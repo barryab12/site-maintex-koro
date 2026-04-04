@@ -1,0 +1,17 @@
+# Robots.txt pour MAINTEX
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.maintex.fr/sitemap.xml
+
+# Autoriser les robots d'indexation
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Bloquer les pages d'administration
+Disallow: /api/
+Disallow: /admin/
