@@ -4,7 +4,7 @@ export function SiteFooter() {
   return (
     <footer className="bg-gray-50 py-16 border-t border-gray-200">
       <div className="max-w-[1240px] mx-auto px-6 lg:px-10">
-        <div className="grid md:grid-cols-5 gap-8 mb-12">
+        <div className="grid md:grid-cols-5 gap-12 mb-12">
           {/* Brand */}
           <div className="md:col-span-1">
             <img
@@ -16,95 +16,82 @@ export function SiteFooter() {
               La GMAO française qui s&apos;adapte à votre métier. Développé par BBC & Partners depuis 2009.
             </p>
             <div className="flex items-center gap-3 p-3 bg-white border border-gray-200 rounded-lg">
-              <span className="text-sm font-semibold text-gray-700">BBC & Partners</span>
-              <span className="text-[11px] text-gray-400">Éditeur de MAINTEX</span>
+              <img src="/upload/logo-bbc.png" alt="BBC & Partners" className="h-10 w-auto" />
+              <div className="flex flex-col">
+                <span className="text-xs font-medium text-gray-700">Développé par BBC & Partners</span>
+                <span className="text-xs text-gray-500">Depuis 2009</span>
+              </div>
             </div>
           </div>
 
-          {/* Links */}
+          {/* Produit */}
           <div>
             <h4 className="text-[11px] uppercase tracking-wider text-gray-400 font-semibold mb-5">Produit</h4>
             <ul className="space-y-3 list-none p-0 m-0">
-              {[
-                { label: 'Fonctionnalités', href: '/fonctionnalites' },
-                { label: 'Tarifs', href: '/tarifs' },
-                { label: 'Clients', href: '/clients' },
-                { label: 'Secteurs', href: '/secteurs' },
-                { label: 'Feuille de route', href: '/feuille-de-route' },
-              ].map((link, i) => (
-                <li key={i}>
-                  <Link href={link.href} className="text-sm text-gray-500 hover:text-[#0A0A8A] no-underline transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              <li><Link href="/fonctionnalites" className="text-sm text-gray-500 hover:text-[#0A0A8A] no-underline transition-colors">Fonctionnalités</Link></li>
+              <li><Link href="/tarifs" className="text-sm text-gray-500 hover:text-[#0A0A8A] no-underline transition-colors">Tarifs</Link></li>
+              <li><Link href="/clients" className="text-sm text-gray-500 hover:text-[#0A0A8A] no-underline transition-colors">Clients</Link></li>
+              <li><Link href="/secteurs" className="text-sm text-gray-500 hover:text-[#0A0A8A] no-underline transition-colors">Secteurs</Link></li>
+              <li><Link href="/calculateur-roi" className="text-sm text-gray-500 hover:text-[#0A0A8A] no-underline transition-colors">Calculateur ROI</Link></li>
+              <li><Link href="/feuille-de-route" className="text-sm text-gray-500 hover:text-[#0A0A8A] no-underline transition-colors">Feuille de route</Link></li>
             </ul>
           </div>
 
+          {/* Entreprise */}
           <div>
             <h4 className="text-[11px] uppercase tracking-wider text-gray-400 font-semibold mb-5">Entreprise</h4>
             <ul className="space-y-3 list-none p-0 m-0">
-              {[
-                { label: 'À propos', href: '/a-propos' },
-                { label: 'Blog', href: '#' },
-                { label: 'Carrières', href: '#' },
-                { label: 'Presse', href: '#' },
-                { label: 'Contact', href: '/contact' },
-              ].map((link, i) => (
-                <li key={i}>
-                  <Link href={link.href} className="text-sm text-gray-500 hover:text-[#0A0A8A] no-underline transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              <li><Link href="/a-propos" className="text-sm text-gray-500 hover:text-[#0A0A8A] no-underline transition-colors">À propos</Link></li>
+              <li><Link href="/ressources#blog" className="text-sm text-gray-500 hover:text-[#0A0A8A] no-underline transition-colors">Blog</Link></li>
+              <li><Link href="#" className="text-sm text-gray-500 hover:text-[#0A0A8A] no-underline transition-colors">Carrières</Link></li>
+              <li><Link href="#" className="text-sm text-gray-500 hover:text-[#0A0A8A] no-underline transition-colors">Presse</Link></li>
+              <li><Link href="/contact" className="text-sm text-gray-500 hover:text-[#0A0A8A] no-underline transition-colors">Contact</Link></li>
             </ul>
           </div>
 
+          {/* Support */}
           <div>
             <h4 className="text-[11px] uppercase tracking-wider text-gray-400 font-semibold mb-5">Support</h4>
             <ul className="space-y-3 list-none p-0 m-0">
-              {[
-                { label: 'Centre d\'aide', href: '/ressources#aide' },
-                { label: 'Documentation', href: '/ressources#api' },
-                { label: 'API', href: '/ressources#api' },
-                { label: 'Status', href: '#' },
-                { label: 'Support', href: '/legal/support' },
-              ].map((link, i) => (
-                <li key={i}>
-                  <Link href={link.href} className="text-sm text-gray-500 hover:text-[#0A0A8A] no-underline transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              <li><Link href="/legal/support" className="text-sm text-gray-500 hover:text-[#0A0A8A] no-underline transition-colors">Centre d&apos;aide</Link></li>
+              <li><Link href="/ressources#api" className="text-sm text-gray-500 hover:text-[#0A0A8A] no-underline transition-colors">Documentation</Link></li>
+              <li><Link href="/education" className="text-sm text-gray-500 hover:text-[#0A0A8A] no-underline transition-colors">Académie</Link></li>
+              <li><Link href="#" className="text-sm text-gray-500 hover:text-[#0A0A8A] no-underline transition-colors">Status</Link></li>
+              <li><Link href="/contact" className="text-sm text-gray-500 hover:text-[#0A0A8A] no-underline transition-colors">Nous contacter</Link></li>
             </ul>
           </div>
+
+          {/* Légal */}
           <div>
             <h4 className="text-[11px] uppercase tracking-wider text-gray-400 font-semibold mb-5">Légal</h4>
             <ul className="space-y-3 list-none p-0 m-0">
-              {[
-                { label: 'CGU', href: '/legal/cgu' },
-                { label: 'Confidentialité', href: '/legal/confidentialite' },
-                { label: 'Cookies', href: '/legal/cookies' },
-                { label: 'RGPD', href: '/legal/rgpd' },
-              ].map((link, i) => (
-                <li key={i}>
-                  <Link href={link.href} className="text-sm text-gray-500 hover:text-[#0A0A8A] no-underline transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              <li><Link href="/legal/cgu" className="text-sm text-gray-500 hover:text-[#0A0A8A] no-underline transition-colors">CGU</Link></li>
+              <li><Link href="/legal/confidentialite" className="text-sm text-gray-500 hover:text-[#0A0A8A] no-underline transition-colors">Confidentialité</Link></li>
+              <li><Link href="/legal/cookies" className="text-sm text-gray-500 hover:text-[#0A0A8A] no-underline transition-colors">Cookies</Link></li>
+              <li><Link href="/legal/rgpd" className="text-sm text-gray-500 hover:text-[#0A0A8A] no-underline transition-colors">RGPD</Link></li>
+              <li><Link href="/legal/support" className="text-sm text-gray-500 hover:text-[#0A0A8A] no-underline transition-colors">Support</Link></li>
+              <li><Link href="/legal/mot-de-passe" className="text-sm text-gray-500 hover:text-[#0A0A8A] no-underline transition-colors">Mot de passe</Link></li>
+              <li><Link href="/legal/utilisation-acceptable" className="text-sm text-gray-500 hover:text-[#0A0A8A] no-underline transition-colors">Utilisation acceptable</Link></li>
             </ul>
           </div>
         </div>
 
         {/* Bottom */}
         <div className="border-t border-gray-200 pt-6 flex flex-wrap justify-between items-center gap-4">
-          <p className="text-xs text-gray-400">
-            © 2026 BBC & Partners. Tous droits réservés.
-          </p>
-          <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 bg-green-500 rounded-full" />
-            <span className="text-[11px] text-gray-400">RGPD conforme — Hébergement France</span>
+          <div className="flex flex-wrap items-center gap-4">
+            <p className="text-xs text-gray-400">
+              © 2026 BBC & Partners. Tous droits réservés.
+            </p>
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 bg-green-500 rounded-full" />
+              <span className="text-[11px] text-gray-400">RGPD conforme — Hébergement France</span>
+            </div>
+          </div>
+          <div className="flex items-center gap-4 text-xs text-gray-400">
+            <Link href="/legal/cgu" className="hover:text-[#0A0A8A] no-underline">CGU</Link>
+            <Link href="/legal/confidentialite" className="hover:text-[#0A0A8A] no-underline">Confidentialité</Link>
+            <Link href="/legal/cookies" className="hover:text-[#0A0A8A] no-underline">Cookies</Link>
+            <Link href="/legal/rgpd" className="hover:text-[#0A0A8A] no-underline">RGPD</Link>
           </div>
         </div>
       </div>

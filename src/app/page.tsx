@@ -35,29 +35,26 @@ export default function HomePage() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                padding: '8px 16px',
+                padding: '12px 24px',
                 borderRadius: '9999px',
                 background: '#f0f4ff',
                 border: '1px solid #e0e7ff',
                 color: '#0A0A8A',
                 marginBottom: '32px'
               }}>
-                <span style={{ fontSize: '12px', fontWeight: 500 }}>France • Afrique • 350+ clients industriels</span>
+                <span style={{ fontSize: '17px', fontWeight: 600, letterSpacing: '0.02em' }}>Réinventons la maintenance</span>
               </div>
 
               {/* Headline */}
               <h1 style={{
-                fontSize: '3.5rem',
+                fontSize: '3.25rem',
                 fontWeight: 900,
-                lineHeight: 1.06,
+                lineHeight: 1.15,
                 letterSpacing: '-0.02em',
                 color: '#1e293b',
                 marginBottom: '24px'
               }}>
-                Diagnostiquez vos pannes<br />
-                <span style={{ color: '#0A0A8A' }}>
-                  du premier coup.
-                </span>
+                Réduisez vos temps d&apos;arrêt grâce à des <span style={{ color: '#0A0A8A' }}>diagnostics fiables.</span>
               </h1>
 
               {/* Subheadline */}
@@ -65,21 +62,31 @@ export default function HomePage() {
                 fontSize: '1.125rem',
                 color: '#64748b',
                 fontWeight: 400,
-                marginBottom: '24px',
-                maxWidth: '500px',
-                lineHeight: 1.6
+                marginBottom: '16px',
+                maxWidth: '520px',
+                lineHeight: 1.7
               }}>
-                La GMAO qui <strong style={{ color: '#0A0A8A', fontWeight: 600 }}>réduit vos temps d&apos;arrêt de 30%</strong> et 
-                booste votre <strong style={{ color: '#0A0A8A', fontWeight: 600 }}>First Time Fix Rate</strong>. 
-                IA intégrée pour un diagnostic de panne instantané.
+                Maintex est la GMAO conçue pour aider vos techniciens à identifier rapidement la cause des pannes et appliquer la bonne action corrective dès la première intervention.
+              </p>
+
+              {/* Highlight text */}
+              <p style={{
+                fontSize: '1rem',
+                color: '#0A0A8A',
+                fontWeight: 600,
+                marginBottom: '28px',
+                maxWidth: '500px',
+                lineHeight: 1.5
+              }}>
+                Une GMAO qui améliore la maintenance, pas seulement sa gestion.
               </p>
 
               {/* Key Metrics */}
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginBottom: '32px' }}>
                 {[
-                  { label: '-30% temps d\'arrêt', color: '#16a34a' },
-                  { label: 'Diagnostic IA', color: '#0A0A8A' },
-                  { label: 'First Time Fix', color: '#0891b2' },
+                  { label: 'Diagnostic rapide', color: '#16a34a' },
+                  { label: 'Actions correctives', color: '#0A0A8A' },
+                  { label: 'Première intervention', color: '#0891b2' },
                 ].map((item, i) => (
                   <div key={i} style={{
                     display: 'flex',
@@ -112,9 +119,9 @@ export default function HomePage() {
                   textDecoration: 'none',
                   boxShadow: '0 4px 6px -1px rgba(10, 10, 138, 0.2)'
                 }}>
-                  Voir une démo personnalisée →
+                  Demander une démo
                 </Link>
-                <Link href="/tarifs" style={{
+                <Link href="/clients" style={{
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '8px',
@@ -127,7 +134,7 @@ export default function HomePage() {
                   textDecoration: 'none',
                   background: 'white'
                 }}>
-                  Essai gratuit 30 jours
+                  Voir un cas client
                 </Link>
               </div>
 

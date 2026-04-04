@@ -205,7 +205,7 @@ export function SiteHeader() {
           <img
             src="/upload/logo-maintex.png"
             alt="MAINTEX"
-            className="h-8"
+            className="h-10"
           />
         </Link>
 
