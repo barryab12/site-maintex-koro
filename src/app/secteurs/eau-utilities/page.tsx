@@ -290,8 +290,8 @@ export default function EauUtilitiesPage() {
               </div>
               
               <div className="lg:sticky lg:top-36 flex justify-center">
-                <SectorEnjeuxVisual 
-                  imageSrc="/images/sector-water-enjeux.jpg"
+                <SectorEnjeuxVisual
+                  imageSrc="/images/sector-water-enjeux-v2.jpg"
                   imageAlt="Défis du secteur eau"
                   problems={config.enjeuxProblems}
                 />
