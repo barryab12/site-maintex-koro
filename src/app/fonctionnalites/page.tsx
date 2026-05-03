@@ -59,7 +59,7 @@ export default function FonctionnalitesPage() {
         'Signature électronique et validation numérique',
       ],
       icon: ClipboardList,
-      image: '/images/maintenance-work.png',
+      image: '/images/maintenance-work.jpg',
       stats: [
         { value: '-30%', label: 'Temps de création', type: 'success' },
         { value: '156', label: 'OT/mois', type: 'default' }
@@ -78,7 +78,7 @@ export default function FonctionnalitesPage() {
         'Gammes de maintenance pré-définies',
       ],
       icon: RefreshCw,
-      image: '/images/machine-room.png',
+      image: '/images/machine-room.jpg',
       stats: [
         { value: '76%', label: 'Taux préventif', type: 'accent' },
         { value: '+15%', label: 'Productivité', type: 'success' }
@@ -97,7 +97,7 @@ export default function FonctionnalitesPage() {
         'Alertes préventives sur signaux faibles',
       ],
       icon: Brain,
-      image: '/images/ai-predictive.png',
+      image: '/images/ai-predictive.jpg',
       stats: [
         { value: '-42%', label: 'Pannes imprévues', type: 'success' },
         { value: '99.2%', label: 'Disponibilité', type: 'default' }
@@ -117,7 +117,7 @@ export default function FonctionnalitesPage() {
         'Notifications et alertes intégrées',
       ],
       icon: Cpu,
-      image: '/images/team-engineers.png',
+      image: '/images/team-engineers.jpg',
       stats: [
         { value: '-45%', label: 'Délai traitement', type: 'success' },
         { value: '98%', label: 'Satisfaction', type: 'default' }
@@ -136,7 +136,7 @@ export default function FonctionnalitesPage() {
         'Synchro avec Outlook et Google Calendar',
       ],
       icon: Calendar,
-      image: '/images/team-technicians.png',
+      image: '/images/team-technicians.jpg',
       stats: [
         { value: '+25%', label: 'Efficacité', type: 'success' },
         { value: '4h', label: 'Gains/sem.', type: 'accent' }
@@ -159,7 +159,7 @@ export default function FonctionnalitesPage() {
         'Suivi du cycle de vie complet',
       ],
       icon: Settings,
-      image: '/images/warehouse.png',
+      image: '/images/warehouse.jpg',
       stats: [
         { value: '100%', label: 'Traçabilité', type: 'success' },
         { value: '850+', label: 'Équipements', type: 'default' }
@@ -178,7 +178,7 @@ export default function FonctionnalitesPage() {
         'Alertes automatiques sur seuils',
       ],
       icon: Heart,
-      image: '/images/vital-functions.png',
+      image: '/images/vital-functions.jpg',
       stats: [
         { value: '99.2%', label: 'Disponibilité', type: 'success' }
       ],
@@ -197,7 +197,7 @@ export default function FonctionnalitesPage() {
         'Suivi des certifications et formations',
       ],
       icon: Users,
-      image: '/images/resource-management.png',
+      image: '/images/resource-management.jpg',
       stats: [
         { value: '+20%', label: 'Productivité', type: 'success' },
         { value: '12', label: 'Techniciens', type: 'default' }
@@ -216,7 +216,7 @@ export default function FonctionnalitesPage() {
         'Inventaire en temps réel',
       ],
       icon: Package,
-      image: '/images/inventory-stock.png',
+      image: '/images/inventory-stock.jpg',
       stats: [
         { value: '-20%', label: 'Stock dormant', type: 'success' },
         { value: '2,400', label: 'Références', type: 'default' }
@@ -235,7 +235,7 @@ export default function FonctionnalitesPage() {
         'Intégration comptabilité',
       ],
       icon: ShoppingCart,
-      image: '/images/purchasing-suppliers.png',
+      image: '/images/purchasing-suppliers.jpg',
       stats: [
         { value: '-15%', label: 'Coûts achat', type: 'success' }
       ]
@@ -257,7 +257,7 @@ export default function FonctionnalitesPage() {
         'Alertes sur écarts de performance',
       ],
       icon: BarChart3,
-      image: '/images/dashboard-hero.png',
+      image: '/images/dashboard-hero.jpg',
       stats: [
         { value: '15+', label: 'KPIs suivis', type: 'default' },
         { value: '24/7', label: 'Monitoring', type: 'success' }
@@ -276,7 +276,7 @@ export default function FonctionnalitesPage() {
         'Analyse des écarts budgétaires',
       ],
       icon: Wallet,
-      image: '/images/budget-projects.png',
+      image: '/images/budget-projects.jpg',
       stats: [
         { value: '4 mois', label: 'ROI moyen', type: 'accent' }
       ],
@@ -295,7 +295,7 @@ export default function FonctionnalitesPage() {
         'Interface intuitive pour le terrain',
       ],
       icon: Smartphone,
-      image: '/images/mobile-maintenance-app.png',
+      image: '/images/mobile-maintenance-app.jpg',
       stats: [
         { value: '24/7', label: 'Disponibilité', type: 'success' },
         { value: '100%', label: 'Hors-ligne', type: 'accent' }
@@ -314,7 +314,7 @@ export default function FonctionnalitesPage() {
         'Intégration SCADA et automates',
       ],
       icon: Link2,
-      image: '/images/api-documentation.png',
+      image: '/images/api-documentation.jpg',
       stats: [
         { value: '10+', label: 'Connecteurs', type: 'default' }
       ]
@@ -332,7 +332,7 @@ export default function FonctionnalitesPage() {
         'Alertes échéances réglementaires',
       ],
       icon: FileText,
-      image: '/images/document-management.png',
+      image: '/images/document-management.jpg',
       stats: [
         { value: '100%', label: 'Conformité', type: 'success' },
         { value: '-60%', label: 'Temps recherche', type: 'success' }
