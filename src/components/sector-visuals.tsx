@@ -213,8 +213,8 @@ export function SectorEnjeuxVisual({
         <div className="text-xs text-gray-600">{problems[2]?.label}</div>
       </div>
 
-      {/* Problem Card 4 - Bottom Left */}
-      <div className="absolute -left-3 bottom-4 w-36 bg-white rounded-xl p-3 shadow-xl border-l-4 border-red-400 z-10">
+      {/* Problem Card 4 - Left side, lower middle above banner */}
+      <div className="absolute -left-3 bottom-20 w-36 bg-white rounded-xl p-3 shadow-xl border-l-4 border-red-400 z-10">
         {problems[3]?.icon && (
           <div className="w-7 h-7 rounded-lg bg-red-50 flex items-center justify-center mb-2">
             {problems[3].icon}
@@ -309,8 +309,8 @@ export function SectorSolutionsVisual({
         <div className="text-xs text-gray-600">{benefits[2]?.label}</div>
       </div>
 
-      {/* Benefit Card 4 - Bottom Left */}
-      <div className="absolute -left-3 bottom-4 w-36 bg-white rounded-xl p-3 shadow-xl border-l-4 z-10" style={{ borderLeftColor: colors[3] }}>
+      {/* Benefit Card 4 - Left side, lower middle above banner */}
+      <div className="absolute -left-3 bottom-20 w-36 bg-white rounded-xl p-3 shadow-xl border-l-4 z-10" style={{ borderLeftColor: colors[3] }}>
         {benefits[3]?.icon && (
           <div className="w-7 h-7 rounded-lg flex items-center justify-center mb-2" style={{ backgroundColor: `${colors[3]}15` }}>
             {benefits[3].icon}

@@ -481,7 +481,7 @@ export default function RessourcesPage() {
         <div className="max-w-[1240px] mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-200">
-              <img src="/images/api-documentation.png" alt="Documentation API" className="w-full h-auto" />
+              <img src="/images/api-documentation.jpg" alt="Documentation API" className="w-full h-auto" />
             </div>
             <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0A0A8A]/10 border border-[#0A0A8A]/20 text-[#0A0A8A] mb-6">
