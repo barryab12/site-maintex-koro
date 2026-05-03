@@ -1,15 +1,15 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import Link from 'next/link'
 import { 
   CheckCircle2, HelpCircle, Zap, Building2, Users, Shield, Server, 
   HeadphonesIcon, Clock, ChevronRight, Sparkles, X, ArrowRight,
-  BadgeCheck, TrendingUp, Target, Gift, Star, Phone
+  BadgeCheck, TrendingUp, Target, Gift, Star, Phone, DollarSign, Gauge, ArrowUpRight
 } from 'lucide-react'
-import { TabletMockup, MobileMockup, GMAODashboardMockup, PricingDashboardMockup, MobileTaskListMockup } from '@/components/device-mockups'
 
 export default function TarifsPage() {
   const [isAnnual, setIsAnnual] = useState(true)
@@ -222,14 +222,48 @@ export default function TarifsPage() {
               </div>
             </div>
 
-            {/* Device Mockups */}
-            <div className="hidden lg:flex justify-center gap-4">
-              <TabletMockup className="w-[300px]">
-                <PricingDashboardMockup />
-              </TabletMockup>
-              <MobileMockup className="w-[150px] mt-16">
-                <MobileTaskListMockup />
-              </MobileMockup>
+            {/* Hero Photo with Floating Stats */}
+            <div className="hidden lg:block relative">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/images/analytics-dashboard.png"
+                  alt="Dashboard analytiques MAINTEX"
+                  width={500}
+                  height={400}
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+              </div>
+              
+              {/* Floating Cards */}
+              <div className="absolute -top-3 left-4 flex items-center gap-2 px-4 py-2.5 bg-[#059669] text-white rounded-full shadow-lg">
+                <DollarSign className="w-4 h-4" />
+                <span className="text-sm font-semibold">ROI 4 mois</span>
+              </div>
+              
+              <div className="absolute top-16 right-4 bg-white rounded-xl p-4 shadow-lg">
+                <div className="flex items-center gap-2 mb-1">
+                  <Gauge className="w-4 h-4 text-[#1E3A8A]" />
+                  <span className="text-xs text-gray-500">Disponibilité</span>
+                </div>
+                <div className="text-2xl font-bold text-[#0C0A09]">99.9%</div>
+              </div>
+              
+              <div className="absolute bottom-4 left-4 bg-white rounded-xl p-4 shadow-lg">
+                <div className="flex items-center gap-2 mb-1">
+                  <TrendingUp className="w-4 h-4 text-[#059669]" />
+                  <span className="text-xs text-gray-500">Économie</span>
+                </div>
+                <div className="text-2xl font-bold text-[#059669]">-34%</div>
+              </div>
+              
+              <div className="absolute bottom-4 right-4 bg-[#F97316] text-white rounded-xl p-3 shadow-lg">
+                <div className="flex items-center gap-2">
+                  <ArrowUpRight className="w-4 h-4" />
+                  <span className="text-sm font-semibold">+41% préventif</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -379,7 +413,7 @@ export default function TarifsPage() {
         </div>
       </section>
 
-      {/* Feature Comparison */}
+      {/* Feature Comparison with Photo */}
       <section className="py-20 bg-white">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -442,10 +476,44 @@ export default function TarifsPage() {
               </div>
             </div>
 
-            <div className="flex justify-center">
-              <TabletMockup className="w-[340px]">
-                <GMAODashboardMockup />
-              </TabletMockup>
+            {/* Photo with Stats */}
+            <div className="relative">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/images/business-meeting.png"
+                  alt="Équipe de travail MAINTEX"
+                  width={550}
+                  height={400}
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+              </div>
+              
+              {/* Floating Cards */}
+              <div className="absolute -top-3 left-4 flex items-center gap-2 px-4 py-2.5 bg-[#1E3A8A] text-white rounded-full shadow-lg">
+                <Shield className="w-4 h-4" />
+                <span className="text-sm font-semibold">Sans engagement</span>
+              </div>
+              
+              <div className="absolute top-16 right-4 bg-white rounded-xl p-4 shadow-lg">
+                <div className="flex items-center gap-2 mb-1">
+                  <Clock className="w-4 h-4 text-[#F97316]" />
+                  <span className="text-xs text-gray-500">Déploiement</span>
+                </div>
+                <div className="text-2xl font-bold text-[#0C0A09]">14j</div>
+              </div>
+              
+              <div className="absolute bottom-4 left-4 bg-white rounded-xl p-4 shadow-lg">
+                <div className="text-xl font-bold text-[#059669]">4 mois</div>
+                <div className="text-xs text-gray-500">ROI moyen</div>
+              </div>
+              
+              <div className="absolute bottom-4 right-4 bg-[#F97316] text-white rounded-xl p-3 shadow-lg">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4" />
+                  <span className="text-sm font-semibold">Support FR</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

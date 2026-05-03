@@ -1,9 +1,10 @@
 'use client'
 
+import Image from 'next/image'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import Link from 'next/link'
-import { CheckCircle2, Users, Target, Lightbulb, Shield, Award, BookOpen, Settings, Wrench, Globe, MapPin, Phone, Mail, Building2, Briefcase, TrendingUp, Layers, Cpu, Factory, Pickaxe, Zap, Landmark, HardHat, Wheat, Truck, Hotel, Clock, Heart, Lock, FileText, Newspaper, Rocket, Users2 } from 'lucide-react'
+import { CheckCircle2, Users, Target, Lightbulb, Shield, Award, BookOpen, Settings, Wrench, Globe, MapPin, Phone, Mail, Building2, Briefcase, TrendingUp, Layers, Cpu, Factory, Pickaxe, Zap, Landmark, HardHat, Wheat, Truck, Hotel, Clock, Heart, Lock, FileText, Newspaper, Rocket, Users2, ArrowRight, ArrowUpRight } from 'lucide-react'
 
 export default function AProposPage() {
   const stats = [

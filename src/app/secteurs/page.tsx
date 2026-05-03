@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import Link from 'next/link'
@@ -9,10 +10,10 @@ import {
   Factory, Pickaxe, Car, FlaskConical, Wheat, Zap, Fuel, 
   Building2, Building, Server, HardHat, Truck, 
   Stethoscope, Shield, BadgeCheck, Clock, Users, 
-  Globe, Target, Star
+  Globe, Target, Star, Activity, TrendingDown, ArrowUpRight, Gauge
 } from 'lucide-react'
 import { TabNavigation, TabPanel } from '@/components/tab-navigation'
-import { TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup } from '@/components/device-mockups'
+import { MiniLineChartInline } from '@/components/photo-data-visual'
 
 export default function SecteursPage() {
   const [activeTab, setActiveTab] = useState('industrie')
@@ -31,6 +32,7 @@ export default function SecteursPage() {
       title: 'Industrie',
       icon: Factory,
       color: '#1E3A8A',
+      image: '/images/production-line.png',
       gradient: 'from-blue-600 to-cyan-500',
       description: "Optimisez la disponibilité de vos lignes de production et réduisez les temps d'arrêt.",
       challenges: [
@@ -46,16 +48,16 @@ export default function SecteursPage() {
         { title: "First Time Fix systématique", desc: "Identification de la cause racine sans tâtonnement" },
       ],
       stats: [
-        { value: '–38%', label: 'temps d\'arrêt' },
-        { value: '+85%', label: 'First Time Fix' },
-        { value: '2x', label: 'montée en compétence' },
+        { value: '–38%', label: 'temps d\'arrêt', type: 'success' },
+        { value: '+85%', label: 'First Time Fix', type: 'accent' },
+        { value: '2x', label: 'montée en compétence', type: 'default' },
       ],
-      mockup: <GMAODashboardMockup />
     },
     mines: {
       title: 'Mines & Carrières',
       icon: Pickaxe,
       color: '#F97316',
+      image: '/images/mining-operation.png',
       gradient: 'from-orange-500 to-amber-500',
       description: "Optimisez la disponibilité de vos engins et équipements miniers dans des conditions extrêmes.",
       challenges: [
@@ -71,16 +73,16 @@ export default function SecteursPage() {
         { title: "Rapports de disponibilité", desc: "Indicateurs de performance par engin et par site" },
       ],
       stats: [
-        { value: '+25%', label: 'disponibilité' },
-        { value: '–40%', label: 'pannes imprévues' },
-        { value: '15%', label: 'économie pièces' },
+        { value: '+25%', label: 'disponibilité', type: 'success' },
+        { value: '–40%', label: 'pannes imprévues', type: 'success' },
+        { value: '15%', label: 'économie pièces', type: 'default' },
       ],
-      mockup: <EquipmentDetailMockup />
     },
     sante: {
       title: 'Santé & Biomédical',
       icon: Stethoscope,
       color: '#059669',
+      image: '/images/hospital-medical.png',
       gradient: 'from-emerald-500 to-teal-500',
       description: 'Assurez la conformité et la disponibilité de vos équipements biomédicaux.',
       challenges: [
@@ -96,16 +98,16 @@ export default function SecteursPage() {
         { title: "Alertes préventives", desc: "Anticipation des contrôles réglementaires" },
       ],
       stats: [
-        { value: '100%', label: 'conformité HAS' },
-        { value: '–50%', label: 'interventions répétées' },
-        { value: '24/7', label: 'disponibilité' },
+        { value: '100%', label: 'conformité HAS', type: 'success' },
+        { value: '–50%', label: 'interventions répétées', type: 'success' },
+        { value: '24/7', label: 'disponibilité', type: 'default' },
       ],
-      mockup: <EquipmentDetailMockup />
     },
     energie: {
       title: 'Énergie & Utilities',
       icon: Zap,
       color: '#1E3A8A',
+      image: '/images/energy-plant.png',
       gradient: 'from-blue-600 to-indigo-500',
       description: 'Assurez la continuité de service sur vos réseaux et infrastructures énergétiques.',
       challenges: [
@@ -121,16 +123,16 @@ export default function SecteursPage() {
         { title: "Gestion des urgences", desc: "Workflow d'intervention prioritaire" },
       ],
       stats: [
-        { value: '99.9%', label: 'disponibilité' },
-        { value: '–60%', label: 'temps de réponse' },
-        { value: '100%', label: 'conformité' },
+        { value: '99.9%', label: 'disponibilité', type: 'success' },
+        { value: '–60%', label: 'temps de réponse', type: 'success' },
+        { value: '100%', label: 'conformité', type: 'default' },
       ],
-      mockup: <GMAODashboardMockup />
     },
     btp: {
       title: 'BTP & Construction',
       icon: HardHat,
       color: '#F97316',
+      image: '/images/construction-site.png',
       gradient: 'from-orange-500 to-red-500',
       description: 'Gérez efficacement votre flotte d\'engins de chantier et vos équipements.',
       challenges: [
@@ -146,16 +148,16 @@ export default function SecteursPage() {
         { title: "Multi-chantiers", desc: "Gestion centralisée de tous vos sites" },
       ],
       stats: [
-        { value: '–40%', label: 'pannes imprévues' },
-        { value: '100%', label: 'conformité VGP' },
-        { value: '–2j', label: 'admin par mois' },
+        { value: '–40%', label: 'pannes imprévues', type: 'success' },
+        { value: '100%', label: 'conformité VGP', type: 'success' },
+        { value: '–2j', label: 'admin par mois', type: 'default' },
       ],
-      mockup: <EquipmentDetailMockup />
     },
     agro: {
       title: 'Agroalimentaire',
       icon: Wheat,
       color: '#059669',
+      image: '/images/food-processing.png',
       gradient: 'from-green-500 to-lime-500',
       description: 'Maintenez vos lignes dans la conformité HACCP et ISO 22000.',
       challenges: [
@@ -171,30 +173,24 @@ export default function SecteursPage() {
         { title: "Rapports de conformité", desc: "Documentation prête pour les audits" },
       ],
       stats: [
-        { value: '+44%', label: 'préventif' },
-        { value: '100%', label: 'conformité HACCP' },
-        { value: '–3j', label: 'préparation audit' },
+        { value: '+44%', label: 'préventif', type: 'success' },
+        { value: '100%', label: 'conformité HACCP', type: 'success' },
+        { value: '–3j', label: 'préparation audit', type: 'default' },
       ],
-      mockup: <GMAODashboardMockup />
     }
   }
 
   const otherSectors = [
-    { id: 'chimie-pharma', icon: FlaskConical, title: 'Chimie & Pharmacie', href: '/secteurs/chimie-pharma' },
-    { id: 'automobile', icon: Car, title: 'Automobile', href: '/secteurs/automobile' },
-    { id: 'oil-gas', icon: Fuel, title: 'Pétrole & Gaz', href: '/secteurs/oil-gas' },
-    { id: 'facilities', icon: Building2, title: 'Facility Management', href: '/secteurs/facilities' },
-    { id: 'data-centers', icon: Server, title: 'Data Centers', href: '/secteurs/data-centers' },
-    { id: 'eau-utilities', icon: Building, title: 'Eau & Utilities', href: '/secteurs/eau-utilities' },
-    { id: 'aeronautique-ferroviaire', icon: Truck, title: 'Aéronautique & Ferroviaire', href: '/secteurs/aeronautique-ferroviaire' },
+    { id: 'chimie-pharma', icon: FlaskConical, title: 'Chimie & Pharmacie', href: '/secteurs/chimie-pharma', image: '/images/healthcare-equipment.png' },
+    { id: 'automobile', icon: Car, title: 'Automobile', href: '/secteurs/automobile', image: '/images/production-line.png' },
+    { id: 'oil-gas', icon: Fuel, title: 'Pétrole & Gaz', href: '/secteurs/oil-gas', image: '/images/oil-gas-refinery.png' },
+    { id: 'facilities', icon: Building2, title: 'Facility Management', href: '/secteurs/facilities', image: '/images/warehouse.png' },
+    { id: 'data-centers', icon: Server, title: 'Data Centers', href: '/secteurs/data-centers', image: '/images/data-center.png' },
+    { id: 'eau-utilities', icon: Building, title: 'Eau & Utilities', href: '/secteurs/eau-utilities', image: '/images/water-treatment.png' },
+    { id: 'aeronautique-ferroviaire', icon: Truck, title: 'Aéronautique & Ferroviaire', href: '/secteurs/aeronautique-ferroviaire', image: '/images/railway-maintenance.png' },
   ]
 
-  const stats = [
-    { value: '15', label: 'Secteurs couverts', icon: Target },
-    { value: '350+', label: 'Clients actifs', icon: Users },
-    { value: '15', label: 'Pays', icon: Globe },
-    { value: '–30%', label: 'Temps d\'arrêt moyen', icon: TrendingUp },
-  ]
+  const performanceData = [85, 88, 92, 95, 97, 98, 96, 99, 98, 99, 99, 99]
 
   const currentSector = sectors[activeTab as keyof typeof sectors]
 
@@ -248,17 +244,45 @@ export default function SecteursPage() {
               </div>
             </div>
 
-            {/* Stats Grid */}
-            <div className="hidden lg:grid grid-cols-2 gap-4">
-              {stats.map((stat, i) => (
-                <div key={i} className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-lg hover:border-[#F97316]/30 transition-all">
-                  <div className="w-12 h-12 rounded-xl bg-[#F97316]/10 flex items-center justify-center mb-4">
-                    <stat.icon className="w-5 h-5 text-[#F97316]" />
-                  </div>
-                  <div className="text-3xl font-bold text-[#1E3A8A] mb-1">{stat.value}</div>
-                  <div className="text-sm text-[#64748b]">{stat.label}</div>
+            {/* Hero Photo with Floating Stats */}
+            <div className="hidden lg:block relative">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/images/technician-action.png"
+                  alt="Technicien en action"
+                  width={550}
+                  height={350}
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+              </div>
+              
+              {/* Floating Cards */}
+              <div className="absolute -top-3 left-4 flex items-center gap-2 px-4 py-2.5 bg-[#F97316] text-white rounded-full shadow-lg">
+                <Target className="w-4 h-4" />
+                <span className="text-sm font-semibold">15 Secteurs</span>
+              </div>
+              
+              <div className="absolute top-12 right-4 bg-white rounded-xl p-4 shadow-lg">
+                <div className="flex items-center gap-2 mb-1">
+                  <Gauge className="w-4 h-4 text-[#059669]" />
+                  <span className="text-xs text-gray-500">Disponibilité</span>
                 </div>
-              ))}
+                <div className="text-2xl font-bold text-[#0C0A09]">98.2%</div>
+              </div>
+              
+              <div className="absolute bottom-4 left-4 bg-[#1E3A8A] text-white rounded-xl p-4 shadow-lg">
+                <div className="text-lg font-bold">350+</div>
+                <div className="text-xs text-white/80">Clients</div>
+              </div>
+              
+              <div className="absolute bottom-4 right-4 bg-white rounded-xl p-3 shadow-lg">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#059669]" />
+                  <span className="text-sm font-medium">Conforme</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -308,6 +332,7 @@ export default function SecteursPage() {
             return (
               <TabPanel key={key} isActive={activeTab === key}>
                 <div className="grid lg:grid-cols-2 gap-12 items-start">
+                  {/* Left - Content */}
                   <div>
                     {/* Header */}
                     <div className="flex items-center gap-4 mb-6">
@@ -346,16 +371,6 @@ export default function SecteursPage() {
                       </div>
                     </div>
 
-                    {/* Stats */}
-                    <div className="grid grid-cols-3 gap-4 mb-8">
-                      {sector.stats.map((stat, i) => (
-                        <div key={i} className="bg-white rounded-xl p-4 border border-gray-200 text-center">
-                          <div className="text-2xl font-bold" style={{ color: sector.color }}>{stat.value}</div>
-                          <div className="text-xs text-[#64748b]">{stat.label}</div>
-                        </div>
-                      ))}
-                    </div>
-
                     {/* CTA */}
                     <div className="flex flex-wrap gap-3">
                       <Link
@@ -373,11 +388,36 @@ export default function SecteursPage() {
                     </div>
                   </div>
 
-                  {/* Mockup */}
-                  <div className="flex justify-center lg:sticky lg:top-36">
-                    <TabletMockup className="w-full max-w-[340px]">
-                      {sector.mockup}
-                    </TabletMockup>
+                  {/* Right - Photo with Floating Stats */}
+                  <div className="relative lg:sticky lg:top-36">
+                    <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                      <Image
+                        src={sector.image}
+                        alt={sector.title}
+                        width={500}
+                        height={350}
+                        className="object-cover w-full"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+                    </div>
+                    
+                    {/* Floating Stats Cards */}
+                    <div className="absolute -top-3 left-4 flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-lg">
+                      <sector.icon className="w-4 h-4" style={{ color: sector.color }} />
+                      <span className="text-sm font-semibold text-[#0C0A09]">{sector.title}</span>
+                    </div>
+                    
+                    {sector.stats.map((stat, i) => (
+                      <div 
+                        key={i}
+                        className={`absolute ${i === 0 ? '-right-3 top-16' : i === 1 ? '-left-3 top-1/2' : 'bottom-4 right-4'} bg-white rounded-xl p-4 shadow-lg`}
+                      >
+                        <div className={`text-xl font-bold ${stat.type === 'success' ? 'text-[#059669]' : stat.type === 'accent' ? 'text-[#F97316]' : 'text-[#0C0A09]'}`}>
+                          {stat.value}
+                        </div>
+                        <div className="text-xs text-gray-500">{stat.label}</div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </TabPanel>
@@ -386,23 +426,36 @@ export default function SecteursPage() {
         </div>
       </section>
 
-      {/* Other Sectors */}
+      {/* Other Sectors Grid */}
       <section className="py-16 bg-white">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
           <div className="text-center mb-10">
-            <h3 className="text-xl font-bold text-[#0C0A09] mb-2">Autres secteurs couverts</h3>
-            <p className="text-sm text-[#64748b]">MAINTEX s&apos;adapte à tous les environnements industriels</p>
+            <h3 className="text-2xl font-bold text-[#0C0A09] mb-2">Autres secteurs couverts</h3>
+            <p className="text-[#64748b]">MAINTEX s&apos;adapte à tous les environnements industriels</p>
           </div>
           
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {otherSectors.map((sector) => (
               <Link
                 key={sector.id}
                 href={sector.href}
-                className="flex items-center gap-2 px-5 py-3 bg-[#FAFAF9] border border-gray-200 rounded-xl text-sm text-[#44403C] hover:border-[#F97316] hover:text-[#F97316] hover:shadow-md transition-all no-underline"
+                className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all no-underline"
               >
-                <sector.icon className="w-4 h-4" />
-                {sector.title}
+                <div className="aspect-[4/3] relative">
+                  <Image
+                    src={sector.image}
+                    alt={sector.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <div className="flex items-center gap-2 text-white">
+                    <sector.icon className="w-5 h-5 text-[#F97316]" />
+                    <span className="font-semibold">{sector.title}</span>
+                  </div>
+                </div>
               </Link>
             ))}
           </div>
