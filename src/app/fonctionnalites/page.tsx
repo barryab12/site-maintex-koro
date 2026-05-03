@@ -321,7 +321,8 @@ export default function FonctionnalitesPage() {
   const renderFeatureCard = (feature: any) => (
     <div 
       key={feature.id} 
-      className={`bg-white rounded-2xl border ${feature.highlight ? 'border-[#F97316] shadow-lg shadow-[#F97316]/10' : 'border-gray-200'} p-6 lg:p-8 hover:shadow-xl transition-all duration-300`}
+      id={feature.id}
+      className={`bg-white rounded-2xl border ${feature.highlight ? 'border-[#F97316] shadow-lg shadow-[#F97316]/10' : 'border-gray-200'} p-6 lg:p-8 hover:shadow-xl transition-all duration-300 scroll-mt-40`}
     >
       <div className="grid lg:grid-cols-2 gap-8 items-center">
         {/* Left - Content */}

@@ -8,11 +8,11 @@ import {
   // Fonctionnalités icons
   ClipboardList, RefreshCw, Brain, Cpu, Calendar,
   Settings, Heart, Package, Users, FolderKanban,
-  Smartphone, BarChart3, Link2, FileText, ShieldCheck,
+  Smartphone, BarChart3, Link2, FileText,
   // Secteurs icons
   Factory, Pickaxe, Car, FlaskConical, Wheat,
   Zap, Fuel, Building2, Building, Server,
-  Landmark, HardHat, Truck, Hotel, Stethoscope,
+  HardHat, Truck, Hotel, Stethoscope,
   // Ressources icons
   BookOpen, Video, GraduationCap, HelpCircle, Rss,
   Calculator, FileCode, LayoutTemplate, FileText as FileTextIcon,
@@ -57,29 +57,29 @@ export function SiteHeader() {
           items: [
             { icon: ClipboardList, iconColor: 'from-blue-500 to-cyan-500', label: 'Ordres de travail', href: '/fonctionnalites#ot', description: 'Créer, assigner, suivre' },
             { icon: RefreshCw, iconColor: 'from-green-500 to-emerald-500', label: 'Maintenance préventive', href: '/fonctionnalites#preventif', description: 'Planification automatique' },
-            { icon: Brain, iconColor: 'from-purple-500 to-pink-500', label: 'Prédictive (IA/IoT)', href: '/fonctionnalites#predictive', description: 'Anticipez les pannes' },
-            { icon: Cpu, iconColor: 'from-amber-500 to-orange-500', label: 'Demandes', href: '/fonctionnalites#demandes', description: 'Portail demandeurs' },
+            { icon: Brain, iconColor: 'from-purple-500 to-pink-500', label: 'Maintenance prédictive', href: '/fonctionnalites#predictif', description: 'IA & IoT' },
+            { icon: Cpu, iconColor: 'from-amber-500 to-orange-500', label: 'Demandes d\'intervention', href: '/fonctionnalites#demandes', description: 'Portail demandeurs' },
             { icon: Calendar, iconColor: 'from-teal-500 to-cyan-500', label: 'Planification', href: '/fonctionnalites#planification', description: 'Calendrier intelligent' },
           ]
         },
         {
-          title: 'Gestion des Actifs',
+          title: 'Actifs & Opérations',
           items: [
-            { icon: Settings, iconColor: 'from-slate-500 to-gray-600', label: 'Équipements', href: '/fonctionnalites#equipements', description: 'Parc et nomenclature' },
-            { icon: Heart, iconColor: 'from-rose-500 to-pink-500', label: 'Fonctions Vitales', href: '/fonctionnalites#vitaux', description: 'Nouveau module' },
-            { icon: Package, iconColor: 'from-violet-500 to-purple-500', label: 'Stocks', href: '/fonctionnalites#stocks', description: 'Inventaire temps réel' },
-            { icon: Users, iconColor: 'from-indigo-500 to-blue-500', label: 'Fournisseurs', href: '/fonctionnalites#fournisseurs', description: 'Gestion des achats' },
-            { icon: FolderKanban, iconColor: 'from-amber-500 to-yellow-500', label: 'Projets & Budgets', href: '/fonctionnalites#budget', description: 'Suivi financier' },
+            { icon: Settings, iconColor: 'from-slate-500 to-gray-600', label: 'Gestion équipements', href: '/fonctionnalites#equipements', description: 'Parc et nomenclature' },
+            { icon: Heart, iconColor: 'from-rose-500 to-pink-500', label: 'Fonctions vitales', href: '/fonctionnalites#vitaux', description: 'Équipements critiques' },
+            { icon: Users, iconColor: 'from-indigo-500 to-blue-500', label: 'Gestion ressources', href: '/fonctionnalites#ressources', description: 'Équipes et compétences' },
+            { icon: Package, iconColor: 'from-violet-500 to-purple-500', label: 'Stocks & inventaire', href: '/fonctionnalites#stocks', description: 'Inventaire temps réel' },
+            { icon: FolderKanban, iconColor: 'from-amber-500 to-yellow-500', label: 'Achats & fournisseurs', href: '/fonctionnalites#achats', description: 'Approvisionnements' },
           ]
         },
         {
-          title: 'Outils & Analyse',
+          title: 'Outils & Plateforme',
           items: [
-            { icon: Smartphone, iconColor: 'from-cyan-500 to-blue-500', label: 'Application mobile', href: '/fonctionnalites#mobile', description: 'iOS & Android' },
             { icon: BarChart3, iconColor: 'from-indigo-500 to-violet-500', label: 'Tableaux de bord', href: '/fonctionnalites#dashboard', description: 'KPI temps réel' },
+            { icon: FolderKanban, iconColor: 'from-emerald-500 to-teal-500', label: 'Projets & budgets', href: '/fonctionnalites#budget', description: 'Suivi financier' },
+            { icon: Smartphone, iconColor: 'from-cyan-500 to-blue-500', label: 'Application mobile', href: '/fonctionnalites#mobile', description: 'Mode hors-ligne' },
             { icon: Link2, iconColor: 'from-emerald-500 to-teal-500', label: 'Intégrations ERP', href: '/fonctionnalites#integrations', description: 'SAP, Sage, Odoo...' },
-            { icon: FileText, iconColor: 'from-orange-500 to-red-500', label: 'Documents', href: '/fonctionnalites#documents', description: 'Gestion documentaire' },
-            { icon: ShieldCheck, iconColor: 'from-green-500 to-lime-500', label: 'Conformité', href: '/fonctionnalites#conformite', description: 'Audits & traçabilité' },
+            { icon: FileText, iconColor: 'from-orange-500 to-red-500', label: 'Documents & conformité', href: '/fonctionnalites#documents', description: 'Traçabilité et audits' },
           ]
         }
       ]
@@ -89,33 +89,36 @@ export function SiteHeader() {
       href: '/secteurs',
       megaMenu: [
         {
-          title: 'Industrie',
+          title: 'Industrie & Production',
           items: [
-            { icon: Factory, iconColor: 'from-slate-500 to-gray-600', label: 'Manufacturière', href: '/secteurs#manufacture', description: 'Production industrielle' },
-            { icon: Pickaxe, iconColor: 'from-amber-500 to-yellow-500', label: 'Mines', href: '/secteurs#mines', description: 'Extraction & carrières' },
-            { icon: Car, iconColor: 'from-blue-500 to-indigo-500', label: 'Automobile', href: '/secteurs#automobile', description: 'Industrie auto' },
-            { icon: FlaskConical, iconColor: 'from-purple-500 to-pink-500', label: 'Chimie', href: '/secteurs#chimie', description: 'Industrie chimique' },
-            { icon: Wheat, iconColor: 'from-green-500 to-lime-500', label: 'Agroalimentaire', href: '/secteurs#agroali', description: 'IAA & HACCP' },
+            { icon: Factory, iconColor: 'from-slate-500 to-gray-600', label: 'Industrie', href: '/secteurs#industrie', description: 'Usines & production' },
+            { icon: Car, iconColor: 'from-blue-500 to-indigo-500', label: 'Automobile', href: '/secteurs#automobile', description: 'Lignes de production' },
+            { icon: FlaskConical, iconColor: 'from-purple-500 to-pink-500', label: 'Chimie & Pharma', href: '/secteurs#chimie-pharma', description: 'Process & conformité' },
+            { icon: Pickaxe, iconColor: 'from-amber-500 to-yellow-500', label: 'Mines & extractif', href: '/secteurs#mines', description: 'Engins lourds' },
+            { icon: Truck, iconColor: 'from-cyan-500 to-blue-500', label: 'Aéronautique & ferro.', href: '/secteurs#aeronautique', description: 'Maintenance réglementée' },
+            { icon: Wheat, iconColor: 'from-green-500 to-lime-500', label: 'Agroalimentaire', href: '/secteurs#agroalimentaire', description: 'Conformité HACCP' },
           ]
         },
         {
-          title: 'Énergie & Utilities',
+          title: 'Énergies & Infrastructures',
           items: [
-            { icon: Zap, iconColor: 'from-yellow-500 to-orange-500', label: 'Énergie', href: '/secteurs#energie', description: 'Production & distribution' },
-            { icon: Fuel, iconColor: 'from-slate-600 to-gray-700', label: 'Pétrole & gaz', href: '/secteurs#petrole', description: 'Exploration & raffinage' },
-            { icon: Building2, iconColor: 'from-cyan-500 to-blue-500', label: 'Facilities', href: '/secteurs#facilities', description: 'Gestion technique' },
-            { icon: Building, iconColor: 'from-indigo-500 to-purple-500', label: 'Immobilier', href: '/secteurs#immobilier', description: 'Gestion patrimoine' },
-            { icon: Server, iconColor: 'from-blue-500 to-cyan-500', label: 'Data centers', href: '/secteurs#datacenters', description: 'Infrastructure IT' },
+            { icon: Zap, iconColor: 'from-yellow-500 to-orange-500', label: 'Énergie', href: '/secteurs#energie', description: 'Électricité & renouvelable' },
+            { icon: Building, iconColor: 'from-cyan-500 to-blue-500', label: 'Eau & utilities', href: '/secteurs#eau-utilities', description: 'Réseaux & traitement' },
+            { icon: Fuel, iconColor: 'from-slate-600 to-gray-700', label: 'Oil & Gas', href: '/secteurs#oil-gas', description: 'Sites critiques' },
+            { icon: HardHat, iconColor: 'from-orange-500 to-red-500', label: 'BTP & construction', href: '/secteurs#btp', description: 'Engins de chantier' },
+            { icon: Building2, iconColor: 'from-indigo-500 to-purple-500', label: 'Infrastructures publ.', href: '/secteurs#infrastructures', description: 'Patrimoine public' },
+            { icon: Server, iconColor: 'from-blue-500 to-cyan-500', label: 'Télécoms', href: '/secteurs#telecoms', description: 'Réseaux & data' },
           ]
         },
         {
-          title: 'Services & Autres',
+          title: 'Services & Exploitation',
           items: [
-            { icon: Landmark, iconColor: 'from-blue-500 to-indigo-500', label: 'Institutions', href: '/secteurs#institutions', description: 'Secteur public' },
-            { icon: HardHat, iconColor: 'from-orange-500 to-red-500', label: 'BTP', href: '/secteurs#btp', description: 'Construction' },
-            { icon: Truck, iconColor: 'from-teal-500 to-cyan-500', label: 'Logistique', href: '/secteurs#logistique', description: 'Transport & entrepôts' },
-            { icon: Hotel, iconColor: 'from-rose-500 to-pink-500', label: 'Hôtellerie', href: '/secteurs#hotellerie', description: 'Tourisme & hospitality' },
+            { icon: Truck, iconColor: 'from-teal-500 to-cyan-500', label: 'Logistique & transport', href: '/secteurs#logistique', description: 'Entrepôts & supply chain' },
+            { icon: Building2, iconColor: 'from-violet-500 to-purple-500', label: 'Immobilier & bâtiments', href: '/secteurs#immobilier', description: 'Gestion technique' },
+            { icon: Hotel, iconColor: 'from-rose-500 to-pink-500', label: 'Hôtellerie', href: '/secteurs#hotellerie', description: 'Hôtels & résidences' },
             { icon: Stethoscope, iconColor: 'from-emerald-500 to-green-500', label: 'Santé', href: '/secteurs#sante', description: 'Biomédical' },
+            { icon: Building, iconColor: 'from-amber-500 to-orange-500', label: 'Retail & distribution', href: '/secteurs#retail', description: 'Magasins & chaînes' },
+            { icon: Factory, iconColor: 'from-blue-500 to-indigo-500', label: 'Services techniques', href: '/secteurs#services-techniques', description: 'Maintenance externalisée' },
           ]
         }
       ]

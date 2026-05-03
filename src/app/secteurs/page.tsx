@@ -371,49 +371,54 @@ export default function SecteursPage() {
                 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {sectors.map((sector) => (
-                    <Link
+                    <div
                       key={sector.id}
-                      href={`/secteurs/${sector.id}`}
-                      className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-[#F97316]/30 hover:shadow-xl transition-all no-underline"
+                      id={sector.id}
+                      className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-[#F97316]/30 hover:shadow-xl transition-all scroll-mt-40"
                     >
-                      <div className="aspect-[16/10] relative overflow-hidden">
-                        <Image
-                          src={sector.image}
-                          alt={sector.title}
-                          fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                        <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full">
-                          <sector.icon className="w-4 h-4 text-[#F97316]" />
-                          <span className="text-xs font-semibold text-[#0C0A09]">{sector.subtitle}</span>
-                        </div>
-                      </div>
-                      <div className="p-5">
-                        <h3 className="text-lg font-bold text-[#0C0A09] mb-2 group-hover:text-[#F97316] transition-colors">
-                          {sector.title}
-                        </h3>
-                        <p className="text-sm text-[#64748b] mb-4 line-clamp-2">{sector.description}</p>
-                        
-                        {/* Challenges */}
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {sector.challenges.map((challenge, i) => (
-                            <span key={i} className="text-xs px-2 py-1 bg-[#1E3A8A]/5 text-[#1E3A8A] rounded-full">
-                              {challenge}
-                            </span>
-                          ))}
-                        </div>
-                        
-                        {/* Stat */}
-                        <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                          <div className={`text-lg font-bold ${sector.stats.value.includes('-') ? 'text-[#059669]' : sector.stats.value.includes('+') ? 'text-[#F97316]' : 'text-[#1E3A8A]'}`}>
-                            {sector.stats.value}
+                      <Link
+                        href={`/secteurs/${sector.id}`}
+                        className="block no-underline"
+                      >
+                        <div className="aspect-[16/10] relative overflow-hidden">
+                          <Image
+                            src={sector.image}
+                            alt={sector.title}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                          <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full">
+                            <sector.icon className="w-4 h-4 text-[#F97316]" />
+                            <span className="text-xs font-semibold text-[#0C0A09]">{sector.subtitle}</span>
                           </div>
-                          <div className="text-xs text-gray-500">{sector.stats.label}</div>
-                          <ChevronRight className="w-4 h-4 text-[#F97316] group-hover:translate-x-1 transition-transform" />
                         </div>
-                      </div>
-                    </Link>
+                        <div className="p-5">
+                          <h3 className="text-lg font-bold text-[#0C0A09] mb-2 group-hover:text-[#F97316] transition-colors">
+                            {sector.title}
+                          </h3>
+                          <p className="text-sm text-[#64748b] mb-4 line-clamp-2">{sector.description}</p>
+                          
+                          {/* Challenges */}
+                          <div className="flex flex-wrap gap-2 mb-4">
+                            {sector.challenges.map((challenge, i) => (
+                              <span key={i} className="text-xs px-2 py-1 bg-[#1E3A8A]/5 text-[#1E3A8A] rounded-full">
+                                {challenge}
+                              </span>
+                            ))}
+                          </div>
+                          
+                          {/* Stat */}
+                          <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                            <div className={`text-lg font-bold ${sector.stats.value.includes('-') ? 'text-[#059669]' : sector.stats.value.includes('+') ? 'text-[#F97316]' : 'text-[#1E3A8A]'}`}>
+                              {sector.stats.value}
+                            </div>
+                            <div className="text-xs text-gray-500">{sector.stats.label}</div>
+                            <ChevronRight className="w-4 h-4 text-[#F97316] group-hover:translate-x-1 transition-transform" />
+                          </div>
+                        </div>
+                      </Link>
+                    </div>
                   ))}
                 </div>
               </TabPanel>
