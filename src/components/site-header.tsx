@@ -49,40 +49,6 @@ export function SiteHeader() {
 
   const menuItems: MenuItem[] = [
     {
-      label: 'À propos',
-      href: '/a-propos',
-      megaMenu: [
-        {
-          title: "L'Entreprise",
-          items: [
-            { icon: Building2Icon, iconColor: 'from-blue-500 to-cyan-500', label: 'Qui sommes-nous', href: '/a-propos#qui-sommes-nous', description: 'Découvrir BBC & Partners' },
-            { icon: Target, iconColor: 'from-purple-500 to-pink-500', label: 'BBC & Partners', href: '/a-propos#bbc-partners', description: 'Notre cabinet de conseil' },
-            { icon: History, iconColor: 'from-amber-500 to-orange-500', label: 'Histoire', href: '/a-propos#histoire', description: 'Plus de 15 ans d\'expertise' },
-            { icon: Users2, iconColor: 'from-green-500 to-emerald-500', label: 'Mission', href: '/a-propos#mission', description: 'Notre vision' },
-            { icon: Users, iconColor: 'from-rose-500 to-pink-500', label: 'Équipe', href: '/a-propos#equipe', description: 'Nos experts' },
-          ]
-        },
-        {
-          title: 'Engagements',
-          items: [
-            { icon: Lock, iconColor: 'from-slate-500 to-gray-600', label: 'Sécurité & RGPD', href: '/a-propos#securite', description: 'Protection des données' },
-            { icon: Award, iconColor: 'from-yellow-500 to-amber-500', label: 'Certifications', href: '/a-propos#certifications', description: 'Nos accréditations' },
-            { icon: MapPin, iconColor: 'from-indigo-500 to-blue-500', label: 'Données en France', href: '/a-propos#donnees', description: 'Hébergement local' },
-          ]
-        },
-        {
-          title: 'Partenariats',
-          items: [
-            { icon: Handshake, iconColor: 'from-teal-500 to-cyan-500', label: 'Intégrateurs', href: '/partenaires#integrateurs', description: 'Notre réseau' },
-            { icon: UserPlus, iconColor: 'from-violet-500 to-purple-500', label: 'Devenir partenaire', href: '/partenaires', description: 'Rejoignez-nous' },
-            { icon: GraduationCapIcon, iconColor: 'from-emerald-500 to-teal-500', label: 'Éducation', href: '/education', description: 'Offre académique' },
-            { icon: Newspaper, iconColor: 'from-orange-500 to-red-500', label: 'Presse', href: '/a-propos#presse', description: 'Nos actualités' },
-            { icon: Mail, iconColor: 'from-blue-500 to-indigo-500', label: 'Contact', href: '/contact', description: 'Nous contacter' },
-          ]
-        }
-      ]
-    },
-    {
       label: 'Fonctionnalités',
       href: '/fonctionnalites',
       megaMenu: [
@@ -186,6 +152,40 @@ export function SiteHeader() {
             { icon: Star, iconColor: 'from-yellow-500 to-amber-500', label: 'Études de cas', href: '/clients#etudes', description: 'Success stories' },
             { icon: UsersIcon, iconColor: 'from-teal-500 to-cyan-500', label: 'Clients par secteur', href: '/clients', description: 'Références' },
             { icon: Play, iconColor: 'from-rose-500 to-pink-500', label: 'Vidéos', href: '/ressources#videos', description: 'Témoignages vidéo' },
+          ]
+        }
+      ]
+    },
+    {
+      label: 'À propos',
+      href: '/a-propos',
+      megaMenu: [
+        {
+          title: "L'Entreprise",
+          items: [
+            { icon: Building2Icon, iconColor: 'from-blue-500 to-cyan-500', label: 'Qui sommes-nous', href: '/a-propos#qui-sommes-nous', description: 'Découvrir BBC & Partners' },
+            { icon: Target, iconColor: 'from-purple-500 to-pink-500', label: 'BBC & Partners', href: '/a-propos#bbc-partners', description: 'Notre cabinet de conseil' },
+            { icon: History, iconColor: 'from-amber-500 to-orange-500', label: 'Histoire', href: '/a-propos#histoire', description: 'Plus de 15 ans d\'expertise' },
+            { icon: Users2, iconColor: 'from-green-500 to-emerald-500', label: 'Mission', href: '/a-propos#mission', description: 'Notre vision' },
+            { icon: Users, iconColor: 'from-rose-500 to-pink-500', label: 'Équipe', href: '/a-propos#equipe', description: 'Nos experts' },
+          ]
+        },
+        {
+          title: 'Engagements',
+          items: [
+            { icon: Lock, iconColor: 'from-slate-500 to-gray-600', label: 'Sécurité & RGPD', href: '/a-propos#securite', description: 'Protection des données' },
+            { icon: Award, iconColor: 'from-yellow-500 to-amber-500', label: 'Certifications', href: '/a-propos#certifications', description: 'Nos accréditations' },
+            { icon: MapPin, iconColor: 'from-indigo-500 to-blue-500', label: 'Données en France', href: '/a-propos#donnees', description: 'Hébergement local' },
+          ]
+        },
+        {
+          title: 'Partenariats',
+          items: [
+            { icon: Handshake, iconColor: 'from-teal-500 to-cyan-500', label: 'Intégrateurs', href: '/partenaires#integrateurs', description: 'Notre réseau' },
+            { icon: UserPlus, iconColor: 'from-violet-500 to-purple-500', label: 'Devenir partenaire', href: '/partenaires', description: 'Rejoignez-nous' },
+            { icon: GraduationCapIcon, iconColor: 'from-emerald-500 to-teal-500', label: 'Éducation', href: '/education', description: 'Offre académique' },
+            { icon: Newspaper, iconColor: 'from-orange-500 to-red-500', label: 'Presse', href: '/a-propos#presse', description: 'Nos actualités' },
+            { icon: Mail, iconColor: 'from-blue-500 to-indigo-500', label: 'Contact', href: '/contact', description: 'Nous contacter' },
           ]
         }
       ]
