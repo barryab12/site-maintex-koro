@@ -231,72 +231,78 @@ export function HeroPhotoVisual({ imageSrc, imageAlt, className = '' }: HeroPhot
 
   return (
     <div className={`relative ${className}`}>
-      {/* Main Photo Container */}
+      {/* Main Photo Container - Large Portrait */}
       <div className="relative rounded-3xl overflow-hidden shadow-2xl">
         <Image
           src={imageSrc}
           alt={imageAlt}
-          width={450}
-          height={550}
-          className="object-cover"
+          width={500}
+          height={750}
+          className="object-cover w-full h-auto"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
       </div>
 
       {/* Badge Top Left */}
-      <div className="absolute -top-2 -left-2 md:top-4 md:left-4 flex items-center gap-2 px-4 py-2.5 bg-[#F97316] text-white rounded-full shadow-lg">
-        <Zap className="w-4 h-4" />
+      <div className="absolute -top-3 -left-3 md:top-6 md:left-6 flex items-center gap-2 px-5 py-3 bg-[#F97316] text-white rounded-full shadow-lg">
+        <Zap className="w-5 h-5" />
         <span className="text-sm font-semibold">GMAO Mobile</span>
       </div>
 
       {/* Floating Card - Top Right */}
-      <div className="absolute -right-2 top-12 md:right-4 md:top-16 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 w-36 md:w-44">
+      <div className="absolute -right-3 top-20 md:right-6 md:top-24 bg-white rounded-2xl p-5 shadow-xl border border-gray-100 w-40 md:w-48">
         <div className="flex items-center gap-2 mb-2">
-          <div className="w-8 h-8 rounded-lg bg-[#059669]/10 flex items-center justify-center">
-            <TrendingUp className="w-4 h-4 text-[#059669]" />
+          <div className="w-10 h-10 rounded-xl bg-[#059669]/10 flex items-center justify-center">
+            <TrendingUp className="w-5 h-5 text-[#059669]" />
           </div>
           <span className="text-xs text-gray-500">Disponibilité</span>
         </div>
-        <div className="text-2xl font-bold text-[#0C0A09]">98.5%</div>
+        <div className="text-3xl font-bold text-[#0C0A09]">98.5%</div>
         <div className="flex items-center gap-1 mt-1">
-          <ArrowUpRight className="w-3 h-3 text-[#059669]" />
-          <span className="text-xs font-semibold text-[#059669]">+2.3%</span>
+          <ArrowUpRight className="w-4 h-4 text-[#059669]" />
+          <span className="text-sm font-semibold text-[#059669]">+2.3%</span>
         </div>
       </div>
 
       {/* Floating Card - Left Middle */}
-      <div className="absolute -left-4 top-1/2 md:left-4 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 w-36 md:w-44">
+      <div className="absolute -left-4 top-[45%] md:left-6 bg-white rounded-2xl p-5 shadow-xl border border-gray-100 w-40 md:w-48">
         <div className="flex items-center gap-2 mb-2">
-          <div className="w-8 h-8 rounded-lg bg-[#F97316]/10 flex items-center justify-center">
-            <Clock className="w-4 h-4 text-[#F97316]" />
+          <div className="w-10 h-10 rounded-xl bg-[#F97316]/10 flex items-center justify-center">
+            <Clock className="w-5 h-5 text-[#F97316]" />
           </div>
           <span className="text-xs text-gray-500">MTTR</span>
         </div>
-        <div className="text-2xl font-bold text-[#0C0A09]">2.4h</div>
+        <div className="text-3xl font-bold text-[#0C0A09]">2.4h</div>
         <div className="flex items-center gap-1 mt-1">
-          <TrendingDown className="w-3 h-3 text-[#059669]" />
-          <span className="text-xs font-semibold text-[#059669]">-18%</span>
+          <TrendingDown className="w-4 h-4 text-[#059669]" />
+          <span className="text-sm font-semibold text-[#059669]">-18%</span>
         </div>
       </div>
 
       {/* Chart Card - Bottom Right */}
-      <div className="absolute -right-2 bottom-4 md:right-4 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 w-44 md:w-52">
+      <div className="absolute -right-3 bottom-24 md:right-6 bg-white rounded-2xl p-5 shadow-xl border border-gray-100 w-48 md:w-56">
         <div className="flex items-center justify-between mb-2">
           <span className="text-xs text-gray-500">Interventions</span>
           <span className="text-xs font-semibold text-[#059669] bg-[#059669]/10 px-2 py-0.5 rounded-full">+20%</span>
         </div>
-        <div className="text-xl font-bold text-[#0C0A09] mb-2">156/mois</div>
-        <MiniLineChartInline data={interventionData} color="#1E3A8A" height={40} />
+        <div className="text-2xl font-bold text-[#0C0A09] mb-2">156/mois</div>
+        <MiniLineChartInline data={interventionData} color="#1E3A8A" height={45} />
       </div>
 
       {/* Accent Badge - Bottom Left */}
-      <div className="absolute left-0 md:left-4 bottom-4 flex items-center gap-2 px-4 py-3 bg-[#1E3A8A] text-white rounded-xl shadow-lg">
-        <Shield className="w-5 h-5" />
+      <div className="absolute left-0 md:left-6 bottom-6 flex items-center gap-3 px-5 py-4 bg-[#1E3A8A] text-white rounded-xl shadow-lg">
+        <Shield className="w-6 h-6" />
         <div>
-          <div className="text-lg font-bold">350+</div>
+          <div className="text-xl font-bold">350+</div>
           <div className="text-xs text-white/80">Clients</div>
         </div>
+      </div>
+      
+      {/* Success Badge - Middle Right */}
+      <div className="absolute right-0 md:right-6 top-[65%] flex items-center gap-2 px-4 py-2.5 bg-[#059669] text-white rounded-full shadow-lg">
+        <CheckCircle2 className="w-4 h-4" />
+        <span className="text-sm font-semibold">ROI 4 mois</span>
       </div>
     </div>
   )
