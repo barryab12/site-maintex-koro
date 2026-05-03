@@ -152,8 +152,8 @@ export default function HomePage() {
             {/* Right - Photo with Floating Data */}
             <div className="order-1 lg:order-2 hidden lg:block">
               <EnhancedHeroPhotoVisual 
-                imageSrc="/images/hero-technician-portrait.png"
-                imageAlt="Technicien maintenance heureux avec tablette sur ligne de production"
+                imageSrc="/images/hero-technician-portrait-v2.png"
+                imageAlt="Technicien maintenance européen avec tablette sur ligne de production"
                 className="ml-4"
               />
             </div>

@@ -370,8 +370,8 @@ export function EnhancedHeroPhotoVisual({ imageSrc, imageAlt, className = '' }: 
         <Image
           src={imageSrc}
           alt={imageAlt}
-          width={520}
-          height={500}
+          width={480}
+          height={420}
           className="object-cover w-full h-auto rounded-3xl"
           priority
         />
@@ -400,7 +400,7 @@ export function EnhancedHeroPhotoVisual({ imageSrc, imageAlt, className = '' }: 
       </div>
 
       {/* Card 2 - Left side, middle */}
-      <div className="absolute -left-2 top-[28%] w-40 bg-white rounded-xl p-4 shadow-xl border border-gray-100 z-10">
+      <div className="absolute -left-2 top-[26%] w-40 bg-white rounded-xl p-4 shadow-xl border border-gray-100 z-10">
         <div className="flex items-center gap-2 mb-2">
           <div className="w-8 h-8 rounded-lg bg-[#1E3A8A]/10 flex items-center justify-center">
             <Activity className="w-4 h-4 text-[#1E3A8A]" />
@@ -415,7 +415,7 @@ export function EnhancedHeroPhotoVisual({ imageSrc, imageAlt, className = '' }: 
       </div>
 
       {/* Card 3 - Right side, lower middle */}
-      <div className="absolute -right-2 top-[52%] w-44 bg-white rounded-xl p-4 shadow-xl border border-gray-100 z-10">
+      <div className="absolute -right-2 top-[48%] w-44 bg-white rounded-xl p-4 shadow-xl border border-gray-100 z-10">
         <div className="flex items-center justify-between mb-1.5">
           <div className="flex items-center gap-2">
             <div className="w-7 h-7 rounded-lg bg-[#F97316]/10 flex items-center justify-center">
@@ -440,7 +440,7 @@ export function EnhancedHeroPhotoVisual({ imageSrc, imageAlt, className = '' }: 
       </div>
 
       {/* Card 5 - Bottom Right, OEE on edge */}
-      <div className="absolute -right-2 bottom-16 w-44 bg-white rounded-xl p-4 shadow-xl border border-gray-100 z-10">
+      <div className="absolute -right-2 bottom-14 w-44 bg-white rounded-xl p-4 shadow-xl border border-gray-100 z-10">
         <div className="flex items-center justify-between mb-1.5">
           <div className="flex items-center gap-2">
             <Target className="w-4 h-4 text-[#7C3AED]" />
