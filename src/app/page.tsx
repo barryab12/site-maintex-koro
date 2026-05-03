@@ -9,12 +9,18 @@ import {
   Factory, Pickaxe, Stethoscope, HardHat, Wheat, Truck,
   Globe, Users, TrendingUp, Clock, Star, MapPin, BadgeCheck,
   Activity, Brain, Heart, Smartphone, BarChart3, Settings,
-  ArrowUpRight, Gauge, DollarSign, PieChart, Target, TrendingDown
+  ArrowUpRight, Gauge, DollarSign, PieChart, Target, TrendingDown,
+  Wrench, Calendar, AlertTriangle, Timer
 } from 'lucide-react'
 import { 
   HeroPhotoVisual, TeamPhotoVisual, MachineRoomVisual,
   BtpTeamVisual, MiniLineChartInline
 } from '@/components/photo-data-visual'
+import { 
+  EnhancedHeroPhotoVisual, EnhancedBtpPhotoVisual, 
+  ZeroBadge, KpiCard, KpiDashboard, SectorKpiGrid,
+  maintenanceKPIs, sectorKPIs, zeroBadges
+} from '@/components/kpi-visual'
 
 export default function HomePage() {
   const features = [
@@ -145,7 +151,7 @@ export default function HomePage() {
 
             {/* Right - Photo with Floating Data */}
             <div className="order-1 lg:order-2 hidden lg:block">
-              <HeroPhotoVisual 
+              <EnhancedHeroPhotoVisual 
                 imageSrc="/images/hero-technician-portrait.png"
                 imageAlt="Technicien maintenance heureux avec tablette sur ligne de production"
                 className="ml-4"
@@ -210,51 +216,19 @@ export default function HomePage() {
                 Nos clients constatent une amélioration significative de leurs indicateurs de performance maintenance en moins de 6 mois.
               </p>
 
-              {/* KPI Grid */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white rounded-2xl p-5 shadow-lg border border-gray-100">
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className="w-10 h-10 rounded-xl bg-[#059669]/10 flex items-center justify-center">
-                      <TrendingDown className="w-5 h-5 text-[#059669]" />
-                    </div>
-                    <span className="text-sm text-gray-500">Temps d'arrêt</span>
-                  </div>
-                  <div className="text-3xl font-bold text-[#0C0A09]">-38%</div>
-                  <div className="text-sm text-[#059669] mt-1">vs. année précédente</div>
-                </div>
-
-                <div className="bg-white rounded-2xl p-5 shadow-lg border border-gray-100">
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className="w-10 h-10 rounded-xl bg-[#1E3A8A]/10 flex items-center justify-center">
-                      <Gauge className="w-5 h-5 text-[#1E3A8A]" />
-                    </div>
-                    <span className="text-sm text-gray-500">Disponibilité</span>
-                  </div>
-                  <div className="text-3xl font-bold text-[#0C0A09]">98.5%</div>
-                  <div className="text-sm text-[#059669] mt-1">+2.3% ce mois</div>
-                </div>
-
-                <div className="bg-white rounded-2xl p-5 shadow-lg border border-gray-100">
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className="w-10 h-10 rounded-xl bg-[#F97316]/10 flex items-center justify-center">
-                      <Target className="w-5 h-5 text-[#F97316]" />
-                    </div>
-                    <span className="text-sm text-gray-500">First Time Fix</span>
-                  </div>
-                  <div className="text-3xl font-bold text-[#0C0A09]">+89%</div>
-                  <div className="text-sm text-[#059669] mt-1">+24 pts vs. avant</div>
-                </div>
-
-                <div className="bg-white rounded-2xl p-5 shadow-lg border border-gray-100">
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className="w-10 h-10 rounded-xl bg-[#7C3AED]/10 flex items-center justify-center">
-                      <DollarSign className="w-5 h-5 text-[#7C3AED]" />
-                    </div>
-                    <span className="text-sm text-gray-500">ROI moyen</span>
-                  </div>
-                  <div className="text-3xl font-bold text-[#0C0A09]">4 mois</div>
-                  <div className="text-sm text-[#059669] mt-1">retour investissement</div>
-                </div>
+              {/* Enhanced KPI Grid with Maintenance KPIs */}
+              <div className="grid grid-cols-2 gap-4 mb-6">
+                <KpiCard kpiKey="tempsArret" value="-38%" change="vs. année précédente" trend="down" size="md" />
+                <KpiCard kpiKey="disponibilite" value="98.5%" change="+2.3% ce mois" trend="up" size="md" />
+                <KpiCard kpiKey="ftfr" value="89%" change="+24 pts vs. avant" trend="up" size="md" />
+                <KpiCard kpiKey="roi" value="4 mois" description="retour investissement" size="md" />
+              </div>
+              
+              {/* Zero Badges */}
+              <div className="flex flex-wrap gap-2">
+                <ZeroBadge text="Zéro arrêt production" icon={Shield} color="#059669" size="sm" />
+                <ZeroBadge text="Zéro panne" icon={Zap} color="#0891B2" size="sm" />
+                <ZeroBadge text="Zéro gaspillages" icon={Target} color="#7C3AED" size="sm" />
               </div>
             </div>
           </div>
@@ -279,15 +253,15 @@ export default function HomePage() {
           </div>
 
           <div className="mb-12">
-            <BtpTeamVisual 
+            <EnhancedBtpPhotoVisual 
               imageSrc="/images/team-btp-chantier.png"
               imageAlt="Équipe de techniciens sur chantier BTP avec tablettes"
               className="max-w-4xl mx-auto"
             />
           </div>
 
-          {/* Feature Pills */}
-          <div className="flex flex-wrap justify-center gap-4">
+          {/* Feature Pills with Zero Badges */}
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
             {[
               { icon: Activity, text: 'Monitoring temps réel', color: '#059669' },
               { icon: Brain, text: 'Diagnostic IA', color: '#7C3AED' },
@@ -299,6 +273,14 @@ export default function HomePage() {
                 <span className="text-sm font-medium text-[#44403C]">{item.text}</span>
               </div>
             ))}
+          </div>
+          
+          {/* Zero Badges Row */}
+          <div className="flex flex-wrap justify-center gap-3">
+            <ZeroBadge text="Zéro indisponibilité" icon={Shield} color="#059669" size="md" />
+            <ZeroBadge text="Zéro retard chantier" icon={Clock} color="#F97316" size="md" />
+            <ZeroBadge text="Zéro arrêt production" icon={Factory} color="#DC2626" size="md" />
+            <ZeroBadge text="Zéro gaspillages" icon={Target} color="#7C3AED" size="md" />
           </div>
         </div>
       </section>
@@ -363,6 +345,119 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Full KPI Dashboard Section */}
+      <section className="py-20 bg-gradient-to-br from-[#1E3A8A] to-[#1E3A8A]/95 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(249,115,22,0.2),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(5,150,105,0.15),transparent_50%)]" />
+        
+        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white mb-6">
+              <BarChart3 className="w-4 h-4 text-[#F97316]" />
+              <span className="text-sm font-semibold">Indicateurs de Performance</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4">
+              Les KPIs qui transforment<br />
+              <span className="text-[#F97316]">votre maintenance</span>
+            </h2>
+            <p className="text-lg text-white/80 max-w-2xl mx-auto">
+              Pilotez votre maintenance avec des indicateurs clés. Mesurez, analysez, optimisez.
+            </p>
+          </div>
+
+          {/* KPI Categories Grid */}
+          <div className="grid md:grid-cols-3 gap-6 mb-10">
+            {/* Fiabilité */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <Activity className="w-5 h-5 text-[#F97316]" />
+                Fiabilité & Disponibilité
+              </h3>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center text-white/90">
+                  <span className="text-sm">MTBF</span>
+                  <span className="font-semibold">720h <span className="text-[#059669] text-xs">+15%</span></span>
+                </div>
+                <div className="flex justify-between items-center text-white/90">
+                  <span className="text-sm">MTTR</span>
+                  <span className="font-semibold">2.4h <span className="text-[#059669] text-xs">-18%</span></span>
+                </div>
+                <div className="flex justify-between items-center text-white/90">
+                  <span className="text-sm">Disponibilité</span>
+                  <span className="font-semibold">98.5% <span className="text-[#059669] text-xs">+2.3%</span></span>
+                </div>
+                <div className="flex justify-between items-center text-white/90">
+                  <span className="text-sm">OEE</span>
+                  <span className="font-semibold">92% <span className="text-[#059669] text-xs">World-class</span></span>
+                </div>
+              </div>
+            </div>
+
+            {/* Efficacité */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <Target className="w-5 h-5 text-[#F97316]" />
+                Efficacité Opérationnelle
+              </h3>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center text-white/90">
+                  <span className="text-sm">PMP (Maintenance Planifiée)</span>
+                  <span className="font-semibold">88% <span className="text-[#059669] text-xs">+15%</span></span>
+                </div>
+                <div className="flex justify-between items-center text-white/90">
+                  <span className="text-sm">PMC (Conformité)</span>
+                  <span className="font-semibold">94% <span className="text-[#059669] text-xs">+8%</span></span>
+                </div>
+                <div className="flex justify-between items-center text-white/90">
+                  <span className="text-sm">First Time Fix Rate</span>
+                  <span className="font-semibold">89% <span className="text-[#059669] text-xs">+24pts</span></span>
+                </div>
+                <div className="flex justify-between items-center text-white/90">
+                  <span className="text-sm">Backlog</span>
+                  <span className="font-semibold">2.1 sem <span className="text-[#059669] text-xs">Optimal</span></span>
+                </div>
+              </div>
+            </div>
+
+            {/* Impact */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <TrendingUp className="w-5 h-5 text-[#F97316]" />
+                Impact Business
+              </h3>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center text-white/90">
+                  <span className="text-sm">Temps d'arrêt</span>
+                  <span className="font-semibold text-[#059669]">-38%</span>
+                </div>
+                <div className="flex justify-between items-center text-white/90">
+                  <span className="text-sm">Coûts maintenance</span>
+                  <span className="font-semibold text-[#059669]">-22%</span>
+                </div>
+                <div className="flex justify-between items-center text-white/90">
+                  <span className="text-sm">ROI</span>
+                  <span className="font-semibold">4 mois</span>
+                </div>
+                <div className="flex justify-between items-center text-white/90">
+                  <span className="text-sm">Productivité équipes</span>
+                  <span className="font-semibold text-[#059669]">+35%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Zero Badges Row */}
+          <div className="flex flex-wrap justify-center gap-3">
+            <ZeroBadge text="Zéro indisponibilité" icon={Shield} color="#059669" size="md" />
+            <ZeroBadge text="Zéro retard chantier" icon={Clock} color="#F97316" size="md" />
+            <ZeroBadge text="Zéro arrêt production" icon={Factory} color="#DC2626" size="md" />
+            <ZeroBadge text="Zéro gaspillages" icon={Target} color="#7C3AED" size="md" />
+            <ZeroBadge text="Zéro perte de production" icon={TrendingUp} color="#1E3A8A" size="md" />
+            <ZeroBadge text="Zéro défauts" icon={CheckCircle2} color="#0891B2" size="md" />
+          </div>
+        </div>
+      </section>
+
       {/* Sectors Section with Photo */}
       <section className="py-24 bg-white">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
@@ -402,7 +497,7 @@ export default function HomePage() {
               </Link>
             </div>
 
-            {/* Sector Photo Visual */}
+            {/* Sector Photo Visual with KPIs */}
             <div className="hidden lg:block relative">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <Image
@@ -415,7 +510,7 @@ export default function HomePage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
               </div>
 
-              {/* Floating Stats */}
+              {/* Floating Stats with KPIs */}
               <div className="absolute -top-4 left-8 bg-white rounded-xl p-4 shadow-lg">
                 <div className="flex items-center gap-2 mb-1">
                   <Factory className="w-4 h-4 text-[#F97316]" />
@@ -423,6 +518,15 @@ export default function HomePage() {
                 </div>
                 <div className="text-xl font-bold text-[#0C0A09]">98.2%</div>
                 <div className="text-xs text-[#059669]">Disponibilité</div>
+              </div>
+
+              {/* OEE Badge */}
+              <div className="absolute top-16 -left-4 bg-white rounded-xl p-3 shadow-lg">
+                <div className="flex items-center gap-2 mb-1">
+                  <Target className="w-3.5 h-3.5 text-[#7C3AED]" />
+                  <span className="text-xs text-gray-500">OEE</span>
+                </div>
+                <div className="text-lg font-bold text-[#0C0A09]">92%</div>
               </div>
 
               <div className="absolute -bottom-4 right-8 bg-[#1E3A8A] text-white rounded-xl p-4 shadow-lg">
@@ -435,6 +539,11 @@ export default function HomePage() {
                   <CheckCircle2 className="w-4 h-4 text-[#059669]" />
                   <span className="text-sm font-medium">Conforme réglementation</span>
                 </div>
+              </div>
+              
+              {/* Zero Badge */}
+              <div className="absolute bottom-4 left-8">
+                <ZeroBadge text="Zéro défauts" icon={CheckCircle2} color="#059669" size="sm" />
               </div>
             </div>
           </div>
