@@ -78,7 +78,7 @@ export default function FonctionnalitesPage() {
         'Gammes de maintenance pré-définies',
       ],
       icon: RefreshCw,
-      image: '/images/machine-room.jpg',
+      image: '/images/preventive-maintenance.jpg',
       stats: [
         { value: '76%', label: 'Taux préventif', type: 'accent' },
         { value: '+15%', label: 'Productivité', type: 'success' }
