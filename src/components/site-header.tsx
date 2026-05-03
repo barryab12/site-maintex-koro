@@ -301,9 +301,9 @@ export function SiteHeader() {
             </Link>
             <Link
               href="/contact"
-              className="px-5 py-2 text-[13px] font-medium text-white bg-[#0A0A8A] rounded-md hover:bg-[#0A0A8A]/90 transition-all no-underline"
+              className="px-5 py-2.5 text-[13px] font-semibold text-white bg-[#F97316] rounded-lg hover:bg-[#EA580C] transition-all shadow-lg shadow-[#F97316]/25 no-underline"
             >
-              Démo gratuite →
+              Démo gratuite
             </Link>
           </div>
         </div>
@@ -358,10 +358,10 @@ export function SiteHeader() {
             <hr className="border-gray-200 my-4" />
             <Link
               href="/contact"
-              className="w-full py-3 text-center bg-[#0A0A8A] hover:bg-[#0A0A8A]/90 text-white rounded-lg no-underline"
+              className="w-full py-3 text-center bg-[#F97316] hover:bg-[#EA580C] text-white rounded-lg no-underline font-semibold shadow-lg shadow-[#F97316]/25"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Démo gratuite →
+              Démo gratuite
             </Link>
           </div>
         </div>

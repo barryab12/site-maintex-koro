@@ -287,3 +287,56 @@ Successfully updated `/home/z/my-project/src/app/secteurs/page.tsx` with the fol
    - Uses SiteHeader and SiteFooter components
    - 'use client' directive for client-side interactivity
    - ESLint passed with no errors
+
+---
+## Task ID: audit-implementation - main-agent
+### Work Task
+Implement audit recommendations for MAINTEX website modernization with:
+- New hero wording from audit
+- Orange accent color (#F97316) for CTAs
+- Trust signals and social proof
+- Modern design updates
+
+### Work Summary
+
+1. **Homepage Updates** (`/src/app/page.tsx`):
+   - New hero headline: "Votre maintenance reprend le pouvoir sur le terrain."
+   - Updated subtitle with key differentiators (Hébergée en France, Opérationnelle hors-ligne, Déployée en 14 jours)
+   - Social proof badge: "De Marseille à Abidjan — 350+ clients en 15 pays"
+   - Trust bandeau with icons (Hébergement France, RGPD conforme, Mode hors-ligne, Déploiement 14 jours, Support francophone)
+   - Orange CTAs (#F97316) for primary actions
+   - Tablet and mobile mockups in hero section
+   - Updated features grid with highlight badges
+   - Stats section with key metrics
+
+2. **Header Updates** (`/src/components/site-header.tsx`):
+   - Primary CTA button now orange (#F97316) with shadow
+   - Mobile menu CTA also updated to orange
+   - "Démo gratuite" as main call-to-action
+
+3. **Footer Updates** (`/src/components/site-footer.tsx`):
+   - New tagline: "La GMAO mobile-first pour les industries francophones."
+   - Added stats bar (350+ Clients actifs, 15 Pays francophones, 100% Hébergement France, RGPD Conforme)
+   - Orange hover colors on all links
+   - Improved trust signals with icons
+
+4. **Asset Management**:
+   - Copied logo files to public/upload folder
+   - Fixed 404 errors for logo images
+
+5. **Design System Implementation**:
+   - Primary color: #1E3A8A (Indigo 800)
+   - Accent/CTA color: #F97316 (Orange)
+   - Surface color: #FAFAF9 (Stone 50)
+   - Consistent use of shadows and hover effects
+   - Modern rounded corners (rounded-xl, rounded-2xl)
+
+6. **Key Audit Recommendations Applied**:
+   - ✅ Orange (#F97316) for all primary CTAs
+   - ✅ New hero wording from audit
+   - ✅ Trust bandeau with key differentiators
+   - ✅ Social proof elements (350+ clients, 15 pays)
+   - ✅ Updated footer tagline
+   - ✅ French hosting and RGPD compliance highlighted
+   - ✅ Modern design with tablet/mobile mockups
+   - ✅ No typos (verified lint pass)
