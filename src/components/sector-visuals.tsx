@@ -29,61 +29,113 @@ export function SectorHeroVisual({
   return (
     <div className={`relative ${className}`}>
       {/* Main Photo Container */}
-      <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+      <div className="relative rounded-3xl overflow-visible shadow-2xl">
         <Image
           src={imageSrc}
           alt={imageAlt}
           width={520}
           height={620}
-          className="object-cover w-full h-auto"
+          className="object-cover w-full h-auto rounded-3xl"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-3xl" />
       </div>
 
-      {/* Badge Top Left */}
+      {/* Badge Top Left - Outside image */}
       {badge && (
-        <div className="absolute -top-2 -left-2 md:top-4 md:left-4 flex items-center gap-2 px-4 py-2.5 bg-[#F97316] text-white rounded-full shadow-lg z-10">
+        <div className="absolute -top-3 left-4 flex items-center gap-2 px-4 py-2.5 bg-[#F97316] text-white rounded-full shadow-lg z-10">
           {badge.icon}
           <span className="text-sm font-semibold">{badge.text}</span>
         </div>
       )}
 
-      {/* Stats Cards - 2x2 Grid Pattern */}
-      {stats.slice(0, 4).map((stat, index) => {
-        const positions = [
-          'absolute -right-2 top-16 md:right-4 md:top-20 w-36 md:w-44',
-          'absolute -left-3 top-[40%] md:left-4 w-36 md:w-44',
-          'absolute -right-2 bottom-28 md:right-4 w-40 md:w-48',
-          'absolute -left-3 bottom-4 md:left-4 w-36 md:w-44'
-        ]
-        
-        return (
-          <div 
-            key={index}
-            className={`${positions[index]} bg-white rounded-2xl p-4 shadow-xl border border-gray-100`}
-          >
-            {stat.icon && (
-              <div className="flex items-center gap-2 mb-2">
-                <div 
-                  className="w-8 h-8 rounded-lg flex items-center justify-center"
-                  style={{ backgroundColor: stat.iconColor ? `${stat.iconColor}15` : '#F9731615' }}
-                >
-                  {stat.icon}
-                </div>
-                <span className="text-xs text-gray-500">{stat.label}</span>
-              </div>
-            )}
-            <div className="text-2xl font-bold text-[#0C0A09]">{stat.value}</div>
-            {stat.trend && (
-              <div className={`flex items-center gap-1 mt-1 ${stat.trendType === 'positive' ? 'text-[#059669]' : 'text-[#DC2626]'}`}>
-                {stat.trendType === 'positive' ? <ArrowUpRight className="w-3.5 h-3.5" /> : <ArrowDownRight className="w-3.5 h-3.5" />}
-                <span className="text-xs font-semibold">{stat.trend}</span>
-              </div>
-            )}
+      {/* Card 1 - Top Right, outside image */}
+      <div className="absolute -right-4 top-4 w-40 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 z-10">
+        {stats[0]?.icon && (
+          <div className="flex items-center gap-2 mb-2">
+            <div 
+              className="w-8 h-8 rounded-lg flex items-center justify-center"
+              style={{ backgroundColor: stats[0].iconColor ? `${stats[0].iconColor}15` : '#F9731615' }}
+            >
+              {stats[0].icon}
+            </div>
+            <span className="text-xs text-gray-500">{stats[0].label}</span>
           </div>
-        )
-      })}
+        )}
+        <div className="text-2xl font-bold text-[#0C0A09]">{stats[0]?.value}</div>
+        {stats[0]?.trend && (
+          <div className={`flex items-center gap-1 mt-1 ${stats[0].trendType === 'positive' ? 'text-[#059669]' : 'text-[#DC2626]'}`}>
+            {stats[0].trendType === 'positive' ? <ArrowUpRight className="w-3.5 h-3.5" /> : <ArrowDownRight className="w-3.5 h-3.5" />}
+            <span className="text-xs font-semibold">{stats[0].trend}</span>
+          </div>
+        )}
+      </div>
+
+      {/* Card 2 - Left side, upper middle */}
+      <div className="absolute -left-4 top-[25%] w-40 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 z-10">
+        {stats[1]?.icon && (
+          <div className="flex items-center gap-2 mb-2">
+            <div 
+              className="w-8 h-8 rounded-lg flex items-center justify-center"
+              style={{ backgroundColor: stats[1].iconColor ? `${stats[1].iconColor}15` : '#F9731615' }}
+            >
+              {stats[1].icon}
+            </div>
+            <span className="text-xs text-gray-500">{stats[1].label}</span>
+          </div>
+        )}
+        <div className="text-2xl font-bold text-[#0C0A09]">{stats[1]?.value}</div>
+        {stats[1]?.trend && (
+          <div className={`flex items-center gap-1 mt-1 ${stats[1].trendType === 'positive' ? 'text-[#059669]' : 'text-[#DC2626]'}`}>
+            {stats[1].trendType === 'positive' ? <ArrowUpRight className="w-3.5 h-3.5" /> : <ArrowDownRight className="w-3.5 h-3.5" />}
+            <span className="text-xs font-semibold">{stats[1].trend}</span>
+          </div>
+        )}
+      </div>
+
+      {/* Card 3 - Right side, lower middle */}
+      <div className="absolute -right-4 top-[55%] w-40 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 z-10">
+        {stats[2]?.icon && (
+          <div className="flex items-center gap-2 mb-2">
+            <div 
+              className="w-8 h-8 rounded-lg flex items-center justify-center"
+              style={{ backgroundColor: stats[2].iconColor ? `${stats[2].iconColor}15` : '#F9731615' }}
+            >
+              {stats[2].icon}
+            </div>
+            <span className="text-xs text-gray-500">{stats[2].label}</span>
+          </div>
+        )}
+        <div className="text-2xl font-bold text-[#0C0A09]">{stats[2]?.value}</div>
+        {stats[2]?.trend && (
+          <div className={`flex items-center gap-1 mt-1 ${stats[2].trendType === 'positive' ? 'text-[#059669]' : 'text-[#DC2626]'}`}>
+            {stats[2].trendType === 'positive' ? <ArrowUpRight className="w-3.5 h-3.5" /> : <ArrowDownRight className="w-3.5 h-3.5" />}
+            <span className="text-xs font-semibold">{stats[2].trend}</span>
+          </div>
+        )}
+      </div>
+
+      {/* Card 4 - Bottom Left, outside image */}
+      <div className="absolute -left-4 bottom-4 w-40 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 z-10">
+        {stats[3]?.icon && (
+          <div className="flex items-center gap-2 mb-2">
+            <div 
+              className="w-8 h-8 rounded-lg flex items-center justify-center"
+              style={{ backgroundColor: stats[3].iconColor ? `${stats[3].iconColor}15` : '#F9731615' }}
+            >
+              {stats[3].icon}
+            </div>
+            <span className="text-xs text-gray-500">{stats[3].label}</span>
+          </div>
+        )}
+        <div className="text-2xl font-bold text-[#0C0A09]">{stats[3]?.value}</div>
+        {stats[3]?.trend && (
+          <div className={`flex items-center gap-1 mt-1 ${stats[3].trendType === 'positive' ? 'text-[#059669]' : 'text-[#DC2626]'}`}>
+            {stats[3].trendType === 'positive' ? <ArrowUpRight className="w-3.5 h-3.5" /> : <ArrowDownRight className="w-3.5 h-3.5" />}
+            <span className="text-xs font-semibold">{stats[3].trend}</span>
+          </div>
+        )}
+      </div>
     </div>
   )
 }
@@ -110,51 +162,70 @@ export function SectorEnjeuxVisual({
   return (
     <div className={`relative ${className}`}>
       {/* Main Photo */}
-      <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+      <div className="relative rounded-3xl overflow-visible shadow-2xl">
         <Image
           src={imageSrc}
           alt={imageAlt}
           width={500}
           height={400}
-          className="object-cover w-full h-auto"
+          className="object-cover w-full h-auto rounded-3xl"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/10 to-transparent rounded-3xl" />
       </div>
 
-      {/* Alert Badge */}
-      <div className="absolute -top-2 left-4 flex items-center gap-2 px-4 py-2.5 bg-red-500 text-white rounded-full shadow-lg">
+      {/* Alert Badge - Outside top left */}
+      <div className="absolute -top-3 left-4 flex items-center gap-2 px-4 py-2.5 bg-red-500 text-white rounded-full shadow-lg z-10">
         <AlertTriangle className="w-4 h-4" />
         <span className="text-sm font-semibold">Défis du secteur</span>
       </div>
 
-      {/* Problem Cards - Red themed */}
-      {problems.slice(0, 4).map((problem, index) => {
-        const positions = [
-          'absolute -right-2 top-12 md:right-4 w-32 md:w-40',
-          'absolute -left-3 top-1/3 md:left-4 w-32 md:w-40',
-          'absolute -right-2 bottom-24 md:right-4 w-36 md:w-44',
-          'absolute -left-3 bottom-4 md:left-4 w-32 md:w-40'
-        ]
-        
-        return (
-          <div 
-            key={index}
-            className={`${positions[index]} bg-white rounded-xl p-3 shadow-xl border-l-4 border-red-400`}
-          >
-            {problem.icon && (
-              <div className="w-7 h-7 rounded-lg bg-red-50 flex items-center justify-center mb-2">
-                {problem.icon}
-              </div>
-            )}
-            <div className="text-xl font-bold text-red-600">{problem.value}</div>
-            <div className="text-xs text-gray-600">{problem.label}</div>
+      {/* Problem Card 1 - Top Right */}
+      <div className="absolute -right-3 top-4 w-36 bg-white rounded-xl p-3 shadow-xl border-l-4 border-red-400 z-10">
+        {problems[0]?.icon && (
+          <div className="w-7 h-7 rounded-lg bg-red-50 flex items-center justify-center mb-2">
+            {problems[0].icon}
           </div>
-        )
-      })}
+        )}
+        <div className="text-xl font-bold text-red-600">{problems[0]?.value}</div>
+        <div className="text-xs text-gray-600">{problems[0]?.label}</div>
+      </div>
+
+      {/* Problem Card 2 - Left side */}
+      <div className="absolute -left-3 top-[30%] w-36 bg-white rounded-xl p-3 shadow-xl border-l-4 border-red-400 z-10">
+        {problems[1]?.icon && (
+          <div className="w-7 h-7 rounded-lg bg-red-50 flex items-center justify-center mb-2">
+            {problems[1].icon}
+          </div>
+        )}
+        <div className="text-xl font-bold text-red-600">{problems[1]?.value}</div>
+        <div className="text-xs text-gray-600">{problems[1]?.label}</div>
+      </div>
+
+      {/* Problem Card 3 - Right side, lower */}
+      <div className="absolute -right-3 top-[55%] w-36 bg-white rounded-xl p-3 shadow-xl border-l-4 border-red-400 z-10">
+        {problems[2]?.icon && (
+          <div className="w-7 h-7 rounded-lg bg-red-50 flex items-center justify-center mb-2">
+            {problems[2].icon}
+          </div>
+        )}
+        <div className="text-xl font-bold text-red-600">{problems[2]?.value}</div>
+        <div className="text-xs text-gray-600">{problems[2]?.label}</div>
+      </div>
+
+      {/* Problem Card 4 - Bottom Left */}
+      <div className="absolute -left-3 bottom-4 w-36 bg-white rounded-xl p-3 shadow-xl border-l-4 border-red-400 z-10">
+        {problems[3]?.icon && (
+          <div className="w-7 h-7 rounded-lg bg-red-50 flex items-center justify-center mb-2">
+            {problems[3].icon}
+          </div>
+        )}
+        <div className="text-xl font-bold text-red-600">{problems[3]?.value}</div>
+        <div className="text-xs text-gray-600">{problems[3]?.label}</div>
+      </div>
 
       {/* Bottom Warning Banner */}
-      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-red-900/80 to-transparent p-4 pt-12">
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-red-900/80 to-transparent p-4 pt-12 rounded-b-3xl">
         <div className="flex items-center gap-2 text-white text-sm">
           <XCircle className="w-4 h-4" />
           <span>Les coûts cachés impactent votre rentabilité</span>
@@ -182,59 +253,75 @@ export function SectorSolutionsVisual({
   benefits,
   className = ''
 }: SectorSolutionsVisualProps) {
+  const colors = ['#059669', '#1E3A8A', '#F97316', '#059669']
+  
   return (
     <div className={`relative ${className}`}>
       {/* Main Photo */}
-      <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+      <div className="relative rounded-3xl overflow-visible shadow-2xl">
         <Image
           src={imageSrc}
           alt={imageAlt}
           width={500}
           height={400}
-          className="object-cover w-full h-auto"
+          className="object-cover w-full h-auto rounded-3xl"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-3xl" />
       </div>
 
-      {/* Success Badge */}
-      <div className="absolute -top-2 left-4 flex items-center gap-2 px-4 py-2.5 bg-[#059669] text-white rounded-full shadow-lg">
+      {/* Success Badge - Outside top left */}
+      <div className="absolute -top-3 left-4 flex items-center gap-2 px-4 py-2.5 bg-[#059669] text-white rounded-full shadow-lg z-10">
         <CheckCircle2 className="w-4 h-4" />
         <span className="text-sm font-semibold">Avec Maintex</span>
       </div>
 
-      {/* Benefit Cards - Green/Blue themed */}
-      {benefits.slice(0, 4).map((benefit, index) => {
-        const positions = [
-          'absolute -right-2 top-12 md:right-4 w-32 md:w-40',
-          'absolute -left-3 top-1/3 md:left-4 w-32 md:w-40',
-          'absolute -right-2 bottom-24 md:right-4 w-36 md:w-44',
-          'absolute -left-3 bottom-4 md:left-4 w-32 md:w-40'
-        ]
-        const colors = ['#059669', '#1E3A8A', '#F97316', '#059669']
-        
-        return (
-          <div 
-            key={index}
-            className={`${positions[index]} bg-white rounded-xl p-3 shadow-xl border-l-4`}
-            style={{ borderLeftColor: colors[index] }}
-          >
-            {benefit.icon && (
-              <div 
-                className="w-7 h-7 rounded-lg flex items-center justify-center mb-2"
-                style={{ backgroundColor: `${colors[index]}15` }}
-              >
-                {benefit.icon}
-              </div>
-            )}
-            <div className="text-xl font-bold" style={{ color: colors[index] }}>{benefit.value}</div>
-            <div className="text-xs text-gray-600">{benefit.label}</div>
+      {/* Benefit Card 1 - Top Right */}
+      <div className="absolute -right-3 top-4 w-36 bg-white rounded-xl p-3 shadow-xl border-l-4 z-10" style={{ borderLeftColor: colors[0] }}>
+        {benefits[0]?.icon && (
+          <div className="w-7 h-7 rounded-lg flex items-center justify-center mb-2" style={{ backgroundColor: `${colors[0]}15` }}>
+            {benefits[0].icon}
           </div>
-        )
-      })}
+        )}
+        <div className="text-xl font-bold" style={{ color: colors[0] }}>{benefits[0]?.value}</div>
+        <div className="text-xs text-gray-600">{benefits[0]?.label}</div>
+      </div>
+
+      {/* Benefit Card 2 - Left side */}
+      <div className="absolute -left-3 top-[30%] w-36 bg-white rounded-xl p-3 shadow-xl border-l-4 z-10" style={{ borderLeftColor: colors[1] }}>
+        {benefits[1]?.icon && (
+          <div className="w-7 h-7 rounded-lg flex items-center justify-center mb-2" style={{ backgroundColor: `${colors[1]}15` }}>
+            {benefits[1].icon}
+          </div>
+        )}
+        <div className="text-xl font-bold" style={{ color: colors[1] }}>{benefits[1]?.value}</div>
+        <div className="text-xs text-gray-600">{benefits[1]?.label}</div>
+      </div>
+
+      {/* Benefit Card 3 - Right side, lower */}
+      <div className="absolute -right-3 top-[55%] w-36 bg-white rounded-xl p-3 shadow-xl border-l-4 z-10" style={{ borderLeftColor: colors[2] }}>
+        {benefits[2]?.icon && (
+          <div className="w-7 h-7 rounded-lg flex items-center justify-center mb-2" style={{ backgroundColor: `${colors[2]}15` }}>
+            {benefits[2].icon}
+          </div>
+        )}
+        <div className="text-xl font-bold" style={{ color: colors[2] }}>{benefits[2]?.value}</div>
+        <div className="text-xs text-gray-600">{benefits[2]?.label}</div>
+      </div>
+
+      {/* Benefit Card 4 - Bottom Left */}
+      <div className="absolute -left-3 bottom-4 w-36 bg-white rounded-xl p-3 shadow-xl border-l-4 z-10" style={{ borderLeftColor: colors[3] }}>
+        {benefits[3]?.icon && (
+          <div className="w-7 h-7 rounded-lg flex items-center justify-center mb-2" style={{ backgroundColor: `${colors[3]}15` }}>
+            {benefits[3].icon}
+          </div>
+        )}
+        <div className="text-xl font-bold" style={{ color: colors[3] }}>{benefits[3]?.value}</div>
+        <div className="text-xs text-gray-600">{benefits[3]?.label}</div>
+      </div>
 
       {/* Bottom Success Banner */}
-      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#1E3A8A]/80 to-transparent p-4 pt-12">
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#1E3A8A]/80 to-transparent p-4 pt-12 rounded-b-3xl">
         <div className="flex items-center gap-2 text-white text-sm">
           <Zap className="w-4 h-4 text-[#F97316]" />
           <span>Maintex optimise votre maintenance</span>
