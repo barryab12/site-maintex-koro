@@ -340,3 +340,50 @@ Implement audit recommendations for MAINTEX website modernization with:
    - ✅ French hosting and RGPD compliance highlighted
    - ✅ Modern design with tablet/mobile mockups
    - ✅ No typos (verified lint pass)
+
+---
+## Task ID: data-visualization-components - main-agent
+### Work Task
+Create modern data visualization components inspired by reference images showing:
+- Large KPI cards with metrics
+- Bar charts and line charts
+- Donut charts and progress bars
+- Floating stats overlays
+- Modern dashboard-style layouts
+
+### Work Summary
+
+1. **Created `/src/components/data-visualization.tsx`** with:
+   - **KPICard** - Large metric display with value, label, change indicator, and icon
+   - **StatsOverlay** - Floating stat badges (e.g., "+74.6%", "-38%")
+   - **MiniBarChart** - Simple vertical bar visualization
+   - **MiniLineChart** - Clean line chart with gradient fill
+   - **DonutChart** - Circular progress indicator
+   - **ProgressBar** - Horizontal progress with label
+   - **MetricGrid** - Multiple KPIs in a responsive grid
+   - **DashboardStatsRow** - Compact stats for tablet mockups
+
+2. **Updated Homepage (`/src/app/page.tsx`)**:
+   - Added 'use client' directive for client-side interactivity
+   - New hero with dashboard mockup showing KPI cards
+   - Floating stats overlays (-38% arrêts, +89% FTFR)
+   - Mobile mockup for task list
+   - Modern KPI section with large metric cards
+   - Bar chart and donut chart for data visualization
+   - Sector performance dashboard with progress bars
+   - Gradient charts and modern card designs
+
+3. **Design Patterns Implemented**:
+   - Large bold numbers (98.5%, -38%, +89%)
+   - Color-coded indicators (green for positive, red for negative)
+   - Card-based layout with shadows and hover effects
+   - Split-screen layouts with data and text
+   - Gradient charts with modern styling
+   - Progress bars with smooth transitions
+   - Donut charts for percentage displays
+
+4. **Technical Changes**:
+   - Fixed icon passing issue by using React.ReactNode instead of React.ComponentType
+   - Added 'use client' to page.tsx for client-side features
+   - All components use Tailwind CSS with consistent color scheme
+   - ESLint passed with no errors
