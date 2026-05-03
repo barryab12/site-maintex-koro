@@ -11,10 +11,11 @@ import {
   AlertTriangle, Antenna, Wifi
 } from 'lucide-react'
 import { TabNavigation, TabPanel } from '@/components/tab-navigation'
-import { TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup } from '@/components/device-mockups'
+import { SectorHeroVisual, SectorEnjeuxVisual, SectorSolutionsVisual, getSectorConfig } from '@/components/sector-visuals'
 
 export default function TelecomsPage() {
   const [activeTab, setActiveTab] = useState('enjeux')
+  const config = getSectorConfig('telecoms')
 
   const contentTabs = [
     { id: 'enjeux', label: 'Enjeux', icon: <AlertTriangle className="w-4 h-4" /> },
@@ -211,13 +212,13 @@ export default function TelecomsPage() {
             </div>
 
             {/* Stats */}
-            <div className="hidden lg:grid grid-cols-2 gap-4">
-              {stats.map((stat, i) => (
-                <div key={i} className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                  <div className="text-3xl font-bold text-[#F97316] mb-1">{stat.value}</div>
-                  <div className="text-sm text-white/70">{stat.label}</div>
-                </div>
-              ))}
+            <div className="hidden lg:block">
+              <SectorHeroVisual
+                imageSrc="/images/sector-telecom.jpg"
+                imageAlt="Telecom network maintenance"
+                stats={config.heroStats}
+                badge={{ text: 'Télécoms', icon: <Radio className="w-4 h-4" /> }}
+              />
             </div>
           </div>
         </div>
@@ -296,9 +297,11 @@ export default function TelecomsPage() {
               </div>
               
               <div className="lg:sticky lg:top-36 flex justify-center">
-                <TabletMockup className="w-full max-w-[340px]">
-                  <GMAODashboardMockup />
-                </TabletMockup>
+                <SectorEnjeuxVisual
+                  imageSrc="/images/sector-telecom-enjeux.jpg"
+                  imageAlt="Telecom challenges"
+                  problems={config.enjeuxProblems}
+                />
               </div>
             </div>
           </TabPanel>
@@ -337,13 +340,12 @@ export default function TelecomsPage() {
                 ))}
               </div>
               
-              <div className="lg:sticky lg:top-36 flex flex-col gap-4 items-center">
-                <TabletMockup className="w-full max-w-[300px]">
-                  <EquipmentDetailMockup />
-                </TabletMockup>
-                <MobileMockup className="w-[150px]">
-                  <TaskManagementMockup />
-                </MobileMockup>
+              <div className="lg:sticky lg:top-36 flex justify-center">
+                <SectorSolutionsVisual
+                  imageSrc="/images/sector-telecom-solutions.jpg"
+                  imageAlt="Telecom solutions"
+                  benefits={config.solutionsBenefits}
+                />
               </div>
             </div>
           </TabPanel>

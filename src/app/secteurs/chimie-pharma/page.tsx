@@ -11,10 +11,11 @@ import {
   AlertTriangle, Beaker, Biohazard
 } from 'lucide-react'
 import { TabNavigation, TabPanel } from '@/components/tab-navigation'
-import { TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup } from '@/components/device-mockups'
+import { SectorHeroVisual, SectorEnjeuxVisual, SectorSolutionsVisual, getSectorConfig } from '@/components/sector-visuals'
 
 export default function ChimiePharmaPage() {
   const [activeTab, setActiveTab] = useState('enjeux')
+  const config = getSectorConfig('chimie-pharma')
 
   const contentTabs = [
     { id: 'enjeux', label: 'Enjeux', icon: <AlertTriangle className="w-4 h-4" /> },
@@ -154,13 +155,6 @@ export default function ChimiePharmaPage() {
     }
   ]
 
-  const stats = [
-    { value: '100%', label: 'Conformité BPF' },
-    { value: '–35%', label: 'Temps d\'arrêt' },
-    { value: '+85%', label: 'First Time Fix' },
-    { value: '0', label: 'Papier terrain' },
-  ]
-
   return (
     <main className="min-h-screen bg-white">
       <SiteHeader />
@@ -210,14 +204,14 @@ export default function ChimiePharmaPage() {
               </div>
             </div>
 
-            {/* Stats */}
-            <div className="hidden lg:grid grid-cols-2 gap-4">
-              {stats.map((stat, i) => (
-                <div key={i} className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                  <div className="text-3xl font-bold text-[#F97316] mb-1">{stat.value}</div>
-                  <div className="text-sm text-white/70">{stat.label}</div>
-                </div>
-              ))}
+            {/* Hero Visual with Stats */}
+            <div className="hidden lg:block">
+              <SectorHeroVisual
+                imageSrc="/images/sector-pharma.jpg"
+                imageAlt="Installation pharmaceutique"
+                stats={config.heroStats}
+                badge={{ text: 'Chimie & Pharma', icon: <FlaskConical className="w-4 h-4" /> }}
+              />
             </div>
           </div>
         </div>
@@ -296,9 +290,11 @@ export default function ChimiePharmaPage() {
               </div>
               
               <div className="lg:sticky lg:top-36 flex justify-center">
-                <TabletMockup className="w-full max-w-[340px]">
-                  <GMAODashboardMockup />
-                </TabletMockup>
+                <SectorEnjeuxVisual
+                  imageSrc="/images/sector-pharma-enjeux.jpg"
+                  imageAlt="Défis maintenance chimie pharma"
+                  problems={config.enjeuxProblems}
+                />
               </div>
             </div>
           </TabPanel>
@@ -337,13 +333,12 @@ export default function ChimiePharmaPage() {
                 ))}
               </div>
               
-              <div className="lg:sticky lg:top-36 flex flex-col gap-4 items-center">
-                <TabletMockup className="w-full max-w-[300px]">
-                  <EquipmentDetailMockup />
-                </TabletMockup>
-                <MobileMockup className="w-[150px]">
-                  <TaskManagementMockup />
-                </MobileMockup>
+              <div className="lg:sticky lg:top-36 flex justify-center">
+                <SectorSolutionsVisual
+                  imageSrc="/images/sector-pharma-solutions.jpg"
+                  imageAlt="Solutions Maintex chimie pharma"
+                  benefits={config.solutionsBenefits}
+                />
               </div>
             </div>
           </TabPanel>

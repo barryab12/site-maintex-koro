@@ -1,20 +1,22 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import Link from 'next/link'
 import { 
   Factory, Brain, Activity, Target, Shield, Clock, 
   TrendingDown, Users, Award, Quote, Zap, Database,
-  CheckCircle2, BarChart3, BookOpen, FileCheck, ChevronRight, Server, HeadphonesIcon,
-  AlertTriangle
+  CheckCircle2, BarChart3, FileCheck, ChevronRight, Server, HeadphonesIcon,
+  AlertTriangle, ArrowUpRight, Gauge
 } from 'lucide-react'
 import { TabNavigation, TabPanel } from '@/components/tab-navigation'
-import { TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup } from '@/components/device-mockups'
+import { SectorHeroVisual, SectorEnjeuxVisual, SectorSolutionsVisual, getSectorConfig } from '@/components/sector-visuals'
 
 export default function IndustriePage() {
   const [activeTab, setActiveTab] = useState('enjeux')
+  const config = getSectorConfig('industrie')
 
   const contentTabs = [
     { id: 'enjeux', label: 'Enjeux', icon: <AlertTriangle className="w-4 h-4" /> },
@@ -154,13 +156,6 @@ export default function IndustriePage() {
     }
   ]
 
-  const stats = [
-    { value: '–38%', label: 'Temps d\'arrêt' },
-    { value: '+85%', label: 'First Time Fix' },
-    { value: '100%', label: 'Conformité' },
-    { value: '2x', label: 'Montée en compétence' },
-  ]
-
   return (
     <main className="min-h-screen bg-white">
       <SiteHeader />
@@ -210,14 +205,14 @@ export default function IndustriePage() {
               </div>
             </div>
 
-            {/* Stats */}
-            <div className="hidden lg:grid grid-cols-2 gap-4">
-              {stats.map((stat, i) => (
-                <div key={i} className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                  <div className="text-3xl font-bold text-[#F97316] mb-1">{stat.value}</div>
-                  <div className="text-sm text-white/70">{stat.label}</div>
-                </div>
-              ))}
+            {/* Hero Visual with Image */}
+            <div className="hidden lg:block">
+              <SectorHeroVisual
+                imageSrc="/images/sector-industry.jpg"
+                imageAlt="Industrie - Ligne de production"
+                stats={config.heroStats}
+                badge={{ text: 'Industrie', icon: <Factory className="w-4 h-4" /> }}
+              />
             </div>
           </div>
         </div>
@@ -295,10 +290,14 @@ export default function IndustriePage() {
                 ))}
               </div>
               
+              {/* Enjeux Visual */}
               <div className="lg:sticky lg:top-36 flex justify-center">
-                <TabletMockup className="w-full max-w-[340px]">
-                  <GMAODashboardMockup />
-                </TabletMockup>
+                <SectorEnjeuxVisual
+                  imageSrc="/images/sector-industry-enjeux.jpg"
+                  imageAlt="Défis de l'industrie"
+                  problems={config.enjeuxProblems}
+                  className="w-full max-w-[480px]"
+                />
               </div>
             </div>
           </TabPanel>
@@ -337,13 +336,14 @@ export default function IndustriePage() {
                 ))}
               </div>
               
-              <div className="lg:sticky lg:top-36 flex flex-col gap-4 items-center">
-                <TabletMockup className="w-full max-w-[300px]">
-                  <EquipmentDetailMockup />
-                </TabletMockup>
-                <MobileMockup className="w-[150px]">
-                  <TaskManagementMockup />
-                </MobileMockup>
+              {/* Solutions Visual */}
+              <div className="lg:sticky lg:top-36 flex justify-center">
+                <SectorSolutionsVisual
+                  imageSrc="/images/sector-industry-solutions.jpg"
+                  imageAlt="Solutions Maintex pour l'industrie"
+                  benefits={config.solutionsBenefits}
+                  className="w-full max-w-[480px]"
+                />
               </div>
             </div>
           </TabPanel>

@@ -462,3 +462,287 @@ Update all remaining pages with photo-data visuals in different styles (photos, 
    - Company headquarters with team size metrics
    - Chart cards with trend lines
    - Location photos with country badges
+
+---
+## Task ID: 2-b - sector-visuals-agent
+### Work Task
+Update sector pages (aeronautique, agroalimentaire, energie) to use the new SectorHeroVisual, SectorEnjeuxVisual, and SectorSolutionsVisual components from '@/components/sector-visuals'.
+
+### Work Summary
+
+Successfully updated three sector landing pages with the new visual components:
+
+1. **Aéronautique Page** (`/src/app/secteurs/aeronautique/page.tsx`):
+   - Added import for SectorHeroVisual, SectorEnjeuxVisual, SectorSolutionsVisual, getSectorConfig
+   - Added `const config = getSectorConfig('aeronautique')` for sector-specific data
+   - Replaced hero stats grid with SectorHeroVisual using `/images/sector-aerospace.jpg`
+   - Replaced Enjeux tab tablet mockup with SectorEnjeuxVisual using `/images/sector-aerospace-enjeux.jpg`
+   - Replaced Solutions tab mockups with SectorSolutionsVisual using `/images/sector-aerospace-solutions.jpg`
+   - Removed unused imports (TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup)
+
+2. **Agroalimentaire Page** (`/src/app/secteurs/agroalimentaire/page.tsx`):
+   - Completely rewrote the page with tabbed interface matching other sector pages
+   - Added tab navigation (Enjeux, Solutions, Résultats)
+   - Added SectorHeroVisual using `/images/sector-food.jpg`
+   - Added SectorEnjeuxVisual using `/images/sector-food-enjeux.jpg`
+   - Added SectorSolutionsVisual using `/images/sector-food-solutions.jpg`
+   - Added testimonials section with sector-specific quotes
+   - Added comparison section (sans/avec Maintex)
+
+3. **Énergie Page** (`/src/app/secteurs/energie/page.tsx`):
+   - Completely rewrote the page with tabbed interface matching other sector pages
+   - Added tab navigation (Enjeux, Solutions, Résultats)
+   - Added SectorHeroVisual using `/images/sector-energy.jpg`
+   - Added SectorEnjeuxVisual using `/images/sector-energy-enjeux.jpg`
+   - Added SectorSolutionsVisual using `/images/sector-energy-solutions.jpg`
+   - Added testimonials section with sector-specific quotes
+   - Added comparison section (sans/avec Maintex)
+
+4. **Visual Component Integration**:
+   - All three pages now use consistent visual components
+   - Each page displays floating KPI cards on sector images
+   - Enjeux tab shows problem indicators with red-themed cards
+   - Solutions tab shows benefit indicators with green/blue-themed cards
+   - Sector-specific configurations pulled from sectorConfigs in sector-visuals.tsx
+
+5. **Technical Details**:
+   - All pages use 'use client' directive for client-side interactivity
+   - Consistent color scheme (#1E3A8A primary, #F97316 accent)
+   - Responsive design with mobile-first approach
+   - ESLint passed with no errors
+
+---
+## Task ID: 2-c - sector-visuals-agent
+### Work Task
+Update sector pages (eau-utilities, oil-gas, btp) to use the new SectorHeroVisual, SectorEnjeuxVisual, and SectorSolutionsVisual components from '@/components/sector-visuals'.
+
+### Work Summary
+
+Successfully updated three sector landing pages with the new visual components:
+
+1. **Eau & Utilities Page** (`/src/app/secteurs/eau-utilities/page.tsx`):
+   - Added import for SectorHeroVisual, SectorEnjeuxVisual, SectorSolutionsVisual, getSectorConfig
+   - Added `const config = getSectorConfig('eau-utilities')` for sector-specific data
+   - Replaced hero stats grid with SectorHeroVisual using `/images/sector-water.jpg`
+   - Replaced Enjeux tab tablet mockup with SectorEnjeuxVisual using `/images/sector-water-enjeux.jpg`
+   - Replaced Solutions tab mockups with SectorSolutionsVisual using `/images/sector-water-solutions.jpg`
+   - Badge: "Eau & Utilities" with Droplets icon
+   - Removed unused imports (TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup)
+
+2. **Oil & Gas Page** (`/src/app/secteurs/oil-gas/page.tsx`):
+   - Added import for SectorHeroVisual, SectorEnjeuxVisual, SectorSolutionsVisual, getSectorConfig
+   - Added `const config = getSectorConfig('oil-gas')` for sector-specific data
+   - Replaced hero stats grid with SectorHeroVisual using `/images/sector-oilgas.jpg`
+   - Replaced Enjeux tab tablet mockup with SectorEnjeuxVisual using `/images/sector-oilgas-enjeux.jpg`
+   - Replaced Solutions tab mockups with SectorSolutionsVisual using `/images/sector-oilgas-solutions.jpg`
+   - Badge: "Oil & Gas" with Fuel icon
+   - Removed unused imports (TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup)
+
+3. **BTP Page** (`/src/app/secteurs/btp/page.tsx`):
+   - Added import for SectorHeroVisual, SectorEnjeuxVisual, SectorSolutionsVisual, getSectorConfig
+   - Added `const config = getSectorConfig('btp')` for sector-specific data
+   - Replaced hero stats grid with SectorHeroVisual using `/images/sector-construction.jpg`
+   - Replaced Enjeux tab tablet mockup with SectorEnjeuxVisual using `/images/sector-construction-enjeux.jpg`
+   - Replaced Solutions tab mockups with SectorSolutionsVisual using `/images/sector-construction-solutions.jpg`
+   - Badge: "BTP & Construction" with HardHat icon
+   - Removed unused imports (TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup)
+
+4. **Visual Component Integration**:
+   - All three pages now use consistent visual components
+   - Each page displays floating KPI cards on sector images
+   - Enjeux tab shows problem indicators with red-themed cards
+   - Solutions tab shows benefit indicators with green/blue-themed cards
+   - Sector-specific configurations pulled from sectorConfigs in sector-visuals.tsx
+
+5. **Technical Details**:
+   - All pages use 'use client' directive for client-side interactivity
+   - Consistent color scheme (#1E3A8A primary, #F97316 accent)
+   - Responsive design with mobile-first approach
+   - ESLint passed with no errors
+
+---
+## Task ID: 2-a - sector-visuals-agent
+### Work Task
+Update sector pages (automobile, chimie-pharma, mines) to use the new SectorHeroVisual, SectorEnjeuxVisual, and SectorSolutionsVisual components from '@/components/sector-visuals'.
+
+### Work Summary
+
+Successfully updated three sector landing pages with the new visual components:
+
+1. **Automobile Page** (`/src/app/secteurs/automobile/page.tsx`):
+   - Added import for SectorHeroVisual, SectorEnjeuxVisual, SectorSolutionsVisual, getSectorConfig
+   - Added `const config = getSectorConfig('automobile')` for sector-specific data
+   - Replaced hero stats grid with SectorHeroVisual using `/images/sector-automotive.jpg`
+   - Replaced Enjeux tab tablet mockup with SectorEnjeuxVisual using `/images/sector-automotive-enjeux.jpg`
+   - Replaced Solutions tab mockups with SectorSolutionsVisual using `/images/sector-automotive-solutions.jpg`
+   - Badge: "Automobile" with Car icon
+   - Removed unused imports (TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup)
+
+2. **Chimie-Pharma Page** (`/src/app/secteurs/chimie-pharma/page.tsx`):
+   - Added import for SectorHeroVisual, SectorEnjeuxVisual, SectorSolutionsVisual, getSectorConfig
+   - Added `const config = getSectorConfig('chimie-pharma')` for sector-specific data
+   - Replaced hero stats grid with SectorHeroVisual using `/images/sector-pharma.jpg`
+   - Replaced Enjeux tab tablet mockup with SectorEnjeuxVisual using `/images/sector-pharma-enjeux.jpg`
+   - Replaced Solutions tab mockups with SectorSolutionsVisual using `/images/sector-pharma-solutions.jpg`
+   - Badge: "Chimie & Pharma" with FlaskConical icon
+   - Removed unused imports (TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup)
+
+3. **Mines Page** (`/src/app/secteurs/mines/page.tsx`):
+   - Added import for SectorHeroVisual, SectorEnjeuxVisual, SectorSolutionsVisual, getSectorConfig
+   - Added `const config = getSectorConfig('mines')` for sector-specific data
+   - Replaced hero stats grid with SectorHeroVisual using `/images/sector-mining.jpg`
+   - Replaced Enjeux tab tablet mockup with SectorEnjeuxVisual using `/images/sector-mining-enjeux.jpg`
+   - Replaced Solutions tab mockups with SectorSolutionsVisual using `/images/sector-mining-solutions.jpg`
+   - Badge: "Mines & Carrières" with Mountain icon
+   - Removed unused imports (TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup)
+
+4. **Visual Component Integration**:
+   - All three pages now use consistent visual components
+   - Each page displays floating KPI cards on sector images
+   - Enjeux tab shows problem indicators with red-themed cards
+   - Solutions tab shows benefit indicators with green/blue-themed cards
+   - Sector-specific configurations pulled from sectorConfigs in sector-visuals.tsx
+
+5. **Technical Details**:
+   - All pages use 'use client' directive for client-side interactivity
+   - Consistent color scheme (#1E3A8A primary, #F97316 accent)
+   - Responsive design with mobile-first approach
+   - ESLint passed with no errors
+
+---
+## Task ID: 2-f - sector-visuals-agent
+### Work Task
+Update sector pages (retail, services-techniques) to use the new SectorHeroVisual, SectorEnjeuxVisual, and SectorSolutionsVisual components from '@/components/sector-visuals'.
+
+### Work Summary
+
+Successfully updated two sector landing pages with the new visual components:
+
+1. **Retail Page** (`/src/app/secteurs/retail/page.tsx`):
+   - Added import for SectorHeroVisual, SectorEnjeuxVisual, SectorSolutionsVisual, getSectorConfig
+   - Added `const config = getSectorConfig('retail')` for sector-specific data
+   - Replaced hero stats grid with SectorHeroVisual using `/images/sector-retail.jpg`
+   - Replaced Enjeux tab tablet mockup with SectorEnjeuxVisual using `/images/sector-retail-enjeux.jpg`
+   - Replaced Solutions tab mockups with SectorSolutionsVisual using `/images/sector-retail-solutions.jpg`
+   - Badge: "Retail" with ShoppingCart icon
+   - Removed unused imports (TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup)
+
+2. **Services Techniques Page** (`/src/app/secteurs/services-techniques/page.tsx`):
+   - Added import for SectorHeroVisual, SectorEnjeuxVisual, SectorSolutionsVisual, getSectorConfig
+   - Added `const config = getSectorConfig('services-techniques')` for sector-specific data
+   - Replaced hero stats grid with SectorHeroVisual using `/images/sector-services-techniques.jpg`
+   - Replaced Enjeux tab tablet mockup with SectorEnjeuxVisual using `/images/sector-services-techniques-enjeux.jpg`
+   - Replaced Solutions tab mockups with SectorSolutionsVisual using `/images/sector-services-techniques-solutions.jpg`
+   - Badge: "Services Techniques" with Wrench icon
+   - Removed unused imports (TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup)
+
+3. **Visual Component Integration**:
+   - Both pages now use consistent visual components
+   - Each page displays floating KPI cards on sector images
+   - Enjeux tab shows problem indicators with red-themed cards
+   - Solutions tab shows benefit indicators with green/blue-themed cards
+   - Sector-specific configurations pulled from sectorConfigs in sector-visuals.tsx
+
+4. **Technical Details**:
+   - All pages use 'use client' directive for client-side interactivity
+   - Consistent color scheme (#1E3A8A primary, #F97316 accent)
+   - Responsive design with mobile-first approach
+   - ESLint passed with no errors
+
+---
+## Task ID: 2-d - sector-visuals-agent
+### Work Task
+Update sector pages (infrastructures, telecoms, logistique) to use the new SectorHeroVisual, SectorEnjeuxVisual, and SectorSolutionsVisual components from '@/components/sector-visuals'.
+
+### Work Summary
+
+Successfully updated three sector landing pages with the new visual components:
+
+1. **Infrastructures Page** (`/src/app/secteurs/infrastructures/page.tsx`):
+   - Added import for SectorHeroVisual, SectorEnjeuxVisual, SectorSolutionsVisual, getSectorConfig
+   - Added `const config = getSectorConfig('infrastructures')` for sector-specific data
+   - Replaced hero stats grid with SectorHeroVisual using `/images/sector-infrastructure.jpg`
+   - Replaced Enjeux tab tablet mockup with SectorEnjeuxVisual using `/images/sector-infrastructure-enjeux.jpg`
+   - Replaced Solutions tab mockups with SectorSolutionsVisual using `/images/sector-infrastructure-solutions.jpg`
+   - Badge: "Infrastructures" with Building icon
+   - Removed unused imports (TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup)
+
+2. **Télécoms Page** (`/src/app/secteurs/telecoms/page.tsx`):
+   - Added import for SectorHeroVisual, SectorEnjeuxVisual, SectorSolutionsVisual, getSectorConfig
+   - Added `const config = getSectorConfig('telecoms')` for sector-specific data
+   - Replaced hero stats grid with SectorHeroVisual using `/images/sector-telecom.jpg`
+   - Replaced Enjeux tab tablet mockup with SectorEnjeuxVisual using `/images/sector-telecom-enjeux.jpg`
+   - Replaced Solutions tab mockups with SectorSolutionsVisual using `/images/sector-telecom-solutions.jpg`
+   - Badge: "Télécoms" with Radio icon
+   - Removed unused imports (TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup)
+
+3. **Logistique Page** (`/src/app/secteurs/logistique/page.tsx`):
+   - Added import for SectorHeroVisual, SectorEnjeuxVisual, SectorSolutionsVisual, getSectorConfig
+   - Added `const config = getSectorConfig('logistique')` for sector-specific data
+   - Replaced hero stats grid with SectorHeroVisual using `/images/sector-logistics.jpg`
+   - Replaced Enjeux tab tablet mockup with SectorEnjeuxVisual using `/images/sector-logistics-enjeux.jpg`
+   - Replaced Solutions tab mockups with SectorSolutionsVisual using `/images/sector-logistics-solutions.jpg`
+   - Badge: "Logistique" with Truck icon
+   - Removed unused imports (TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup)
+
+4. **Visual Component Integration**:
+   - All three pages now use consistent visual components
+   - Each page displays floating KPI cards on sector images
+   - Enjeux tab shows problem indicators with red-themed cards
+   - Solutions tab shows benefit indicators with green/blue-themed cards
+   - Sector-specific configurations pulled from sectorConfigs in sector-visuals.tsx
+
+5. **Technical Details**:
+   - All pages use 'use client' directive for client-side interactivity
+   - Consistent color scheme (#1E3A8A primary, #F97316 accent)
+   - Responsive design with mobile-first approach
+   - ESLint passed with no errors
+
+---
+## Task ID: 2-e - sector-visuals-agent
+### Work Task
+Update sector pages (immobilier, hotellerie, sante) to use the new SectorHeroVisual, SectorEnjeuxVisual, and SectorSolutionsVisual components from '@/components/sector-visuals'.
+
+### Work Summary
+
+Successfully updated three sector landing pages with the new visual components:
+
+1. **Immobilier Page** (`/src/app/secteurs/immobilier/page.tsx`):
+   - Added import for SectorHeroVisual, SectorEnjeuxVisual, SectorSolutionsVisual, getSectorConfig
+   - Added `const config = getSectorConfig('immobilier')` for sector-specific data
+   - Replaced hero stats grid with SectorHeroVisual using `/images/sector-realestate.jpg`
+   - Replaced Enjeux tab tablet mockup with SectorEnjeuxVisual using `/images/sector-realestate-enjeux.jpg`
+   - Replaced Solutions tab mockups with SectorSolutionsVisual using `/images/sector-realestate-solutions.jpg`
+   - Badge: "Immobilier" with Building2 icon
+   - Removed unused imports (TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup)
+
+2. **Hotellerie Page** (`/src/app/secteurs/hotellerie/page.tsx`):
+   - Added import for SectorHeroVisual, SectorEnjeuxVisual, SectorSolutionsVisual, getSectorConfig
+   - Added `const config = getSectorConfig('hotellerie')` for sector-specific data
+   - Replaced hero stats grid with SectorHeroVisual using `/images/sector-hotel.jpg`
+   - Replaced Enjeux tab tablet mockup with SectorEnjeuxVisual using `/images/sector-hotel-enjeux.jpg`
+   - Replaced Solutions tab mockups with SectorSolutionsVisual using `/images/sector-hotel-solutions.jpg`
+   - Badge: "Hôtellerie" with Hotel icon
+   - Removed unused imports (TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup)
+
+3. **Santé Page** (`/src/app/secteurs/sante/page.tsx`):
+   - Added import for SectorHeroVisual, SectorEnjeuxVisual, SectorSolutionsVisual, getSectorConfig
+   - Added `const config = getSectorConfig('sante')` for sector-specific data
+   - Replaced hero stats grid with SectorHeroVisual using `/images/sector-healthcare.jpg`
+   - Replaced Enjeux tab tablet mockup with SectorEnjeuxVisual using `/images/sector-healthcare-enjeux.jpg`
+   - Replaced Solutions tab mockups with SectorSolutionsVisual using `/images/sector-healthcare-solutions.jpg`
+   - Badge: "Santé" with HeartPulse icon
+   - Removed unused imports (TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup)
+
+4. **Visual Component Integration**:
+   - All three pages now use consistent visual components
+   - Each page displays floating KPI cards on sector images
+   - Enjeux tab shows problem indicators with red-themed cards
+   - Solutions tab shows benefit indicators with green/blue-themed cards
+   - Sector-specific configurations pulled from sectorConfigs in sector-visuals.tsx
+
+5. **Technical Details**:
+   - All pages use 'use client' directive for client-side interactivity
+   - Consistent color scheme (#1E3A8A primary, #F97316 accent)
+   - Responsive design with mobile-first approach
+   - ESLint passed with no errors

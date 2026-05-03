@@ -11,10 +11,11 @@ import {
   AlertTriangle, Flame, Gauge
 } from 'lucide-react'
 import { TabNavigation, TabPanel } from '@/components/tab-navigation'
-import { TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup } from '@/components/device-mockups'
+import { SectorHeroVisual, SectorEnjeuxVisual, SectorSolutionsVisual, getSectorConfig } from '@/components/sector-visuals'
 
 export default function OilGasPage() {
   const [activeTab, setActiveTab] = useState('enjeux')
+  const config = getSectorConfig('oil-gas')
 
   const contentTabs = [
     { id: 'enjeux', label: 'Enjeux', icon: <AlertTriangle className="w-4 h-4" /> },
@@ -154,13 +155,6 @@ export default function OilGasPage() {
     }
   ]
 
-  const stats = [
-    { value: '–30%', label: 'Arrêts imprévus' },
-    { value: '100%', label: 'Conformité' },
-    { value: '+85%', label: 'First Time Fix' },
-    { value: '0', label: 'Observation audit' },
-  ]
-
   return (
     <main className="min-h-screen bg-white">
       <SiteHeader />
@@ -210,14 +204,14 @@ export default function OilGasPage() {
               </div>
             </div>
 
-            {/* Stats */}
-            <div className="hidden lg:grid grid-cols-2 gap-4">
-              {stats.map((stat, i) => (
-                <div key={i} className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                  <div className="text-3xl font-bold text-[#F97316] mb-1">{stat.value}</div>
-                  <div className="text-sm text-white/70">{stat.label}</div>
-                </div>
-              ))}
+            {/* Hero Visual with Photo and Stats */}
+            <div className="hidden lg:block">
+              <SectorHeroVisual 
+                imageSrc="/images/sector-oilgas.jpg"
+                imageAlt="Plateforme pétrolière et gazière"
+                stats={config.heroStats}
+                badge={{ text: 'Oil & Gas', icon: <Fuel className="w-4 h-4" /> }}
+              />
             </div>
           </div>
         </div>
@@ -296,9 +290,11 @@ export default function OilGasPage() {
               </div>
               
               <div className="lg:sticky lg:top-36 flex justify-center">
-                <TabletMockup className="w-full max-w-[340px]">
-                  <GMAODashboardMockup />
-                </TabletMockup>
+                <SectorEnjeuxVisual 
+                  imageSrc="/images/sector-oilgas-enjeux.jpg"
+                  imageAlt="Défis du secteur pétrolier et gazier"
+                  problems={config.enjeuxProblems}
+                />
               </div>
             </div>
           </TabPanel>
@@ -337,13 +333,12 @@ export default function OilGasPage() {
                 ))}
               </div>
               
-              <div className="lg:sticky lg:top-36 flex flex-col gap-4 items-center">
-                <TabletMockup className="w-full max-w-[300px]">
-                  <EquipmentDetailMockup />
-                </TabletMockup>
-                <MobileMockup className="w-[150px]">
-                  <TaskManagementMockup />
-                </MobileMockup>
+              <div className="lg:sticky lg:top-36 flex justify-center">
+                <SectorSolutionsVisual 
+                  imageSrc="/images/sector-oilgas-solutions.jpg"
+                  imageAlt="Solutions Maintex pour le secteur pétrolier et gazier"
+                  benefits={config.solutionsBenefits}
+                />
               </div>
             </div>
           </TabPanel>
