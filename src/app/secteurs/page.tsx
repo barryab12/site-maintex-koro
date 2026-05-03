@@ -6,193 +6,226 @@ import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import Link from 'next/link'
 import { 
-  CheckCircle2, TrendingUp, ArrowRight, ChevronRight,
+  CheckCircle2, ArrowRight, ChevronRight,
   Factory, Pickaxe, Car, FlaskConical, Wheat, Zap, Fuel, 
   Building2, Building, Server, HardHat, Truck, 
   Stethoscope, Shield, BadgeCheck, Clock, Users, 
-  Globe, Target, Star, Activity, TrendingDown, ArrowUpRight, Gauge
+  Globe, Target, Activity, Gauge, TrendingUp, TrendingDown, ArrowUpRight
 } from 'lucide-react'
 import { TabNavigation, TabPanel } from '@/components/tab-navigation'
-import { MiniLineChartInline } from '@/components/photo-data-visual'
 
 export default function SecteursPage() {
   const [activeTab, setActiveTab] = useState('industrie')
 
   const sectorTabs = [
-    { id: 'industrie', label: 'Industrie', icon: <Factory className="w-4 h-4" /> },
-    { id: 'mines', label: 'Mines & Carrières', icon: <Pickaxe className="w-4 h-4" /> },
-    { id: 'sante', label: 'Santé', icon: <Stethoscope className="w-4 h-4" /> },
-    { id: 'energie', label: 'Énergie', icon: <Zap className="w-4 h-4" /> },
-    { id: 'btp', label: 'BTP', icon: <HardHat className="w-4 h-4" /> },
-    { id: 'agro', label: 'Agroalimentaire', icon: <Wheat className="w-4 h-4" /> },
+    { id: 'industrie', label: 'Industrie & Production', icon: <Factory className="w-4 h-4" /> },
+    { id: 'energies', label: 'Énergies & Infrastructures', icon: <Zap className="w-4 h-4" /> },
+    { id: 'services', label: 'Services & Exploitation', icon: <Building2 className="w-4 h-4" /> },
   ]
 
-  const sectors = {
-    industrie: {
-      title: 'Industrie',
+  // INDUSTRIE & PRODUCTION
+  const industrieSectors = [
+    {
+      id: 'industrie',
       icon: Factory,
-      color: '#1E3A8A',
+      title: 'Industrie',
+      subtitle: 'Usines & production',
+      description: 'Optimisez la disponibilité de vos lignes de production et réduisez les temps d\'arrêt.',
       image: '/images/production-line.png',
-      gradient: 'from-blue-600 to-cyan-500',
-      description: "Optimisez la disponibilité de vos lignes de production et réduisez les temps d'arrêt.",
-      challenges: [
-        "Arrêts de ligne non planifiés impactant la production",
-        "Diagnostic trop lent et incertain",
-        "Conformité ICPE et réglementations industrielles",
-        "Base de connaissances technique dispersée"
-      ],
-      solutions: [
-        { title: "Suivi des fonctions vitales", desc: "Visualisez la disponibilité de vos fonctions critiques en temps réel" },
-        { title: "IA au service du diagnostic", desc: "Analyse des pannes similaires et recommandations automatiques" },
-        { title: "Traçabilité automatique", desc: "Conformité HACCP, GMP, ISO sans surcharge administrative" },
-        { title: "First Time Fix systématique", desc: "Identification de la cause racine sans tâtonnement" },
-      ],
-      stats: [
-        { value: '–38%', label: 'temps d\'arrêt', type: 'success' },
-        { value: '+85%', label: 'First Time Fix', type: 'accent' },
-        { value: '2x', label: 'montée en compétence', type: 'default' },
-      ],
+      challenges: ['Arrêts de ligne non planifiés', 'Diagnostic trop lent', 'Conformité ICPE'],
+      stats: { value: '-38%', label: 'temps d\'arrêt' }
     },
-    mines: {
-      title: 'Mines & Carrières',
+    {
+      id: 'automobile',
+      icon: Car,
+      title: 'Automobile',
+      subtitle: 'Industrie auto & équipements',
+      description: 'Maintenance des lignes de production automobile et équipements spécialisés.',
+      image: '/images/production-line.png',
+      challenges: ['Lignes haute cadence', 'Traçabilité qualité', 'Juste-à-temps'],
+      stats: { value: '99.5%', label: 'disponibilité' }
+    },
+    {
+      id: 'chimie-pharma',
+      icon: FlaskConical,
+      title: 'Chimie & Pharma',
+      subtitle: 'Process & conformité',
+      description: 'Conformité et maintenance des installations chimiques et pharmaceutiques.',
+      image: '/images/healthcare-equipment.png',
+      challenges: ['Conformité GMP', 'Sécurité process', 'Traçabilité BPF'],
+      stats: { value: '100%', label: 'conformité' }
+    },
+    {
+      id: 'mines',
       icon: Pickaxe,
-      color: '#F97316',
+      title: 'Mines & extractif',
+      subtitle: 'Exploitation & équipements lourds',
+      description: 'Maintenance des engins miniers et équipements d\'extraction dans des conditions extrêmes.',
       image: '/images/mining-operation.png',
-      gradient: 'from-orange-500 to-amber-500',
-      description: "Optimisez la disponibilité de vos engins et équipements miniers dans des conditions extrêmes.",
-      challenges: [
-        "Conditions d'exploitation extrêmes (poussière, chaleur)",
-        "Engins mobiles difficiles à suivre",
-        "Coûts d'immobilisation très élevés",
-        "Gestion des pièces de rechange critiques"
-      ],
-      solutions: [
-        { title: "Suivi des heures de fonctionnement", desc: "Compteurs automatiques et alertes de maintenance" },
-        { title: "Maintenance prédictive", desc: "Anticipez les pannes sur les équipements critiques" },
-        { title: "Mobile offline", desc: "Fonctionne même sans connexion en zone isolée" },
-        { title: "Rapports de disponibilité", desc: "Indicateurs de performance par engin et par site" },
-      ],
-      stats: [
-        { value: '+25%', label: 'disponibilité', type: 'success' },
-        { value: '–40%', label: 'pannes imprévues', type: 'success' },
-        { value: '15%', label: 'économie pièces', type: 'default' },
-      ],
+      challenges: ['Conditions extrêmes', 'Engins mobiles', 'Coûts immobilisation'],
+      stats: { value: '+25%', label: 'disponibilité' }
     },
-    sante: {
-      title: 'Santé & Biomédical',
-      icon: Stethoscope,
-      color: '#059669',
-      image: '/images/hospital-medical.png',
-      gradient: 'from-emerald-500 to-teal-500',
-      description: 'Assurez la conformité et la disponibilité de vos équipements biomédicaux.',
-      challenges: [
-        "Zéro tolérance à la panne sur les équipements critiques",
-        "Conformité HAS et réglementations strictes",
-        "Traçabilité obligatoire des interventions",
-        "Sécurité patient directement liée à la maintenance"
-      ],
-      solutions: [
-        { title: "Historique complet par équipement", desc: "Accès instantané au contexte de chaque machine" },
-        { title: "Traçabilité automatique", desc: "Conformité réglementaire sans ressaisie" },
-        { title: "Base de connaissances partagée", desc: "Capitalisation du savoir biomédical" },
-        { title: "Alertes préventives", desc: "Anticipation des contrôles réglementaires" },
-      ],
-      stats: [
-        { value: '100%', label: 'conformité HAS', type: 'success' },
-        { value: '–50%', label: 'interventions répétées', type: 'success' },
-        { value: '24/7', label: 'disponibilité', type: 'default' },
-      ],
+    {
+      id: 'aeronautique',
+      icon: Truck,
+      title: 'Aéronautique & ferrov.',
+      subtitle: 'Maintenance réglementée',
+      description: 'Maintenance réglementée pour le transport aérien et ferroviaire.',
+      image: '/images/railway-maintenance.png',
+      challenges: ['Réglementation stricte', 'Sécurité critique', 'Traçabilité totale'],
+      stats: { value: '100%', label: 'traçabilité' }
     },
-    energie: {
-      title: 'Énergie & Utilities',
-      icon: Zap,
-      color: '#1E3A8A',
-      image: '/images/energy-plant.png',
-      gradient: 'from-blue-600 to-indigo-500',
-      description: 'Assurez la continuité de service sur vos réseaux et infrastructures énergétiques.',
-      challenges: [
-        "Continuité de service critique",
-        "Conformité réglementaire CRE",
-        "Interventions d'urgence fréquentes",
-        "Intégration avec les systèmes SCADA"
-      ],
-      solutions: [
-        { title: "Fonctions vitales", desc: "Surveillance des fonctions critiques du réseau" },
-        { title: "Conformité automatisée", desc: "Génération automatique des rapports réglementaires" },
-        { title: "Intégration SCADA", desc: "Connexion avec vos systèmes de contrôle" },
-        { title: "Gestion des urgences", desc: "Workflow d'intervention prioritaire" },
-      ],
-      stats: [
-        { value: '99.9%', label: 'disponibilité', type: 'success' },
-        { value: '–60%', label: 'temps de réponse', type: 'success' },
-        { value: '100%', label: 'conformité', type: 'default' },
-      ],
-    },
-    btp: {
-      title: 'BTP & Construction',
-      icon: HardHat,
-      color: '#F97316',
-      image: '/images/construction-site.png',
-      gradient: 'from-orange-500 to-red-500',
-      description: 'Gérez efficacement votre flotte d\'engins de chantier et vos équipements.',
-      challenges: [
-        "Engins mobiles multi-chantiers",
-        "Contrôles techniques obligatoires",
-        "Conformité VGP réglementaire",
-        "Carnet d'entretien numérique"
-      ],
-      solutions: [
-        { title: "Géolocalisation des engins", desc: "Suivi en temps réel de votre flotte" },
-        { title: "Carnet numérique", desc: "Remplacez le carnet papier réglementaire" },
-        { title: "Alertes VGP", desc: "Notifications avant échéance des contrôles" },
-        { title: "Multi-chantiers", desc: "Gestion centralisée de tous vos sites" },
-      ],
-      stats: [
-        { value: '–40%', label: 'pannes imprévues', type: 'success' },
-        { value: '100%', label: 'conformité VGP', type: 'success' },
-        { value: '–2j', label: 'admin par mois', type: 'default' },
-      ],
-    },
-    agro: {
-      title: 'Agroalimentaire',
+    {
+      id: 'agroalimentaire',
       icon: Wheat,
-      color: '#059669',
-      image: '/images/food-processing.png',
-      gradient: 'from-green-500 to-lime-500',
+      title: 'Agroalimentaire',
+      subtitle: 'Production & chaîne alimentaire',
       description: 'Maintenez vos lignes dans la conformité HACCP et ISO 22000.',
-      challenges: [
-        "Exigences HACCP strictes",
-        "Traçabilité des nettoyages et désinfections",
-        "Alertes températures critiques",
-        "Conformité IFS, BRC, ISO 22000"
-      ],
-      solutions: [
-        { title: "Plans HACCP intégrés", desc: "Check-lists automatiques dans les OT" },
-        { title: "Suivi des températures", desc: "Alertes automatiques sur seuils critiques" },
-        { title: "Traçabilité hygiène", desc: "Enregistrement des nettoyages et désinfections" },
-        { title: "Rapports de conformité", desc: "Documentation prête pour les audits" },
-      ],
-      stats: [
-        { value: '+44%', label: 'préventif', type: 'success' },
-        { value: '100%', label: 'conformité HACCP', type: 'success' },
-        { value: '–3j', label: 'préparation audit', type: 'default' },
-      ],
+      image: '/images/food-processing.png',
+      challenges: ['Exigences HACCP', 'Traçabilité nettoyages', 'Alertes températures'],
+      stats: { value: '+44%', label: 'préventif' }
     }
+  ]
+
+  // ÉNERGIES & INFRASTRUCTURES
+  const energiesSectors = [
+    {
+      id: 'energie',
+      icon: Zap,
+      title: 'Énergie',
+      subtitle: 'Électricité & renouvelable',
+      description: 'Assurez la continuité de service sur vos réseaux et infrastructures énergétiques.',
+      image: '/images/energy-plant.png',
+      challenges: ['Continuité service', 'Conformité CRE', 'Intégration SCADA'],
+      stats: { value: '99.9%', label: 'disponibilité' }
+    },
+    {
+      id: 'eau-utilities',
+      icon: Building,
+      title: 'Eau & utilities',
+      subtitle: 'Réseaux & traitement',
+      description: 'Gestion de la maintenance pour les réseaux d\'eau et services publics.',
+      image: '/images/water-treatment.png',
+      challenges: ['Continuité service public', 'Réglementation eau', 'Réseau étendu'],
+      stats: { value: '24/7', label: 'service' }
+    },
+    {
+      id: 'oil-gas',
+      icon: Fuel,
+      title: 'Oil & Gas',
+      subtitle: 'Pétrole, gaz & sites critiques',
+      description: 'Maintenance des sites pétroliers, gaziers et installations critiques.',
+      image: '/images/oil-gas-refinery.png',
+      challenges: ['Sécurité ATEX', 'Sites isolés', 'Maintenance critique'],
+      stats: { value: '100%', label: 'sécurité' }
+    },
+    {
+      id: 'btp',
+      icon: HardHat,
+      title: 'BTP & construction',
+      subtitle: 'Chantiers & équipements',
+      description: 'Gérez efficacement votre flotte d\'engins de chantier et vos équipements.',
+      image: '/images/construction-site.png',
+      challenges: ['Engins multi-chantiers', 'Conformité VGP', 'Carnet numérique'],
+      stats: { value: '-40%', label: 'pannes imprévues' }
+    },
+    {
+      id: 'infrastructures',
+      icon: Building2,
+      title: 'Infrastructures publ.',
+      subtitle: 'Routes, villes, équipements',
+      description: 'Maintenance des infrastructures publiques et équipements urbains.',
+      image: '/images/warehouse.png',
+      challenges: ['Patrimoine étendu', 'Budgets limités', 'Service public'],
+      stats: { value: '+30%', label: 'efficacité' }
+    },
+    {
+      id: 'telecoms',
+      icon: Server,
+      title: 'Télécoms',
+      subtitle: 'Réseaux & infrastructures',
+      description: 'Maintenance des réseaux télécoms et infrastructures de données.',
+      image: '/images/data-center.png',
+      challenges: ['Disponibilité réseau', 'Sites distants', 'Technologies variées'],
+      stats: { value: '99.99%', label: 'uptime' }
+    }
+  ]
+
+  // SERVICES & EXPLOITATION
+  const servicesSectors = [
+    {
+      id: 'logistique',
+      icon: Truck,
+      title: 'Logistique & transport',
+      subtitle: 'Entrepôts & supply chain',
+      description: 'Maintenance des centres logistiques, entrepôts et flottes de transport.',
+      image: '/images/warehouse.png',
+      challenges: ['Haute disponibilité', 'Flottes hétérogènes', 'Supply chain'],
+      stats: { value: '99.5%', label: 'disponibilité' }
+    },
+    {
+      id: 'immobilier',
+      icon: Building2,
+      title: 'Immobilier & bâtiments',
+      subtitle: 'Gestion technique',
+      description: 'Gestion technique et maintenance des bâtiments et patrimoines immobiliers.',
+      image: '/images/warehouse.png',
+      challenges: ['Multi-sites', 'Confort occupants', 'Efficacité énergétique'],
+      stats: { value: '-20%', label: 'consommation' }
+    },
+    {
+      id: 'hotellerie',
+      icon: Building,
+      title: 'Hôtellerie',
+      subtitle: 'Hôtels & résidences',
+      description: 'Maintenance des établissements hôteliers et résidences.',
+      image: '/images/hospital-medical.png',
+      challenges: ['Expérience client', 'Disponibilité 24/7', 'Multi-services'],
+      stats: { value: '+35%', label: 'satisfaction' }
+    },
+    {
+      id: 'sante',
+      icon: Stethoscope,
+      title: 'Santé',
+      subtitle: 'Hôpitaux & cliniques',
+      description: 'Assurez la conformité et la disponibilité de vos équipements biomédicaux.',
+      image: '/images/hospital-medical.png',
+      challenges: ['Zéro tolérance panne', 'Conformité HAS', 'Sécurité patient'],
+      stats: { value: '100%', label: 'conformité HAS' }
+    },
+    {
+      id: 'retail',
+      icon: Building2,
+      title: 'Retail & distribution',
+      subtitle: 'Magasins & chaînes',
+      description: 'Maintenance des réseaux de magasins et points de vente.',
+      image: '/images/warehouse.png',
+      challenges: ['Multi-points de vente', 'Expérience client', 'Équipements variés'],
+      stats: { value: '-25%', label: 'réactifs' }
+    },
+    {
+      id: 'services-techniques',
+      icon: Factory,
+      title: 'Services techniques',
+      subtitle: 'Maintenance externalisée',
+      description: 'Pour les prestataires de maintenance et services techniques.',
+      image: '/images/team-technicians.png',
+      challenges: ['Multi-clients', 'SLA stricts', 'Ressources optimisées'],
+      stats: { value: '+40%', label: 'productivité' }
+    }
+  ]
+
+  const currentSectors = {
+    industrie: industrieSectors,
+    energies: energiesSectors,
+    services: servicesSectors
   }
 
-  const otherSectors = [
-    { id: 'chimie-pharma', icon: FlaskConical, title: 'Chimie & Pharmacie', href: '/secteurs/chimie-pharma', image: '/images/healthcare-equipment.png' },
-    { id: 'automobile', icon: Car, title: 'Automobile', href: '/secteurs/automobile', image: '/images/production-line.png' },
-    { id: 'oil-gas', icon: Fuel, title: 'Pétrole & Gaz', href: '/secteurs/oil-gas', image: '/images/oil-gas-refinery.png' },
-    { id: 'facilities', icon: Building2, title: 'Facility Management', href: '/secteurs/facilities', image: '/images/warehouse.png' },
-    { id: 'data-centers', icon: Server, title: 'Data Centers', href: '/secteurs/data-centers', image: '/images/data-center.png' },
-    { id: 'eau-utilities', icon: Building, title: 'Eau & Utilities', href: '/secteurs/eau-utilities', image: '/images/water-treatment.png' },
-    { id: 'aeronautique-ferroviaire', icon: Truck, title: 'Aéronautique & Ferroviaire', href: '/secteurs/aeronautique-ferroviaire', image: '/images/railway-maintenance.png' },
-  ]
-
-  const performanceData = [85, 88, 92, 95, 97, 98, 96, 99, 98, 99, 99, 99]
-
-  const currentSector = sectors[activeTab as keyof typeof sectors]
+  const tabDescriptions = {
+    industrie: { title: 'Industrie & Production', desc: 'Solutions adaptées aux environnements industriels et de production' },
+    energies: { title: 'Énergies & Infrastructures', desc: 'Maintenance des infrastructures critiques et réseaux' },
+    services: { title: 'Services & Exploitation', desc: 'Accompagnement des secteurs de services et d\'exploitation' }
+  }
 
   return (
     <main className="min-h-screen bg-[#FAFAF9] font-sans">
@@ -200,7 +233,6 @@ export default function SecteursPage() {
 
       {/* Hero Section */}
       <section className="relative pt-[90px] pb-16 overflow-hidden">
-        {/* Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#1E3A8A]/5 via-white to-[#F97316]/10" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#e2e8f0_1px,transparent_0)] bg-[size:40px_40px] opacity-40" />
         
@@ -213,8 +245,8 @@ export default function SecteursPage() {
             <div>
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F97316]/10 border border-[#F97316]/20 text-[#1E3A8A] mb-6">
-                <Factory className="w-4 h-4 text-[#F97316]" />
-                <span className="text-sm font-semibold">15 secteurs couverts</span>
+                <Globe className="w-4 h-4 text-[#F97316]" />
+                <span className="text-sm font-semibold">18 secteurs couverts</span>
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0C0A09] leading-tight tracking-tight mb-6">
@@ -261,7 +293,7 @@ export default function SecteursPage() {
               {/* Floating Cards */}
               <div className="absolute -top-3 left-4 flex items-center gap-2 px-4 py-2.5 bg-[#F97316] text-white rounded-full shadow-lg">
                 <Target className="w-4 h-4" />
-                <span className="text-sm font-semibold">15 Secteurs</span>
+                <span className="text-sm font-semibold">18 Secteurs</span>
               </div>
               
               <div className="absolute top-12 right-4 bg-white rounded-xl p-4 shadow-lg">
@@ -327,98 +359,62 @@ export default function SecteursPage() {
       {/* Tab Content */}
       <section className="py-16 bg-[#FAFAF9]">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
-          {Object.keys(sectors).map((key) => {
-            const sector = sectors[key as keyof typeof sectors]
+          {Object.keys(currentSectors).map((key) => {
+            const sectors = currentSectors[key as keyof typeof currentSectors]
+            const tabInfo = tabDescriptions[key as keyof typeof tabDescriptions]
             return (
               <TabPanel key={key} isActive={activeTab === key}>
-                <div className="grid lg:grid-cols-2 gap-12 items-start">
-                  {/* Left - Content */}
-                  <div>
-                    {/* Header */}
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${sector.gradient} flex items-center justify-center shadow-lg`}>
-                        <sector.icon className="w-7 h-7 text-white" />
-                      </div>
-                      <div>
-                        <h2 className="text-2xl md:text-3xl font-bold text-[#0C0A09]">{sector.title}</h2>
-                        <p className="text-[#64748b]">{sector.description}</p>
-                      </div>
-                    </div>
-
-                    {/* Challenges */}
-                    <div className="mb-8">
-                      <h3 className="text-sm font-semibold text-[#64748b] uppercase tracking-wider mb-3">Défis du secteur</h3>
-                      <div className="grid sm:grid-cols-2 gap-3">
-                        {sector.challenges.map((challenge, i) => (
-                          <div key={i} className="flex items-start gap-2 p-3 bg-white rounded-lg border border-gray-200">
-                            <div className="w-2 h-2 rounded-full bg-[#F97316] mt-1.5 flex-shrink-0" />
-                            <span className="text-sm text-[#44403C]">{challenge}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Solutions */}
-                    <div className="mb-8">
-                      <h3 className="text-sm font-semibold text-[#64748b] uppercase tracking-wider mb-3">Solutions MAINTEX</h3>
-                      <div className="space-y-3">
-                        {sector.solutions.map((solution, i) => (
-                          <div key={i} className="bg-white rounded-lg border border-gray-200 p-4 hover:border-[#F97316]/30 transition-colors">
-                            <div className="font-semibold text-[#0C0A09] mb-1">{solution.title}</div>
-                            <div className="text-sm text-[#64748b]">{solution.desc}</div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* CTA */}
-                    <div className="flex flex-wrap gap-3">
-                      <Link
-                        href={`/secteurs/${key}`}
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#F97316] text-white font-semibold rounded-xl hover:bg-[#EA580C] transition-all shadow-lg shadow-[#F97316]/25 no-underline"
-                      >
-                        En savoir plus <ChevronRight className="w-4 h-4" />
-                      </Link>
-                      <Link
-                        href="/contact"
-                        className="inline-flex items-center gap-2 px-6 py-3 border-2 border-[#1E3A8A]/20 text-[#1E3A8A] font-semibold rounded-xl hover:border-[#1E3A8A] transition-all no-underline"
-                      >
-                        Demander une démo
-                      </Link>
-                    </div>
-                  </div>
-
-                  {/* Right - Photo with Floating Stats */}
-                  <div className="relative lg:sticky lg:top-36">
-                    <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                      <Image
-                        src={sector.image}
-                        alt={sector.title}
-                        width={500}
-                        height={350}
-                        className="object-cover w-full"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
-                    </div>
-                    
-                    {/* Floating Stats Cards */}
-                    <div className="absolute -top-3 left-4 flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-lg">
-                      <sector.icon className="w-4 h-4" style={{ color: sector.color }} />
-                      <span className="text-sm font-semibold text-[#0C0A09]">{sector.title}</span>
-                    </div>
-                    
-                    {sector.stats.map((stat, i) => (
-                      <div 
-                        key={i}
-                        className={`absolute ${i === 0 ? '-right-3 top-16' : i === 1 ? '-left-3 top-1/2' : 'bottom-4 right-4'} bg-white rounded-xl p-4 shadow-lg`}
-                      >
-                        <div className={`text-xl font-bold ${stat.type === 'success' ? 'text-[#059669]' : stat.type === 'accent' ? 'text-[#F97316]' : 'text-[#0C0A09]'}`}>
-                          {stat.value}
+                <div className="mb-10">
+                  <h2 className="text-2xl font-bold text-[#0C0A09] mb-2">{tabInfo.title}</h2>
+                  <p className="text-[#64748b]">{tabInfo.desc}</p>
+                </div>
+                
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {sectors.map((sector) => (
+                    <Link
+                      key={sector.id}
+                      href={`/secteurs/${sector.id}`}
+                      className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-[#F97316]/30 hover:shadow-xl transition-all no-underline"
+                    >
+                      <div className="aspect-[16/10] relative overflow-hidden">
+                        <Image
+                          src={sector.image}
+                          alt={sector.title}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                        <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full">
+                          <sector.icon className="w-4 h-4 text-[#F97316]" />
+                          <span className="text-xs font-semibold text-[#0C0A09]">{sector.subtitle}</span>
                         </div>
-                        <div className="text-xs text-gray-500">{stat.label}</div>
                       </div>
-                    ))}
-                  </div>
+                      <div className="p-5">
+                        <h3 className="text-lg font-bold text-[#0C0A09] mb-2 group-hover:text-[#F97316] transition-colors">
+                          {sector.title}
+                        </h3>
+                        <p className="text-sm text-[#64748b] mb-4 line-clamp-2">{sector.description}</p>
+                        
+                        {/* Challenges */}
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {sector.challenges.map((challenge, i) => (
+                            <span key={i} className="text-xs px-2 py-1 bg-[#1E3A8A]/5 text-[#1E3A8A] rounded-full">
+                              {challenge}
+                            </span>
+                          ))}
+                        </div>
+                        
+                        {/* Stat */}
+                        <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                          <div className={`text-lg font-bold ${sector.stats.value.includes('-') ? 'text-[#059669]' : sector.stats.value.includes('+') ? 'text-[#F97316]' : 'text-[#1E3A8A]'}`}>
+                            {sector.stats.value}
+                          </div>
+                          <div className="text-xs text-gray-500">{sector.stats.label}</div>
+                          <ChevronRight className="w-4 h-4 text-[#F97316] group-hover:translate-x-1 transition-transform" />
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
                 </div>
               </TabPanel>
             )
@@ -426,38 +422,40 @@ export default function SecteursPage() {
         </div>
       </section>
 
-      {/* Other Sectors Grid */}
+      {/* Key Benefits */}
       <section className="py-16 bg-white">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
-          <div className="text-center mb-10">
-            <h3 className="text-2xl font-bold text-[#0C0A09] mb-2">Autres secteurs couverts</h3>
-            <p className="text-[#64748b]">MAINTEX s&apos;adapte à tous les environnements industriels</p>
+          <div className="text-center mb-12">
+            <span className="text-xs font-semibold uppercase tracking-wider text-[#F97316] mb-3 block">Avantages</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0C0A09] mb-4">
+              Pourquoi choisir MAINTEX pour votre secteur ?
+            </h2>
           </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {otherSectors.map((sector) => (
-              <Link
-                key={sector.id}
-                href={sector.href}
-                className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all no-underline"
-              >
-                <div className="aspect-[4/3] relative">
-                  <Image
-                    src={sector.image}
-                    alt={sector.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <div className="flex items-center gap-2 text-white">
-                    <sector.icon className="w-5 h-5 text-[#F97316]" />
-                    <span className="font-semibold">{sector.title}</span>
-                  </div>
-                </div>
-              </Link>
-            ))}
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-[#FAFAF9] rounded-2xl p-6 border border-gray-200">
+              <div className="w-14 h-14 rounded-xl bg-[#1E3A8A]/10 flex items-center justify-center mb-4">
+                <Shield className="w-7 h-7 text-[#1E3A8A]" />
+              </div>
+              <h3 className="text-lg font-bold text-[#0C0A09] mb-2">Conformité intégrée</h3>
+              <p className="text-sm text-[#64748b]">Chaque secteur dispose de ses modules de conformité préconfigurés : HACCP, GMP, VGP, HAS, etc.</p>
+            </div>
+            
+            <div className="bg-[#FAFAF9] rounded-2xl p-6 border border-gray-200">
+              <div className="w-14 h-14 rounded-xl bg-[#F97316]/10 flex items-center justify-center mb-4">
+                <Users className="w-7 h-7 text-[#F97316]" />
+              </div>
+              <h3 className="text-lg font-bold text-[#0C0A09] mb-2">Support expert</h3>
+              <p className="text-sm text-[#64748b]">Nos consultants connaissent votre métier et vous accompagnent dans la mise en place de vos processus.</p>
+            </div>
+            
+            <div className="bg-[#FAFAF9] rounded-2xl p-6 border border-gray-200">
+              <div className="w-14 h-14 rounded-xl bg-[#059669]/10 flex items-center justify-center mb-4">
+                <Clock className="w-7 h-7 text-[#059669]" />
+              </div>
+              <h3 className="text-lg font-bold text-[#0C0A09] mb-2">Déploiement rapide</h3>
+              <p className="text-sm text-[#64748b]">En 14 jours, votre GMAO est opérationnelle avec vos configurations métier prêtes à l\'emploi.</p>
+            </div>
           </div>
         </div>
       </section>

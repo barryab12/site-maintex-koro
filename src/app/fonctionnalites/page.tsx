@@ -6,32 +6,32 @@ import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import Link from 'next/link'
 import { 
-  CheckCircle2, TrendingUp, AlertTriangle, Activity, Gauge, PieChart, DollarSign, FolderKanban, BarChart3, ClipboardList, RefreshCw, Heart, Wallet, Package, Smartphone, Link2, Brain, Cpu, Calendar, Settings, Users, FileText, ShieldCheck, ArrowRight, Zap, Shield, Server, ChevronRight, Clock, Target, ArrowUpRight, TrendingDown
+  CheckCircle2, TrendingUp, Activity, Gauge, BarChart3, ClipboardList, RefreshCw, Heart, Wallet, Package, Smartphone, Link2, Brain, Cpu, Calendar, Settings, Users, FileText, ShieldCheck, ArrowRight, Zap, Shield, Server, ChevronRight, Clock, Target, Warehouse, ShoppingCart, DollarSign, FolderKanban
 } from 'lucide-react'
 import { TabNavigation, TabPanel } from '@/components/tab-navigation'
 import { MiniLineChartInline } from '@/components/photo-data-visual'
 
 export default function FonctionnalitesPage() {
-  const [activeTab, setActiveTab] = useState('core')
+  const [activeTab, setActiveTab] = useState('maintenance')
 
   const featureTabs = [
-    { id: 'core', label: 'Cœur du produit', icon: <ClipboardList className="w-4 h-4" /> },
-    { id: 'planning', label: 'Planification', icon: <Calendar className="w-4 h-4" /> },
-    { id: 'assets', label: 'Équipements', icon: <Settings className="w-4 h-4" /> },
-    { id: 'ai', label: 'IA & Analytics', icon: <Brain className="w-4 h-4" /> },
-    { id: 'mobile', label: 'Mobile', icon: <Smartphone className="w-4 h-4" /> },
-    { id: 'integrations', label: 'Intégrations', icon: <Link2 className="w-4 h-4" /> },
+    { id: 'maintenance', label: 'Gestion Maintenance', icon: <ClipboardList className="w-4 h-4" /> },
+    { id: 'actifs', label: 'Actifs & Opérations', icon: <Settings className="w-4 h-4" /> },
+    { id: 'outils', label: 'Outils & Plateforme', icon: <BarChart3 className="w-4 h-4" /> },
   ]
 
-  const coreFeatures = [
+  // GESTION DE LA MAINTENANCE
+  const maintenanceFeatures = [
     {
       id: 'ot',
-      title: 'Ordres de travail intelligents',
-      description: 'Créez, assignez et suivez chaque intervention en temps réel depuis le terrain.',
+      title: 'Ordres de travail',
+      subtitle: 'Créer, assigner et suivre chaque intervention',
+      description: 'Gérez l\'ensemble de vos interventions avec un système complet de création, assignation et suivi en temps réel.',
       features: [
-        'Création en 30 secondes par QR code ou saisie manuelle',
-        'Check-lists configurables par type d\'équipement',
-        'Photos, vidéos et documents attachés depuis mobile',
+        'Création rapide par QR code ou saisie manuelle',
+        'Assignation automatique selon compétences et disponibilité',
+        'Suivi en temps réel de l\'avancement',
+        'Photos, vidéos et documents attachés',
         'Signature électronique et validation numérique',
       ],
       icon: ClipboardList,
@@ -44,12 +44,14 @@ export default function FonctionnalitesPage() {
     {
       id: 'preventif',
       title: 'Maintenance préventive',
+      subtitle: 'Planifiez automatiquement vos opérations',
       description: 'Planifiez vos révisions récurrentes par fréquence calendaire, compteur horaire ou déclencheur métrique.',
       features: [
         'Planification par fréquence, compteur ou condition',
         'Génération automatique des ordres à l\'échéance',
         'Alertes configurables avant date limite',
         'Vue calendrier hebdo/mensuel par équipement',
+        'Gammes de maintenance pré-définies',
       ],
       icon: RefreshCw,
       image: '/images/machine-room.png',
@@ -59,14 +61,36 @@ export default function FonctionnalitesPage() {
       ]
     },
     {
+      id: 'predictif',
+      title: 'Maintenance prédictive',
+      subtitle: 'Anticipez les pannes et réduisez les arrêts',
+      description: 'Anticipez les pannes avant qu\'elles ne surviennent grâce à l\'intelligence artificielle et à l\'analyse prédictive.',
+      features: [
+        'Connexion boîtiers IoT M-Predictor',
+        'Analyse prédictive par machine learning',
+        'Détection d\'anomalies en temps réel',
+        'Recommandations d\'intervention automatiques',
+        'Alertes préventives sur signaux faibles',
+      ],
+      icon: Brain,
+      image: '/images/ai-predictive.png',
+      stats: [
+        { value: '-42%', label: 'Pannes imprévues', type: 'success' },
+        { value: '99.2%', label: 'Disponibilité', type: 'default' }
+      ],
+      highlight: true
+    },
+    {
       id: 'demandes',
-      title: 'Portail demandeurs',
+      title: 'Demandes d\'intervention',
+      subtitle: 'Centralisez les demandes via un portail dédié',
       description: 'Un portail simple pour que vos collaborateurs soumettent leurs demandes d\'intervention.',
       features: [
         'Portail web accessible à tous',
         'Formulaire de demande simplifié',
         'Qualification automatique par catégorie',
         'Suivi en temps réel pour le demandeur',
+        'Notifications et alertes intégrées',
       ],
       icon: Cpu,
       image: '/images/team-engineers.png',
@@ -74,54 +98,60 @@ export default function FonctionnalitesPage() {
         { value: '-45%', label: 'Délai traitement', type: 'success' },
         { value: '98%', label: 'Satisfaction', type: 'default' }
       ]
-    }
-  ]
-
-  const planningFeatures = [
+    },
     {
       id: 'planification',
-      title: 'Planification & calendrier intelligent',
-      description: 'Optimisez l\'organisation de vos équipes avec un calendrier drag & drop intelligent.',
+      title: 'Planification intelligente',
+      subtitle: 'Optimisez vos calendriers d\'intervention',
+      description: 'Optimisez l\'organisation de vos équipes avec un calendrier intelligent et des suggestions automatiques.',
       features: [
         'Vue calendrier jour/semaine/mois',
         'Drag & drop pour réorganiser',
         'Gestion des disponibilités et compétences',
+        'Suggestions d\'optimisation IA',
         'Synchro avec Outlook et Google Calendar',
       ],
       icon: Calendar,
-      image: '/images/team-engineers.png',
+      image: '/images/team-technicians.png',
       stats: [
-        { value: '+25%', label: 'Efficacité', type: 'success' }
+        { value: '+25%', label: 'Efficacité', type: 'success' },
+        { value: '4h', label: 'Gains/sem.', type: 'accent' }
       ]
     }
   ]
 
-  const assetFeatures = [
+  // GESTION DES ACTIFS & OPÉRATIONS
+  const actifsFeatures = [
     {
       id: 'equipements',
       title: 'Gestion des équipements',
+      subtitle: 'Suivez votre parc et son cycle de vie',
       description: 'Cartographiez votre parc, structurez vos nomenclatures, suivez la vie de chaque actif.',
       features: [
         'Arborescence équipements et nomenclature',
         'Historique de maintenance par équipement',
         'Documents attachés (manuels, schémas)',
         'QR code pour accès rapide terrain',
+        'Suivi du cycle de vie complet',
       ],
       icon: Settings,
       image: '/images/warehouse.png',
       stats: [
-        { value: '100%', label: 'Traçabilité', type: 'success' }
+        { value: '100%', label: 'Traçabilité', type: 'success' },
+        { value: '850+', label: 'Équipements', type: 'default' }
       ]
     },
     {
       id: 'vitaux',
-      title: 'Fonctions Vitales',
+      title: 'Fonctions vitales',
+      subtitle: 'Surveillez les équipements critiques',
       description: 'Surveillez la disponibilité de vos fonctions critiques et priorisez les interventions.',
       features: [
         'Identification des fonctions critiques',
         'Suivi de disponibilité en temps réel',
         'États : Disponible, Dégradée, Critique',
         'Priorisation par criticité fonctionnelle',
+        'Alertes automatiques sur seuils',
       ],
       icon: Heart,
       image: '/images/machine-room.png',
@@ -131,50 +161,95 @@ export default function FonctionnalitesPage() {
       highlight: true
     },
     {
+      id: 'ressources',
+      title: 'Gestion des ressources',
+      subtitle: 'Affectez techniciens et équipes efficacement',
+      description: 'Affectez vos techniciens et équipes de manière optimale selon les compétences et la charge de travail.',
+      features: [
+        'Matrice de compétences par technicien',
+        'Gestion des équipes et planning',
+        'Vue de la charge de travail',
+        'Affectation optimale automatique',
+        'Suivi des certifications et formations',
+      ],
+      icon: Users,
+      image: '/images/team-engineers.png',
+      stats: [
+        { value: '+20%', label: 'Productivité', type: 'success' },
+        { value: '12', label: 'Techniciens', type: 'default' }
+      ]
+    },
+    {
       id: 'stocks',
-      title: 'Gestion pièces & inventaire',
-      description: 'Stock en temps réel, seuils d\'alerte, liens fournisseurs.',
+      title: 'Stocks & inventaire',
+      subtitle: 'Suivez vos pièces en temps réel',
+      description: 'Stock en temps réel, seuils d\'alerte, liens fournisseurs pour optimiser vos approvisionnements.',
       features: [
         'Gestion multi-entrepôts et multi-sites',
         'Seuils d\'alerte et réapprovisionnement',
         'Historique consommation par machine',
         'Catalogue fournisseurs intégré',
+        'Inventaire en temps réel',
       ],
       icon: Package,
       image: '/images/warehouse.png',
       stats: [
-        { value: '-20%', label: 'Stock dormant', type: 'success' }
+        { value: '-20%', label: 'Stock dormant', type: 'success' },
+        { value: '2,400', label: 'Références', type: 'default' }
+      ]
+    },
+    {
+      id: 'achats',
+      title: 'Achats & fournisseurs',
+      subtitle: 'Gérez vos approvisionnements et commandes',
+      description: 'Gérez vos achats de pièces, suivez vos commandes et évaluez vos fournisseurs.',
+      features: [
+        'Gestion des demandes d\'achat',
+        'Suivi des commandes fournisseurs',
+        'Évaluation performance fournisseurs',
+        'Historique des prix et délais',
+        'Intégration comptabilité',
+      ],
+      icon: ShoppingCart,
+      image: '/images/warehouse.png',
+      stats: [
+        { value: '-15%', label: 'Coûts achat', type: 'success' }
       ]
     }
   ]
 
-  const aiFeatures = [
+  // OUTILS, ANALYSE & PLATEFORME
+  const outilsFeatures = [
     {
-      id: 'predictive',
-      title: 'Maintenance prédictive (IA/IoT)',
-      description: 'Anticipez les pannes avant qu\'elles ne surviennent grâce à l\'intelligence artificielle.',
+      id: 'dashboard',
+      title: 'Tableaux de bord & KPI',
+      subtitle: 'Visualisez vos performances en temps réel',
+      description: 'Visualisez en temps réel les performances de votre maintenance avec des KPIs personnalisables.',
       features: [
-        'Connexion boîtiers IoT M-Predictor',
-        'Analyse prédictive par machine learning',
-        'Détection d\'anomalies en temps réel',
-        'Recommandations d\'intervention automatiques',
+        'MTTR, MTBF, taux de pannes, taux préventif',
+        'Tableaux de bord par site, par équipe',
+        'Exports PDF automatiques',
+        'Intégration Power BI, Tableau via API',
+        'Alertes sur écarts de performance',
       ],
-      icon: Brain,
-      image: '/images/ai-predictive.png',
+      icon: BarChart3,
+      image: '/images/dashboard-hero.png',
       stats: [
-        { value: '-42%', label: 'Pannes imprévues', type: 'success' }
-      ],
-      highlight: true
+        { value: '15+', label: 'KPIs suivis', type: 'default' },
+        { value: '24/7', label: 'Monitoring', type: 'success' }
+      ]
     },
     {
       id: 'budget',
-      title: 'Projets & Budgets',
+      title: 'Projets & budgets',
+      subtitle: 'Suivez vos investissements et coûts',
       description: 'Pilotez vos projets d\'investissement et suivez vos budgets en temps réel.',
       features: [
         'Budgets par projet, division, centre de frais',
         'Suivi temps réel : En cours, Réalisé, Solde',
         'Alertes automatiques à 80% et dépassement',
         'Rapports et exports pour pilotage financier',
+        'Analyse des écarts budgétaires',
       ],
       icon: Wallet,
       image: '/images/team-engineers.png',
@@ -184,33 +259,16 @@ export default function FonctionnalitesPage() {
       highlight: true
     },
     {
-      id: 'dashboard',
-      title: 'Tableaux de bord & analytics',
-      description: 'Visualisez en temps réel les performances de votre maintenance.',
-      features: [
-        'MTTR, MTBF, taux de pannes, taux préventif',
-        'Tableaux de bord par site, par équipe',
-        'Exports PDF automatiques',
-        'Intégration Power BI, Tableau via API',
-      ],
-      icon: BarChart3,
-      image: '/images/dashboard-hero.png',
-      stats: [
-        { value: '15+', label: 'KPIs suivis', type: 'default' }
-      ]
-    }
-  ]
-
-  const mobileFeatures = [
-    {
       id: 'mobile',
-      title: 'Application mobile iOS & Android',
-      description: 'L\'appli Maintex fonctionne partout, même sans connexion.',
+      title: 'Application mobile',
+      subtitle: 'Intervenez partout, même hors ligne',
+      description: 'L\'appli Maintex fonctionne partout, même sans connexion internet.',
       features: [
         'Mode hors-ligne complet — sync automatique',
         'Scan QR code des équipements en 1 seconde',
         'Prise de photos et vidéos intégrée',
         'Notifications push configurables',
+        'Interface intuitive pour le terrain',
       ],
       icon: Smartphone,
       image: '/images/mobile-maintenance-app.png',
@@ -218,56 +276,42 @@ export default function FonctionnalitesPage() {
         { value: '24/7', label: 'Disponibilité', type: 'success' },
         { value: '100%', label: 'Hors-ligne', type: 'accent' }
       ]
-    }
-  ]
-
-  const integrationFeatures = [
-    {
-      id: 'documents',
-      title: 'Gestion documentaire',
-      description: 'Centralisez tous vos documents techniques : manuels, procédures, certificats.',
-      features: [
-        'Stockage centralisé et organisé',
-        'Versioning et historique des modifications',
-        'Recherche full-text performante',
-        'Contrôle d\'accès par rôle',
-      ],
-      icon: FileText,
-      image: '/images/document-management.png',
-      stats: [
-        { value: '-60%', label: 'Temps recherche', type: 'success' }
-      ]
-    },
-    {
-      id: 'conformite',
-      title: 'Conformité & traçabilité',
-      description: 'Garantissez la conformité réglementaire et tracez toutes vos opérations.',
-      features: [
-        'Gestion des contrôles réglementaires',
-        'Plans de vérification automatisés',
-        'Rapports d\'audit prêts à l\'emploi',
-        'Alertes échéances réglementaires',
-      ],
-      icon: ShieldCheck,
-      image: '/images/compliance-audit.png',
-      stats: [
-        { value: '100%', label: 'Conformité', type: 'success' }
-      ]
     },
     {
       id: 'integrations',
       title: 'Intégrations ERP & API',
-      description: 'Connectez Maintex à votre écosystème existant.',
+      subtitle: 'Connectez Maintex à votre SI',
+      description: 'Connectez Maintex à votre écosystème existant via nos connecteurs natifs et API REST.',
       features: [
         'Connecteurs natifs SAP, Sage, Divalto, Odoo',
         'API REST complète et documentée',
         'Webhooks temps réel pour événements métier',
         'SSO SAML 2.0 / Azure AD / Okta',
+        'Intégration SCADA et automates',
       ],
       icon: Link2,
       image: '/images/api-documentation.png',
       stats: [
         { value: '10+', label: 'Connecteurs', type: 'default' }
+      ]
+    },
+    {
+      id: 'documents',
+      title: 'Documents & conformité',
+      subtitle: 'Assurez traçabilité, audits et conformité',
+      description: 'Centralisez vos documents techniques et garantissez la conformité réglementaire de vos opérations.',
+      features: [
+        'Stockage centralisé et organisé',
+        'Versioning et historique des modifications',
+        'Gestion des contrôles réglementaires',
+        'Rapports d\'audit prêts à l\'emploi',
+        'Alertes échéances réglementaires',
+      ],
+      icon: FileText,
+      image: '/images/document-management.png',
+      stats: [
+        { value: '100%', label: 'Conformité', type: 'success' },
+        { value: '-60%', label: 'Temps recherche', type: 'success' }
       ]
     }
   ]
@@ -287,10 +331,12 @@ export default function FonctionnalitesPage() {
           </div>
           {feature.highlight && (
             <div className="inline-flex items-center gap-1 px-3 py-1 bg-[#F97316] text-white text-xs font-bold rounded-full mb-3">
-              Nouveau
+              <Zap className="w-3 h-3" />
+              Populaire
             </div>
           )}
-          <h3 className="text-xl font-bold text-[#0C0A09] mb-3">{feature.title}</h3>
+          <h3 className="text-xl font-bold text-[#0C0A09] mb-1">{feature.title}</h3>
+          <p className="text-sm text-[#F97316] font-medium mb-3">{feature.subtitle}</p>
           <p className="text-[#44403C] mb-6 leading-relaxed">{feature.description}</p>
           <ul className="space-y-3 mb-6">
             {feature.features.map((f: string, i: number) => (
@@ -360,7 +406,7 @@ export default function FonctionnalitesPage() {
                 <span className="text-[#1E3A8A]">pour le terrain.</span>
               </h1>
               <p className="text-lg text-[#44403C] max-w-xl mb-8">
-                Chaque module a été conçu avec et pour des équipes de maintenance. Pas de complexité inutile.
+                Chaque module a été conçu avec et pour des équipes de maintenance. Pas de complexité inutile — que de l'efficacité.
               </p>
               <div className="flex flex-wrap justify-center gap-4 lg:justify-start">
                 <Link 
@@ -461,89 +507,45 @@ export default function FonctionnalitesPage() {
       {/* Tab Content */}
       <section className="py-12 bg-[#FAFAF9]">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-10">
-          <TabPanel isActive={activeTab === 'core'}>
+          <TabPanel isActive={activeTab === 'maintenance'}>
+            <div className="mb-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#1E3A8A]/10 rounded-full mb-4">
+                <ClipboardList className="w-4 h-4 text-[#1E3A8A]" />
+                <span className="text-sm font-semibold text-[#1E3A8A]">Gestion de la maintenance</span>
+              </div>
+              <h2 className="text-2xl font-bold text-[#0C0A09] mb-2">Gérez vos interventions et opérations terrain</h2>
+              <p className="text-[#64748b]">Pilotez l'ensemble de vos opérations de maintenance depuis une interface unique.</p>
+            </div>
             <div className="space-y-6">
-              {coreFeatures.map(renderFeatureCard)}
+              {maintenanceFeatures.map(renderFeatureCard)}
             </div>
           </TabPanel>
 
-          <TabPanel isActive={activeTab === 'planning'}>
+          <TabPanel isActive={activeTab === 'actifs'}>
+            <div className="mb-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#1E3A8A]/10 rounded-full mb-4">
+                <Settings className="w-4 h-4 text-[#1E3A8A]" />
+                <span className="text-sm font-semibold text-[#1E3A8A]">Gestion des actifs & opérations</span>
+              </div>
+              <h2 className="text-2xl font-bold text-[#0C0A09] mb-2">Maîtrisez vos équipements, ressources et approvisionnements</h2>
+              <p className="text-[#64748b]">Optimisez la gestion de votre parc, vos ressources et vos stocks.</p>
+            </div>
             <div className="space-y-6">
-              {planningFeatures.map(renderFeatureCard)}
+              {actifsFeatures.map(renderFeatureCard)}
             </div>
           </TabPanel>
 
-          <TabPanel isActive={activeTab === 'assets'}>
-            <div className="space-y-6">
-              {assetFeatures.map(renderFeatureCard)}
+          <TabPanel isActive={activeTab === 'outils'}>
+            <div className="mb-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#1E3A8A]/10 rounded-full mb-4">
+                <BarChart3 className="w-4 h-4 text-[#1E3A8A]" />
+                <span className="text-sm font-semibold text-[#1E3A8A]">Outils, analyse & plateforme</span>
+              </div>
+              <h2 className="text-2xl font-bold text-[#0C0A09] mb-2">Pilotez, analysez et connectez votre maintenance</h2>
+              <p className="text-[#64748b]">Des outils puissants pour piloter vos performances et connecter votre SI.</p>
             </div>
-          </TabPanel>
-
-          <TabPanel isActive={activeTab === 'ai'}>
             <div className="space-y-6">
-              {aiFeatures.map(renderFeatureCard)}
-            </div>
-          </TabPanel>
-
-          <TabPanel isActive={activeTab === 'mobile'}>
-            <div className="space-y-6">
-              {mobileFeatures.map((feature) => (
-                <div key={feature.id} className="bg-white rounded-2xl border border-gray-200 p-6 lg:p-8 hover:shadow-xl transition-all duration-300">
-                  <div className="grid lg:grid-cols-2 gap-8 items-center">
-                    <div>
-                      <div className="w-14 h-14 rounded-xl bg-[#1E3A8A]/10 flex items-center justify-center mb-4">
-                        <feature.icon className="w-7 h-7 text-[#1E3A8A]" />
-                      </div>
-                      <h3 className="text-xl font-bold text-[#0C0A09] mb-3">{feature.title}</h3>
-                      <p className="text-[#44403C] mb-6 leading-relaxed">{feature.description}</p>
-                      <ul className="space-y-3 mb-6">
-                        {feature.features.map((f: string, i: number) => (
-                          <li key={i} className="flex items-start gap-3 text-sm text-[#44403C]">
-                            <CheckCircle2 className="w-4 h-4 text-[#059669] flex-shrink-0 mt-0.5" />
-                            <span>{f}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      <div className="flex gap-3">
-                        <Link
-                          href="/contact"
-                          className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#F97316] text-white text-sm font-semibold rounded-xl hover:bg-[#EA580C] transition-all shadow-lg shadow-[#F97316]/25 no-underline"
-                        >
-                          Demander une démo <ChevronRight className="w-4 h-4" />
-                        </Link>
-                      </div>
-                    </div>
-                    <div className="relative">
-                      <div className="relative rounded-2xl overflow-hidden shadow-lg mx-auto w-48">
-                        <Image
-                          src={feature.image}
-                          alt={feature.title}
-                          width={300}
-                          height={500}
-                          className="object-cover"
-                        />
-                      </div>
-                      {feature.stats && feature.stats.map((stat: any, index: number) => (
-                        <div 
-                          key={index}
-                          className={`absolute ${index === 0 ? '-top-3 -right-8' : 'bottom-8 -left-8'} bg-white rounded-xl p-3 shadow-lg`}
-                        >
-                          <div className={`text-xl font-bold ${stat.type === 'success' ? 'text-[#059669]' : stat.type === 'accent' ? 'text-[#F97316]' : 'text-[#0C0A09]'}`}>
-                            {stat.value}
-                          </div>
-                          <div className="text-xs text-gray-500">{stat.label}</div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </TabPanel>
-
-          <TabPanel isActive={activeTab === 'integrations'}>
-            <div className="space-y-6">
-              {integrationFeatures.map(renderFeatureCard)}
+              {outilsFeatures.map(renderFeatureCard)}
             </div>
           </TabPanel>
         </div>
