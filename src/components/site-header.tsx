@@ -154,6 +154,7 @@ export function SiteHeader() {
         }
       ]
     },
+    { label: 'IA', href: '/intelligence-artificielle' },
     { label: 'Tarifs', href: '/tarifs' },
     {
       label: 'Ressources',

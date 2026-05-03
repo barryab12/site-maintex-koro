@@ -387,3 +387,78 @@ Create modern data visualization components inspired by reference images showing
    - Added 'use client' to page.tsx for client-side features
    - All components use Tailwind CSS with consistent color scheme
    - ESLint passed with no errors
+
+---
+## Task ID: ai-features-page - main-agent
+### Work Task
+Create a comprehensive AI features page with 18 AI functionalities as specified in the prompt, including:
+- Page pilier for Intelligence Artificielle
+- Hub of 18 AI functionalities organized by categories
+- Comparative table with competitors
+- Photo-data visuals with floating stats
+
+### Work Summary
+
+1. **Created `/src/app/intelligence-artificielle/page.tsx`** with:
+   - Hero section with photo and floating data cards
+   - Stats bandeau with market data (65% adoption, 3-5x cost difference, 12 Mds$ market)
+   - 4 differentiation pillars (Souveraineté, Multi-moteur IA, Human-in-the-Loop, Intégration native)
+   - 18 AI functionalities organized in 6 categories:
+     - Productivité au quotidien (3): Chatbot, Recherche NL, Amélioration Texte
+     - Diagnostic & Résolution (4): Diagnostic Intelligent, Suggestion Technicien, Checklists IA, Extraction PDF
+     - Pilotage & Décision (4): Score Santé, Score Qualité, Conseil Cycle de Vie, Rapports IA
+     - Prédictif & Anticipation (4): Détection Anomalies, BT Prédictifs, Prédiction Stock, Analyse Fournisseurs
+     - Mobile & Terrain (2): Asset Snap, Photo-to-Part
+     - Administration & ROI (1): Dashboard & Administration IA
+   - Category filter buttons for easy navigation
+   - Photo with chart section for Diagnostic Intelligent
+   - Profile gains section (Techniciens, Responsables, Direction)
+   - Comparative table with MaintainX, UpKeep, Limble
+   - CTA band with demo request
+
+2. **Updated Navigation** (`/src/components/site-header.tsx`):
+   - Added "IA" menu item linking to /intelligence-artificielle
+   - Positioned between "Secteurs" and "Tarifs"
+
+3. **Design Features**:
+   - Primary color: #1E3A8A (Indigo 800)
+   - Accent color: #F97316 (Orange)
+   - Photo-data visuals with floating stat cards
+   - MiniLineChartInline for trend visualization
+   - Category filter pills with active state
+   - Comparative table with check/cross indicators
+   - Responsive mobile-first design
+
+---
+## Task ID: photo-data-visuals-update - main-agent
+### Work Task
+Update all remaining pages with photo-data visuals in different styles (photos, form screenshots, field photos, machines and technicians in action, production scenes).
+
+### Work Summary
+
+1. **Updated Contact Page** (`/src/app/contact/page.tsx`):
+   - New hero section with photo and floating stats
+   - Stats bandeau with trust indicators
+   - MiniLineChartInline for project trends
+   - Locations section with photo and floating cards
+   - Orange CTAs and modern design
+
+2. **Updated A-Propos Page** (`/src/app/a-propos/page.tsx`):
+   - Enhanced hero section with photo and floating stats
+   - Team photo with performance metrics overlay
+   - Orange accent colors for buttons
+   - Modern card-based design
+
+3. **Design Patterns Applied**:
+   - Floating cards with metrics and trends
+   - Mini charts for data visualization
+   - Consistent color scheme (#1E3A8A primary, #F97316 accent)
+   - Modern rounded corners and shadows
+   - Responsive design for all screen sizes
+
+4. **Key Visual Elements**:
+   - Team photos with floating stat badges
+   - Business meeting photos with ROI indicators
+   - Company headquarters with team size metrics
+   - Chart cards with trend lines
+   - Location photos with country badges

@@ -4,7 +4,8 @@ import Image from 'next/image'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import Link from 'next/link'
-import { CheckCircle2, Users, Target, Lightbulb, Shield, Award, BookOpen, Settings, Wrench, Globe, MapPin, Phone, Mail, Building2, Briefcase, TrendingUp, Layers, Cpu, Factory, Pickaxe, Zap, Landmark, HardHat, Wheat, Truck, Hotel, Clock, Heart, Lock, FileText, Newspaper, Rocket, Users2, ArrowRight, ArrowUpRight } from 'lucide-react'
+import { CheckCircle2, Users, Target, Lightbulb, Shield, Award, BookOpen, Settings, Wrench, Globe, MapPin, Phone, Mail, Building2, Briefcase, TrendingUp, Layers, Cpu, Factory, Pickaxe, Zap, Landmark, HardHat, Wheat, Truck, Hotel, Clock, Heart, Lock, FileText, Newspaper, Rocket, Users2, ArrowRight, ArrowUpRight, Activity, Gauge } from 'lucide-react'
+import { MiniLineChartInline } from '@/components/photo-data-visual'
 
 export default function AProposPage() {
   const stats = [
@@ -132,40 +133,69 @@ export default function AProposPage() {
       <section id="qui-sommes-nous" className="relative min-h-[60vh] flex items-center pt-[70px] pb-16 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#e2e8f0_1px,transparent_0)] bg-[size:40px_40px] opacity-50" />
 
-        <div className="relative z-10 max-w-[1240px] mx-auto px-6 lg:px-10">
+        <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0A0A8A]/10 border border-[#0A0A8A]/20 text-[#0A0A8A] mb-6">
-                <Building2 className="w-4 h-4" />
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F97316]/10 border border-[#F97316]/20 text-[#1E3A8A] mb-6">
+                <Building2 className="w-4 h-4 text-[#F97316]" />
                 <span className="text-xs font-medium">Cabinet de conseil & intégration</span>
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 leading-[1.06] tracking-tight mb-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0C0A09] leading-tight tracking-tight mb-6">
                 Votre partenaire en<br />
-                <span className="text-[#0A0A8A]">
+                <span className="text-[#1E3A8A]">
                   excellence opérationnelle
                 </span>
               </h1>
-              <p className="text-lg text-gray-600 font-normal mb-8 max-w-lg leading-relaxed">
+              <p className="text-lg text-[#44403C] font-normal mb-8 max-w-lg leading-relaxed">
                 BBC & Partners est un cabinet de conseil, de formation et d\'intégration de solutions technologiques, spécialisé dans l\'excellence opérationnelle.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 text-white bg-[#0A0A8A] rounded-lg hover:bg-[#0A0A8A]/90 transition-all no-underline">
-                  Nous contacter →
+                <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3.5 text-white bg-[#F97316] rounded-xl hover:bg-[#EA580C] transition-all shadow-lg shadow-[#F97316]/25 no-underline">
+                  Nous contacter <ArrowRight className="w-4 h-4" />
                 </Link>
-                <Link href="/fonctionnalites" className="inline-flex items-center gap-2 px-6 py-3 text-gray-600 border border-gray-300 rounded-lg hover:border-[#0A0A8A] hover:text-[#0A0A8A] transition-all no-underline">
+                <Link href="/fonctionnalites" className="inline-flex items-center gap-2 px-6 py-3.5 text-[#1E3A8A] border-2 border-[#1E3A8A]/20 rounded-xl hover:border-[#1E3A8A] transition-all no-underline">
                   Découvrir Maintex
                 </Link>
               </div>
             </div>
 
-            <div className="hidden lg:block">
-              <div className="grid grid-cols-2 gap-4">
-                {stats.map((stat, i) => (
-                  <div key={i} className="bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-sm">
-                    <div className="text-4xl font-black text-[#0A0A8A] mb-2">{stat.value}</div>
-                    <div className="text-sm text-gray-500">{stat.label}</div>
+            {/* Hero Photo with Floating Stats */}
+            <div className="hidden lg:block relative">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <img src="/images/team-engineers.png" alt="BBC & Partners" className="w-full h-auto" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+              </div>
+              
+              {/* Floating Cards */}
+              <div className="absolute -top-3 left-4 flex items-center gap-2 px-4 py-2.5 bg-[#F97316] text-white rounded-full shadow-lg">
+                <TrendingUp className="w-4 h-4" />
+                <span className="text-sm font-semibold">+15 ans</span>
+              </div>
+              
+              <div className="absolute top-16 right-4 bg-white rounded-xl p-4 shadow-lg">
+                <div className="flex items-center gap-2 mb-1">
+                  <Gauge className="w-4 h-4 text-[#1E3A8A]" />
+                  <span className="text-xs text-gray-500">Performance</span>
+                </div>
+                <div className="text-2xl font-bold text-[#0C0A09]">+30%</div>
+              </div>
+              
+              <div className="absolute bottom-4 left-4 bg-white rounded-xl p-4 shadow-lg">
+                <div className="flex items-center gap-2 mb-1">
+                  <Users className="w-4 h-4 text-[#059669]" />
+                  <span className="text-xs text-gray-500">Clients</span>
+                </div>
+                <div className="text-2xl font-bold text-[#0C0A09]">350+</div>
+              </div>
+              
+              <div className="absolute bottom-4 right-4 bg-[#1E3A8A] text-white rounded-xl p-3 shadow-lg">
+                <div className="flex items-center gap-2">
+                  <Globe className="w-4 h-4" />
+                  <div>
+                    <div className="text-lg font-bold">25</div>
+                    <div className="text-xs text-white/80">Pays</div>
                   </div>
-                ))}
+                </div>
               </div>
             </div>
           </div>
