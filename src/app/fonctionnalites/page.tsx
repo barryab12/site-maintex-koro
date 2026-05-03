@@ -178,7 +178,7 @@ export default function FonctionnalitesPage() {
         'Alertes automatiques sur seuils',
       ],
       icon: Heart,
-      image: '/images/machine-room.png',
+      image: '/images/vital-functions.png',
       stats: [
         { value: '99.2%', label: 'Disponibilité', type: 'success' }
       ],
@@ -197,7 +197,7 @@ export default function FonctionnalitesPage() {
         'Suivi des certifications et formations',
       ],
       icon: Users,
-      image: '/images/team-engineers.png',
+      image: '/images/resource-management.png',
       stats: [
         { value: '+20%', label: 'Productivité', type: 'success' },
         { value: '12', label: 'Techniciens', type: 'default' }
@@ -216,7 +216,7 @@ export default function FonctionnalitesPage() {
         'Inventaire en temps réel',
       ],
       icon: Package,
-      image: '/images/warehouse.png',
+      image: '/images/inventory-stock.png',
       stats: [
         { value: '-20%', label: 'Stock dormant', type: 'success' },
         { value: '2,400', label: 'Références', type: 'default' }
@@ -235,7 +235,7 @@ export default function FonctionnalitesPage() {
         'Intégration comptabilité',
       ],
       icon: ShoppingCart,
-      image: '/images/warehouse.png',
+      image: '/images/purchasing-suppliers.png',
       stats: [
         { value: '-15%', label: 'Coûts achat', type: 'success' }
       ]
@@ -276,7 +276,7 @@ export default function FonctionnalitesPage() {
         'Analyse des écarts budgétaires',
       ],
       icon: Wallet,
-      image: '/images/team-engineers.png',
+      image: '/images/budget-projects.png',
       stats: [
         { value: '4 mois', label: 'ROI moyen', type: 'accent' }
       ],
