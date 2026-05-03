@@ -419,4 +419,88 @@ export function MachineRoomVisual({ imageSrc, imageAlt, className = '' }: Machin
   )
 }
 
+// BTP Team Visual - Équipe techniciens sur chantier BTP
+interface BtpTeamVisualProps {
+  imageSrc: string
+  imageAlt: string
+  className?: string
+}
+
+export function BtpTeamVisual({ imageSrc, imageAlt, className = '' }: BtpTeamVisualProps) {
+  const performanceData = [78, 82, 85, 88, 92, 95, 89, 94, 96, 98, 97, 99]
+  const chantierData = [45, 52, 58, 62, 68, 72, 75, 80, 85, 88, 92, 95]
+
+  return (
+    <div className={`relative ${className}`}>
+      {/* Main Photo */}
+      <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          width={900}
+          height={500}
+          className="object-cover w-full"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+      </div>
+
+      {/* Top Left - BTP Badge */}
+      <div className="absolute -top-2 left-4 flex items-center gap-2 px-4 py-2.5 bg-[#F97316] text-white rounded-full shadow-lg">
+        <Factory className="w-4 h-4" />
+        <span className="text-sm font-semibold">Chantier BTP</span>
+      </div>
+
+      {/* Top Right - Disponibilité Card */}
+      <div className="absolute top-4 right-4 bg-white rounded-xl p-4 shadow-lg w-40">
+        <div className="flex items-center gap-2 mb-1">
+          <Gauge className="w-4 h-4 text-[#059669]" />
+          <span className="text-xs text-gray-500">Disponibilité</span>
+        </div>
+        <div className="text-2xl font-bold text-[#0C0A09]">99.5%</div>
+        <div className="flex items-center gap-1 mt-1">
+          <ArrowUpRight className="w-3 h-3 text-[#059669]" />
+          <span className="text-xs font-semibold text-[#059669]">+3.2%</span>
+        </div>
+      </div>
+
+      {/* Middle Left - MTTR Card */}
+      <div className="absolute left-4 top-1/3 bg-white rounded-xl p-4 shadow-lg w-36">
+        <div className="flex items-center gap-2 mb-1">
+          <Clock className="w-4 h-4 text-[#F97316]" />
+          <span className="text-xs text-gray-500">MTTR</span>
+        </div>
+        <div className="text-xl font-bold text-[#0C0A09]">1.8h</div>
+        <div className="text-xs text-[#059669]">-40% vs avant</div>
+      </div>
+
+      {/* Bottom Left - Chart Card */}
+      <div className="absolute bottom-4 left-4 bg-white rounded-xl p-4 shadow-lg w-48">
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-xs text-gray-500">Interventions</span>
+          <span className="text-xs font-semibold text-[#059669] bg-[#059669]/10 px-2 py-0.5 rounded-full">+45%</span>
+        </div>
+        <div className="text-lg font-bold text-[#0C0A09] mb-2">89/mois</div>
+        <MiniLineChartInline data={chantierData} color="#F97316" height={35} />
+      </div>
+
+      {/* Bottom Right - Stats Badge */}
+      <div className="absolute bottom-4 right-4 bg-[#1E3A8A] text-white rounded-xl p-4 shadow-lg">
+        <div className="flex items-center gap-2 mb-1">
+          <Target className="w-4 h-4 text-[#F97316]" />
+          <span className="text-xs text-white/80">First Time Fix</span>
+        </div>
+        <div className="text-2xl font-bold">92%</div>
+        <div className="text-xs text-[#F97316]">+28 pts</div>
+      </div>
+
+      {/* Middle Right - Success Badge */}
+      <div className="absolute right-4 top-1/2 flex items-center gap-2 px-4 py-2 bg-[#059669] text-white rounded-full shadow-lg">
+        <CheckCircle2 className="w-4 h-4" />
+        <span className="text-sm font-semibold">Zéro panne</span>
+      </div>
+    </div>
+  )
+}
+
 // Named exports only - use import { ComponentName } from '@/components/photo-data-visual'

@@ -13,7 +13,7 @@ import {
 } from 'lucide-react'
 import { 
   HeroPhotoVisual, TeamPhotoVisual, MachineRoomVisual,
-  MiniLineChartInline
+  BtpTeamVisual, MiniLineChartInline
 } from '@/components/photo-data-visual'
 
 export default function HomePage() {
@@ -146,8 +146,8 @@ export default function HomePage() {
             {/* Right - Photo with Floating Data */}
             <div className="order-1 lg:order-2 hidden lg:block">
               <HeroPhotoVisual 
-                imageSrc="/images/hero-technician.png"
-                imageAlt="Technicien maintenance avec tablette MAINTEX"
+                imageSrc="/images/hero-technician-happy.png"
+                imageAlt="Technicien maintenance heureux avec tablette sur ligne de production"
                 className="ml-8"
               />
             </div>
@@ -261,7 +261,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Machine Room Section */}
+      {/* BTP Team Section */}
       <section className="py-20 bg-white">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
           <div className="text-center mb-12">
@@ -279,9 +279,9 @@ export default function HomePage() {
           </div>
 
           <div className="mb-12">
-            <MachineRoomVisual 
-              imageSrc="/images/machine-room.png"
-              imageAlt="Salle machine industrielle avec équipements"
+            <BtpTeamVisual 
+              imageSrc="/images/team-btp-chantier.png"
+              imageAlt="Équipe de techniciens sur chantier BTP avec tablettes"
               className="max-w-4xl mx-auto"
             />
           </div>
