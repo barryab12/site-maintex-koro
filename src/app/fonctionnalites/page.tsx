@@ -6,10 +6,34 @@ import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import Link from 'next/link'
 import { 
-  CheckCircle2, TrendingUp, Activity, Gauge, BarChart3, ClipboardList, RefreshCw, Heart, Wallet, Package, Smartphone, Link2, Brain, Cpu, Calendar, Settings, Users, FileText, ShieldCheck, ArrowRight, Zap, Shield, Server, ChevronRight, Clock, Target, Warehouse, ShoppingCart, DollarSign, FolderKanban
+  CheckCircle2, TrendingUp, Activity, Gauge, BarChart3, ClipboardList, RefreshCw, Heart, Wallet, Package, Smartphone, Link2, Brain, Cpu, Calendar, Settings, Users, FileText, ShieldCheck, ArrowRight, Zap, Shield, Server, ChevronRight, Clock, Target, Warehouse, ShoppingCart, DollarSign, FolderKanban, ArrowUpRight, TrendingDown, Wrench
 } from 'lucide-react'
 import { TabNavigation, TabPanel } from '@/components/tab-navigation'
 import { MiniLineChartInline } from '@/components/photo-data-visual'
+import { ZeroBadge, KpiCard, maintenanceKPIs } from '@/components/kpi-visual'
+
+// Mini Bar Chart Component
+function MiniBarChartInline({ data, color = '#F97316', height = 40, className = '' }: { data: number[], color?: string, height?: number, className?: string }) {
+  const max = Math.max(...data)
+  const barWidth = 100 / data.length
+  
+  return (
+    <div className={`flex items-end gap-1 ${className}`} style={{ height }}>
+      {data.map((value, index) => (
+        <div
+          key={index}
+          className="rounded-t transition-all duration-300"
+          style={{
+            width: `${barWidth - 2}%`,
+            height: `${(value / max) * 100}%`,
+            backgroundColor: color,
+            opacity: 0.6 + (value / max) * 0.4
+          }}
+        />
+      ))}
+    </div>
+  )
+}
 
 export default function FonctionnalitesPage() {
   const [activeTab, setActiveTab] = useState('maintenance')
@@ -318,81 +342,185 @@ export default function FonctionnalitesPage() {
 
   const performanceData = [85, 88, 92, 95, 97, 98, 96, 99, 98, 99, 99, 99]
 
-  const renderFeatureCard = (feature: any) => (
-    <div 
-      key={feature.id} 
-      id={feature.id}
-      className={`bg-white rounded-2xl border ${feature.highlight ? 'border-[#F97316] shadow-lg shadow-[#F97316]/10' : 'border-gray-200'} p-6 lg:p-8 hover:shadow-xl transition-all duration-300 scroll-mt-40`}
-    >
-      <div className="grid lg:grid-cols-2 gap-8 items-center">
-        {/* Left - Content */}
-        <div>
-          <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-4 ${feature.highlight ? 'bg-[#F97316]/10' : 'bg-[#1E3A8A]/10'}`}>
-            <feature.icon className={`w-7 h-7 ${feature.highlight ? 'text-[#F97316]' : 'text-[#1E3A8A]'}`} />
-          </div>
-          {feature.highlight && (
-            <div className="inline-flex items-center gap-1 px-3 py-1 bg-[#F97316] text-white text-xs font-bold rounded-full mb-3">
-              <Zap className="w-3 h-3" />
-              Populaire
+  // KPI data for features
+  const featureKpiData: Record<string, { chartData: number[], barData: number[], kpis: { name: string, value: string, trend?: string }[] }> = {
+    'ot': {
+      chartData: [45, 62, 78, 95, 110, 125, 118, 132, 145, 138, 152, 156],
+      barData: [12, 8, 5, 3, 2],
+      kpis: [{ name: 'OT/mois', value: '156' }, { name: 'Délai moyen', value: '2.1j', trend: '-30%' }]
+    },
+    'preventif': {
+      chartData: [55, 58, 62, 68, 72, 75, 78, 82, 85, 88, 90, 92],
+      barData: [25, 18, 12, 8, 5],
+      kpis: [{ name: 'Taux préventif', value: '76%' }, { name: 'Planifiées', value: '+45%' }]
+    },
+    'predictif': {
+      chartData: [98, 98.5, 99, 99.2, 99.5, 99.6, 99.7, 99.8, 99.9, 99.9, 99.9, 99.9],
+      barData: [35, 22, 12, 6, 2],
+      kpis: [{ name: 'Disponibilité', value: '99.9%' }, { name: 'Pannes évitées', value: '42%' }]
+    },
+    'demandes': {
+      chartData: [72, 78, 85, 88, 92, 94, 95, 96, 97, 98, 98, 99],
+      barData: [45, 32, 18, 8, 4],
+      kpis: [{ name: 'Satisfaction', value: '98%' }, { name: 'Délai traitement', value: '-45%' }]
+    },
+    'planification': {
+      chartData: [65, 72, 78, 82, 85, 88, 90, 92, 94, 95, 96, 97],
+      barData: [20, 15, 10, 5, 3],
+      kpis: [{ name: 'Efficacité', value: '+25%' }, { name: 'Conflits', value: '-80%' }]
+    },
+    'equipements': {
+      chartData: [850, 860, 870, 880, 890, 900, 910, 920, 930, 940, 950, 960],
+      barData: [100, 80, 60, 40, 20],
+      kpis: [{ name: 'Équipements', value: '850+' }, { name: 'Traçabilité', value: '100%' }]
+    },
+    'vitaux': {
+      chartData: [95, 96, 97, 98, 98.5, 99, 99.2, 99.5, 99.6, 99.7, 99.8, 99.9],
+      barData: [5, 3, 1, 0, 0],
+      kpis: [{ name: 'Disponibilité', value: '99.2%' }, { name: 'Critiques', value: '0 panne' }]
+    },
+    'ressources': {
+      chartData: [75, 78, 82, 85, 88, 90, 91, 92, 93, 94, 95, 96],
+      barData: [30, 25, 20, 15, 10],
+      kpis: [{ name: 'Productivité', value: '+20%' }, { name: 'Techniciens', value: '12' }]
+    },
+    'stocks': {
+      chartData: [2400, 2350, 2300, 2250, 2200, 2150, 2100, 2050, 2000, 1950, 1900, 1850],
+      barData: [40, 30, 20, 10, 5],
+      kpis: [{ name: 'Références', value: '2,400' }, { name: 'Stock dormant', value: '-20%' }]
+    },
+    'achats': {
+      chartData: [85, 87, 89, 90, 91, 92, 93, 94, 95, 95, 96, 96],
+      barData: [25, 20, 15, 10, 5],
+      kpis: [{ name: 'Coûts achat', value: '-15%' }, { name: 'Délai', value: '-25%' }]
+    },
+    'dashboard': {
+      chartData: [15, 18, 22, 28, 35, 42, 48, 55, 62, 68, 75, 82],
+      barData: [50, 40, 30, 20, 15],
+      kpis: [{ name: 'KPIs suivis', value: '15+' }, { name: 'Monitoring', value: '24/7' }]
+    },
+    'budget': {
+      chartData: [80, 82, 85, 87, 90, 92, 94, 96, 98, 99, 100, 100],
+      barData: [20, 15, 10, 5, 2],
+      kpis: [{ name: 'ROI moyen', value: '4 mois' }, { name: 'Écarts', value: '-60%' }]
+    },
+    'mobile': {
+      chartData: [92, 94, 95, 96, 97, 98, 98, 99, 99, 99, 99, 99],
+      barData: [85, 90, 94, 97, 99],
+      kpis: [{ name: 'Hors-ligne', value: '100%' }, { name: 'Adoption', value: '98%' }]
+    },
+    'integrations': {
+      chartData: [5, 6, 7, 8, 9, 10, 10, 11, 11, 12, 12, 13],
+      barData: [95, 92, 88, 85, 82],
+      kpis: [{ name: 'Connecteurs', value: '10+' }, { name: 'API uptime', value: '99.9%' }]
+    },
+    'documents': {
+      chartData: [60, 65, 70, 75, 80, 85, 88, 90, 92, 94, 96, 98],
+      barData: [40, 30, 20, 10, 5],
+      kpis: [{ name: 'Conformité', value: '100%' }, { name: 'Recherche', value: '-60%' }]
+    }
+  }
+
+  const renderFeatureCard = (feature: any) => {
+    const kpiData = featureKpiData[feature.id] || { chartData: performanceData, barData: [50, 40, 30, 20, 10], kpis: feature.stats || [] }
+    
+    return (
+      <div 
+        key={feature.id} 
+        id={feature.id}
+        className={`bg-white rounded-2xl border ${feature.highlight ? 'border-[#F97316] shadow-lg shadow-[#F97316]/10' : 'border-gray-200'} p-6 lg:p-8 hover:shadow-xl transition-all duration-300 scroll-mt-40`}
+      >
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
+          {/* Left - Content */}
+          <div>
+            <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-4 ${feature.highlight ? 'bg-[#F97316]/10' : 'bg-[#1E3A8A]/10'}`}>
+              <feature.icon className={`w-7 h-7 ${feature.highlight ? 'text-[#F97316]' : 'text-[#1E3A8A]'}`} />
             </div>
-          )}
-          <h3 className="text-xl font-bold text-[#0C0A09] mb-1">{feature.title}</h3>
-          <p className="text-sm text-[#F97316] font-medium mb-3">{feature.subtitle}</p>
-          <p className="text-[#44403C] mb-6 leading-relaxed">{feature.description}</p>
-          <ul className="space-y-3 mb-6">
-            {feature.features.map((f: string, i: number) => (
-              <li key={i} className="flex items-start gap-3 text-sm text-[#44403C]">
-                <CheckCircle2 className="w-4 h-4 text-[#059669] flex-shrink-0 mt-0.5" />
-                <span>{f}</span>
-              </li>
-            ))}
-          </ul>
-          <div className="flex gap-3">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#F97316] text-white text-sm font-semibold rounded-xl hover:bg-[#EA580C] transition-all shadow-lg shadow-[#F97316]/25 no-underline"
-            >
-              Demander une démo <ChevronRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-        
-        {/* Right - Photo with Stats */}
-        <div className="relative">
-          <div className="relative rounded-2xl overflow-hidden shadow-lg">
-            <Image
-              src={feature.image}
-              alt={feature.title}
-              width={450}
-              height={300}
-              className="object-cover w-full"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+            {feature.highlight && (
+              <div className="inline-flex items-center gap-1 px-3 py-1 bg-[#F97316] text-white text-xs font-bold rounded-full mb-3">
+                <Zap className="w-3 h-3" />
+                Populaire
+              </div>
+            )}
+            <h3 className="text-xl font-bold text-[#0C0A09] mb-1">{feature.title}</h3>
+            <p className="text-sm text-[#F97316] font-medium mb-3">{feature.subtitle}</p>
+            <p className="text-[#44403C] mb-6 leading-relaxed">{feature.description}</p>
+            <ul className="space-y-3 mb-6">
+              {feature.features.map((f: string, i: number) => (
+                <li key={i} className="flex items-start gap-3 text-sm text-[#44403C]">
+                  <CheckCircle2 className="w-4 h-4 text-[#059669] flex-shrink-0 mt-0.5" />
+                  <span>{f}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="flex gap-3">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#F97316] text-white text-sm font-semibold rounded-xl hover:bg-[#EA580C] transition-all shadow-lg shadow-[#F97316]/25 no-underline"
+              >
+                Demander une démo <ChevronRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
           
-          {/* Floating Stats Cards */}
-          {feature.stats && feature.stats.map((stat: any, index: number) => (
-            <div 
-              key={index}
-              className={`absolute ${index === 0 ? '-top-3 -right-3' : 'bottom-4 left-4'} bg-white rounded-xl p-3 shadow-lg`}
-            >
-              <div className={`text-xl font-bold ${stat.type === 'success' ? 'text-[#059669]' : stat.type === 'accent' ? 'text-[#F97316]' : 'text-[#0C0A09]'}`}>
-                {stat.value}
-              </div>
-              <div className="text-xs text-gray-500">{stat.label}</div>
+          {/* Right - Photo with KPIs and Graphs */}
+          <div className="relative">
+            <div className="relative rounded-2xl overflow-hidden shadow-lg">
+              <Image
+                src={feature.image}
+                alt={feature.title}
+                width={450}
+                height={280}
+                className="object-cover w-full"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
             </div>
-          ))}
+            
+            {/* Top Right - Line Chart Card */}
+            <div className="absolute -top-2 -right-2 bg-white rounded-xl p-3 shadow-lg w-36">
+              <div className="text-xs text-gray-500 mb-1">Évolution</div>
+              <MiniLineChartInline data={kpiData.chartData} color={feature.highlight ? '#F97316' : '#1E3A8A'} height={30} />
+            </div>
+            
+            {/* Bottom Left - KPI Card with Bar Chart */}
+            <div className="absolute -bottom-2 left-4 bg-white rounded-xl p-3 shadow-lg w-40">
+              <div className="flex items-center gap-2 mb-2">
+                {kpiData.kpis[0] && (
+                  <div>
+                    <div className="text-lg font-bold text-[#0C0A09]">{kpiData.kpis[0].value}</div>
+                    <div className="text-xs text-gray-500">{kpiData.kpis[0].name}</div>
+                  </div>
+                )}
+              </div>
+              <MiniBarChartInline data={kpiData.barData} color={feature.highlight ? '#F97316' : '#059669'} height={25} />
+            </div>
+            
+            {/* Top Left - Badge */}
+            <div className={`absolute top-4 left-4 px-3 py-1.5 rounded-full text-xs font-semibold ${feature.highlight ? 'bg-[#F97316] text-white' : 'bg-[#1E3A8A] text-white'}`}>
+              {feature.stats && feature.stats[0]?.value}
+            </div>
+            
+            {/* Right Middle - Additional KPI */}
+            {kpiData.kpis[1] && (
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 bg-white rounded-lg p-2 shadow-lg">
+                <div className={`text-sm font-bold ${kpiData.kpis[1].trend?.includes('-') ? 'text-[#059669]' : 'text-[#0C0A09]'}`}>
+                  {kpiData.kpis[1].value}
+                </div>
+                <div className="text-[10px] text-gray-500">{kpiData.kpis[1].name}</div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
-    </div>
-  )
+    )
+  }
 
   return (
     <main className="min-h-screen bg-[#FAFAF9] font-sans">
       <SiteHeader />
 
       {/* Hero */}
-      <section className="relative min-h-[50vh] flex items-center pt-[70px] pb-16 bg-gradient-to-br from-[#1E3A8A]/5 via-white to-[#F97316]/5 overflow-hidden">
+      <section className="relative min-h-[55vh] flex items-center pt-[70px] pb-16 bg-gradient-to-br from-[#1E3A8A]/5 via-white to-[#F97316]/5 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#e2e8f0_1px,transparent_0)] bg-[size:40px_40px] opacity-50" />
 
         <div className="relative z-10 max-w-[1240px] mx-auto px-6 lg:px-10">
@@ -425,45 +553,87 @@ export default function FonctionnalitesPage() {
               </div>
             </div>
             
-            {/* Hero Photo with Floating Data */}
+            {/* Hero Photo with Floating KPIs and Graphs */}
             <div className="hidden lg:block relative">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/hero-technician.png"
-                  alt="Technicien avec tablette MAINTEX"
+                  src="/images/hero-fonctionnalites.png"
+                  alt="Technicien maintenance avec tablette devant machine industrielle"
                   width={400}
-                  height={500}
+                  height={600}
                   className="object-cover"
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
               </div>
               
-              {/* Floating Cards */}
-              <div className="absolute -top-3 -left-3 flex items-center gap-2 px-4 py-2.5 bg-[#F97316] text-white rounded-full shadow-lg">
-                <Zap className="w-4 h-4" />
-                <span className="text-sm font-semibold">GMAO Mobile</span>
+              {/* Top Left - OEE Badge */}
+              <div className="absolute -top-2 left-0 bg-white rounded-xl p-3 shadow-lg w-32">
+                <div className="flex items-center gap-2 mb-1">
+                  <Target className="w-4 h-4 text-[#7C3AED]" />
+                  <span className="text-xs text-gray-500">OEE</span>
+                </div>
+                <div className="text-2xl font-bold text-[#0C0A09]">92%</div>
+                <span className="text-xs text-[#059669] font-semibold">World-class</span>
               </div>
               
-              <div className="absolute top-16 -right-4 bg-white rounded-xl p-4 shadow-lg w-36">
+              {/* Top Right - Disponibilité with Chart */}
+              <div className="absolute top-4 -right-3 bg-white rounded-xl p-4 shadow-lg w-40">
                 <div className="flex items-center gap-2 mb-1">
-                  <TrendingUp className="w-4 h-4 text-[#059669]" />
+                  <Gauge className="w-4 h-4 text-[#059669]" />
                   <span className="text-xs text-gray-500">Disponibilité</span>
                 </div>
                 <div className="text-2xl font-bold text-[#0C0A09]">98.5%</div>
+                <div className="flex items-center gap-1 mt-1">
+                  <ArrowUpRight className="w-3.5 h-3.5 text-[#059669]" />
+                  <span className="text-xs font-semibold text-[#059669]">+2.3%</span>
+                </div>
+                <MiniLineChartInline data={[92, 94, 91, 96, 98, 97, 99, 98, 99, 98, 99, 98]} color="#059669" height={25} />
               </div>
               
-              <div className="absolute bottom-20 -left-4 bg-white rounded-xl p-4 shadow-lg w-36">
+              {/* Middle Left - MTTR Card */}
+              <div className="absolute left-0 top-[35%] bg-white rounded-xl p-4 shadow-lg w-36">
                 <div className="flex items-center gap-2 mb-1">
                   <Clock className="w-4 h-4 text-[#F97316]" />
                   <span className="text-xs text-gray-500">MTTR</span>
                 </div>
                 <div className="text-2xl font-bold text-[#0C0A09]">2.4h</div>
+                <div className="flex items-center gap-1 mt-1">
+                  <TrendingDown className="w-3.5 h-3.5 text-[#059669]" />
+                  <span className="text-xs font-semibold text-[#059669]">-18%</span>
+                </div>
               </div>
               
-              <div className="absolute bottom-4 right-4 bg-[#1E3A8A] text-white rounded-xl p-3 shadow-lg">
-                <div className="text-lg font-bold">15</div>
-                <div className="text-xs text-white/80">Modules</div>
+              {/* Middle Right - Bar Chart */}
+              <div className="absolute right-0 top-[45%] bg-white rounded-xl p-3 shadow-lg w-36">
+                <div className="text-xs text-gray-500 mb-2">Interventions/mois</div>
+                <div className="text-lg font-bold text-[#0C0A09] mb-2">156</div>
+                <MiniBarChartInline data={[45, 62, 78, 95, 110, 125, 118, 132, 145, 138, 152, 156]} color="#1E3A8A" height={35} />
+              </div>
+              
+              {/* Bottom Left - MTBF */}
+              <div className="absolute bottom-20 left-0 bg-[#1E3A8A] text-white rounded-xl p-4 shadow-lg">
+                <div className="flex items-center gap-2 mb-1">
+                  <Activity className="w-4 h-4 text-[#F97316]" />
+                  <span className="text-xs text-white/80">MTBF</span>
+                </div>
+                <div className="text-2xl font-bold">720h</div>
+                <div className="text-xs text-[#F97316]">+15%</div>
+              </div>
+              
+              {/* Bottom Right - FTFR */}
+              <div className="absolute bottom-4 right-4 bg-white rounded-xl p-3 shadow-lg">
+                <div className="flex items-center gap-2 mb-1">
+                  <Wrench className="w-4 h-4 text-[#F97316]" />
+                  <span className="text-xs text-gray-500">First Time Fix</span>
+                </div>
+                <div className="text-lg font-bold text-[#0C0A09]">89%</div>
+              </div>
+              
+              {/* Bottom Center - Zero Badges */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                <ZeroBadge text="Zéro panne" icon={Zap} color="#059669" size="sm" />
+                <ZeroBadge text="Zéro arrêt" icon={Shield} color="#DC2626" size="sm" />
               </div>
             </div>
           </div>
