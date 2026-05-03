@@ -365,96 +365,97 @@ export function EnhancedHeroPhotoVisual({ imageSrc, imageAlt, className = '' }: 
   
   return (
     <div className={`relative ${className}`}>
-      {/* Main Photo Container - Large Portrait */}
-      <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+      {/* Main Photo Container - Reduced height for better proportions */}
+      <div className="relative rounded-3xl overflow-visible shadow-2xl">
         <Image
           src={imageSrc}
           alt={imageAlt}
-          width={500}
-          height={750}
-          className="object-cover w-full h-auto"
+          width={520}
+          height={500}
+          className="object-cover w-full h-auto rounded-3xl"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent rounded-3xl" />
       </div>
 
-      {/* Top Left - MTBF Card */}
-      <div className="absolute -top-2 left-0 md:top-6 md:left-6 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 w-36">
-        <div className="flex items-center gap-2 mb-1">
-          <div className="w-8 h-8 rounded-lg bg-[#1E3A8A]/10 flex items-center justify-center">
-            <Activity className="w-4 h-4 text-[#1E3A8A]" />
+      {/* Badge Top Left - Outside image on edge */}
+      <div className="absolute -top-3 left-2 flex items-center gap-2 px-3 py-2 bg-[#F97316] text-white rounded-full shadow-lg z-10">
+        <Activity className="w-3.5 h-3.5" />
+        <span className="text-xs font-semibold">Performance</span>
+      </div>
+
+      {/* Card 1 - Top Right, on edge */}
+      <div className="absolute -right-2 top-3 w-36 bg-white rounded-xl p-3 shadow-xl border border-gray-100 z-10">
+        <div className="flex items-center gap-1.5 mb-1.5">
+          <div className="w-6 h-6 rounded-lg bg-[#059669]/10 flex items-center justify-center">
+            <Gauge className="w-3.5 h-3.5 text-[#059669]" />
           </div>
-          <span className="text-xs text-gray-500">MTBF</span>
+          <span className="text-[10px] text-gray-500">Disponibilité</span>
         </div>
-        <div className="text-2xl font-bold text-[#0C0A09]">720h</div>
-        <div className="flex items-center gap-1 mt-1">
-          <ArrowUpRight className="w-3.5 h-3.5 text-[#059669]" />
-          <span className="text-xs font-semibold text-[#059669]">+15%</span>
+        <div className="text-xl font-bold text-[#0C0A09]">98.5%</div>
+        <div className="flex items-center gap-0.5 mt-0.5">
+          <ArrowUpRight className="w-3 h-3 text-[#059669]" />
+          <span className="text-[10px] font-semibold text-[#059669]">+2.3%</span>
         </div>
       </div>
 
-      {/* Top Right - Disponibilité Card */}
-      <div className="absolute -right-2 top-16 md:right-6 md:top-20 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 w-40">
-        <div className="flex items-center gap-2 mb-1">
-          <div className="w-8 h-8 rounded-lg bg-[#059669]/10 flex items-center justify-center">
-            <Gauge className="w-4 h-4 text-[#059669]" />
+      {/* Card 2 - Left side, middle */}
+      <div className="absolute -left-2 top-[28%] w-36 bg-white rounded-xl p-3 shadow-xl border border-gray-100 z-10">
+        <div className="flex items-center gap-1.5 mb-1.5">
+          <div className="w-6 h-6 rounded-lg bg-[#1E3A8A]/10 flex items-center justify-center">
+            <Activity className="w-3.5 h-3.5 text-[#1E3A8A]" />
           </div>
-          <span className="text-xs text-gray-500">Disponibilité</span>
+          <span className="text-[10px] text-gray-500">MTBF</span>
         </div>
-        <div className="text-3xl font-bold text-[#0C0A09]">98.5%</div>
-        <div className="flex items-center gap-1 mt-1">
-          <ArrowUpRight className="w-4 h-4 text-[#059669]" />
-          <span className="text-sm font-semibold text-[#059669]">+2.3%</span>
+        <div className="text-xl font-bold text-[#0C0A09]">720h</div>
+        <div className="flex items-center gap-0.5 mt-0.5">
+          <ArrowUpRight className="w-3 h-3 text-[#059669]" />
+          <span className="text-[10px] font-semibold text-[#059669]">+15%</span>
         </div>
       </div>
 
-      {/* Middle Left - MTTR Card with Chart */}
-      <div className="absolute left-0 top-[42%] md:left-6 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 w-44">
+      {/* Card 3 - Right side, lower middle */}
+      <div className="absolute -right-2 top-[52%] w-40 bg-white rounded-xl p-3 shadow-xl border border-gray-100 z-10">
         <div className="flex items-center justify-between mb-1">
-          <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-[#F97316]/10 flex items-center justify-center">
-              <Clock className="w-3.5 h-3.5 text-[#F97316]" />
+          <div className="flex items-center gap-1.5">
+            <div className="w-5 h-5 rounded-lg bg-[#F97316]/10 flex items-center justify-center">
+              <Clock className="w-3 h-3 text-[#F97316]" />
             </div>
-            <span className="text-xs text-gray-500">MTTR</span>
+            <span className="text-[10px] text-gray-500">MTTR</span>
           </div>
-          <span className="text-xs font-semibold text-[#059669] bg-[#059669]/10 px-1.5 py-0.5 rounded">-18%</span>
+          <span className="text-[10px] font-semibold text-[#059669] bg-[#059669]/10 px-1.5 py-0.5 rounded">-18%</span>
         </div>
-        <div className="text-2xl font-bold text-[#0C0A09]">2.4h</div>
-        <MiniLineChartInline data={mttrData} color="#F97316" height={30} />
+        <div className="text-lg font-bold text-[#0C0A09]">2.4h</div>
+        <MiniLineChartInline data={mttrData} color="#F97316" height={20} />
       </div>
 
-      {/* Middle Right - Zero Badge */}
-      <div className="absolute right-0 md:right-6 top-[58%]">
-        <ZeroBadge text="Zéro arrêt production" icon={Shield} color="#059669" size="sm" />
+      {/* Card 4 - Bottom Left, on edge */}
+      <div className="absolute -left-2 bottom-3 w-36 bg-[#1E3A8A] text-white rounded-xl p-3 shadow-lg z-10">
+        <div className="flex items-center gap-1.5 mb-1">
+          <Wrench className="w-3.5 h-3.5 text-[#F97316]" />
+          <span className="text-[10px] text-white/80">First Time Fix</span>
+        </div>
+        <div className="text-xl font-bold">89%</div>
+        <div className="text-[10px] text-[#F97316]">+24 pts</div>
       </div>
 
-      {/* Bottom Right - OEE Card with Chart */}
-      <div className="absolute -right-2 bottom-28 md:right-6 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 w-48">
-        <div className="flex items-center justify-between mb-2">
-          <div className="flex items-center gap-2">
-            <Target className="w-4 h-4 text-[#7C3AED]" />
-            <span className="text-xs text-gray-500">OEE</span>
+      {/* Card 5 - Bottom Right, OEE on edge */}
+      <div className="absolute -right-2 bottom-16 w-40 bg-white rounded-xl p-3 shadow-xl border border-gray-100 z-10">
+        <div className="flex items-center justify-between mb-1">
+          <div className="flex items-center gap-1.5">
+            <Target className="w-3.5 h-3.5 text-[#7C3AED]" />
+            <span className="text-[10px] text-gray-500">OEE</span>
           </div>
-          <span className="text-xs font-semibold text-[#059669] bg-[#059669]/10 px-2 py-0.5 rounded-full">World-class</span>
+          <span className="text-[10px] font-semibold text-[#059669] bg-[#059669]/10 px-1.5 py-0.5 rounded-full">World-class</span>
         </div>
-        <div className="text-2xl font-bold text-[#0C0A09] mb-2">92%</div>
-        <MiniLineChartInline data={oeeData} color="#7C3AED" height={40} />
-      </div>
-
-      {/* Bottom Left - FTFR Badge */}
-      <div className="absolute left-0 md:left-6 bottom-20 bg-[#1E3A8A] text-white rounded-xl p-4 shadow-lg">
-        <div className="flex items-center gap-2 mb-1">
-          <Wrench className="w-4 h-4 text-[#F97316]" />
-          <span className="text-xs text-white/80">First Time Fix</span>
-        </div>
-        <div className="text-2xl font-bold">89%</div>
-        <div className="text-xs text-[#F97316]">+24 pts</div>
+        <div className="text-lg font-bold text-[#0C0A09]">92%</div>
+        <MiniLineChartInline data={oeeData} color="#7C3AED" height={20} />
       </div>
 
       {/* Bottom - Zero Badge Row */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2 z-10">
         <ZeroBadge text="Zéro panne" icon={Zap} color="#059669" size="sm" />
-        <ZeroBadge text="Zéro surprise" icon={Activity} color="#F97316" size="sm" />
+        <ZeroBadge text="Zéro arrêt" icon={Shield} color="#059669" size="sm" />
       </div>
     </div>
   )
@@ -476,77 +477,79 @@ export function EnhancedBtpPhotoVisual({ imageSrc, imageAlt, className = '' }: E
   
   return (
     <div className={`relative ${className}`}>
-      {/* Main Photo */}
-      <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+      {/* Main Photo - Reduced height */}
+      <div className="relative rounded-3xl overflow-visible shadow-2xl">
         <Image
           src={imageSrc}
           alt={imageAlt}
           width={900}
-          height={500}
-          className="object-cover w-full"
+          height={450}
+          className="object-cover w-full rounded-3xl"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-3xl" />
       </div>
 
-      {/* Top Left - BTP Badge */}
-      <div className="absolute -top-2 left-4 flex items-center gap-2 px-4 py-2.5 bg-[#F97316] text-white rounded-full shadow-lg">
-        <HardHat className="w-4 h-4" />
-        <span className="text-sm font-semibold">Chantier BTP</span>
+      {/* Badge Top Left - Outside image on edge */}
+      <div className="absolute -top-3 left-2 flex items-center gap-2 px-3 py-2 bg-[#F97316] text-white rounded-full shadow-lg z-10">
+        <HardHat className="w-3.5 h-3.5" />
+        <span className="text-xs font-semibold">Chantier BTP</span>
       </div>
 
-      {/* Top Right - Conformité Calendrier */}
-      <div className="absolute top-4 right-4 bg-white rounded-xl p-4 shadow-lg w-40">
-        <div className="flex items-center gap-2 mb-1">
-          <Calendar className="w-4 h-4 text-[#059669]" />
-          <span className="text-xs text-gray-500">Conformité calendrier</span>
+      {/* Card 1 - Top Right, on edge */}
+      <div className="absolute -right-2 top-3 w-36 bg-white rounded-xl p-3 shadow-xl border border-gray-100 z-10">
+        <div className="flex items-center gap-1.5 mb-1.5">
+          <div className="w-6 h-6 rounded-lg bg-[#059669]/10 flex items-center justify-center">
+            <Calendar className="w-3.5 h-3.5 text-[#059669]" />
+          </div>
+          <span className="text-[10px] text-gray-500">Conformité</span>
         </div>
-        <div className="text-2xl font-bold text-[#0C0A09]">94%</div>
-        <div className="flex items-center gap-1 mt-1">
+        <div className="text-xl font-bold text-[#0C0A09]">94%</div>
+        <div className="flex items-center gap-0.5 mt-0.5">
           <ArrowUpRight className="w-3 h-3 text-[#059669]" />
-          <span className="text-xs font-semibold text-[#059669]">+12%</span>
+          <span className="text-[10px] font-semibold text-[#059669]">+12%</span>
         </div>
       </div>
 
-      {/* Middle Left - MTTR Engins */}
-      <div className="absolute left-4 top-1/3 bg-white rounded-xl p-4 shadow-lg w-36">
-        <div className="flex items-center gap-2 mb-1">
-          <Clock className="w-4 h-4 text-[#F97316]" />
-          <span className="text-xs text-gray-500">MTTR Engins</span>
+      {/* Card 2 - Left side, middle */}
+      <div className="absolute -left-2 top-[30%] w-36 bg-white rounded-xl p-3 shadow-xl border border-gray-100 z-10">
+        <div className="flex items-center gap-1.5 mb-1.5">
+          <div className="w-6 h-6 rounded-lg bg-[#F97316]/10 flex items-center justify-center">
+            <Clock className="w-3.5 h-3.5 text-[#F97316]" />
+          </div>
+          <span className="text-[10px] text-gray-500">MTTR Engins</span>
         </div>
         <div className="text-xl font-bold text-[#0C0A09]">1.8h</div>
-        <div className="text-xs text-[#059669]">-30% vs avant</div>
+        <div className="text-[10px] text-[#059669]">-30% vs avant</div>
       </div>
 
-      {/* Middle Right - Zero Badge */}
-      <div className="absolute right-4 top-1/2">
-        <ZeroBadge text="Zéro retard chantier" icon={Clock} color="#F97316" size="md" />
-      </div>
-
-      {/* Bottom Left - Chart Card */}
-      <div className="absolute bottom-4 left-4 bg-white rounded-xl p-4 shadow-lg w-52">
-        <div className="flex items-center justify-between mb-2">
-          <span className="text-xs text-gray-500">Progression chantier</span>
-          <span className="text-xs font-semibold text-[#059669] bg-[#059669]/10 px-2 py-0.5 rounded-full">+45%</span>
+      {/* Card 3 - Right side, lower middle */}
+      <div className="absolute -right-2 top-[55%] w-40 bg-white rounded-xl p-3 shadow-xl border border-gray-100 z-10">
+        <div className="flex items-center justify-between mb-1">
+          <div className="flex items-center gap-1.5">
+            <Target className="w-3.5 h-3.5 text-[#7C3AED]" />
+            <span className="text-[10px] text-gray-500">Progression</span>
+          </div>
+          <span className="text-[10px] font-semibold text-[#059669] bg-[#059669]/10 px-1.5 py-0.5 rounded">+45%</span>
         </div>
-        <div className="text-lg font-bold text-[#0C0A09] mb-2">95% conforme</div>
-        <MiniLineChartInline data={chantierData} color="#F97316" height={35} />
+        <div className="text-lg font-bold text-[#0C0A09]">95%</div>
+        <MiniLineChartInline data={chantierData} color="#F97316" height={20} />
       </div>
 
-      {/* Bottom Center - Zero Badges */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+      {/* Card 4 - Bottom Left, on edge */}
+      <div className="absolute -left-2 bottom-3 w-36 bg-[#1E3A8A] text-white rounded-xl p-3 shadow-lg z-10">
+        <div className="flex items-center gap-1.5 mb-1">
+          <Target className="w-3.5 h-3.5 text-[#F97316]" />
+          <span className="text-[10px] text-white/80">First Time Fix</span>
+        </div>
+        <div className="text-xl font-bold">92%</div>
+        <div className="text-[10px] text-[#F97316]">+28 pts</div>
+      </div>
+
+      {/* Bottom - Zero Badges */}
+      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2 z-10">
         <ZeroBadge text="Zéro indisponibilité" icon={Shield} color="#059669" size="sm" />
         <ZeroBadge text="Zéro panne" icon={Zap} color="#0891B2" size="sm" />
-      </div>
-
-      {/* Bottom Right - First Time Fix */}
-      <div className="absolute bottom-4 right-4 bg-[#1E3A8A] text-white rounded-xl p-4 shadow-lg">
-        <div className="flex items-center gap-2 mb-1">
-          <Target className="w-4 h-4 text-[#F97316]" />
-          <span className="text-xs text-white/80">First Time Fix</span>
-        </div>
-        <div className="text-2xl font-bold">92%</div>
-        <div className="text-xs text-[#F97316]">+28 pts</div>
       </div>
     </div>
   )
