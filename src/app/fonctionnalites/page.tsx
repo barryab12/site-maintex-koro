@@ -512,13 +512,13 @@ export default function FonctionnalitesPage() {
             </div>
             
             {/* Top Right - Line Chart Card */}
-            <div className="absolute top-2 right-0 bg-white/95 backdrop-blur-sm rounded-xl p-3 shadow-xl w-44 z-10 border border-gray-100">
+            <div className="absolute top-2 right-0 bg-white rounded-xl p-3 shadow-xl w-44 z-10 border border-gray-100">
               <div className="text-xs text-gray-500 mb-1 font-medium">{kpiData.chartLabel}</div>
               <MiniLineChartInline data={kpiData.chartData} color={feature.highlight ? '#F97316' : '#1E3A8A'} height={30} />
             </div>
             
             {/* Bottom Left - KPI Card with Bar Chart */}
-            <div className="absolute bottom-0 left-6 bg-white/95 backdrop-blur-sm rounded-xl p-3 shadow-xl w-48 z-10 border border-gray-100">
+            <div className="absolute bottom-0 left-6 bg-white rounded-xl p-3 shadow-xl w-48 z-10 border border-gray-100">
               {kpiData.kpis[0] && (
                 <div className="flex items-center gap-3 mb-2">
                   <div>
@@ -542,7 +542,7 @@ export default function FonctionnalitesPage() {
             
             {/* Right Middle - Additional KPI */}
             {kpiData.kpis[1] && (
-              <div className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/95 backdrop-blur-sm rounded-lg p-3 shadow-xl z-10 border border-gray-100">
+              <div className="absolute right-2 top-1/2 -translate-y-1/2 bg-white rounded-lg p-3 shadow-xl z-10 border border-gray-100">
                 <div className={`text-sm font-bold ${kpiData.kpis[1].trend?.includes('-') ? 'text-[#059669]' : 'text-[#0C0A09]'}`}>
                   {kpiData.kpis[1].value}
                 </div>
@@ -594,20 +594,21 @@ export default function FonctionnalitesPage() {
             </div>
             
             {/* Hero Photo with Floating KPIs and Graphs */}
-            <div className="hidden lg:block relative py-4 px-2">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl w-full h-[420px]">
+            <div className="hidden lg:block relative py-8">
+              {/* Main Image Container */}
+              <div className="relative rounded-3xl overflow-visible shadow-2xl w-full h-[520px]">
                 <Image
                   src="/images/hero-fonctionnalites.jpg"
                   alt="Technicien maintenance avec tablette devant machine industrielle"
                   fill
-                  className="object-cover"
+                  className="object-cover object-top rounded-3xl"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent rounded-3xl" />
               </div>
               
-              {/* Top Left - OEE Badge */}
-              <div className="absolute top-2 left-2 bg-white/95 backdrop-blur-sm rounded-xl p-3 shadow-xl w-32 z-10 border border-gray-100">
+              {/* Top Left - OEE Badge - overlapping */}
+              <div className="absolute -top-2 left-4 bg-white rounded-xl p-3 shadow-xl w-32 z-10 border border-gray-100">
                 <div className="flex items-center gap-2 mb-1">
                   <Target className="w-4 h-4 text-[#7C3AED]" />
                   <span className="text-xs text-gray-500">OEE</span>
@@ -616,8 +617,8 @@ export default function FonctionnalitesPage() {
                 <span className="text-xs text-[#059669] font-semibold">World-class</span>
               </div>
               
-              {/* Top Right - Disponibilité with Chart */}
-              <div className="absolute top-2 right-2 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-xl w-40 z-10 border border-gray-100">
+              {/* Top Right - Disponibilité with Chart - overlapping */}
+              <div className="absolute -top-2 right-4 bg-white rounded-xl p-4 shadow-xl w-44 z-10 border border-gray-100">
                 <div className="flex items-center gap-2 mb-1">
                   <Gauge className="w-4 h-4 text-[#059669]" />
                   <span className="text-xs text-gray-500">Disponibilité</span>
@@ -630,8 +631,8 @@ export default function FonctionnalitesPage() {
                 <MiniLineChartInline data={[92, 94, 91, 96, 98, 97, 99, 98, 99, 98, 99, 98]} color="#059669" height={25} />
               </div>
               
-              {/* Middle Left - MTTR Card */}
-              <div className="absolute left-2 top-[35%] bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-xl w-36 z-10 border border-gray-100">
+              {/* Middle Left - MTTR Card - overlapping */}
+              <div className="absolute left-0 top-[30%] -translate-x-1/4 bg-white rounded-xl p-4 shadow-xl w-40 z-10 border border-gray-100">
                 <div className="flex items-center gap-2 mb-1">
                   <Clock className="w-4 h-4 text-[#F97316]" />
                   <span className="text-xs text-gray-500">MTTR</span>
@@ -643,15 +644,15 @@ export default function FonctionnalitesPage() {
                 </div>
               </div>
               
-              {/* Middle Right - Bar Chart */}
-              <div className="absolute right-2 top-[45%] bg-white/95 backdrop-blur-sm rounded-xl p-3 shadow-xl w-36 z-10 border border-gray-100">
+              {/* Middle Right - Bar Chart - overlapping */}
+              <div className="absolute right-0 top-[40%] translate-x-1/4 bg-white rounded-xl p-3 shadow-xl w-40 z-10 border border-gray-100">
                 <div className="text-xs text-gray-500 mb-2 font-medium">Interventions/mois</div>
                 <div className="text-lg font-bold text-[#0C0A09] mb-2">156</div>
                 <MiniBarChartInline data={[45, 62, 78, 95, 110, 125, 118, 132, 145, 138, 152, 156]} color="#1E3A8A" height={35} />
               </div>
               
-              {/* Bottom Left - MTBF */}
-              <div className="absolute bottom-16 left-2 bg-[#1E3A8A] text-white rounded-xl p-4 shadow-xl z-10">
+              {/* Bottom Left - MTBF - overlapping */}
+              <div className="absolute bottom-12 -left-4 bg-[#1E3A8A] text-white rounded-xl p-4 shadow-xl z-10">
                 <div className="flex items-center gap-2 mb-1">
                   <Activity className="w-4 h-4 text-[#F97316]" />
                   <span className="text-xs text-white/80">MTBF</span>
@@ -660,8 +661,8 @@ export default function FonctionnalitesPage() {
                 <div className="text-xs text-[#F97316]">+15%</div>
               </div>
               
-              {/* Bottom Right - FTFR */}
-              <div className="absolute bottom-4 right-4 bg-white/95 backdrop-blur-sm rounded-xl p-3 shadow-xl z-10 border border-gray-100">
+              {/* Bottom Right - FTFR - overlapping */}
+              <div className="absolute -bottom-2 right-6 bg-white rounded-xl p-3 shadow-xl z-10 border border-gray-100">
                 <div className="flex items-center gap-2 mb-1">
                   <Wrench className="w-4 h-4 text-[#F97316]" />
                   <span className="text-xs text-gray-500">First Time Fix</span>
@@ -670,7 +671,7 @@ export default function FonctionnalitesPage() {
               </div>
               
               {/* Bottom Center - Zero Badges */}
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
                 <ZeroBadge text="Zéro panne" icon={Zap} color="#059669" size="sm" />
                 <ZeroBadge text="Zéro arrêt" icon={Shield} color="#DC2626" size="sm" />
               </div>
