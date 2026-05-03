@@ -1,14 +1,15 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import Link from 'next/link'
 import { 
-  CheckCircle2, TrendingUp, AlertTriangle, Activity, Gauge, PieChart, DollarSign, FolderKanban, BarChart3, ClipboardList, RefreshCw, Heart, Wallet, Package, Smartphone, Link2, Brain, Cpu, Calendar, Settings, Users, FileText, ShieldCheck, ArrowRight, Zap, Shield, Server, ChevronRight
+  CheckCircle2, TrendingUp, AlertTriangle, Activity, Gauge, PieChart, DollarSign, FolderKanban, BarChart3, ClipboardList, RefreshCw, Heart, Wallet, Package, Smartphone, Link2, Brain, Cpu, Calendar, Settings, Users, FileText, ShieldCheck, ArrowRight, Zap, Shield, Server, ChevronRight, Clock, Target, ArrowUpRight, TrendingDown
 } from 'lucide-react'
 import { TabNavigation, TabPanel } from '@/components/tab-navigation'
-import { TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup, PricingDashboardMockup, MobileTaskListMockup } from '@/components/device-mockups'
+import { MiniLineChartInline } from '@/components/photo-data-visual'
 
 export default function FonctionnalitesPage() {
   const [activeTab, setActiveTab] = useState('core')
@@ -34,7 +35,11 @@ export default function FonctionnalitesPage() {
         'Signature électronique et validation numérique',
       ],
       icon: ClipboardList,
-      mockup: <TaskManagementMockup />
+      image: '/images/maintenance-work.png',
+      stats: [
+        { value: '-30%', label: 'Temps de création', type: 'success' },
+        { value: '156', label: 'OT/mois', type: 'default' }
+      ]
     },
     {
       id: 'preventif',
@@ -47,7 +52,11 @@ export default function FonctionnalitesPage() {
         'Vue calendrier hebdo/mensuel par équipement',
       ],
       icon: RefreshCw,
-      mockup: <GMAODashboardMockup />
+      image: '/images/machine-room.png',
+      stats: [
+        { value: '76%', label: 'Taux préventif', type: 'accent' },
+        { value: '+15%', label: 'Productivité', type: 'success' }
+      ]
     },
     {
       id: 'demandes',
@@ -60,7 +69,11 @@ export default function FonctionnalitesPage() {
         'Suivi en temps réel pour le demandeur',
       ],
       icon: Cpu,
-      mockup: <GMAODashboardMockup />
+      image: '/images/team-engineers.png',
+      stats: [
+        { value: '-45%', label: 'Délai traitement', type: 'success' },
+        { value: '98%', label: 'Satisfaction', type: 'default' }
+      ]
     }
   ]
 
@@ -76,7 +89,10 @@ export default function FonctionnalitesPage() {
         'Synchro avec Outlook et Google Calendar',
       ],
       icon: Calendar,
-      mockup: <GMAODashboardMockup />
+      image: '/images/team-engineers.png',
+      stats: [
+        { value: '+25%', label: 'Efficacité', type: 'success' }
+      ]
     }
   ]
 
@@ -92,7 +108,10 @@ export default function FonctionnalitesPage() {
         'QR code pour accès rapide terrain',
       ],
       icon: Settings,
-      mockup: <EquipmentDetailMockup />
+      image: '/images/warehouse.png',
+      stats: [
+        { value: '100%', label: 'Traçabilité', type: 'success' }
+      ]
     },
     {
       id: 'vitaux',
@@ -105,7 +124,10 @@ export default function FonctionnalitesPage() {
         'Priorisation par criticité fonctionnelle',
       ],
       icon: Heart,
-      mockup: <EquipmentDetailMockup />,
+      image: '/images/machine-room.png',
+      stats: [
+        { value: '99.2%', label: 'Disponibilité', type: 'success' }
+      ],
       highlight: true
     },
     {
@@ -119,7 +141,10 @@ export default function FonctionnalitesPage() {
         'Catalogue fournisseurs intégré',
       ],
       icon: Package,
-      mockup: <GMAODashboardMockup />
+      image: '/images/warehouse.png',
+      stats: [
+        { value: '-20%', label: 'Stock dormant', type: 'success' }
+      ]
     }
   ]
 
@@ -135,7 +160,10 @@ export default function FonctionnalitesPage() {
         'Recommandations d\'intervention automatiques',
       ],
       icon: Brain,
-      mockup: <EquipmentDetailMockup />,
+      image: '/images/ai-predictive.png',
+      stats: [
+        { value: '-42%', label: 'Pannes imprévues', type: 'success' }
+      ],
       highlight: true
     },
     {
@@ -149,7 +177,11 @@ export default function FonctionnalitesPage() {
         'Rapports et exports pour pilotage financier',
       ],
       icon: Wallet,
-      mockup: <PricingDashboardMockup />
+      image: '/images/team-engineers.png',
+      stats: [
+        { value: '4 mois', label: 'ROI moyen', type: 'accent' }
+      ],
+      highlight: true
     },
     {
       id: 'dashboard',
@@ -162,7 +194,10 @@ export default function FonctionnalitesPage() {
         'Intégration Power BI, Tableau via API',
       ],
       icon: BarChart3,
-      mockup: <GMAODashboardMockup />
+      image: '/images/dashboard-hero.png',
+      stats: [
+        { value: '15+', label: 'KPIs suivis', type: 'default' }
+      ]
     }
   ]
 
@@ -178,7 +213,11 @@ export default function FonctionnalitesPage() {
         'Notifications push configurables',
       ],
       icon: Smartphone,
-      mockup: <MobileTaskListMockup />
+      image: '/images/mobile-maintenance-app.png',
+      stats: [
+        { value: '24/7', label: 'Disponibilité', type: 'success' },
+        { value: '100%', label: 'Hors-ligne', type: 'accent' }
+      ]
     }
   ]
 
@@ -194,7 +233,10 @@ export default function FonctionnalitesPage() {
         'Contrôle d\'accès par rôle',
       ],
       icon: FileText,
-      mockup: <GMAODashboardMockup />
+      image: '/images/document-management.png',
+      stats: [
+        { value: '-60%', label: 'Temps recherche', type: 'success' }
+      ]
     },
     {
       id: 'conformite',
@@ -207,7 +249,10 @@ export default function FonctionnalitesPage() {
         'Alertes échéances réglementaires',
       ],
       icon: ShieldCheck,
-      mockup: <GMAODashboardMockup />
+      image: '/images/compliance-audit.png',
+      stats: [
+        { value: '100%', label: 'Conformité', type: 'success' }
+      ]
     },
     {
       id: 'integrations',
@@ -220,23 +265,34 @@ export default function FonctionnalitesPage() {
         'SSO SAML 2.0 / Azure AD / Okta',
       ],
       icon: Link2,
-      mockup: <GMAODashboardMockup />
+      image: '/images/api-documentation.png',
+      stats: [
+        { value: '10+', label: 'Connecteurs', type: 'default' }
+      ]
     }
   ]
+
+  const performanceData = [85, 88, 92, 95, 97, 98, 96, 99, 98, 99, 99, 99]
 
   const renderFeatureCard = (feature: any) => (
     <div 
       key={feature.id} 
-      className={`bg-white rounded-2xl border ${feature.highlight ? 'border-[#F97316] shadow-lg shadow-[#F97316]/10' : 'border-gray-200'} p-6 hover:shadow-xl transition-all duration-300`}
+      className={`bg-white rounded-2xl border ${feature.highlight ? 'border-[#F97316] shadow-lg shadow-[#F97316]/10' : 'border-gray-200'} p-6 lg:p-8 hover:shadow-xl transition-all duration-300`}
     >
       <div className="grid lg:grid-cols-2 gap-8 items-center">
+        {/* Left - Content */}
         <div>
           <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-4 ${feature.highlight ? 'bg-[#F97316]/10' : 'bg-[#1E3A8A]/10'}`}>
             <feature.icon className={`w-7 h-7 ${feature.highlight ? 'text-[#F97316]' : 'text-[#1E3A8A]'}`} />
           </div>
+          {feature.highlight && (
+            <div className="inline-flex items-center gap-1 px-3 py-1 bg-[#F97316] text-white text-xs font-bold rounded-full mb-3">
+              Nouveau
+            </div>
+          )}
           <h3 className="text-xl font-bold text-[#0C0A09] mb-3">{feature.title}</h3>
           <p className="text-[#44403C] mb-6 leading-relaxed">{feature.description}</p>
-          <ul className="space-y-3">
+          <ul className="space-y-3 mb-6">
             {feature.features.map((f: string, i: number) => (
               <li key={i} className="flex items-start gap-3 text-sm text-[#44403C]">
                 <CheckCircle2 className="w-4 h-4 text-[#059669] flex-shrink-0 mt-0.5" />
@@ -244,7 +300,7 @@ export default function FonctionnalitesPage() {
               </li>
             ))}
           </ul>
-          <div className="flex gap-3 mt-6">
+          <div className="flex gap-3">
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#F97316] text-white text-sm font-semibold rounded-xl hover:bg-[#EA580C] transition-all shadow-lg shadow-[#F97316]/25 no-underline"
@@ -253,10 +309,32 @@ export default function FonctionnalitesPage() {
             </Link>
           </div>
         </div>
-        <div className="flex justify-center">
-          <TabletMockup className="w-full max-w-[320px]">
-            {feature.mockup}
-          </TabletMockup>
+        
+        {/* Right - Photo with Stats */}
+        <div className="relative">
+          <div className="relative rounded-2xl overflow-hidden shadow-lg">
+            <Image
+              src={feature.image}
+              alt={feature.title}
+              width={450}
+              height={300}
+              className="object-cover w-full"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+          </div>
+          
+          {/* Floating Stats Cards */}
+          {feature.stats && feature.stats.map((stat: any, index: number) => (
+            <div 
+              key={index}
+              className={`absolute ${index === 0 ? '-top-3 -right-3' : 'bottom-4 left-4'} bg-white rounded-xl p-3 shadow-lg`}
+            >
+              <div className={`text-xl font-bold ${stat.type === 'success' ? 'text-[#059669]' : stat.type === 'accent' ? 'text-[#F97316]' : 'text-[#0C0A09]'}`}>
+                {stat.value}
+              </div>
+              <div className="text-xs text-gray-500">{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -299,13 +377,47 @@ export default function FonctionnalitesPage() {
                 </Link>
               </div>
             </div>
-            <div className="hidden lg:flex justify-center gap-4">
-              <TabletMockup className="w-[280px]">
-                <GMAODashboardMockup />
-              </TabletMockup>
-              <MobileMockup className="w-[140px] mt-12">
-                <MobileTaskListMockup />
-              </MobileMockup>
+            
+            {/* Hero Photo with Floating Data */}
+            <div className="hidden lg:block relative">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/images/hero-technician.png"
+                  alt="Technicien avec tablette MAINTEX"
+                  width={400}
+                  height={500}
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+              </div>
+              
+              {/* Floating Cards */}
+              <div className="absolute -top-3 -left-3 flex items-center gap-2 px-4 py-2.5 bg-[#F97316] text-white rounded-full shadow-lg">
+                <Zap className="w-4 h-4" />
+                <span className="text-sm font-semibold">GMAO Mobile</span>
+              </div>
+              
+              <div className="absolute top-16 -right-4 bg-white rounded-xl p-4 shadow-lg w-36">
+                <div className="flex items-center gap-2 mb-1">
+                  <TrendingUp className="w-4 h-4 text-[#059669]" />
+                  <span className="text-xs text-gray-500">Disponibilité</span>
+                </div>
+                <div className="text-2xl font-bold text-[#0C0A09]">98.5%</div>
+              </div>
+              
+              <div className="absolute bottom-20 -left-4 bg-white rounded-xl p-4 shadow-lg w-36">
+                <div className="flex items-center gap-2 mb-1">
+                  <Clock className="w-4 h-4 text-[#F97316]" />
+                  <span className="text-xs text-gray-500">MTTR</span>
+                </div>
+                <div className="text-2xl font-bold text-[#0C0A09]">2.4h</div>
+              </div>
+              
+              <div className="absolute bottom-4 right-4 bg-[#1E3A8A] text-white rounded-xl p-3 shadow-lg">
+                <div className="text-lg font-bold">15</div>
+                <div className="text-xs text-white/80">Modules</div>
+              </div>
             </div>
           </div>
         </div>
@@ -376,7 +488,7 @@ export default function FonctionnalitesPage() {
           <TabPanel isActive={activeTab === 'mobile'}>
             <div className="space-y-6">
               {mobileFeatures.map((feature) => (
-                <div key={feature.id} className="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-xl transition-all duration-300">
+                <div key={feature.id} className="bg-white rounded-2xl border border-gray-200 p-6 lg:p-8 hover:shadow-xl transition-all duration-300">
                   <div className="grid lg:grid-cols-2 gap-8 items-center">
                     <div>
                       <div className="w-14 h-14 rounded-xl bg-[#1E3A8A]/10 flex items-center justify-center mb-4">
@@ -384,7 +496,7 @@ export default function FonctionnalitesPage() {
                       </div>
                       <h3 className="text-xl font-bold text-[#0C0A09] mb-3">{feature.title}</h3>
                       <p className="text-[#44403C] mb-6 leading-relaxed">{feature.description}</p>
-                      <ul className="space-y-3">
+                      <ul className="space-y-3 mb-6">
                         {feature.features.map((f: string, i: number) => (
                           <li key={i} className="flex items-start gap-3 text-sm text-[#44403C]">
                             <CheckCircle2 className="w-4 h-4 text-[#059669] flex-shrink-0 mt-0.5" />
@@ -392,7 +504,7 @@ export default function FonctionnalitesPage() {
                           </li>
                         ))}
                       </ul>
-                      <div className="flex gap-3 mt-6">
+                      <div className="flex gap-3">
                         <Link
                           href="/contact"
                           className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#F97316] text-white text-sm font-semibold rounded-xl hover:bg-[#EA580C] transition-all shadow-lg shadow-[#F97316]/25 no-underline"
@@ -401,13 +513,27 @@ export default function FonctionnalitesPage() {
                         </Link>
                       </div>
                     </div>
-                    <div className="flex justify-center gap-4">
-                      <MobileMockup className="w-[180px]">
-                        {feature.mockup}
-                      </MobileMockup>
-                      <MobileMockup className="w-[180px] mt-8">
-                        <GMAODashboardMockup />
-                      </MobileMockup>
+                    <div className="relative">
+                      <div className="relative rounded-2xl overflow-hidden shadow-lg mx-auto w-48">
+                        <Image
+                          src={feature.image}
+                          alt={feature.title}
+                          width={300}
+                          height={500}
+                          className="object-cover"
+                        />
+                      </div>
+                      {feature.stats && feature.stats.map((stat: any, index: number) => (
+                        <div 
+                          key={index}
+                          className={`absolute ${index === 0 ? '-top-3 -right-8' : 'bottom-8 -left-8'} bg-white rounded-xl p-3 shadow-lg`}
+                        >
+                          <div className={`text-xl font-bold ${stat.type === 'success' ? 'text-[#059669]' : stat.type === 'accent' ? 'text-[#F97316]' : 'text-[#0C0A09]'}`}>
+                            {stat.value}
+                          </div>
+                          <div className="text-xs text-gray-500">{stat.label}</div>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>

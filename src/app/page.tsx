@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { 
@@ -11,9 +12,9 @@ import {
   ArrowUpRight, Gauge, DollarSign, PieChart, Target, TrendingDown
 } from 'lucide-react'
 import { 
-  TabletMockup, MobileMockup, GMAODashboardMockup, MobileTaskListMockup,
-  KPICard, StatsOverlay, MiniBarChart, MiniLineChart, DonutChart, MetricGrid, ProgressBar
-} from '@/components/data-visualization'
+  HeroPhotoVisual, TeamPhotoVisual, MachineRoomVisual,
+  MiniLineChartInline
+} from '@/components/photo-data-visual'
 
 export default function HomePage() {
   const features = [
@@ -58,33 +59,23 @@ export default function HomePage() {
     { icon: Truck, name: 'Logistique', href: '/secteurs' },
   ]
 
-  // Data for charts
-  const availabilityData = [92, 94, 91, 96, 98, 97, 99, 98, 99, 98, 99, 98]
-  const monthlyData = [
-    { value: 85, label: 'Jan', color: '#1E3A8A' },
-    { value: 92, label: 'Fév', color: '#1E3A8A' },
-    { value: 78, label: 'Mar', color: '#F97316' },
-    { value: 95, label: 'Avr', color: '#1E3A8A' },
-    { value: 88, label: 'Mai', color: '#1E3A8A' },
-    { value: 102, label: 'Jun', color: '#059669' },
-  ]
-
   return (
     <main className="min-h-screen bg-white flex flex-col">
       <SiteHeader />
 
-      {/* Hero Section with Data Visualization */}
+      {/* Hero Section with Photo + Floating Data */}
       <section className="relative min-h-[90vh] flex items-center pt-[70px] pb-20 bg-gradient-to-br from-[#FAFAF9] via-white to-[#F97316]/5 overflow-hidden">
         {/* Background Pattern */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#e2e8f0_1px,transparent_0)] bg-[size:40px_40px] opacity-50" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,#e2e8f0_1px,transparent_0)] bg-[size:40px_40px] opacity-40" />
         
         {/* Decorative Blobs */}
         <div className="absolute top-20 right-1/4 w-96 h-96 bg-[#F97316]/10 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-[#1E3A8A]/10 rounded-full blur-3xl" />
 
         <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10 w-full">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            {/* Left - Content */}
+            <div className="order-2 lg:order-1">
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F97316]/10 border border-[#F97316]/20 text-[#1E3A8A] mb-6">
                 <MapPin className="w-4 h-4 text-[#F97316]" />
@@ -152,107 +143,13 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Dashboard Mockup with KPI Cards */}
-            <div className="hidden lg:block relative">
-              {/* Main Tablet */}
-              <div className="relative z-10">
-                <TabletMockup className="w-[340px] mx-auto">
-                  <div className="h-full bg-gradient-to-br from-[#FAFAF9] to-white p-4">
-                    {/* Dashboard Header */}
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 bg-[#1E3A8A] rounded-lg flex items-center justify-center">
-                          <Zap className="w-4 h-4 text-white" />
-                        </div>
-                        <span className="font-bold text-gray-900 text-sm">MAINTEX</span>
-                      </div>
-                      <div className="text-xs text-gray-500">Tableau de bord</div>
-                    </div>
-
-                    {/* KPI Cards Grid */}
-                    <div className="grid grid-cols-2 gap-3 mb-4">
-                      <div className="bg-white p-3 rounded-xl shadow-md border border-gray-100">
-                        <div className="flex items-center gap-2 mb-2">
-                          <div className="w-6 h-6 rounded-lg bg-[#059669]/10 flex items-center justify-center">
-                            <TrendingUp className="w-3 h-3 text-[#059669]" />
-                          </div>
-                          <span className="text-[10px] text-gray-500">Disponibilité</span>
-                        </div>
-                        <div className="text-2xl font-bold text-[#1E3A8A]">98.5%</div>
-                        <div className="flex items-center gap-1 mt-1">
-                          <span className="text-[9px] text-[#059669] font-medium flex items-center gap-0.5">
-                            <ArrowUpRight className="w-2.5 h-2.5" />+2.3%
-                          </span>
-                          <span className="text-[9px] text-gray-400">vs. mois dernier</span>
-                        </div>
-                      </div>
-                      <div className="bg-white p-3 rounded-xl shadow-md border border-gray-100">
-                        <div className="flex items-center gap-2 mb-2">
-                          <div className="w-6 h-6 rounded-lg bg-[#F97316]/10 flex items-center justify-center">
-                            <Clock className="w-3 h-3 text-[#F97316]" />
-                          </div>
-                          <span className="text-[10px] text-gray-500">MTTR</span>
-                        </div>
-                        <div className="text-2xl font-bold text-[#1E3A8A]">2.4h</div>
-                        <div className="flex items-center gap-1 mt-1">
-                          <span className="text-[9px] text-[#059669] font-medium flex items-center gap-0.5">
-                            <TrendingDown className="w-2.5 h-2.5" />-18%
-                          </span>
-                          <span className="text-[9px] text-gray-400">amélioration</span>
-                        </div>
-                      </div>
-                      <div className="bg-white p-3 rounded-xl shadow-md border border-gray-100">
-                        <div className="flex items-center gap-2 mb-2">
-                          <div className="w-6 h-6 rounded-lg bg-[#7C3AED]/10 flex items-center justify-center">
-                            <Activity className="w-3 h-3 text-[#7C3AED]" />
-                          </div>
-                          <span className="text-[10px] text-gray-500">OT ouverts</span>
-                        </div>
-                        <div className="text-2xl font-bold text-[#F97316]">24</div>
-                        <div className="text-[9px] text-gray-400 mt-1">8 en cours, 16 en attente</div>
-                      </div>
-                      <div className="bg-white p-3 rounded-xl shadow-md border border-gray-100">
-                        <div className="flex items-center gap-2 mb-2">
-                          <div className="w-6 h-6 rounded-lg bg-[#0891B2]/10 flex items-center justify-center">
-                            <CheckCircle2 className="w-3 h-3 text-[#0891B2]" />
-                          </div>
-                          <span className="text-[10px] text-gray-500">Clôturés</span>
-                        </div>
-                        <div className="text-2xl font-bold text-[#059669]">156</div>
-                        <div className="text-[9px] text-gray-400 mt-1">ce mois</div>
-                      </div>
-                    </div>
-
-                    {/* Chart */}
-                    <div className="bg-white p-3 rounded-xl shadow-md border border-gray-100">
-                      <div className="flex items-center justify-between mb-3">
-                        <span className="text-xs font-semibold text-gray-700">Évolution disponibilité</span>
-                        <span className="text-[10px] text-gray-500">12 derniers mois</span>
-                      </div>
-                      <MiniLineChart data={availabilityData} color="#1E3A8A" height={50} />
-                    </div>
-                  </div>
-                </TabletMockup>
-              </div>
-
-              {/* Floating Stats Badges */}
-              <StatsOverlay 
-                value="-38%" 
-                label="arrêts" 
-                type="success" 
-                className="absolute -left-8 top-20 animate-pulse" 
+            {/* Right - Photo with Floating Data */}
+            <div className="order-1 lg:order-2 hidden lg:block">
+              <HeroPhotoVisual 
+                imageSrc="/images/hero-technician.png"
+                imageAlt="Technicien maintenance avec tablette MAINTEX"
+                className="ml-8"
               />
-              <StatsOverlay 
-                value="+89%" 
-                label="FTFR" 
-                type="accent" 
-                className="absolute -right-4 top-40" 
-              />
-              
-              {/* Mobile Mockup */}
-              <MobileMockup className="absolute -right-8 bottom-0 w-[120px]">
-                <MobileTaskListMockup />
-              </MobileMockup>
             </div>
           </div>
         </div>
@@ -287,88 +184,76 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* KPI Section - Modern Dashboard Style */}
+      {/* KPI Section with Photo + Data */}
       <section className="py-20 bg-[#FAFAF9]">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#059669]/10 border border-[#059669]/20 text-[#059669] mb-6">
-              <TrendingUp className="w-4 h-4" />
-              <span className="text-sm font-semibold">Résultats clients</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0C0A09] tracking-tight mb-4">
-              Des résultats mesurables,<br />
-              <span className="text-[#1E3A8A]">dès les premiers mois.</span>
-            </h2>
-          </div>
-
-          {/* Modern KPI Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <KPICard
-              value="-38%"
-              label="Temps d'arrêt"
-              change="-38% vs. année précédente"
-              changeType="positive"
-              iconElement={<TrendingDown className="w-6 h-6" style={{ color: '#059669' }} />}
-              iconColor="#059669"
-              size="lg"
-            />
-            <KPICard
-              value="98.5%"
-              label="Disponibilité"
-              change="+2.3% ce mois"
-              changeType="positive"
-              iconElement={<Gauge className="w-6 h-6" style={{ color: '#1E3A8A' }} />}
-              iconColor="#1E3A8A"
-              size="lg"
-            />
-            <KPICard
-              value="+89%"
-              label="First Time Fix Rate"
-              change="+24 pts vs. avant"
-              changeType="positive"
-              iconElement={<Target className="w-6 h-6" style={{ color: '#F97316' }} />}
-              iconColor="#F97316"
-              size="lg"
-            />
-            <KPICard
-              value="4 mois"
-              label="ROI moyen"
-              change="Retour sur investissement"
-              changeType="positive"
-              iconElement={<DollarSign className="w-6 h-6" style={{ color: '#7C3AED' }} />}
-              iconColor="#7C3AED"
-              size="lg"
-            />
-          </div>
-
-          {/* Chart Section */}
-          <div className="grid lg:grid-cols-2 gap-8">
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
-              <div className="flex items-center justify-between mb-6">
-                <div>
-                  <h3 className="text-lg font-bold text-[#0C0A09]">Interventions mensuelles</h3>
-                  <p className="text-sm text-[#64748b]">Évolution sur 6 mois</p>
-                </div>
-                <div className="flex items-center gap-2 px-3 py-1.5 bg-[#059669]/10 rounded-full">
-                  <ArrowUpRight className="w-4 h-4 text-[#059669]" />
-                  <span className="text-sm font-semibold text-[#059669]">+20%</span>
-                </div>
-              </div>
-              <MiniBarChart data={monthlyData} height={120} />
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left - Photo Visual */}
+            <div className="hidden lg:block">
+              <TeamPhotoVisual 
+                imageSrc="/images/team-engineers.png"
+                imageAlt="Équipe d'ingénieurs maintenance"
+              />
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
-              <div className="flex items-center justify-between mb-6">
-                <div>
-                  <h3 className="text-lg font-bold text-[#0C0A09]">Taux de préventif</h3>
-                  <p className="text-sm text-[#64748b]">Objectif : 80%</p>
-                </div>
+            {/* Right - Content */}
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#059669]/10 border border-[#059669]/20 text-[#059669] mb-6">
+                <TrendingUp className="w-4 h-4" />
+                <span className="text-sm font-semibold">Résultats clients</span>
               </div>
-              <div className="flex items-center gap-8">
-                <DonutChart value={76} max={100} size={120} color="#F97316" label="Atteint" />
-                <div className="flex-1 space-y-4">
-                  <ProgressBar value={76} max={100} color="#F97316" label="Préventif" />
-                  <ProgressBar value={24} max={100} color="#64748b" label="Correctif" />
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0C0A09] tracking-tight mb-6">
+                Des résultats mesurables,<br />
+                <span className="text-[#1E3A8A]">dès les premiers mois.</span>
+              </h2>
+              <p className="text-lg text-[#44403C] mb-8">
+                Nos clients constatent une amélioration significative de leurs indicateurs de performance maintenance en moins de 6 mois.
+              </p>
+
+              {/* KPI Grid */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white rounded-2xl p-5 shadow-lg border border-gray-100">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-10 h-10 rounded-xl bg-[#059669]/10 flex items-center justify-center">
+                      <TrendingDown className="w-5 h-5 text-[#059669]" />
+                    </div>
+                    <span className="text-sm text-gray-500">Temps d'arrêt</span>
+                  </div>
+                  <div className="text-3xl font-bold text-[#0C0A09]">-38%</div>
+                  <div className="text-sm text-[#059669] mt-1">vs. année précédente</div>
+                </div>
+
+                <div className="bg-white rounded-2xl p-5 shadow-lg border border-gray-100">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-10 h-10 rounded-xl bg-[#1E3A8A]/10 flex items-center justify-center">
+                      <Gauge className="w-5 h-5 text-[#1E3A8A]" />
+                    </div>
+                    <span className="text-sm text-gray-500">Disponibilité</span>
+                  </div>
+                  <div className="text-3xl font-bold text-[#0C0A09]">98.5%</div>
+                  <div className="text-sm text-[#059669] mt-1">+2.3% ce mois</div>
+                </div>
+
+                <div className="bg-white rounded-2xl p-5 shadow-lg border border-gray-100">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-10 h-10 rounded-xl bg-[#F97316]/10 flex items-center justify-center">
+                      <Target className="w-5 h-5 text-[#F97316]" />
+                    </div>
+                    <span className="text-sm text-gray-500">First Time Fix</span>
+                  </div>
+                  <div className="text-3xl font-bold text-[#0C0A09]">+89%</div>
+                  <div className="text-sm text-[#059669] mt-1">+24 pts vs. avant</div>
+                </div>
+
+                <div className="bg-white rounded-2xl p-5 shadow-lg border border-gray-100">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-10 h-10 rounded-xl bg-[#7C3AED]/10 flex items-center justify-center">
+                      <DollarSign className="w-5 h-5 text-[#7C3AED]" />
+                    </div>
+                    <span className="text-sm text-gray-500">ROI moyen</span>
+                  </div>
+                  <div className="text-3xl font-bold text-[#0C0A09]">4 mois</div>
+                  <div className="text-sm text-[#059669] mt-1">retour investissement</div>
                 </div>
               </div>
             </div>
@@ -376,8 +261,50 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Machine Room Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F97316]/10 border border-[#F97316]/20 text-[#1E3A8A] mb-6">
+              <Activity className="w-4 h-4 text-[#F97316]" />
+              <span className="text-sm font-semibold">Pilotage en temps réel</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0C0A09] tracking-tight mb-4">
+              Supervisez vos installations,<br />
+              <span className="text-[#1E3A8A]">où que vous soyez.</span>
+            </h2>
+            <p className="text-lg text-[#44403C] max-w-2xl mx-auto">
+              Visualisez l'état de vos équipements, suivez les interventions en cours et anticipez les pannes grâce à nos tableaux de bord intuitifs.
+            </p>
+          </div>
+
+          <div className="mb-12">
+            <MachineRoomVisual 
+              imageSrc="/images/machine-room.png"
+              imageAlt="Salle machine industrielle avec équipements"
+              className="max-w-4xl mx-auto"
+            />
+          </div>
+
+          {/* Feature Pills */}
+          <div className="flex flex-wrap justify-center gap-4">
+            {[
+              { icon: Activity, text: 'Monitoring temps réel', color: '#059669' },
+              { icon: Brain, text: 'Diagnostic IA', color: '#7C3AED' },
+              { icon: Clock, text: 'Alertes préventives', color: '#F97316' },
+              { icon: Shield, text: 'Fonctions vitales', color: '#DC2626' },
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-2 px-5 py-3 bg-[#FAFAF9] rounded-full border border-gray-200">
+                <item.icon className="w-5 h-5" style={{ color: item.color }} />
+                <span className="text-sm font-medium text-[#44403C]">{item.text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-[#FAFAF9]">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F97316]/10 border border-[#F97316]/20 text-[#1E3A8A] mb-6">
@@ -436,8 +363,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Sectors Section with Dashboard Style */}
-      <section className="py-24 bg-[#FAFAF9]">
+      {/* Sectors Section with Photo */}
+      <section className="py-24 bg-white">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -475,39 +402,38 @@ export default function HomePage() {
               </Link>
             </div>
 
-            {/* Sector Stats Dashboard */}
-            <div className="hidden lg:block">
-              <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-200">
-                <h3 className="text-xl font-bold text-[#0C0A09] mb-6">Performance par secteur</h3>
-                
-                <div className="space-y-6">
-                  {[
-                    { sector: 'Industrie', availability: 98.2, improvement: '+15%', icon: Factory },
-                    { sector: 'Santé', availability: 99.8, improvement: '+8%', icon: Stethoscope },
-                    { sector: 'Énergie', availability: 99.9, improvement: '+12%', icon: Zap },
-                    { sector: 'BTP', availability: 96.5, improvement: '+22%', icon: HardHat },
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-4 p-4 bg-[#FAFAF9] rounded-xl">
-                      <div className="w-12 h-12 rounded-xl bg-[#F97316]/10 flex items-center justify-center">
-                        <item.icon className="w-6 h-6 text-[#F97316]" />
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between mb-2">
-                          <span className="font-semibold text-[#0C0A09]">{item.sector}</span>
-                          <div className="flex items-center gap-2">
-                            <span className="text-lg font-bold text-[#1E3A8A]">{item.availability}%</span>
-                            <span className="text-xs font-semibold text-[#059669] bg-[#059669]/10 px-2 py-0.5 rounded-full">{item.improvement}</span>
-                          </div>
-                        </div>
-                        <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-                          <div 
-                            className="h-full bg-gradient-to-r from-[#1E3A8A] to-[#F97316] rounded-full"
-                            style={{ width: `${item.availability}%` }}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  ))}
+            {/* Sector Photo Visual */}
+            <div className="hidden lg:block relative">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/images/warehouse.png"
+                  alt="Entrepôt industriel"
+                  width={550}
+                  height={450}
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+              </div>
+
+              {/* Floating Stats */}
+              <div className="absolute -top-4 left-8 bg-white rounded-xl p-4 shadow-lg">
+                <div className="flex items-center gap-2 mb-1">
+                  <Factory className="w-4 h-4 text-[#F97316]" />
+                  <span className="text-xs text-gray-500">Industrie</span>
+                </div>
+                <div className="text-xl font-bold text-[#0C0A09]">98.2%</div>
+                <div className="text-xs text-[#059669]">Disponibilité</div>
+              </div>
+
+              <div className="absolute -bottom-4 right-8 bg-[#1E3A8A] text-white rounded-xl p-4 shadow-lg">
+                <div className="text-lg font-bold">15</div>
+                <div className="text-xs text-white/80">Secteurs</div>
+              </div>
+
+              <div className="absolute top-1/3 -right-4 bg-white rounded-xl p-3 shadow-lg">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#059669]" />
+                  <span className="text-sm font-medium">Conforme réglementation</span>
                 </div>
               </div>
             </div>
