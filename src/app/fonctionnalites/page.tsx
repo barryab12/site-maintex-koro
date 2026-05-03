@@ -501,13 +501,12 @@ export default function FonctionnalitesPage() {
           
           {/* Right - Photo with KPIs and Graphs */}
           <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-lg">
+            <div className="relative rounded-2xl overflow-hidden shadow-lg w-full h-[280px]">
               <Image
                 src={feature.image}
                 alt={feature.title}
-                width={450}
-                height={280}
-                className="object-cover w-full"
+                fill
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
             </div>
