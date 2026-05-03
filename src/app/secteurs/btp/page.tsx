@@ -5,15 +5,15 @@ import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import Link from 'next/link'
 import { 
-  HeartPulse, Brain, Activity, Target, Shield, Clock, 
+  HardHat, Brain, Activity, Target, Shield, Clock, 
   TrendingDown, Users, Award, Quote, Zap, Database,
   CheckCircle2, BarChart3, BookOpen, FileCheck, ChevronRight, Server, HeadphonesIcon,
-  AlertTriangle, Stethoscope, Syringe
+  AlertTriangle, Building2, Crane
 } from 'lucide-react'
 import { TabNavigation, TabPanel } from '@/components/tab-navigation'
 import { TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup } from '@/components/device-mockups'
 
-export default function SantePage() {
+export default function BTPPage() {
   const [activeTab, setActiveTab] = useState('enjeux')
 
   const contentTabs = [
@@ -24,36 +24,36 @@ export default function SantePage() {
 
   const enjeux = [
     {
-      icon: HeartPulse,
-      title: "Sécurité des patients : priorité absolue",
-      description: "Dans le secteur de la santé, la défaillance d'un équipement médical peut avoir des conséquences directes sur la vie des patients.",
+      icon: Shield,
+      title: "Sécurité sur les chantiers",
+      description: "Le BTP est l'un des secteurs les plus exposés aux risques professionnels. La défaillance d'un équipement peut avoir des conséquences graves.",
       points: [
-        "Équipements de soins critiques",
-        "Disponibilité 24/7",
-        "Risques pour les patients",
-        "Responsabilité médicale"
+        "Engins de chantier dangereux",
+        "Travaux en hauteur",
+        "Équipements de levage",
+        "Environnements complexes"
       ]
     },
     {
-      icon: Stethoscope,
-      title: "Parc d'équipements médicaux complexe",
-      description: "Les établissements de santé gèrent un parc d'équipements variés et complexes : IRM, scanners, blocs opératoires, laboratoires.",
+      icon: TrendingDown,
+      title: "Impact des immobilisations sur les délais",
+      description: "Un engin en panne sur un chantier peut retarder l'ensemble du projet et engendrer des pénalités de retard.",
       points: [
-        "Équipements haute technologie",
-        "Maintenance spécialisée",
-        "Réglementations strictes",
-        "Compétences techniques"
+        "Retards de chantier",
+        "Pénalités contractuelles",
+        "Réorganisation nécessaire",
+        "Surcoûts importants"
       ]
     },
     {
-      icon: FileCheck,
-      title: "Conformité réglementaire stricte",
-      description: "Le secteur de la santé est soumis à des réglementations strictes : certifications, contrôles qualité, traçabilité des équipements.",
+      icon: Building2,
+      title: "Parc d'engins dispersé",
+      description: "Les entreprises du BTP gèrent des parcs d'engins répartis sur plusieurs chantiers géographiquement dispersés.",
       points: [
-        "Certifications HAS",
-        "Contrôles périodiques",
-        "Traçabilité obligatoire",
-        "Documentation exhaustive"
+        "Chantiers multiples",
+        "Engins mobiles",
+        "Transferts fréquents",
+        "Gestion complexe"
       ]
     }
   ]
@@ -61,104 +61,104 @@ export default function SantePage() {
   const solutions = [
     {
       icon: Brain,
-      title: "Diagnostic IA pour équipements médicaux",
-      description: "Maintex utilise l'intelligence artificielle pour analyser les historiques de vos équipements et proposer des diagnostics précis.",
+      title: "Diagnostic IA pour engins de chantier",
+      description: "Maintex utilise l'intelligence artificielle pour analyser les historiques de vos engins et proposer des diagnostics précis.",
       benefits: [
         "Identification des causes racines",
         "Anticipation des pannes",
         "Capitalisation du savoir-faire",
-        "Aide aux biomédicaux"
+        "Aide aux mécaniciens terrain"
       ]
     },
     {
       icon: Activity,
-      title: "Suivi des fonctions vitales",
-      description: "Surveillez les fonctions critiques de votre établissement : blocs opératoires, imagerie, urgences, réanimation.",
+      title: "Suivi des engins par chantier",
+      description: "Visualisez en temps réel la disponibilité de vos engins par chantier et optimisez leur allocation.",
       benefits: [
-        "Vision par service",
-        "Priorisation automatique",
-        "Alertes intelligentes",
+        "Vision par chantier",
+        "Allocation optimisée",
+        "Transferts planifiés",
         "Disponibilité consolidée"
       ]
     },
     {
       icon: Database,
-      title: "Traçabilité complète pour conformité",
-      description: "Maintex garantit une traçabilité exhaustive de toutes les interventions, conforme aux exigences réglementaires.",
+      title: "Gestion du parc d'engins",
+      description: "Centralisez toutes les informations de vos engins : historique, maintenance, localisation, documentation.",
       benefits: [
         "Historique complet",
-        "Rapports d'audit automatisés",
         "Documentation centralisée",
-        "Préparation certifications"
+        "Suivi des heures",
+        "Géolocalisation"
       ]
     },
     {
       icon: Target,
-      title: "First Time Fix pour interventions critiques",
-      description: "Équipez vos équipes biomédicales de toutes les informations pour résoudre les pannes rapidement.",
+      title: "First Time Fix pour interventions terrain",
+      description: "Équipez vos mécaniciens de toutes les informations nécessaires pour résoudre les pannes sur le chantier.",
       benefits: [
         "Diagnostic assisté",
         "Historique accessible",
-        "Procédures détaillées",
-        "Intervention rapide"
+        "Pièces pré-positionnées",
+        "Réduction des déplacements"
       ]
     },
     {
       icon: Clock,
-      title: "Maintenance préventive réglementaire",
-      description: "Planifiez vos opérations de maintenance selon les cycles réglementaires et les recommandations fabricants.",
+      title: "Maintenance préventive par heures",
+      description: "Planifiez vos opérations de maintenance en fonction des heures de fonctionnement de chaque engin.",
       benefits: [
-        "Calendrier réglementaire",
+        "Planification par heures",
         "Alertes d'échéance",
-        "Conformité assurée",
-        "Documentation automatique"
+        "Optimisation des révisions",
+        "Allongement durée de vie"
       ]
     },
     {
       icon: BarChart3,
-      title: "Indicateurs pour la santé",
-      description: "Pilotez votre maintenance avec des indicateurs adaptés aux exigences des établissements de santé.",
+      title: "Indicateurs pour le BTP",
+      description: "Pilotez votre maintenance avec des indicateurs adaptés aux contraintes des chantiers.",
       benefits: [
-        "Disponibilité par service",
-        "Conformité réglementaire",
-        "MTBF/MTTR critiques",
-        "Performance biomédicale"
+        "Disponibilité par engin",
+        "Coût par chantier",
+        "MTBF/MTTR",
+        "Performance parc"
       ]
     }
   ]
 
   const testimonials = [
     {
-      quote: "Maintex nous a permis de réduire nos pannes d'équipements critiques de 40%. La disponibilité de nos IRM est passée à 99.5%.",
-      author: "Dr. Jean-Marc Leroy",
-      role: "Directeur Technique",
-      company: "CHU",
-      stat: "99.5%",
-      statLabel: "disponibilité IRM"
+      quote: "Maintex nous a permis de réduire nos immobilisations d'engins de 35%. Nos chantiers respectent mieux leurs délais.",
+      author: "Michel Dupont",
+      role: "Directeur Parc",
+      company: "Entreprise BTP",
+      stat: "–35%",
+      statLabel: "immobilisations"
     },
     {
-      quote: "La traçabilité complète des interventions nous a été essentielle pour nos certifications HAS. Zéro non-conformité.",
+      quote: "La géolocalisation des engins et le suivi des heures nous a fait gagner un temps précieux dans la gestion de notre parc.",
       author: "Sophie Martin",
-      role: "Responsable Qualité",
-      company: "Clinique Privée",
-      stat: "100%",
-      statLabel: "conformité HAS"
+      role: "Responsable Maintenance",
+      company: "Constructeur",
+      stat: "–40%",
+      statLabel: "temps gestion"
     },
     {
-      quote: "Nos biomédicaux ont accès à l'historique de chaque équipement sur leur mobile. L'efficacité des interventions a bondi.",
-      author: "Pierre Durand",
-      role: "Chef Biomédical",
-      company: "Centre Hospitalier",
-      stat: "+35%",
-      statLabel: "efficacité interventions"
+      quote: "Nos mécaniciens itinérants ont accès à tout l'historique des engins sur leur mobile. Plus besoin de paperasse.",
+      author: "Pierre Bernard",
+      role: "Chef Mécanicien",
+      company: "Groupe BTP",
+      stat: "0",
+      statLabel: "papier terrain"
     }
   ]
 
   const stats = [
-    { value: '99.5%', label: 'Disponibilité équipements' },
-    { value: '100%', label: 'Conformité' },
-    { value: '–40%', label: 'Pannes critiques' },
-    { value: '+35%', label: 'Efficacité interventions' },
+    { value: '–35%', label: 'Immobilisations' },
+    { value: '+80%', label: 'First Time Fix' },
+    { value: '–40%', label: 'Temps gestion' },
+    { value: '0', label: 'Papier terrain' },
   ]
 
   return (
@@ -179,19 +179,19 @@ export default function SantePage() {
             <div>
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 bg-[#F97316]/20 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/30">
-                  <HeartPulse className="w-8 h-8 text-[#F97316]" />
+                  <HardHat className="w-8 h-8 text-[#F97316]" />
                 </div>
                 <div>
-                  <span className="text-white/80 font-medium text-sm uppercase tracking-wider">Santé & Médical</span>
+                  <span className="text-white/80 font-medium text-sm uppercase tracking-wider">BTP & Construction</span>
                 </div>
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight max-w-4xl">
-                Garantissez la disponibilité de vos équipements médicaux
+                Optimisez la disponibilité de votre parc d'engins
               </h1>
 
               <p className="text-lg text-white/80 max-w-xl mb-8">
-                Dans la santé, chaque équipement doit fonctionner parfaitement. Maintex optimise votre maintenance biomédicale pour la sécurité des patients.
+                Dans le BTP, un engin en panne retarde tout le chantier. Maintex vous aide à maintenir votre parc opérationnel et à respecter vos délais.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -384,7 +384,7 @@ export default function SantePage() {
             {/* Comparison */}
             <div className="bg-white rounded-2xl p-8 border border-gray-200">
               <h3 className="text-xl font-bold text-[#0C0A09] mb-6 text-center">
-                Dans la santé, la maintenance protège les patients
+                Dans le BTP, la maintenance impacte directement vos délais
               </h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-red-50 rounded-xl p-6 border border-red-100">
@@ -395,15 +395,15 @@ export default function SantePage() {
                   <ul className="space-y-2 text-red-700/80 text-sm">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Équipements en panne
+                      Engins fréquemment en panne
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Risques pour les patients
+                      Retards de chantier
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Non-conformités
+                      Surcoûts importants
                     </li>
                   </ul>
                 </div>
@@ -415,15 +415,15 @@ export default function SantePage() {
                   <ul className="space-y-2 text-green-700/80 text-sm">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Équipements disponibles
+                      Engins disponibles
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Sécurité patients garantie
+                      Chantiers dans les délais
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Conformité totale
+                      Maîtrise des coûts
                     </li>
                   </ul>
                 </div>
@@ -443,10 +443,10 @@ export default function SantePage() {
             <Zap className="w-8 h-8 text-[#F97316]" />
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Découvrez Maintex pour votre établissement de santé
+            Découvrez Maintex pour votre parc d'engins
           </h2>
           <p className="text-xl text-white/90 mb-4 max-w-3xl mx-auto">
-            Hôpitaux, cliniques, centres d&apos;imagerie : Maintex s&apos;adapte à tous les établissements de santé.
+            Pelle, bulldozer, grue, nacelle : Maintex s&apos;adapte à tous vos engins de chantier.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <Link 

@@ -5,15 +5,15 @@ import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import Link from 'next/link'
 import { 
-  HeartPulse, Brain, Activity, Target, Shield, Clock, 
+  Radio, Brain, Activity, Target, Shield, Clock, 
   TrendingDown, Users, Award, Quote, Zap, Database,
   CheckCircle2, BarChart3, BookOpen, FileCheck, ChevronRight, Server, HeadphonesIcon,
-  AlertTriangle, Stethoscope, Syringe
+  AlertTriangle, Antenna, Wifi
 } from 'lucide-react'
 import { TabNavigation, TabPanel } from '@/components/tab-navigation'
 import { TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup } from '@/components/device-mockups'
 
-export default function SantePage() {
+export default function TelecomsPage() {
   const [activeTab, setActiveTab] = useState('enjeux')
 
   const contentTabs = [
@@ -24,36 +24,36 @@ export default function SantePage() {
 
   const enjeux = [
     {
-      icon: HeartPulse,
-      title: "Sécurité des patients : priorité absolue",
-      description: "Dans le secteur de la santé, la défaillance d'un équipement médical peut avoir des conséquences directes sur la vie des patients.",
+      icon: Wifi,
+      title: "Continuité du service réseau",
+      description: "Les opérateurs télécoms doivent garantir une disponibilité maximale de leur réseau. Toute coupure impacte directement les clients.",
       points: [
-        "Équipements de soins critiques",
-        "Disponibilité 24/7",
-        "Risques pour les patients",
-        "Responsabilité médicale"
+        "Disponibilité 99.99% exigée",
+        "Impact client immédiat",
+        "Pénalités de SLA",
+        "Image de marque"
       ]
     },
     {
-      icon: Stethoscope,
-      title: "Parc d'équipements médicaux complexe",
-      description: "Les établissements de santé gèrent un parc d'équipements variés et complexes : IRM, scanners, blocs opératoires, laboratoires.",
+      icon: Antenna,
+      title: "Infrastructure dispersée",
+      description: "Les réseaux télécoms s'étendent sur des milliers de sites géographiquement dispersés : antennes, datacenters, centres techniques.",
       points: [
-        "Équipements haute technologie",
-        "Maintenance spécialisée",
-        "Réglementations strictes",
-        "Compétences techniques"
+        "Sites multiples",
+        "Accès parfois difficile",
+        "Coordination complexe",
+        "Déplacements fréquents"
       ]
     },
     {
-      icon: FileCheck,
-      title: "Conformité réglementaire stricte",
-      description: "Le secteur de la santé est soumis à des réglementations strictes : certifications, contrôles qualité, traçabilité des équipements.",
+      icon: Server,
+      title: "Technologies en constante évolution",
+      description: "La rapidité d'évolution des technologies (5G, fibre, edge computing) nécessite une maintenance adaptée et des compétences techniques pointues.",
       points: [
-        "Certifications HAS",
-        "Contrôles périodiques",
-        "Traçabilité obligatoire",
-        "Documentation exhaustive"
+        "Montée en compétence continue",
+        "Équipements variés",
+        "Standards évolutifs",
+        "Documentation complexe"
       ]
     }
   ]
@@ -61,21 +61,21 @@ export default function SantePage() {
   const solutions = [
     {
       icon: Brain,
-      title: "Diagnostic IA pour équipements médicaux",
+      title: "Diagnostic IA pour équipements réseau",
       description: "Maintex utilise l'intelligence artificielle pour analyser les historiques de vos équipements et proposer des diagnostics précis.",
       benefits: [
         "Identification des causes racines",
         "Anticipation des pannes",
         "Capitalisation du savoir-faire",
-        "Aide aux biomédicaux"
+        "Aide aux techniciens terrain"
       ]
     },
     {
       icon: Activity,
-      title: "Suivi des fonctions vitales",
-      description: "Surveillez les fonctions critiques de votre établissement : blocs opératoires, imagerie, urgences, réanimation.",
+      title: "Suivi des fonctions vitales du réseau",
+      description: "Surveillez les fonctions critiques de votre réseau : transmission, distribution, accès client.",
       benefits: [
-        "Vision par service",
+        "Vision par fonction critique",
         "Priorisation automatique",
         "Alertes intelligentes",
         "Disponibilité consolidée"
@@ -83,82 +83,82 @@ export default function SantePage() {
     },
     {
       icon: Database,
-      title: "Traçabilité complète pour conformité",
-      description: "Maintex garantit une traçabilité exhaustive de toutes les interventions, conforme aux exigences réglementaires.",
+      title: "Gestion des interventions terrain",
+      description: "Optimisez la gestion de vos interventions sur sites dispersés avec un accès mobile complet.",
       benefits: [
-        "Historique complet",
-        "Rapports d'audit automatisés",
-        "Documentation centralisée",
-        "Préparation certifications"
+        "Accès terrain mobile",
+        "Historique par site",
+        "Géolocalisation",
+        "Rapports automatisés"
       ]
     },
     {
       icon: Target,
-      title: "First Time Fix pour interventions critiques",
-      description: "Équipez vos équipes biomédicales de toutes les informations pour résoudre les pannes rapidement.",
+      title: "First Time Fix pour interventions terrain",
+      description: "Équipez vos techniciens de toutes les informations pour résoudre les incidents dès le premier passage.",
       benefits: [
         "Diagnostic assisté",
         "Historique accessible",
-        "Procédures détaillées",
-        "Intervention rapide"
+        "Pièces pré-positionnées",
+        "Réduction des retours"
       ]
     },
     {
       icon: Clock,
-      title: "Maintenance préventive réglementaire",
-      description: "Planifiez vos opérations de maintenance selon les cycles réglementaires et les recommandations fabricants.",
+      title: "Maintenance préventive planifiée",
+      description: "Planifiez vos opérations de maintenance en fonction des contraintes de service et des fenêtres d'intervention.",
       benefits: [
-        "Calendrier réglementaire",
-        "Alertes d'échéance",
-        "Conformité assurée",
-        "Documentation automatique"
+        "Planification par impact",
+        "Créneaux d'intervention",
+        "Optimisation des déplacements",
+        "Respect des SLA"
       ]
     },
     {
       icon: BarChart3,
-      title: "Indicateurs pour la santé",
-      description: "Pilotez votre maintenance avec des indicateurs adaptés aux exigences des établissements de santé.",
+      title: "Indicateurs pour télécoms",
+      description: "Pilotez votre maintenance avec des indicateurs adaptés aux exigences des opérateurs télécoms.",
       benefits: [
-        "Disponibilité par service",
-        "Conformité réglementaire",
-        "MTBF/MTTR critiques",
-        "Performance biomédicale"
+        "Disponibilité réseau",
+        "MTBF/MTTR",
+        "Respect SLA",
+        "Performance terrain"
       ]
     }
   ]
 
   const testimonials = [
     {
-      quote: "Maintex nous a permis de réduire nos pannes d'équipements critiques de 40%. La disponibilité de nos IRM est passée à 99.5%.",
-      author: "Dr. Jean-Marc Leroy",
-      role: "Directeur Technique",
-      company: "CHU",
-      stat: "99.5%",
-      statLabel: "disponibilité IRM"
+      quote: "Maintex nous a permis de réduire nos interventions répétées de 45% sur nos sites d'antennes. Le diagnostic assisté fait gagner un temps précieux.",
+      author: "Thomas Leroy",
+      role: "Directeur Maintenance",
+      company: "Opérateur Télécom",
+      stat: "–45%",
+      statLabel: "interventions répétées"
     },
     {
-      quote: "La traçabilité complète des interventions nous a été essentielle pour nos certifications HAS. Zéro non-conformité.",
+      quote: "La géolocalisation des sites et l'accès mobile ont optimisé nos déplacements. Nos techniciens gagnent 30% de temps.",
       author: "Sophie Martin",
-      role: "Responsable Qualité",
-      company: "Clinique Privée",
-      stat: "100%",
-      statLabel: "conformité HAS"
+      role: "Responsable Terrain",
+      company: "Infrastructure Télécom",
+      stat: "–30%",
+      statLabel: "temps déplacement"
     },
     {
-      quote: "Nos biomédicaux ont accès à l'historique de chaque équipement sur leur mobile. L'efficacité des interventions a bondi.",
-      author: "Pierre Durand",
-      role: "Chef Biomédical",
-      company: "Centre Hospitalier",
-      stat: "+35%",
-      statLabel: "efficacité interventions"
+      quote: "Le respect de nos SLA clients s'est amélioré significativement grâce à la meilleure anticipation des pannes.",
+      author: "Marc Dubois",
+      role: "Directeur Technique",
+      company: "Opérateur Fibre",
+      stat: "+15%",
+      statLabel: "SLA respectés"
     }
   ]
 
   const stats = [
-    { value: '99.5%', label: 'Disponibilité équipements' },
-    { value: '100%', label: 'Conformité' },
-    { value: '–40%', label: 'Pannes critiques' },
-    { value: '+35%', label: 'Efficacité interventions' },
+    { value: '–45%', label: 'Interventions répétées' },
+    { value: '+15%', label: 'SLA respectés' },
+    { value: '+85%', label: 'First Time Fix' },
+    { value: '–30%', label: 'Temps déplacement' },
   ]
 
   return (
@@ -179,19 +179,19 @@ export default function SantePage() {
             <div>
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 bg-[#F97316]/20 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/30">
-                  <HeartPulse className="w-8 h-8 text-[#F97316]" />
+                  <Radio className="w-8 h-8 text-[#F97316]" />
                 </div>
                 <div>
-                  <span className="text-white/80 font-medium text-sm uppercase tracking-wider">Santé & Médical</span>
+                  <span className="text-white/80 font-medium text-sm uppercase tracking-wider">Télécommunications</span>
                 </div>
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight max-w-4xl">
-                Garantissez la disponibilité de vos équipements médicaux
+                Garantissez la disponibilité de votre réseau
               </h1>
 
               <p className="text-lg text-white/80 max-w-xl mb-8">
-                Dans la santé, chaque équipement doit fonctionner parfaitement. Maintex optimise votre maintenance biomédicale pour la sécurité des patients.
+                Dans les télécoms, chaque minute de coupure impacte vos clients. Maintex optimise votre maintenance pour une disponibilité maximale.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -384,7 +384,7 @@ export default function SantePage() {
             {/* Comparison */}
             <div className="bg-white rounded-2xl p-8 border border-gray-200">
               <h3 className="text-xl font-bold text-[#0C0A09] mb-6 text-center">
-                Dans la santé, la maintenance protège les patients
+                Dans les télécoms, la maintenance garantit la qualité de service
               </h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-red-50 rounded-xl p-6 border border-red-100">
@@ -395,15 +395,15 @@ export default function SantePage() {
                   <ul className="space-y-2 text-red-700/80 text-sm">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Équipements en panne
+                      Coupures fréquentes
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Risques pour les patients
+                      SLA non respectés
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Non-conformités
+                      Interventions répétées
                     </li>
                   </ul>
                 </div>
@@ -415,15 +415,15 @@ export default function SantePage() {
                   <ul className="space-y-2 text-green-700/80 text-sm">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Équipements disponibles
+                      Disponibilité maximale
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Sécurité patients garantie
+                      SLA respectés
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Conformité totale
+                      First Time Fix
                     </li>
                   </ul>
                 </div>
@@ -443,10 +443,10 @@ export default function SantePage() {
             <Zap className="w-8 h-8 text-[#F97316]" />
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Découvrez Maintex pour votre établissement de santé
+            Découvrez Maintex pour votre réseau télécom
           </h2>
           <p className="text-xl text-white/90 mb-4 max-w-3xl mx-auto">
-            Hôpitaux, cliniques, centres d&apos;imagerie : Maintex s&apos;adapte à tous les établissements de santé.
+            Antennes, datacenters, centres techniques : Maintex s&apos;adapte à toutes vos installations.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <Link 

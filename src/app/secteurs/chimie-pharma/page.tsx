@@ -5,15 +5,15 @@ import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import Link from 'next/link'
 import { 
-  HeartPulse, Brain, Activity, Target, Shield, Clock, 
+  FlaskConical, Brain, Activity, Target, Shield, Clock, 
   TrendingDown, Users, Award, Quote, Zap, Database,
   CheckCircle2, BarChart3, BookOpen, FileCheck, ChevronRight, Server, HeadphonesIcon,
-  AlertTriangle, Stethoscope, Syringe
+  AlertTriangle, Beaker, Biohazard
 } from 'lucide-react'
 import { TabNavigation, TabPanel } from '@/components/tab-navigation'
 import { TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup } from '@/components/device-mockups'
 
-export default function SantePage() {
+export default function ChimiePharmaPage() {
   const [activeTab, setActiveTab] = useState('enjeux')
 
   const contentTabs = [
@@ -24,36 +24,36 @@ export default function SantePage() {
 
   const enjeux = [
     {
-      icon: HeartPulse,
-      title: "Sécurité des patients : priorité absolue",
-      description: "Dans le secteur de la santé, la défaillance d'un équipement médical peut avoir des conséquences directes sur la vie des patients.",
+      icon: Shield,
+      title: "Sécurité et risques chimiques : une responsabilité majeure",
+      description: "Dans l'industrie chimique et pharmaceutique, la défaillance d'un équipement peut avoir des conséquences dramatiques pour le personnel et l'environnement.",
       points: [
-        "Équipements de soins critiques",
-        "Disponibilité 24/7",
-        "Risques pour les patients",
-        "Responsabilité médicale"
-      ]
-    },
-    {
-      icon: Stethoscope,
-      title: "Parc d'équipements médicaux complexe",
-      description: "Les établissements de santé gèrent un parc d'équipements variés et complexes : IRM, scanners, blocs opératoires, laboratoires.",
-      points: [
-        "Équipements haute technologie",
-        "Maintenance spécialisée",
-        "Réglementations strictes",
-        "Compétences techniques"
+        "Risques chimiques et toxiques",
+        "Équipements sous pression",
+        "Réactions exothermiques",
+        "Stockage de matières dangereuses"
       ]
     },
     {
       icon: FileCheck,
-      title: "Conformité réglementaire stricte",
-      description: "Le secteur de la santé est soumis à des réglementations strictes : certifications, contrôles qualité, traçabilité des équipements.",
+      title: "Conformité BPF/GMP : exigences strictes",
+      description: "L'industrie pharmaceutique est soumise aux Bonnes Pratiques de Fabrication (BPF/GMP) qui imposent une traçabilité complète et des procédures rigoureuses.",
       points: [
-        "Certifications HAS",
-        "Contrôles périodiques",
-        "Traçabilité obligatoire",
-        "Documentation exhaustive"
+        "Validation des procédés",
+        "Documentation exhaustive",
+        "Traçabilité des interventions",
+        "Préparation aux inspections"
+      ]
+    },
+    {
+      icon: Beaker,
+      title: "Continuité des processus critiques",
+      description: "Les réacteurs, les systèmes de filtration, les enceintes climatiques doivent fonctionner sans interruption pour garantir la qualité des produits.",
+      points: [
+        "Lots de production compromis",
+        "Pertes de matières premières",
+        "Non-conformités produit",
+        "Délais de livraison impactés"
       ]
     }
   ]
@@ -61,104 +61,104 @@ export default function SantePage() {
   const solutions = [
     {
       icon: Brain,
-      title: "Diagnostic IA pour équipements médicaux",
-      description: "Maintex utilise l'intelligence artificielle pour analyser les historiques de vos équipements et proposer des diagnostics précis.",
+      title: "Diagnostic IA pour équipements critiques",
+      description: "Maintex utilise l'intelligence artificielle pour analyser les historiques et proposer des diagnostics précis sur vos équipements de production.",
       benefits: [
-        "Identification des causes racines",
-        "Anticipation des pannes",
+        "Analyse des tendances de défaillance",
+        "Aide au diagnostic en temps réel",
         "Capitalisation du savoir-faire",
-        "Aide aux biomédicaux"
+        "Réduction des erreurs de diagnostic"
       ]
     },
     {
       icon: Activity,
-      title: "Suivi des fonctions vitales",
-      description: "Surveillez les fonctions critiques de votre établissement : blocs opératoires, imagerie, urgences, réanimation.",
+      title: "Suivi des fonctions vitales de production",
+      description: "Surveillez les fonctions critiques de vos unités de production : réaction, filtration, conditionnement.",
       benefits: [
-        "Vision par service",
+        "Vision par fonction critique",
         "Priorisation automatique",
         "Alertes intelligentes",
-        "Disponibilité consolidée"
+        "Disponibilité en temps réel"
       ]
     },
     {
       icon: Database,
-      title: "Traçabilité complète pour conformité",
+      title: "Traçabilité complète pour audits BPF",
       description: "Maintex garantit une traçabilité exhaustive de toutes les interventions, conforme aux exigences réglementaires.",
       benefits: [
-        "Historique complet",
+        "Historique complet par équipement",
         "Rapports d'audit automatisés",
-        "Documentation centralisée",
-        "Préparation certifications"
+        "Signatures électroniques",
+        "Conformité garantie"
       ]
     },
     {
       icon: Target,
       title: "First Time Fix pour interventions critiques",
-      description: "Équipez vos équipes biomédicales de toutes les informations pour résoudre les pannes rapidement.",
+      description: "Équipez vos techniciens de toutes les informations nécessaires pour résoudre les pannes dès le premier passage.",
       benefits: [
         "Diagnostic assisté",
-        "Historique accessible",
-        "Procédures détaillées",
+        "Procédures validées",
+        "Pièces pré-positionnées",
         "Intervention rapide"
       ]
     },
     {
       icon: Clock,
       title: "Maintenance préventive réglementaire",
-      description: "Planifiez vos opérations de maintenance selon les cycles réglementaires et les recommandations fabricants.",
+      description: "Planifiez et suivez toutes vos opérations de maintenance préventive obligatoires.",
       benefits: [
         "Calendrier réglementaire",
         "Alertes d'échéance",
-        "Conformité assurée",
-        "Documentation automatique"
+        "Historique des contrôles",
+        "Conformité assurée"
       ]
     },
     {
       icon: BarChart3,
-      title: "Indicateurs pour la santé",
-      description: "Pilotez votre maintenance avec des indicateurs adaptés aux exigences des établissements de santé.",
+      title: "Indicateurs pour maîtrise des procédés",
+      description: "Pilotez votre maintenance avec des indicateurs pertinents pour l'industrie chimique et pharmaceutique.",
       benefits: [
-        "Disponibilité par service",
-        "Conformité réglementaire",
-        "MTBF/MTTR critiques",
-        "Performance biomédicale"
+        "Taux de disponibilité",
+        "MTBF par équipement",
+        "Conformité préventif",
+        "Coûts de maintenance"
       ]
     }
   ]
 
   const testimonials = [
     {
-      quote: "Maintex nous a permis de réduire nos pannes d'équipements critiques de 40%. La disponibilité de nos IRM est passée à 99.5%.",
-      author: "Dr. Jean-Marc Leroy",
-      role: "Directeur Technique",
-      company: "CHU",
-      stat: "99.5%",
-      statLabel: "disponibilité IRM"
-    },
-    {
-      quote: "La traçabilité complète des interventions nous a été essentielle pour nos certifications HAS. Zéro non-conformité.",
-      author: "Sophie Martin",
-      role: "Responsable Qualité",
-      company: "Clinique Privée",
+      quote: "Maintex nous a permis de passer nos audits BPF sans aucune non-conformité liée à la maintenance. La traçabilité est impeccable.",
+      author: "Isabelle Moreau",
+      role: "Directrice Qualité",
+      company: "Laboratoire Pharmaceutique",
       stat: "100%",
-      statLabel: "conformité HAS"
+      statLabel: "conformité audits"
     },
     {
-      quote: "Nos biomédicaux ont accès à l'historique de chaque équipement sur leur mobile. L'efficacité des interventions a bondi.",
-      author: "Pierre Durand",
-      role: "Chef Biomédical",
-      company: "Centre Hospitalier",
-      stat: "+35%",
-      statLabel: "efficacité interventions"
+      quote: "L'aide au diagnostic par IA a réduit nos temps d'intervention de 30% sur les équipements critiques de réaction.",
+      author: "Jean-Pierre Bernard",
+      role: "Responsable Maintenance",
+      company: "Site Chimique",
+      stat: "–30%",
+      statLabel: "temps d'intervention"
+    },
+    {
+      quote: "Nos techniciens ont accès à l'historique complet de chaque équipement directement sur le terrain. Plus besoin de paperasse.",
+      author: "Claire Dubois",
+      role: "Responsable HSE",
+      company: "Industrie Pharmaceutique",
+      stat: "0",
+      statLabel: "papier terrain"
     }
   ]
 
   const stats = [
-    { value: '99.5%', label: 'Disponibilité équipements' },
-    { value: '100%', label: 'Conformité' },
-    { value: '–40%', label: 'Pannes critiques' },
-    { value: '+35%', label: 'Efficacité interventions' },
+    { value: '100%', label: 'Conformité BPF' },
+    { value: '–35%', label: 'Temps d\'arrêt' },
+    { value: '+85%', label: 'First Time Fix' },
+    { value: '0', label: 'Papier terrain' },
   ]
 
   return (
@@ -179,19 +179,19 @@ export default function SantePage() {
             <div>
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 bg-[#F97316]/20 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/30">
-                  <HeartPulse className="w-8 h-8 text-[#F97316]" />
+                  <FlaskConical className="w-8 h-8 text-[#F97316]" />
                 </div>
                 <div>
-                  <span className="text-white/80 font-medium text-sm uppercase tracking-wider">Santé & Médical</span>
+                  <span className="text-white/80 font-medium text-sm uppercase tracking-wider">Chimie & Pharmacie</span>
                 </div>
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight max-w-4xl">
-                Garantissez la disponibilité de vos équipements médicaux
+                Garantissez la sécurité et la conformité de vos installations
               </h1>
 
               <p className="text-lg text-white/80 max-w-xl mb-8">
-                Dans la santé, chaque équipement doit fonctionner parfaitement. Maintex optimise votre maintenance biomédicale pour la sécurité des patients.
+                Dans l&apos;industrie chimique et pharmaceutique, la maintenance est un enjeu de sécurité et de conformité. Maintex vous accompagne dans cette démarche critique.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -384,7 +384,7 @@ export default function SantePage() {
             {/* Comparison */}
             <div className="bg-white rounded-2xl p-8 border border-gray-200">
               <h3 className="text-xl font-bold text-[#0C0A09] mb-6 text-center">
-                Dans la santé, la maintenance protège les patients
+                En chimie-pharma, la maintenance protège vos équipes et vos productions
               </h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-red-50 rounded-xl p-6 border border-red-100">
@@ -395,15 +395,15 @@ export default function SantePage() {
                   <ul className="space-y-2 text-red-700/80 text-sm">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Équipements en panne
+                      Risques sécurité accrus
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Risques pour les patients
+                      Non-conformités BPF
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Non-conformités
+                      Lots compromis
                     </li>
                   </ul>
                 </div>
@@ -415,15 +415,15 @@ export default function SantePage() {
                   <ul className="space-y-2 text-green-700/80 text-sm">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Équipements disponibles
+                      Sécurité renforcée
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Sécurité patients garantie
+                      Conformité garantie
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Conformité totale
+                      Production continue
                     </li>
                   </ul>
                 </div>
@@ -443,10 +443,10 @@ export default function SantePage() {
             <Zap className="w-8 h-8 text-[#F97316]" />
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Découvrez Maintex pour votre établissement de santé
+            Découvrez Maintex pour vos installations chimiques et pharmaceutiques
           </h2>
           <p className="text-xl text-white/90 mb-4 max-w-3xl mx-auto">
-            Hôpitaux, cliniques, centres d&apos;imagerie : Maintex s&apos;adapte à tous les établissements de santé.
+            Réacteurs, lignes de conditionnement, enceintes climatiques : Maintex s&apos;adapte à tous vos équipements critiques.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <Link 

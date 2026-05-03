@@ -5,15 +5,15 @@ import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import Link from 'next/link'
 import { 
-  HeartPulse, Brain, Activity, Target, Shield, Clock, 
+  Hotel, Brain, Activity, Target, Shield, Clock, 
   TrendingDown, Users, Award, Quote, Zap, Database,
   CheckCircle2, BarChart3, BookOpen, FileCheck, ChevronRight, Server, HeadphonesIcon,
-  AlertTriangle, Stethoscope, Syringe
+  AlertTriangle, BedDouble, ConciergeBell
 } from 'lucide-react'
 import { TabNavigation, TabPanel } from '@/components/tab-navigation'
 import { TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup } from '@/components/device-mockups'
 
-export default function SantePage() {
+export default function HotelleriePage() {
   const [activeTab, setActiveTab] = useState('enjeux')
 
   const contentTabs = [
@@ -24,36 +24,36 @@ export default function SantePage() {
 
   const enjeux = [
     {
-      icon: HeartPulse,
-      title: "Sécurité des patients : priorité absolue",
-      description: "Dans le secteur de la santé, la défaillance d'un équipement médical peut avoir des conséquences directes sur la vie des patients.",
+      icon: BedDouble,
+      title: "Expérience client et satisfaction",
+      description: "Dans l'hôtellerie, la moindre défaillance impacte directement l'expérience client. Climatisation en panne, ascenseur bloqué : les avis négatifs suivent.",
       points: [
-        "Équipements de soins critiques",
-        "Disponibilité 24/7",
-        "Risques pour les patients",
-        "Responsabilité médicale"
+        "Confort des chambres",
+        "Services disponibles",
+        "Avis clients en ligne",
+        "Image de marque"
       ]
     },
     {
-      icon: Stethoscope,
-      title: "Parc d'équipements médicaux complexe",
-      description: "Les établissements de santé gèrent un parc d'équipements variés et complexes : IRM, scanners, blocs opératoires, laboratoires.",
+      icon: ConciergeBell,
+      title: "Disponibilité des équipements critiques",
+      description: "Les hôtels dépendent d'équipements critiques qui doivent fonctionner 24/7 : chauffage, eau chaude, ascenseurs, cuisines.",
       points: [
-        "Équipements haute technologie",
-        "Maintenance spécialisée",
-        "Réglementations strictes",
-        "Compétences techniques"
+        "Service 24/7 attendu",
+        "Équipements variés",
+        "Interventions rapides",
+        "Impact immédiat client"
       ]
     },
     {
-      icon: FileCheck,
-      title: "Conformité réglementaire stricte",
-      description: "Le secteur de la santé est soumis à des réglementations strictes : certifications, contrôles qualité, traçabilité des équipements.",
+      icon: Shield,
+      title: "Conformité et sécurité",
+      description: "Les établissements hôteliers sont soumis à des réglementations strictes : sécurité incendie, hygiène, accessibilité.",
       points: [
-        "Certifications HAS",
         "Contrôles périodiques",
-        "Traçabilité obligatoire",
-        "Documentation exhaustive"
+        "Normes d'hygiène",
+        "Sécurité incendie",
+        "Accessibilité PMR"
       ]
     }
   ]
@@ -61,21 +61,21 @@ export default function SantePage() {
   const solutions = [
     {
       icon: Brain,
-      title: "Diagnostic IA pour équipements médicaux",
+      title: "Diagnostic IA pour équipements hôteliers",
       description: "Maintex utilise l'intelligence artificielle pour analyser les historiques de vos équipements et proposer des diagnostics précis.",
       benefits: [
         "Identification des causes racines",
         "Anticipation des pannes",
         "Capitalisation du savoir-faire",
-        "Aide aux biomédicaux"
+        "Aide aux équipes techniques"
       ]
     },
     {
       icon: Activity,
       title: "Suivi des fonctions vitales",
-      description: "Surveillez les fonctions critiques de votre établissement : blocs opératoires, imagerie, urgences, réanimation.",
+      description: "Surveillez les fonctions critiques de votre établissement : chambres, cuisines, espaces communs.",
       benefits: [
-        "Vision par service",
+        "Vision par fonction",
         "Priorisation automatique",
         "Alertes intelligentes",
         "Disponibilité consolidée"
@@ -83,82 +83,82 @@ export default function SantePage() {
     },
     {
       icon: Database,
-      title: "Traçabilité complète pour conformité",
-      description: "Maintex garantit une traçabilité exhaustive de toutes les interventions, conforme aux exigences réglementaires.",
+      title: "Gestion centralisée des équipements",
+      description: "Centralisez toutes les informations de vos équipements : historique, maintenance, documentation technique.",
       benefits: [
         "Historique complet",
-        "Rapports d'audit automatisés",
         "Documentation centralisée",
-        "Préparation certifications"
+        "Accès mobile terrain",
+        "Rapports automatisés"
       ]
     },
     {
       icon: Target,
-      title: "First Time Fix pour interventions critiques",
-      description: "Équipez vos équipes biomédicales de toutes les informations pour résoudre les pannes rapidement.",
+      title: "First Time Fix pour interventions rapides",
+      description: "Équipez vos équipes techniques de toutes les informations pour résoudre les pannes dès le premier passage.",
       benefits: [
         "Diagnostic assisté",
         "Historique accessible",
-        "Procédures détaillées",
-        "Intervention rapide"
+        "Réduction des retours",
+        "Satisfaction client"
       ]
     },
     {
       icon: Clock,
-      title: "Maintenance préventive réglementaire",
-      description: "Planifiez vos opérations de maintenance selon les cycles réglementaires et les recommandations fabricants.",
+      title: "Maintenance préventive planifiée",
+      description: "Planifiez vos opérations de maintenance selon les cycles réglementaires et les périodes creuses.",
       benefits: [
         "Calendrier réglementaire",
-        "Alertes d'échéance",
+        "Interventions planifiées",
         "Conformité assurée",
-        "Documentation automatique"
+        "Optimisation des budgets"
       ]
     },
     {
       icon: BarChart3,
-      title: "Indicateurs pour la santé",
-      description: "Pilotez votre maintenance avec des indicateurs adaptés aux exigences des établissements de santé.",
+      title: "Indicateurs pour l'hôtellerie",
+      description: "Pilotez votre maintenance avec des indicateurs adaptés aux exigences de l'hôtellerie.",
       benefits: [
-        "Disponibilité par service",
+        "Satisfaction client",
+        "Disponibilité équipements",
         "Conformité réglementaire",
-        "MTBF/MTTR critiques",
-        "Performance biomédicale"
+        "Coût par chambre"
       ]
     }
   ]
 
   const testimonials = [
     {
-      quote: "Maintex nous a permis de réduire nos pannes d'équipements critiques de 40%. La disponibilité de nos IRM est passée à 99.5%.",
-      author: "Dr. Jean-Marc Leroy",
+      quote: "Maintex nous a permis de réduire nos incidents techniques de 45%. Nos avis clients se sont nettement améliorés.",
+      author: "François Mercier",
       role: "Directeur Technique",
-      company: "CHU",
-      stat: "99.5%",
-      statLabel: "disponibilité IRM"
+      company: "Groupe Hôtelier",
+      stat: "–45%",
+      statLabel: "incidents techniques"
     },
     {
-      quote: "La traçabilité complète des interventions nous a été essentielle pour nos certifications HAS. Zéro non-conformité.",
-      author: "Sophie Martin",
+      quote: "La planification automatique des contrôles réglementaires nous garantit une conformité totale. Zéro surprise lors des inspections.",
+      author: "Marie Laurent",
       role: "Responsable Qualité",
-      company: "Clinique Privée",
+      company: "Hôtel 4 étoiles",
       stat: "100%",
-      statLabel: "conformité HAS"
+      statLabel: "conformité"
     },
     {
-      quote: "Nos biomédicaux ont accès à l'historique de chaque équipement sur leur mobile. L'efficacité des interventions a bondi.",
+      quote: "Nos équipes techniques ont accès à l'historique de chaque équipement sur leur mobile. Plus besoin de paperasse.",
       author: "Pierre Durand",
-      role: "Chef Biomédical",
-      company: "Centre Hospitalier",
-      stat: "+35%",
-      statLabel: "efficacité interventions"
+      role: "Chef Technique",
+      company: "Resort & Spa",
+      stat: "0",
+      statLabel: "papier terrain"
     }
   ]
 
   const stats = [
-    { value: '99.5%', label: 'Disponibilité équipements' },
+    { value: '–45%', label: 'Incidents techniques' },
+    { value: '+20%', label: 'Satisfaction client' },
     { value: '100%', label: 'Conformité' },
-    { value: '–40%', label: 'Pannes critiques' },
-    { value: '+35%', label: 'Efficacité interventions' },
+    { value: '+85%', label: 'First Time Fix' },
   ]
 
   return (
@@ -179,19 +179,19 @@ export default function SantePage() {
             <div>
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 bg-[#F97316]/20 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/30">
-                  <HeartPulse className="w-8 h-8 text-[#F97316]" />
+                  <Hotel className="w-8 h-8 text-[#F97316]" />
                 </div>
                 <div>
-                  <span className="text-white/80 font-medium text-sm uppercase tracking-wider">Santé & Médical</span>
+                  <span className="text-white/80 font-medium text-sm uppercase tracking-wider">Hôtellerie & Hospitalité</span>
                 </div>
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight max-w-4xl">
-                Garantissez la disponibilité de vos équipements médicaux
+                Offrez une expérience client irréprochable
               </h1>
 
               <p className="text-lg text-white/80 max-w-xl mb-8">
-                Dans la santé, chaque équipement doit fonctionner parfaitement. Maintex optimise votre maintenance biomédicale pour la sécurité des patients.
+                Dans l&apos;hôtellerie, la qualité des équipements impacte directement la satisfaction client. Maintex vous aide à maintenir un niveau de service exceptionnel.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -384,7 +384,7 @@ export default function SantePage() {
             {/* Comparison */}
             <div className="bg-white rounded-2xl p-8 border border-gray-200">
               <h3 className="text-xl font-bold text-[#0C0A09] mb-6 text-center">
-                Dans la santé, la maintenance protège les patients
+                Dans l&apos;hôtellerie, la maintenance garantit l&apos;expérience client
               </h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-red-50 rounded-xl p-6 border border-red-100">
@@ -395,15 +395,15 @@ export default function SantePage() {
                   <ul className="space-y-2 text-red-700/80 text-sm">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Équipements en panne
+                      Équipements souvent en panne
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Risques pour les patients
+                      Clients mécontents
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Non-conformités
+                      Avis négatifs
                     </li>
                   </ul>
                 </div>
@@ -415,15 +415,15 @@ export default function SantePage() {
                   <ul className="space-y-2 text-green-700/80 text-sm">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Équipements disponibles
+                      Équipements fiables
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Sécurité patients garantie
+                      Clients satisfaits
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Conformité totale
+                      Excellents avis
                     </li>
                   </ul>
                 </div>
@@ -443,10 +443,10 @@ export default function SantePage() {
             <Zap className="w-8 h-8 text-[#F97316]" />
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Découvrez Maintex pour votre établissement de santé
+            Découvrez Maintex pour votre établissement
           </h2>
           <p className="text-xl text-white/90 mb-4 max-w-3xl mx-auto">
-            Hôpitaux, cliniques, centres d&apos;imagerie : Maintex s&apos;adapte à tous les établissements de santé.
+            Hôtels, resorts, spas : Maintex s&apos;adapte à tous les établissements d&apos;hospitalité.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <Link 

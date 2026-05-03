@@ -5,15 +5,15 @@ import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import Link from 'next/link'
 import { 
-  HeartPulse, Brain, Activity, Target, Shield, Clock, 
+  Droplets, Brain, Activity, Target, Shield, Clock, 
   TrendingDown, Users, Award, Quote, Zap, Database,
   CheckCircle2, BarChart3, BookOpen, FileCheck, ChevronRight, Server, HeadphonesIcon,
-  AlertTriangle, Stethoscope, Syringe
+  AlertTriangle, Waves, Gauge
 } from 'lucide-react'
 import { TabNavigation, TabPanel } from '@/components/tab-navigation'
 import { TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup } from '@/components/device-mockups'
 
-export default function SantePage() {
+export default function EauUtilitiesPage() {
   const [activeTab, setActiveTab] = useState('enjeux')
 
   const contentTabs = [
@@ -24,36 +24,36 @@ export default function SantePage() {
 
   const enjeux = [
     {
-      icon: HeartPulse,
-      title: "Sécurité des patients : priorité absolue",
-      description: "Dans le secteur de la santé, la défaillance d'un équipement médical peut avoir des conséquences directes sur la vie des patients.",
+      icon: Waves,
+      title: "Continuité du service public essentiel",
+      description: "L'eau est un service essentiel. Toute interruption impacte directement la population et peut avoir des conséquences sanitaires.",
       points: [
-        "Équipements de soins critiques",
-        "Disponibilité 24/7",
-        "Risques pour les patients",
-        "Responsabilité médicale"
+        "Desserte continue obligatoire",
+        "Impacts sanitaires potentiels",
+        "Responsabilité de service public",
+        "Exigences réglementaires strictes"
       ]
     },
     {
-      icon: Stethoscope,
-      title: "Parc d'équipements médicaux complexe",
-      description: "Les établissements de santé gèrent un parc d'équipements variés et complexes : IRM, scanners, blocs opératoires, laboratoires.",
+      icon: Gauge,
+      title: "Infrastructure dispersée et vieillissante",
+      description: "Les réseaux d'eau potable et d'assainissement s'étendent sur des kilomètres avec des équipements de différents âges et technologies.",
       points: [
-        "Équipements haute technologie",
-        "Maintenance spécialisée",
-        "Réglementations strictes",
-        "Compétences techniques"
+        "Stations de pompage multiples",
+        "Réseaux enterrés étendus",
+        "Équipements vieillissants",
+        "Sites géographiquement dispersés"
       ]
     },
     {
       icon: FileCheck,
-      title: "Conformité réglementaire stricte",
-      description: "Le secteur de la santé est soumis à des réglementations strictes : certifications, contrôles qualité, traçabilité des équipements.",
+      title: "Conformité sanitaire et environnementale",
+      description: "La qualité de l'eau distribuée doit répondre à des normes strictes. Les stations de traitement nécessitent une maintenance rigoureuse.",
       points: [
-        "Certifications HAS",
-        "Contrôles périodiques",
-        "Traçabilité obligatoire",
-        "Documentation exhaustive"
+        "Paramètres de qualité à respecter",
+        "Analyses régulières obligatoires",
+        "Traçabilité des interventions",
+        "Préparation aux inspections"
       ]
     }
   ]
@@ -61,104 +61,104 @@ export default function SantePage() {
   const solutions = [
     {
       icon: Brain,
-      title: "Diagnostic IA pour équipements médicaux",
-      description: "Maintex utilise l'intelligence artificielle pour analyser les historiques de vos équipements et proposer des diagnostics précis.",
+      title: "Diagnostic IA pour équipements de traitement",
+      description: "Maintex utilise l'intelligence artificielle pour analyser les historiques de vos pompes, filtres et systèmes de traitement.",
       benefits: [
         "Identification des causes racines",
         "Anticipation des pannes",
-        "Capitalisation du savoir-faire",
-        "Aide aux biomédicaux"
+        "Optimisation des interventions",
+        "Capitalisation du savoir-faire"
       ]
     },
     {
       icon: Activity,
-      title: "Suivi des fonctions vitales",
-      description: "Surveillez les fonctions critiques de votre établissement : blocs opératoires, imagerie, urgences, réanimation.",
+      title: "Pilotage des fonctions vitales",
+      description: "Surveillez les fonctions critiques de votre réseau : production, distribution, assainissement.",
       benefits: [
-        "Vision par service",
+        "Vision par fonction critique",
         "Priorisation automatique",
-        "Alertes intelligentes",
+        "Alertes en temps réel",
         "Disponibilité consolidée"
       ]
     },
     {
       icon: Database,
-      title: "Traçabilité complète pour conformité",
-      description: "Maintex garantit une traçabilité exhaustive de toutes les interventions, conforme aux exigences réglementaires.",
+      title: "Gestion des interventions sur le terrain",
+      description: "Déployez les interventions sur vos sites dispersés avec une traçabilité complète et un accès mobile.",
       benefits: [
-        "Historique complet",
-        "Rapports d'audit automatisés",
-        "Documentation centralisée",
-        "Préparation certifications"
+        "Accès terrain mobile",
+        "Historique par équipement",
+        "Géolocalisation des sites",
+        "Rapports automatisés"
       ]
     },
     {
       icon: Target,
-      title: "First Time Fix pour interventions critiques",
-      description: "Équipez vos équipes biomédicales de toutes les informations pour résoudre les pannes rapidement.",
+      title: "First Time Fix pour interventions terrain",
+      description: "Équipez vos techniciens de toutes les informations pour résoudre les pannes dès le premier déplacement.",
       benefits: [
         "Diagnostic assisté",
         "Historique accessible",
-        "Procédures détaillées",
-        "Intervention rapide"
+        "Pièces pré-positionnées",
+        "Réduction des déplacements"
       ]
     },
     {
       icon: Clock,
-      title: "Maintenance préventive réglementaire",
-      description: "Planifiez vos opérations de maintenance selon les cycles réglementaires et les recommandations fabricants.",
+      title: "Maintenance préventive planifiée",
+      description: "Planifiez vos opérations de maintenance préventive selon les cycles réglementaires et l'état réel des équipements.",
       benefits: [
         "Calendrier réglementaire",
         "Alertes d'échéance",
-        "Conformité assurée",
-        "Documentation automatique"
+        "Optimisation des tournées",
+        "Conformité assurée"
       ]
     },
     {
       icon: BarChart3,
-      title: "Indicateurs pour la santé",
-      description: "Pilotez votre maintenance avec des indicateurs adaptés aux exigences des établissements de santé.",
+      title: "Indicateurs pour services publics",
+      description: "Pilotez votre maintenance avec des indicateurs adaptés aux exigences des services d'eau.",
       benefits: [
-        "Disponibilité par service",
-        "Conformité réglementaire",
-        "MTBF/MTTR critiques",
-        "Performance biomédicale"
+        "Taux de disponibilité",
+        "Conformité préventif",
+        "Performance réseau",
+        "Reporting autorités"
       ]
     }
   ]
 
   const testimonials = [
     {
-      quote: "Maintex nous a permis de réduire nos pannes d'équipements critiques de 40%. La disponibilité de nos IRM est passée à 99.5%.",
-      author: "Dr. Jean-Marc Leroy",
+      quote: "Maintex nous a permis de réduire nos interventions non planifiées de 40% sur notre réseau de distribution d'eau potable.",
+      author: "Pierre Lecomte",
       role: "Directeur Technique",
-      company: "CHU",
-      stat: "99.5%",
-      statLabel: "disponibilité IRM"
+      company: "Régie des Eaux",
+      stat: "–40%",
+      statLabel: "pannes imprévues"
     },
     {
-      quote: "La traçabilité complète des interventions nous a été essentielle pour nos certifications HAS. Zéro non-conformité.",
-      author: "Sophie Martin",
+      quote: "La traçabilité complète des interventions nous a été essentielle pour nos audits de conformité sanitaire.",
+      author: "Marie Fontaine",
       role: "Responsable Qualité",
-      company: "Clinique Privée",
+      company: "Service Public Eau",
       stat: "100%",
-      statLabel: "conformité HAS"
+      statLabel: "conformité"
     },
     {
-      quote: "Nos biomédicaux ont accès à l'historique de chaque équipement sur leur mobile. L'efficacité des interventions a bondi.",
-      author: "Pierre Durand",
-      role: "Chef Biomédical",
-      company: "Centre Hospitalier",
-      stat: "+35%",
-      statLabel: "efficacité interventions"
+      quote: "Nos techniciens gagnent 30% de temps sur la préparation des interventions avec l'accès mobile à l'historique.",
+      author: "Jean Rivière",
+      role: "Responsable Maintenance",
+      company: "Syndicat des Eaux",
+      stat: "–30%",
+      statLabel: "temps préparation"
     }
   ]
 
   const stats = [
-    { value: '99.5%', label: 'Disponibilité équipements' },
+    { value: '–40%', label: 'Pannes imprévues' },
     { value: '100%', label: 'Conformité' },
-    { value: '–40%', label: 'Pannes critiques' },
-    { value: '+35%', label: 'Efficacité interventions' },
+    { value: '+85%', label: 'First Time Fix' },
+    { value: '–30%', label: 'Temps préparation' },
   ]
 
   return (
@@ -179,19 +179,19 @@ export default function SantePage() {
             <div>
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 bg-[#F97316]/20 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/30">
-                  <HeartPulse className="w-8 h-8 text-[#F97316]" />
+                  <Droplets className="w-8 h-8 text-[#F97316]" />
                 </div>
                 <div>
-                  <span className="text-white/80 font-medium text-sm uppercase tracking-wider">Santé & Médical</span>
+                  <span className="text-white/80 font-medium text-sm uppercase tracking-wider">Eau & Utilities</span>
                 </div>
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight max-w-4xl">
-                Garantissez la disponibilité de vos équipements médicaux
+                Garantissez la continuité de votre service d'eau
               </h1>
 
               <p className="text-lg text-white/80 max-w-xl mb-8">
-                Dans la santé, chaque équipement doit fonctionner parfaitement. Maintex optimise votre maintenance biomédicale pour la sécurité des patients.
+                L&apos;eau est un service essentiel. Maintex optimise la maintenance de vos réseaux et stations pour une desserte continue et conforme.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -384,7 +384,7 @@ export default function SantePage() {
             {/* Comparison */}
             <div className="bg-white rounded-2xl p-8 border border-gray-200">
               <h3 className="text-xl font-bold text-[#0C0A09] mb-6 text-center">
-                Dans la santé, la maintenance protège les patients
+                Pour les services d&apos;eau, la maintenance garantit la continuité
               </h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-red-50 rounded-xl p-6 border border-red-100">
@@ -395,15 +395,15 @@ export default function SantePage() {
                   <ul className="space-y-2 text-red-700/80 text-sm">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Équipements en panne
+                      Interruptions de service
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Risques pour les patients
+                      Non-conformités sanitaires
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Non-conformités
+                      Réactivité inefficace
                     </li>
                   </ul>
                 </div>
@@ -415,15 +415,15 @@ export default function SantePage() {
                   <ul className="space-y-2 text-green-700/80 text-sm">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Équipements disponibles
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Sécurité patients garantie
+                      Service continu garanti
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
                       Conformité totale
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
+                      Anticipation des pannes
                     </li>
                   </ul>
                 </div>
@@ -443,10 +443,10 @@ export default function SantePage() {
             <Zap className="w-8 h-8 text-[#F97316]" />
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Découvrez Maintex pour votre établissement de santé
+            Découvrez Maintex pour vos services d&apos;eau
           </h2>
           <p className="text-xl text-white/90 mb-4 max-w-3xl mx-auto">
-            Hôpitaux, cliniques, centres d&apos;imagerie : Maintex s&apos;adapte à tous les établissements de santé.
+            Stations de pompage, usines de traitement, réseaux : Maintex s&apos;adapte à toutes vos installations.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <Link 

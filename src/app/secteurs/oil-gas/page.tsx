@@ -5,15 +5,15 @@ import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import Link from 'next/link'
 import { 
-  HeartPulse, Brain, Activity, Target, Shield, Clock, 
+  Fuel, Brain, Activity, Target, Shield, Clock, 
   TrendingDown, Users, Award, Quote, Zap, Database,
   CheckCircle2, BarChart3, BookOpen, FileCheck, ChevronRight, Server, HeadphonesIcon,
-  AlertTriangle, Stethoscope, Syringe
+  AlertTriangle, Flame, Gauge
 } from 'lucide-react'
 import { TabNavigation, TabPanel } from '@/components/tab-navigation'
 import { TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup } from '@/components/device-mockups'
 
-export default function SantePage() {
+export default function OilGasPage() {
   const [activeTab, setActiveTab] = useState('enjeux')
 
   const contentTabs = [
@@ -24,36 +24,36 @@ export default function SantePage() {
 
   const enjeux = [
     {
-      icon: HeartPulse,
-      title: "Sécurité des patients : priorité absolue",
-      description: "Dans le secteur de la santé, la défaillance d'un équipement médical peut avoir des conséquences directes sur la vie des patients.",
+      icon: Flame,
+      title: "Risques majeurs : sécurité et environnement",
+      description: "Le secteur pétrolier et gazier présente des risques inhérents majeurs. La défaillance d'un équipement peut entraîner des incidents graves.",
       points: [
-        "Équipements de soins critiques",
-        "Disponibilité 24/7",
-        "Risques pour les patients",
-        "Responsabilité médicale"
+        "Risques d'explosion et d'incendie",
+        "Fuites de produits dangereux",
+        "Impact environnemental majeur",
+        "Sécurité du personnel critique"
       ]
     },
     {
-      icon: Stethoscope,
-      title: "Parc d'équipements médicaux complexe",
-      description: "Les établissements de santé gèrent un parc d'équipements variés et complexes : IRM, scanners, blocs opératoires, laboratoires.",
+      icon: TrendingDown,
+      title: "Coût des immobilisations",
+      description: "Une plateforme ou une raffinerie à l'arrêt représente un coût financier considérable et peut perturber toute la chaîne d'approvisionnement.",
       points: [
-        "Équipements haute technologie",
-        "Maintenance spécialisée",
-        "Réglementations strictes",
-        "Compétences techniques"
+        "Pertes de production directes",
+        "Impact sur les contrats",
+        "Pénalités contractuelles",
+        "Désorganisation logistique"
       ]
     },
     {
       icon: FileCheck,
       title: "Conformité réglementaire stricte",
-      description: "Le secteur de la santé est soumis à des réglementations strictes : certifications, contrôles qualité, traçabilité des équipements.",
+      description: "L'industrie pétrolière et gazière est soumise à des réglementations strictes en matière de sécurité et d'environnement.",
       points: [
-        "Certifications HAS",
-        "Contrôles périodiques",
-        "Traçabilité obligatoire",
-        "Documentation exhaustive"
+        "Normes ATEX et sécurité",
+        "Inspections réglementaires",
+        "Documentation exhaustive",
+        "Certifications à maintenir"
       ]
     }
   ]
@@ -61,22 +61,22 @@ export default function SantePage() {
   const solutions = [
     {
       icon: Brain,
-      title: "Diagnostic IA pour équipements médicaux",
-      description: "Maintex utilise l'intelligence artificielle pour analyser les historiques de vos équipements et proposer des diagnostics précis.",
+      title: "Diagnostic IA pour équipements critiques",
+      description: "Maintex utilise l'intelligence artificielle pour analyser les historiques de vos équipements critiques : compresseurs, vannes, pompes.",
       benefits: [
         "Identification des causes racines",
-        "Anticipation des pannes",
+        "Anticipation des défaillances",
         "Capitalisation du savoir-faire",
-        "Aide aux biomédicaux"
+        "Aide aux techniciens terrain"
       ]
     },
     {
       icon: Activity,
       title: "Suivi des fonctions vitales",
-      description: "Surveillez les fonctions critiques de votre établissement : blocs opératoires, imagerie, urgences, réanimation.",
+      description: "Surveillez les fonctions critiques de vos installations : extraction, traitement, transport, stockage.",
       benefits: [
-        "Vision par service",
-        "Priorisation automatique",
+        "Vision par fonction critique",
+        "Priorisation par risque",
         "Alertes intelligentes",
         "Disponibilité consolidée"
       ]
@@ -84,81 +84,81 @@ export default function SantePage() {
     {
       icon: Database,
       title: "Traçabilité complète pour conformité",
-      description: "Maintex garantit une traçabilité exhaustive de toutes les interventions, conforme aux exigences réglementaires.",
+      description: "Maintex garantit une traçabilité exhaustive de toutes les interventions pour vos audits et inspections réglementaires.",
       benefits: [
         "Historique complet",
         "Rapports d'audit automatisés",
         "Documentation centralisée",
-        "Préparation certifications"
+        "Préparation inspections"
       ]
     },
     {
       icon: Target,
-      title: "First Time Fix pour interventions critiques",
-      description: "Équipez vos équipes biomédicales de toutes les informations pour résoudre les pannes rapidement.",
+      title: "First Time Fix en environnement ATEX",
+      description: "Équipez vos techniciens de toutes les informations nécessaires pour des interventions efficaces en zone à risque.",
       benefits: [
         "Diagnostic assisté",
+        "Procédures de sécurité",
         "Historique accessible",
-        "Procédures détaillées",
-        "Intervention rapide"
+        "Intervention optimisée"
       ]
     },
     {
       icon: Clock,
-      title: "Maintenance préventive réglementaire",
-      description: "Planifiez vos opérations de maintenance selon les cycles réglementaires et les recommandations fabricants.",
+      title: "Maintenance préventive stratégique",
+      description: "Planifiez vos opérations de maintenance en fonction des conditions opérationnelles et des contraintes de sécurité.",
       benefits: [
-        "Calendrier réglementaire",
-        "Alertes d'échéance",
-        "Conformité assurée",
-        "Documentation automatique"
+        "Planification par cycles",
+        "Intégration des arrêts",
+        "Optimisation des ressources",
+        "Conformité assurée"
       ]
     },
     {
       icon: BarChart3,
-      title: "Indicateurs pour la santé",
-      description: "Pilotez votre maintenance avec des indicateurs adaptés aux exigences des établissements de santé.",
+      title: "Indicateurs pour l'industrie pétrolière",
+      description: "Pilotez votre maintenance avec des indicateurs adaptés aux exigences du secteur Oil & Gas.",
       benefits: [
-        "Disponibilité par service",
-        "Conformité réglementaire",
+        "Disponibilité par installation",
         "MTBF/MTTR critiques",
-        "Performance biomédicale"
+        "Conformité sécurité",
+        "Performance opérationnelle"
       ]
     }
   ]
 
   const testimonials = [
     {
-      quote: "Maintex nous a permis de réduire nos pannes d'équipements critiques de 40%. La disponibilité de nos IRM est passée à 99.5%.",
-      author: "Dr. Jean-Marc Leroy",
-      role: "Directeur Technique",
-      company: "CHU",
-      stat: "99.5%",
-      statLabel: "disponibilité IRM"
+      quote: "Maintex nous a permis de réduire nos arrêts non planifiés de 30% sur notre plateforme offshore. L'aide au diagnostic est précieuse.",
+      author: "Ahmed Hassan",
+      role: "Directeur Maintenance",
+      company: "Plateforme Offshore",
+      stat: "–30%",
+      statLabel: "arrêts imprévus"
     },
     {
-      quote: "La traçabilité complète des interventions nous a été essentielle pour nos certifications HAS. Zéro non-conformité.",
-      author: "Sophie Martin",
-      role: "Responsable Qualité",
-      company: "Clinique Privée",
-      stat: "100%",
-      statLabel: "conformité HAS"
+      quote: "La traçabilité complète des interventions nous a permis de passer nos audits de sécurité sans aucune observation.",
+      author: "Catherine Bernard",
+      role: "Responsable HSE",
+      company: "Raffinerie",
+      stat: "0",
+      statLabel: "observation audit"
     },
     {
-      quote: "Nos biomédicaux ont accès à l'historique de chaque équipement sur leur mobile. L'efficacité des interventions a bondi.",
-      author: "Pierre Durand",
-      role: "Chef Biomédical",
-      company: "Centre Hospitalier",
-      stat: "+35%",
-      statLabel: "efficacité interventions"
+      quote: "Nos techniciens juniors sont rapidement devenus autonomes grâce à la base de connaissances Maintex.",
+      author: "Olivier Martin",
+      role: "Responsable Formation",
+      company: "Terminal GNL",
+      stat: "2x",
+      statLabel: "montée en compétence"
     }
   ]
 
   const stats = [
-    { value: '99.5%', label: 'Disponibilité équipements' },
+    { value: '–30%', label: 'Arrêts imprévus' },
     { value: '100%', label: 'Conformité' },
-    { value: '–40%', label: 'Pannes critiques' },
-    { value: '+35%', label: 'Efficacité interventions' },
+    { value: '+85%', label: 'First Time Fix' },
+    { value: '0', label: 'Observation audit' },
   ]
 
   return (
@@ -179,19 +179,19 @@ export default function SantePage() {
             <div>
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 bg-[#F97316]/20 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/30">
-                  <HeartPulse className="w-8 h-8 text-[#F97316]" />
+                  <Fuel className="w-8 h-8 text-[#F97316]" />
                 </div>
                 <div>
-                  <span className="text-white/80 font-medium text-sm uppercase tracking-wider">Santé & Médical</span>
+                  <span className="text-white/80 font-medium text-sm uppercase tracking-wider">Pétrole & Gaz</span>
                 </div>
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight max-w-4xl">
-                Garantissez la disponibilité de vos équipements médicaux
+                Sécurisez et optimisez vos installations pétrolières et gazières
               </h1>
 
               <p className="text-lg text-white/80 max-w-xl mb-8">
-                Dans la santé, chaque équipement doit fonctionner parfaitement. Maintex optimise votre maintenance biomédicale pour la sécurité des patients.
+                Dans l&apos;industrie pétrolière et gazière, la maintenance est un enjeu de sécurité critique. Maintex vous accompagne dans cette démarche exigeante.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -384,7 +384,7 @@ export default function SantePage() {
             {/* Comparison */}
             <div className="bg-white rounded-2xl p-8 border border-gray-200">
               <h3 className="text-xl font-bold text-[#0C0A09] mb-6 text-center">
-                Dans la santé, la maintenance protège les patients
+                Dans le pétrole-gaz, la maintenance protège vies et environnement
               </h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-red-50 rounded-xl p-6 border border-red-100">
@@ -395,15 +395,15 @@ export default function SantePage() {
                   <ul className="space-y-2 text-red-700/80 text-sm">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Équipements en panne
+                      Risques sécurité accrus
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Risques pour les patients
+                      Non-conformités réglementaires
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Non-conformités
+                      Immobilisations coûteuses
                     </li>
                   </ul>
                 </div>
@@ -415,15 +415,15 @@ export default function SantePage() {
                   <ul className="space-y-2 text-green-700/80 text-sm">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Équipements disponibles
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Sécurité patients garantie
+                      Sécurité garantie
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
                       Conformité totale
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
+                      Disponibilité optimale
                     </li>
                   </ul>
                 </div>
@@ -443,10 +443,10 @@ export default function SantePage() {
             <Zap className="w-8 h-8 text-[#F97316]" />
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Découvrez Maintex pour votre établissement de santé
+            Découvrez Maintex pour vos installations pétrolières et gazières
           </h2>
           <p className="text-xl text-white/90 mb-4 max-w-3xl mx-auto">
-            Hôpitaux, cliniques, centres d&apos;imagerie : Maintex s&apos;adapte à tous les établissements de santé.
+            Plateformes, raffineries, terminaux : Maintex s&apos;adapte à toutes vos installations critiques.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <Link 

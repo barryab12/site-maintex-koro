@@ -5,15 +5,15 @@ import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import Link from 'next/link'
 import { 
-  HeartPulse, Brain, Activity, Target, Shield, Clock, 
+  Wrench, Brain, Activity, Target, Shield, Clock, 
   TrendingDown, Users, Award, Quote, Zap, Database,
   CheckCircle2, BarChart3, BookOpen, FileCheck, ChevronRight, Server, HeadphonesIcon,
-  AlertTriangle, Stethoscope, Syringe
+  AlertTriangle, Settings, UserCheck
 } from 'lucide-react'
 import { TabNavigation, TabPanel } from '@/components/tab-navigation'
 import { TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup } from '@/components/device-mockups'
 
-export default function SantePage() {
+export default function ServicesTechniquesPage() {
   const [activeTab, setActiveTab] = useState('enjeux')
 
   const contentTabs = [
@@ -24,36 +24,36 @@ export default function SantePage() {
 
   const enjeux = [
     {
-      icon: HeartPulse,
-      title: "Sécurité des patients : priorité absolue",
-      description: "Dans le secteur de la santé, la défaillance d'un équipement médical peut avoir des conséquences directes sur la vie des patients.",
+      icon: Settings,
+      title: "Diversité des équipements clients",
+      description: "Les services techniques interviennent sur une grande variété d'équipements chez leurs clients, avec des technologies et contraintes différentes.",
       points: [
-        "Équipements de soins critiques",
-        "Disponibilité 24/7",
-        "Risques pour les patients",
-        "Responsabilité médicale"
+        "Parc client hétérogène",
+        "Technologies variées",
+        "Compétences multiples",
+        "Adaptation continue"
       ]
     },
     {
-      icon: Stethoscope,
-      title: "Parc d'équipements médicaux complexe",
-      description: "Les établissements de santé gèrent un parc d'équipements variés et complexes : IRM, scanners, blocs opératoires, laboratoires.",
+      icon: UserCheck,
+      title: "Satisfaction client et réputation",
+      description: "La qualité des interventions impacte directement la satisfaction client et la réputation de l'entreprise de services techniques.",
       points: [
-        "Équipements haute technologie",
-        "Maintenance spécialisée",
-        "Réglementations strictes",
-        "Compétences techniques"
+        "Exigences clients élevées",
+        "Concurrence forte",
+        "Avis et recommandations",
+        "Fidélisation client"
       ]
     },
     {
-      icon: FileCheck,
-      title: "Conformité réglementaire stricte",
-      description: "Le secteur de la santé est soumis à des réglementations strictes : certifications, contrôles qualité, traçabilité des équipements.",
+      icon: Clock,
+      title: "Rentabilité des interventions",
+      description: "Chaque intervention doit être rentable. Les retours sur site, les diagnostics erronés ou les pièces manquantes impactent la marge.",
       points: [
-        "Certifications HAS",
-        "Contrôles périodiques",
-        "Traçabilité obligatoire",
-        "Documentation exhaustive"
+        "First Time Fix crucial",
+        "Gestion des déplacements",
+        "Optimisation des tournées",
+        "Rentabilité intervenants"
       ]
     }
   ]
@@ -61,104 +61,104 @@ export default function SantePage() {
   const solutions = [
     {
       icon: Brain,
-      title: "Diagnostic IA pour équipements médicaux",
-      description: "Maintex utilise l'intelligence artificielle pour analyser les historiques de vos équipements et proposer des diagnostics précis.",
+      title: "Diagnostic IA pour tous les équipements",
+      description: "Maintex utilise l'intelligence artificielle pour analyser les historiques et proposer des diagnostics précis, quel que soit l'équipement.",
       benefits: [
         "Identification des causes racines",
-        "Anticipation des pannes",
+        "Base de connaissances partagée",
         "Capitalisation du savoir-faire",
-        "Aide aux biomédicaux"
+        "Aide à tous les techniciens"
       ]
     },
     {
       icon: Activity,
-      title: "Suivi des fonctions vitales",
-      description: "Surveillez les fonctions critiques de votre établissement : blocs opératoires, imagerie, urgences, réanimation.",
+      title: "Suivi du parc clients",
+      description: "Gérez l'ensemble des équipements de vos clients avec un historique complet et un suivi des contrats de maintenance.",
       benefits: [
-        "Vision par service",
-        "Priorisation automatique",
-        "Alertes intelligentes",
-        "Disponibilité consolidée"
+        "Vue par client",
+        "Historique complet",
+        "Contrats de maintenance",
+        "Interventions planifiées"
       ]
     },
     {
       icon: Database,
-      title: "Traçabilité complète pour conformité",
-      description: "Maintex garantit une traçabilité exhaustive de toutes les interventions, conforme aux exigences réglementaires.",
+      title: "Gestion des interventions terrain",
+      description: "Optimisez la gestion de vos équipes terrain avec un accès mobile complet et une traçabilité totale.",
       benefits: [
-        "Historique complet",
-        "Rapports d'audit automatisés",
-        "Documentation centralisée",
-        "Préparation certifications"
+        "Accès mobile terrain",
+        "Historique par équipement",
+        "Rapports d'intervention",
+        "Signature client"
       ]
     },
     {
       icon: Target,
-      title: "First Time Fix pour interventions critiques",
-      description: "Équipez vos équipes biomédicales de toutes les informations pour résoudre les pannes rapidement.",
+      title: "First Time Fix optimisé",
+      description: "Équipez vos techniciens de toutes les informations nécessaires pour résoudre les pannes dès le premier passage.",
       benefits: [
         "Diagnostic assisté",
-        "Historique accessible",
+        "Pièces à prévoir",
         "Procédures détaillées",
-        "Intervention rapide"
+        "Historique accessible"
       ]
     },
     {
       icon: Clock,
-      title: "Maintenance préventive réglementaire",
-      description: "Planifiez vos opérations de maintenance selon les cycles réglementaires et les recommandations fabricants.",
+      title: "Planification optimisée",
+      description: "Optimisez vos plannings d'intervention en fonction de la localisation, des compétences et des priorités.",
       benefits: [
-        "Calendrier réglementaire",
-        "Alertes d'échéance",
-        "Conformité assurée",
-        "Documentation automatique"
+        "Tournées optimisées",
+        "Compétences matching",
+        "SLA respectés",
+        "Productivité accrue"
       ]
     },
     {
       icon: BarChart3,
-      title: "Indicateurs pour la santé",
-      description: "Pilotez votre maintenance avec des indicateurs adaptés aux exigences des établissements de santé.",
+      title: "Indicateurs pour services techniques",
+      description: "Pilotez votre activité avec des indicateurs adaptés aux entreprises de services techniques.",
       benefits: [
-        "Disponibilité par service",
-        "Conformité réglementaire",
-        "MTBF/MTTR critiques",
-        "Performance biomédicale"
+        "Taux de First Time Fix",
+        "Satisfaction client",
+        "Rentabilité intervenants",
+        "Performance globale"
       ]
     }
   ]
 
   const testimonials = [
     {
-      quote: "Maintex nous a permis de réduire nos pannes d'équipements critiques de 40%. La disponibilité de nos IRM est passée à 99.5%.",
-      author: "Dr. Jean-Marc Leroy",
+      quote: "Maintex nous a permis d'augmenter notre taux de First Time Fix de 70% à 92%. Nos clients sont beaucoup plus satisfaits.",
+      author: "Marc Leroy",
       role: "Directeur Technique",
-      company: "CHU",
-      stat: "99.5%",
-      statLabel: "disponibilité IRM"
+      company: "Société de Maintenance",
+      stat: "92%",
+      statLabel: "First Time Fix"
     },
     {
-      quote: "La traçabilité complète des interventions nous a été essentielle pour nos certifications HAS. Zéro non-conformité.",
+      quote: "La base de connaissances Maintex a permis de capitaliser notre savoir-faire. Nos techniciens juniors sont autonomes deux fois plus vite.",
       author: "Sophie Martin",
-      role: "Responsable Qualité",
-      company: "Clinique Privée",
-      stat: "100%",
-      statLabel: "conformité HAS"
+      role: "Responsable Formation",
+      company: "Services Techniques",
+      stat: "2x",
+      statLabel: "montée en compétence"
     },
     {
-      quote: "Nos biomédicaux ont accès à l'historique de chaque équipement sur leur mobile. L'efficacité des interventions a bondi.",
+      quote: "L'optimisation de nos tournées nous a fait économiser 25% sur les déplacements. Rentabilité améliorée.",
       author: "Pierre Durand",
-      role: "Chef Biomédical",
-      company: "Centre Hospitalier",
-      stat: "+35%",
-      statLabel: "efficacité interventions"
+      role: "Directeur Opérationnel",
+      company: "Entreprise de Services",
+      stat: "–25%",
+      statLabel: "coûts déplacement"
     }
   ]
 
   const stats = [
-    { value: '99.5%', label: 'Disponibilité équipements' },
-    { value: '100%', label: 'Conformité' },
-    { value: '–40%', label: 'Pannes critiques' },
-    { value: '+35%', label: 'Efficacité interventions' },
+    { value: '92%', label: 'First Time Fix' },
+    { value: '+30%', label: 'Productivité' },
+    { value: '–25%', label: 'Déplacements' },
+    { value: '+20%', label: 'Satisfaction client' },
   ]
 
   return (
@@ -179,19 +179,19 @@ export default function SantePage() {
             <div>
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 bg-[#F97316]/20 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/30">
-                  <HeartPulse className="w-8 h-8 text-[#F97316]" />
+                  <Wrench className="w-8 h-8 text-[#F97316]" />
                 </div>
                 <div>
-                  <span className="text-white/80 font-medium text-sm uppercase tracking-wider">Santé & Médical</span>
+                  <span className="text-white/80 font-medium text-sm uppercase tracking-wider">Services Techniques</span>
                 </div>
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight max-w-4xl">
-                Garantissez la disponibilité de vos équipements médicaux
+                Optimisez vos interventions techniques
               </h1>
 
               <p className="text-lg text-white/80 max-w-xl mb-8">
-                Dans la santé, chaque équipement doit fonctionner parfaitement. Maintex optimise votre maintenance biomédicale pour la sécurité des patients.
+                Pour les services techniques, chaque intervention compte. Maintex maximise votre productivité et la satisfaction de vos clients.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -384,7 +384,7 @@ export default function SantePage() {
             {/* Comparison */}
             <div className="bg-white rounded-2xl p-8 border border-gray-200">
               <h3 className="text-xl font-bold text-[#0C0A09] mb-6 text-center">
-                Dans la santé, la maintenance protège les patients
+                Pour les services techniques, la maintenance est un levier de performance
               </h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-red-50 rounded-xl p-6 border border-red-100">
@@ -395,15 +395,15 @@ export default function SantePage() {
                   <ul className="space-y-2 text-red-700/80 text-sm">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Équipements en panne
+                      Interventions inefficaces
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Risques pour les patients
+                      Clients insatisfaits
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Non-conformités
+                      Rentabilité en berne
                     </li>
                   </ul>
                 </div>
@@ -415,15 +415,15 @@ export default function SantePage() {
                   <ul className="space-y-2 text-green-700/80 text-sm">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Équipements disponibles
+                      First Time Fix élevé
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Sécurité patients garantie
+                      Clients satisfaits
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Conformité totale
+                      Rentabilité optimisée
                     </li>
                   </ul>
                 </div>
@@ -443,10 +443,10 @@ export default function SantePage() {
             <Zap className="w-8 h-8 text-[#F97316]" />
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Découvrez Maintex pour votre établissement de santé
+            Découvrez Maintex pour vos services techniques
           </h2>
           <p className="text-xl text-white/90 mb-4 max-w-3xl mx-auto">
-            Hôpitaux, cliniques, centres d&apos;imagerie : Maintex s&apos;adapte à tous les établissements de santé.
+            Maintenance HVAC, électromécanique, pluridisciplinaire : Maintex s&apos;adapte à toutes vos activités.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <Link 

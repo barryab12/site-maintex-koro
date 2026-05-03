@@ -31,7 +31,7 @@ export default function SecteursPage() {
       title: 'Industrie',
       subtitle: 'Usines & production',
       description: 'Optimisez la disponibilité de vos lignes de production et réduisez les temps d\'arrêt.',
-      image: '/images/production-line.png',
+      image: '/images/sector-industry.jpg',
       challenges: ['Arrêts de ligne non planifiés', 'Diagnostic trop lent', 'Conformité ICPE'],
       stats: { value: '-38%', label: 'temps d\'arrêt' }
     },
@@ -41,7 +41,7 @@ export default function SecteursPage() {
       title: 'Automobile',
       subtitle: 'Industrie auto & équipements',
       description: 'Maintenance des lignes de production automobile et équipements spécialisés.',
-      image: '/images/production-line.png',
+      image: '/images/sector-automotive.jpg',
       challenges: ['Lignes haute cadence', 'Traçabilité qualité', 'Juste-à-temps'],
       stats: { value: '99.5%', label: 'disponibilité' }
     },
@@ -51,7 +51,7 @@ export default function SecteursPage() {
       title: 'Chimie & Pharma',
       subtitle: 'Process & conformité',
       description: 'Conformité et maintenance des installations chimiques et pharmaceutiques.',
-      image: '/images/healthcare-equipment.png',
+      image: '/images/sector-pharma.jpg',
       challenges: ['Conformité GMP', 'Sécurité process', 'Traçabilité BPF'],
       stats: { value: '100%', label: 'conformité' }
     },
@@ -61,7 +61,7 @@ export default function SecteursPage() {
       title: 'Mines & extractif',
       subtitle: 'Exploitation & équipements lourds',
       description: 'Maintenance des engins miniers et équipements d\'extraction dans des conditions extrêmes.',
-      image: '/images/mining-operation.png',
+      image: '/images/sector-mining.jpg',
       challenges: ['Conditions extrêmes', 'Engins mobiles', 'Coûts immobilisation'],
       stats: { value: '+25%', label: 'disponibilité' }
     },
@@ -71,7 +71,7 @@ export default function SecteursPage() {
       title: 'Aéronautique & ferrov.',
       subtitle: 'Maintenance réglementée',
       description: 'Maintenance réglementée pour le transport aérien et ferroviaire.',
-      image: '/images/railway-maintenance.png',
+      image: '/images/sector-aerospace.jpg',
       challenges: ['Réglementation stricte', 'Sécurité critique', 'Traçabilité totale'],
       stats: { value: '100%', label: 'traçabilité' }
     },
@@ -81,7 +81,7 @@ export default function SecteursPage() {
       title: 'Agroalimentaire',
       subtitle: 'Production & chaîne alimentaire',
       description: 'Maintenez vos lignes dans la conformité HACCP et ISO 22000.',
-      image: '/images/food-processing.png',
+      image: '/images/sector-food.jpg',
       challenges: ['Exigences HACCP', 'Traçabilité nettoyages', 'Alertes températures'],
       stats: { value: '+44%', label: 'préventif' }
     }
@@ -95,7 +95,7 @@ export default function SecteursPage() {
       title: 'Énergie',
       subtitle: 'Électricité & renouvelable',
       description: 'Assurez la continuité de service sur vos réseaux et infrastructures énergétiques.',
-      image: '/images/energy-plant.png',
+      image: '/images/sector-energy.jpg',
       challenges: ['Continuité service', 'Conformité CRE', 'Intégration SCADA'],
       stats: { value: '99.9%', label: 'disponibilité' }
     },
@@ -105,7 +105,7 @@ export default function SecteursPage() {
       title: 'Eau & utilities',
       subtitle: 'Réseaux & traitement',
       description: 'Gestion de la maintenance pour les réseaux d\'eau et services publics.',
-      image: '/images/water-treatment.png',
+      image: '/images/sector-water.jpg',
       challenges: ['Continuité service public', 'Réglementation eau', 'Réseau étendu'],
       stats: { value: '24/7', label: 'service' }
     },
@@ -115,7 +115,7 @@ export default function SecteursPage() {
       title: 'Oil & Gas',
       subtitle: 'Pétrole, gaz & sites critiques',
       description: 'Maintenance des sites pétroliers, gaziers et installations critiques.',
-      image: '/images/oil-gas-refinery.png',
+      image: '/images/sector-oilgas.jpg',
       challenges: ['Sécurité ATEX', 'Sites isolés', 'Maintenance critique'],
       stats: { value: '100%', label: 'sécurité' }
     },
@@ -125,7 +125,7 @@ export default function SecteursPage() {
       title: 'BTP & construction',
       subtitle: 'Chantiers & équipements',
       description: 'Gérez efficacement votre flotte d\'engins de chantier et vos équipements.',
-      image: '/images/construction-site.png',
+      image: '/images/sector-construction.jpg',
       challenges: ['Engins multi-chantiers', 'Conformité VGP', 'Carnet numérique'],
       stats: { value: '-40%', label: 'pannes imprévues' }
     },
@@ -135,7 +135,7 @@ export default function SecteursPage() {
       title: 'Infrastructures publ.',
       subtitle: 'Routes, villes, équipements',
       description: 'Maintenance des infrastructures publiques et équipements urbains.',
-      image: '/images/warehouse.png',
+      image: '/images/sector-infrastructure.jpg',
       challenges: ['Patrimoine étendu', 'Budgets limités', 'Service public'],
       stats: { value: '+30%', label: 'efficacité' }
     },
@@ -145,7 +145,7 @@ export default function SecteursPage() {
       title: 'Télécoms',
       subtitle: 'Réseaux & infrastructures',
       description: 'Maintenance des réseaux télécoms et infrastructures de données.',
-      image: '/images/data-center.png',
+      image: '/images/sector-telecom.jpg',
       challenges: ['Disponibilité réseau', 'Sites distants', 'Technologies variées'],
       stats: { value: '99.99%', label: 'uptime' }
     }
@@ -159,7 +159,7 @@ export default function SecteursPage() {
       title: 'Logistique & transport',
       subtitle: 'Entrepôts & supply chain',
       description: 'Maintenance des centres logistiques, entrepôts et flottes de transport.',
-      image: '/images/warehouse.png',
+      image: '/images/sector-logistics.jpg',
       challenges: ['Haute disponibilité', 'Flottes hétérogènes', 'Supply chain'],
       stats: { value: '99.5%', label: 'disponibilité' }
     },
@@ -169,7 +169,7 @@ export default function SecteursPage() {
       title: 'Immobilier & bâtiments',
       subtitle: 'Gestion technique',
       description: 'Gestion technique et maintenance des bâtiments et patrimoines immobiliers.',
-      image: '/images/warehouse.png',
+      image: '/images/sector-realestate.jpg',
       challenges: ['Multi-sites', 'Confort occupants', 'Efficacité énergétique'],
       stats: { value: '-20%', label: 'consommation' }
     },
@@ -179,7 +179,7 @@ export default function SecteursPage() {
       title: 'Hôtellerie',
       subtitle: 'Hôtels & résidences',
       description: 'Maintenance des établissements hôteliers et résidences.',
-      image: '/images/hospital-medical.png',
+      image: '/images/sector-hotel.jpg',
       challenges: ['Expérience client', 'Disponibilité 24/7', 'Multi-services'],
       stats: { value: '+35%', label: 'satisfaction' }
     },
@@ -189,7 +189,7 @@ export default function SecteursPage() {
       title: 'Santé',
       subtitle: 'Hôpitaux & cliniques',
       description: 'Assurez la conformité et la disponibilité de vos équipements biomédicaux.',
-      image: '/images/hospital-medical.png',
+      image: '/images/sector-healthcare.jpg',
       challenges: ['Zéro tolérance panne', 'Conformité HAS', 'Sécurité patient'],
       stats: { value: '100%', label: 'conformité HAS' }
     },
@@ -199,7 +199,7 @@ export default function SecteursPage() {
       title: 'Retail & distribution',
       subtitle: 'Magasins & chaînes',
       description: 'Maintenance des réseaux de magasins et points de vente.',
-      image: '/images/warehouse.png',
+      image: '/images/sector-retail.jpg',
       challenges: ['Multi-points de vente', 'Expérience client', 'Équipements variés'],
       stats: { value: '-25%', label: 'réactifs' }
     },
@@ -209,7 +209,7 @@ export default function SecteursPage() {
       title: 'Services techniques',
       subtitle: 'Maintenance externalisée',
       description: 'Pour les prestataires de maintenance et services techniques.',
-      image: '/images/team-technicians.png',
+      image: '/images/team-technicians.jpg',
       challenges: ['Multi-clients', 'SLA stricts', 'Ressources optimisées'],
       stats: { value: '+40%', label: 'productivité' }
     }

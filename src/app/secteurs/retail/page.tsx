@@ -5,15 +5,15 @@ import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import Link from 'next/link'
 import { 
-  HeartPulse, Brain, Activity, Target, Shield, Clock, 
+  ShoppingCart, Brain, Activity, Target, Shield, Clock, 
   TrendingDown, Users, Award, Quote, Zap, Database,
   CheckCircle2, BarChart3, BookOpen, FileCheck, ChevronRight, Server, HeadphonesIcon,
-  AlertTriangle, Stethoscope, Syringe
+  AlertTriangle, Store, Refrigerator
 } from 'lucide-react'
 import { TabNavigation, TabPanel } from '@/components/tab-navigation'
 import { TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup } from '@/components/device-mockups'
 
-export default function SantePage() {
+export default function RetailPage() {
   const [activeTab, setActiveTab] = useState('enjeux')
 
   const contentTabs = [
@@ -24,36 +24,36 @@ export default function SantePage() {
 
   const enjeux = [
     {
-      icon: HeartPulse,
-      title: "Sécurité des patients : priorité absolue",
-      description: "Dans le secteur de la santé, la défaillance d'un équipement médical peut avoir des conséquences directes sur la vie des patients.",
+      icon: Store,
+      title: "Expérience client et ventes",
+      description: "Dans le retail, un équipement en panne impacte directement l'expérience client et les ventes. Une caisse bloquée, un rayon fermé : le chiffre d'affaires en pâtit.",
       points: [
-        "Équipements de soins critiques",
-        "Disponibilité 24/7",
-        "Risques pour les patients",
-        "Responsabilité médicale"
+        "Impact sur les ventes",
+        "Expérience client dégradée",
+        "Image de marque",
+        "Perte de clients"
       ]
     },
     {
-      icon: Stethoscope,
-      title: "Parc d'équipements médicaux complexe",
-      description: "Les établissements de santé gèrent un parc d'équipements variés et complexes : IRM, scanners, blocs opératoires, laboratoires.",
+      icon: Refrigerator,
+      title: "Équipements sensibles : froid et alimentaire",
+      description: "Les rayons frais et surgelés nécessitent une maintenance rigoureuse. Une défaillance peut entraîner des pertes de marchandises importantes.",
       points: [
-        "Équipements haute technologie",
-        "Maintenance spécialisée",
-        "Réglementations strictes",
-        "Compétences techniques"
+        "Meubles frigorifiques",
+        "Chambres froides",
+        "Pertes de produits",
+        "Risques sanitaires"
       ]
     },
     {
-      icon: FileCheck,
-      title: "Conformité réglementaire stricte",
-      description: "Le secteur de la santé est soumis à des réglementations strictes : certifications, contrôles qualité, traçabilité des équipements.",
+      icon: Target,
+      title: "Réseau de magasins dispersé",
+      description: "Les enseignes gèrent des dizaines voire des centaines de points de vente, chacun avec ses propres équipements à maintenir.",
       points: [
-        "Certifications HAS",
-        "Contrôles périodiques",
-        "Traçabilité obligatoire",
-        "Documentation exhaustive"
+        "Magasins multiples",
+        "Équipements variés",
+        "Coordination complexe",
+        "Déplacements fréquents"
       ]
     }
   ]
@@ -61,21 +61,21 @@ export default function SantePage() {
   const solutions = [
     {
       icon: Brain,
-      title: "Diagnostic IA pour équipements médicaux",
+      title: "Diagnostic IA pour équipements de magasin",
       description: "Maintex utilise l'intelligence artificielle pour analyser les historiques de vos équipements et proposer des diagnostics précis.",
       benefits: [
         "Identification des causes racines",
         "Anticipation des pannes",
         "Capitalisation du savoir-faire",
-        "Aide aux biomédicaux"
+        "Aide aux techniciens"
       ]
     },
     {
       icon: Activity,
-      title: "Suivi des fonctions vitales",
-      description: "Surveillez les fonctions critiques de votre établissement : blocs opératoires, imagerie, urgences, réanimation.",
+      title: "Suivi des fonctions vitales du magasin",
+      description: "Surveillez les fonctions critiques : caisses, rayons frais, éclairage, climatisation.",
       benefits: [
-        "Vision par service",
+        "Vision par fonction",
         "Priorisation automatique",
         "Alertes intelligentes",
         "Disponibilité consolidée"
@@ -83,82 +83,82 @@ export default function SantePage() {
     },
     {
       icon: Database,
-      title: "Traçabilité complète pour conformité",
-      description: "Maintex garantit une traçabilité exhaustive de toutes les interventions, conforme aux exigences réglementaires.",
+      title: "Gestion multi-magasins centralisée",
+      description: "Pilotez la maintenance de tous vos magasins depuis une plateforme unique.",
       benefits: [
+        "Vue par magasin",
         "Historique complet",
-        "Rapports d'audit automatisés",
-        "Documentation centralisée",
-        "Préparation certifications"
+        "Comparaison inter-sites",
+        "Rapports automatisés"
       ]
     },
     {
       icon: Target,
-      title: "First Time Fix pour interventions critiques",
-      description: "Équipez vos équipes biomédicales de toutes les informations pour résoudre les pannes rapidement.",
+      title: "First Time Fix pour interventions rapides",
+      description: "Équipez vos techniciens de toutes les informations pour résoudre les pannes dès le premier passage.",
       benefits: [
         "Diagnostic assisté",
         "Historique accessible",
-        "Procédures détaillées",
-        "Intervention rapide"
+        "Réduction des retours",
+        "Magasin opérationnel"
       ]
     },
     {
       icon: Clock,
-      title: "Maintenance préventive réglementaire",
-      description: "Planifiez vos opérations de maintenance selon les cycles réglementaires et les recommandations fabricants.",
+      title: "Maintenance préventive planifiée",
+      description: "Planifiez vos opérations de maintenance selon les heures d'ouverture et les périodes creuses.",
       benefits: [
-        "Calendrier réglementaire",
-        "Alertes d'échéance",
-        "Conformité assurée",
-        "Documentation automatique"
+        "Interventions hors affluence",
+        "Planification optimisée",
+        "Respect des horaires",
+        "Impact minimal"
       ]
     },
     {
       icon: BarChart3,
-      title: "Indicateurs pour la santé",
-      description: "Pilotez votre maintenance avec des indicateurs adaptés aux exigences des établissements de santé.",
+      title: "Indicateurs pour le retail",
+      description: "Pilotez votre maintenance avec des indicateurs adaptés aux exigences du commerce de détail.",
       benefits: [
-        "Disponibilité par service",
-        "Conformité réglementaire",
-        "MTBF/MTTR critiques",
-        "Performance biomédicale"
+        "Impact sur les ventes",
+        "Disponibilité équipements",
+        "Coût par magasin",
+        "Performance globale"
       ]
     }
   ]
 
   const testimonials = [
     {
-      quote: "Maintex nous a permis de réduire nos pannes d'équipements critiques de 40%. La disponibilité de nos IRM est passée à 99.5%.",
-      author: "Dr. Jean-Marc Leroy",
-      role: "Directeur Technique",
-      company: "CHU",
-      stat: "99.5%",
-      statLabel: "disponibilité IRM"
+      quote: "Maintex nous a permis de réduire nos pannes de caisses de 50%. Nos temps d'attente client ont considérablement diminué.",
+      author: "Marie Dupont",
+      role: "Directrice Technique",
+      company: "Enseigne Grande Distribution",
+      stat: "–50%",
+      statLabel: "pannes caisses"
     },
     {
-      quote: "La traçabilité complète des interventions nous a été essentielle pour nos certifications HAS. Zéro non-conformité.",
-      author: "Sophie Martin",
-      role: "Responsable Qualité",
-      company: "Clinique Privée",
-      stat: "100%",
-      statLabel: "conformité HAS"
+      quote: "La surveillance de nos meubles frigorifiques nous a permis d'anticiper les pannes. Plus de pertes de produits.",
+      author: "Pierre Martin",
+      role: "Responsable Maintenance",
+      company: "Supermarché",
+      stat: "0€",
+      statLabel: "pertes produits"
     },
     {
-      quote: "Nos biomédicaux ont accès à l'historique de chaque équipement sur leur mobile. L'efficacité des interventions a bondi.",
-      author: "Pierre Durand",
-      role: "Chef Biomédical",
-      company: "Centre Hospitalier",
-      stat: "+35%",
-      statLabel: "efficacité interventions"
+      quote: "Gérer 120 magasins avec Maintex nous a fait gagner 40% de temps sur la coordination des interventions.",
+      author: "Sophie Bernard",
+      role: "Directrice Maintenance",
+      company: "Réseau de Magasins",
+      stat: "–40%",
+      statLabel: "temps coordination"
     }
   ]
 
   const stats = [
-    { value: '99.5%', label: 'Disponibilité équipements' },
-    { value: '100%', label: 'Conformité' },
-    { value: '–40%', label: 'Pannes critiques' },
-    { value: '+35%', label: 'Efficacité interventions' },
+    { value: '–50%', label: 'Pannes caisses' },
+    { value: '0€', label: 'Pertes produits' },
+    { value: '+95%', label: 'Disponibilité' },
+    { value: '–40%', label: 'Temps coordination' },
   ]
 
   return (
@@ -179,19 +179,19 @@ export default function SantePage() {
             <div>
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 bg-[#F97316]/20 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/30">
-                  <HeartPulse className="w-8 h-8 text-[#F97316]" />
+                  <ShoppingCart className="w-8 h-8 text-[#F97316]" />
                 </div>
                 <div>
-                  <span className="text-white/80 font-medium text-sm uppercase tracking-wider">Santé & Médical</span>
+                  <span className="text-white/80 font-medium text-sm uppercase tracking-wider">Retail & Distribution</span>
                 </div>
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight max-w-4xl">
-                Garantissez la disponibilité de vos équipements médicaux
+                Maintenez vos magasins opérationnels
               </h1>
 
               <p className="text-lg text-white/80 max-w-xl mb-8">
-                Dans la santé, chaque équipement doit fonctionner parfaitement. Maintex optimise votre maintenance biomédicale pour la sécurité des patients.
+                Dans le retail, un équipement en panne coûte des ventes. Maintex optimise votre maintenance pour des magasins toujours opérationnels.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -384,7 +384,7 @@ export default function SantePage() {
             {/* Comparison */}
             <div className="bg-white rounded-2xl p-8 border border-gray-200">
               <h3 className="text-xl font-bold text-[#0C0A09] mb-6 text-center">
-                Dans la santé, la maintenance protège les patients
+                Dans le retail, la maintenance protège vos ventes
               </h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-red-50 rounded-xl p-6 border border-red-100">
@@ -395,15 +395,15 @@ export default function SantePage() {
                   <ul className="space-y-2 text-red-700/80 text-sm">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Équipements en panne
+                      Équipements souvent en panne
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Risques pour les patients
+                      Ventes perdues
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Non-conformités
+                      Clients mécontents
                     </li>
                   </ul>
                 </div>
@@ -415,15 +415,15 @@ export default function SantePage() {
                   <ul className="space-y-2 text-green-700/80 text-sm">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Équipements disponibles
+                      Magasins opérationnels
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Sécurité patients garantie
+                      Ventes maximisées
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Conformité totale
+                      Clients satisfaits
                     </li>
                   </ul>
                 </div>
@@ -443,10 +443,10 @@ export default function SantePage() {
             <Zap className="w-8 h-8 text-[#F97316]" />
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Découvrez Maintex pour votre établissement de santé
+            Découvrez Maintex pour vos magasins
           </h2>
           <p className="text-xl text-white/90 mb-4 max-w-3xl mx-auto">
-            Hôpitaux, cliniques, centres d&apos;imagerie : Maintex s&apos;adapte à tous les établissements de santé.
+            Hypermarchés, supermarchés, magasins spécialisés : Maintex s&apos;adapte à tous vos points de vente.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <Link 

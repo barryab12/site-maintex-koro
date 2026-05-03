@@ -5,15 +5,15 @@ import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import Link from 'next/link'
 import { 
-  HeartPulse, Brain, Activity, Target, Shield, Clock, 
+  Building2, Brain, Activity, Target, Shield, Clock, 
   TrendingDown, Users, Award, Quote, Zap, Database,
   CheckCircle2, BarChart3, BookOpen, FileCheck, ChevronRight, Server, HeadphonesIcon,
-  AlertTriangle, Stethoscope, Syringe
+  AlertTriangle, Home, Key
 } from 'lucide-react'
 import { TabNavigation, TabPanel } from '@/components/tab-navigation'
 import { TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup } from '@/components/device-mockups'
 
-export default function SantePage() {
+export default function ImmobilierPage() {
   const [activeTab, setActiveTab] = useState('enjeux')
 
   const contentTabs = [
@@ -24,36 +24,36 @@ export default function SantePage() {
 
   const enjeux = [
     {
-      icon: HeartPulse,
-      title: "Sécurité des patients : priorité absolue",
-      description: "Dans le secteur de la santé, la défaillance d'un équipement médical peut avoir des conséquences directes sur la vie des patients.",
+      icon: Home,
+      title: "Confort et satisfaction des occupants",
+      description: "La maintenance des bâtiments impacte directement le confort des occupants et leur satisfaction. Un ascenseur en panne, une climatisation défaillante : l'expérience utilisateur est dégradée.",
       points: [
-        "Équipements de soins critiques",
-        "Disponibilité 24/7",
-        "Risques pour les patients",
-        "Responsabilité médicale"
+        "Confort thermique",
+        "Disponibilité des équipements",
+        "Satisfaction des locataires",
+        "Image de marque"
       ]
     },
     {
-      icon: Stethoscope,
-      title: "Parc d'équipements médicaux complexe",
-      description: "Les établissements de santé gèrent un parc d'équipements variés et complexes : IRM, scanners, blocs opératoires, laboratoires.",
+      icon: Key,
+      title: "Multi-sites et portefeuille immobilier",
+      description: "Les gestionnaires immobiliers doivent maintenir plusieurs bâtiments avec des typologies et des équipements différents.",
       points: [
-        "Équipements haute technologie",
-        "Maintenance spécialisée",
-        "Réglementations strictes",
-        "Compétences techniques"
+        "Bâtiments multiples",
+        "Équipements variés",
+        "Coordination complexe",
+        "Interventions dispersées"
       ]
     },
     {
       icon: FileCheck,
-      title: "Conformité réglementaire stricte",
-      description: "Le secteur de la santé est soumis à des réglementations strictes : certifications, contrôles qualité, traçabilité des équipements.",
+      title: "Conformité réglementaire",
+      description: "Les bâtiments sont soumis à de nombreuses réglementations : sécurité incendie, ascenseurs, installations électriques, DPE.",
       points: [
-        "Certifications HAS",
-        "Contrôles périodiques",
-        "Traçabilité obligatoire",
-        "Documentation exhaustive"
+        "Contrôles périodiques obligatoires",
+        "Documentation à jour",
+        "Vérifications réglementaires",
+        "Traçabilité des interventions"
       ]
     }
   ]
@@ -61,21 +61,21 @@ export default function SantePage() {
   const solutions = [
     {
       icon: Brain,
-      title: "Diagnostic IA pour équipements médicaux",
-      description: "Maintex utilise l'intelligence artificielle pour analyser les historiques de vos équipements et proposer des diagnostics précis.",
+      title: "Diagnostic IA pour équipements du bâtiment",
+      description: "Maintex utilise l'intelligence artificielle pour analyser les historiques de vos équipements techniques et proposer des diagnostics précis.",
       benefits: [
         "Identification des causes racines",
         "Anticipation des pannes",
         "Capitalisation du savoir-faire",
-        "Aide aux biomédicaux"
+        "Aide aux techniciens"
       ]
     },
     {
       icon: Activity,
-      title: "Suivi des fonctions vitales",
-      description: "Surveillez les fonctions critiques de votre établissement : blocs opératoires, imagerie, urgences, réanimation.",
+      title: "Suivi des fonctions vitales du bâtiment",
+      description: "Surveillez les fonctions critiques : chauffage, ventilation, ascenseurs, sécurité.",
       benefits: [
-        "Vision par service",
+        "Vision par fonction",
         "Priorisation automatique",
         "Alertes intelligentes",
         "Disponibilité consolidée"
@@ -83,82 +83,82 @@ export default function SantePage() {
     },
     {
       icon: Database,
-      title: "Traçabilité complète pour conformité",
-      description: "Maintex garantit une traçabilité exhaustive de toutes les interventions, conforme aux exigences réglementaires.",
+      title: "Gestion multi-bâtiments centralisée",
+      description: "Centralisez toutes les informations de votre portefeuille immobilier dans une seule plateforme.",
       benefits: [
+        "Vue par bâtiment",
         "Historique complet",
-        "Rapports d'audit automatisés",
         "Documentation centralisée",
-        "Préparation certifications"
+        "Rapports automatisés"
       ]
     },
     {
       icon: Target,
-      title: "First Time Fix pour interventions critiques",
-      description: "Équipez vos équipes biomédicales de toutes les informations pour résoudre les pannes rapidement.",
+      title: "First Time Fix pour interventions",
+      description: "Équipez vos techniciens de toutes les informations nécessaires pour résoudre les pannes dès le premier passage.",
       benefits: [
         "Diagnostic assisté",
         "Historique accessible",
-        "Procédures détaillées",
-        "Intervention rapide"
+        "Réduction des retours",
+        "Satisfaction occupants"
       ]
     },
     {
       icon: Clock,
-      title: "Maintenance préventive réglementaire",
-      description: "Planifiez vos opérations de maintenance selon les cycles réglementaires et les recommandations fabricants.",
+      title: "Maintenance préventive planifiée",
+      description: "Planifiez vos opérations de maintenance préventive selon les cycles réglementaires et l'état des équipements.",
       benefits: [
         "Calendrier réglementaire",
         "Alertes d'échéance",
         "Conformité assurée",
-        "Documentation automatique"
+        "Optimisation des budgets"
       ]
     },
     {
       icon: BarChart3,
-      title: "Indicateurs pour la santé",
-      description: "Pilotez votre maintenance avec des indicateurs adaptés aux exigences des établissements de santé.",
+      title: "Indicateurs pour l'immobilier",
+      description: "Pilotez votre maintenance avec des indicateurs adaptés à la gestion immobilière.",
       benefits: [
-        "Disponibilité par service",
+        "Satisfaction occupants",
         "Conformité réglementaire",
-        "MTBF/MTTR critiques",
-        "Performance biomédicale"
+        "Budget par bâtiment",
+        "Performance globale"
       ]
     }
   ]
 
   const testimonials = [
     {
-      quote: "Maintex nous a permis de réduire nos pannes d'équipements critiques de 40%. La disponibilité de nos IRM est passée à 99.5%.",
-      author: "Dr. Jean-Marc Leroy",
-      role: "Directeur Technique",
-      company: "CHU",
-      stat: "99.5%",
-      statLabel: "disponibilité IRM"
+      quote: "Maintex nous a permis de réduire nos plaintes locataires de 50% grâce à une meilleure anticipation des pannes d'équipements.",
+      author: "Catherine Martin",
+      role: "Directrice Technique",
+      company: "Gestionnaire Immobilier",
+      stat: "–50%",
+      statLabel: "plaintes locataires"
     },
     {
-      quote: "La traçabilité complète des interventions nous a été essentielle pour nos certifications HAS. Zéro non-conformité.",
-      author: "Sophie Martin",
-      role: "Responsable Qualité",
-      company: "Clinique Privée",
+      quote: "La gestion centralisée de nos 50 bâtiments nous fait gagner un temps considérable. Plus de Excel dispersés.",
+      author: "Pierre Dubois",
+      role: "Responsable Maintenance",
+      company: "Société Foncière",
+      stat: "50",
+      statLabel: "bâtiments gérés"
+    },
+    {
+      quote: "Nos contrôles réglementaires sont toujours à jour avec les alertes automatiques de Maintex. Zéro non-conformité.",
+      author: "Sophie Leroy",
+      role: "Responsable Conformité",
+      company: "Syndic de Copropriété",
       stat: "100%",
-      statLabel: "conformité HAS"
-    },
-    {
-      quote: "Nos biomédicaux ont accès à l'historique de chaque équipement sur leur mobile. L'efficacité des interventions a bondi.",
-      author: "Pierre Durand",
-      role: "Chef Biomédical",
-      company: "Centre Hospitalier",
-      stat: "+35%",
-      statLabel: "efficacité interventions"
+      statLabel: "conformité"
     }
   ]
 
   const stats = [
-    { value: '99.5%', label: 'Disponibilité équipements' },
+    { value: '–50%', label: 'Plaintes locataires' },
     { value: '100%', label: 'Conformité' },
-    { value: '–40%', label: 'Pannes critiques' },
-    { value: '+35%', label: 'Efficacité interventions' },
+    { value: '+85%', label: 'First Time Fix' },
+    { value: '–30%', label: 'Coût maintenance' },
   ]
 
   return (
@@ -179,19 +179,19 @@ export default function SantePage() {
             <div>
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 bg-[#F97316]/20 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/30">
-                  <HeartPulse className="w-8 h-8 text-[#F97316]" />
+                  <Building2 className="w-8 h-8 text-[#F97316]" />
                 </div>
                 <div>
-                  <span className="text-white/80 font-medium text-sm uppercase tracking-wider">Santé & Médical</span>
+                  <span className="text-white/80 font-medium text-sm uppercase tracking-wider">Immobilier & Bâtiments</span>
                 </div>
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight max-w-4xl">
-                Garantissez la disponibilité de vos équipements médicaux
+                Optimisez la maintenance de votre patrimoine immobilier
               </h1>
 
               <p className="text-lg text-white/80 max-w-xl mb-8">
-                Dans la santé, chaque équipement doit fonctionner parfaitement. Maintex optimise votre maintenance biomédicale pour la sécurité des patients.
+                Assurez le confort de vos occupants et la conformité de vos bâtiments avec une maintenance proactive et structurée.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -384,7 +384,7 @@ export default function SantePage() {
             {/* Comparison */}
             <div className="bg-white rounded-2xl p-8 border border-gray-200">
               <h3 className="text-xl font-bold text-[#0C0A09] mb-6 text-center">
-                Dans la santé, la maintenance protège les patients
+                Dans l&apos;immobilier, la maintenance garantit la satisfaction des occupants
               </h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-red-50 rounded-xl p-6 border border-red-100">
@@ -395,11 +395,11 @@ export default function SantePage() {
                   <ul className="space-y-2 text-red-700/80 text-sm">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Équipements en panne
+                      Plombes techniques fréquentes
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Risques pour les patients
+                      Locataires mécontents
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
@@ -415,11 +415,11 @@ export default function SantePage() {
                   <ul className="space-y-2 text-green-700/80 text-sm">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Équipements disponibles
+                      Équipements fiables
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Sécurité patients garantie
+                      Locataires satisfaits
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
@@ -443,10 +443,10 @@ export default function SantePage() {
             <Zap className="w-8 h-8 text-[#F97316]" />
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Découvrez Maintex pour votre établissement de santé
+            Découvrez Maintex pour votre patrimoine immobilier
           </h2>
           <p className="text-xl text-white/90 mb-4 max-w-3xl mx-auto">
-            Hôpitaux, cliniques, centres d&apos;imagerie : Maintex s&apos;adapte à tous les établissements de santé.
+            Bureaux, résidences, commerces : Maintex s&apos;adapte à tous vos bâtiments.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <Link 

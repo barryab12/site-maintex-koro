@@ -5,15 +5,15 @@ import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import Link from 'next/link'
 import { 
-  HeartPulse, Brain, Activity, Target, Shield, Clock, 
+  Car, Brain, Activity, Target, Shield, Clock, 
   TrendingDown, Users, Award, Quote, Zap, Database,
   CheckCircle2, BarChart3, BookOpen, FileCheck, ChevronRight, Server, HeadphonesIcon,
-  AlertTriangle, Stethoscope, Syringe
+  AlertTriangle, Cog, Wrench
 } from 'lucide-react'
 import { TabNavigation, TabPanel } from '@/components/tab-navigation'
 import { TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup } from '@/components/device-mockups'
 
-export default function SantePage() {
+export default function AutomobilePage() {
   const [activeTab, setActiveTab] = useState('enjeux')
 
   const contentTabs = [
@@ -24,36 +24,36 @@ export default function SantePage() {
 
   const enjeux = [
     {
-      icon: HeartPulse,
-      title: "Sécurité des patients : priorité absolue",
-      description: "Dans le secteur de la santé, la défaillance d'un équipement médical peut avoir des conséquences directes sur la vie des patients.",
+      icon: TrendingDown,
+      title: "L'arrêt de ligne : un coût de plusieurs milliers d'euros par heure",
+      description: "Dans l'industrie automobile, chaque minute de production perdue a un impact financier majeur. Les lignes d'assemblage, les presses, les robots de soudure doivent fonctionner en permanence.",
       points: [
-        "Équipements de soins critiques",
-        "Disponibilité 24/7",
-        "Risques pour les patients",
-        "Responsabilité médicale"
+        "Coût d'arrêt élevé par heure",
+        "Effet cascade sur les flux logistiques",
+        "Pénalités de retard clients",
+        "Perte de cadence de production"
       ]
     },
     {
-      icon: Stethoscope,
-      title: "Parc d'équipements médicaux complexe",
-      description: "Les établissements de santé gèrent un parc d'équipements variés et complexes : IRM, scanners, blocs opératoires, laboratoires.",
+      icon: Cog,
+      title: "La complexité des équipements robotisés",
+      description: "Les lignes de production automobile intègrent des centaines de robots, de convoyeurs et de stations automatisées qui nécessitent une maintenance spécialisée.",
       points: [
-        "Équipements haute technologie",
-        "Maintenance spécialisée",
-        "Réglementations strictes",
-        "Compétences techniques"
+        "Robots de soudure et d'assemblage",
+        "Systèmes de transfert automatisés",
+        "Presses et outillages spécifiques",
+        "Systèmes de vision et contrôle"
       ]
     },
     {
       icon: FileCheck,
-      title: "Conformité réglementaire stricte",
-      description: "Le secteur de la santé est soumis à des réglementations strictes : certifications, contrôles qualité, traçabilité des équipements.",
+      title: "La traçabilité qualité : exigence critique",
+      description: "L'industrie automobile est soumise à des normes qualité strictes (IATF 16949, ISO 9001). Chaque intervention doit être tracée et documentée.",
       points: [
-        "Certifications HAS",
-        "Contrôles périodiques",
-        "Traçabilité obligatoire",
-        "Documentation exhaustive"
+        "Traçabilité complète des interventions",
+        "Documentation pour audits qualité",
+        "Historique par numéro de série",
+        "Conformité réglementaire"
       ]
     }
   ]
@@ -61,104 +61,104 @@ export default function SantePage() {
   const solutions = [
     {
       icon: Brain,
-      title: "Diagnostic IA pour équipements médicaux",
-      description: "Maintex utilise l'intelligence artificielle pour analyser les historiques de vos équipements et proposer des diagnostics précis.",
+      title: "Diagnostic IA pour équipements complexes",
+      description: "Maintex utilise l'intelligence artificielle pour analyser les historiques de pannes et proposer des diagnostics précis sur les équipements robotisés.",
       benefits: [
-        "Identification des causes racines",
-        "Anticipation des pannes",
+        "Identification rapide des causes racines",
+        "Réduction des diagnostics erronés",
         "Capitalisation du savoir-faire",
-        "Aide aux biomédicaux"
+        "Aide à la décision en temps réel"
       ]
     },
     {
       icon: Activity,
-      title: "Suivi des fonctions vitales",
-      description: "Surveillez les fonctions critiques de votre établissement : blocs opératoires, imagerie, urgences, réanimation.",
+      title: "Pilotage par les fonctions vitales",
+      description: "Maintex permet de surveiller les fonctions critiques de la ligne de production plutôt que les équipements individuels.",
       benefits: [
-        "Vision par service",
-        "Priorisation automatique",
-        "Alertes intelligentes",
-        "Disponibilité consolidée"
+        "Vision globale de la production",
+        "Priorisation par impact métier",
+        "Alertes sur fonctions critiques",
+        "Indicateurs de disponibilité"
       ]
     },
     {
       icon: Database,
-      title: "Traçabilité complète pour conformité",
-      description: "Maintex garantit une traçabilité exhaustive de toutes les interventions, conforme aux exigences réglementaires.",
+      title: "Gestion des pièces de rechange optimisée",
+      description: "Une gestion intelligente du stock de pièces pour éviter les ruptures et optimiser le coût de stockage.",
       benefits: [
-        "Historique complet",
-        "Rapports d'audit automatisés",
-        "Documentation centralisée",
-        "Préparation certifications"
+        "Inventaire consolidé",
+        "Alertes de réapprovisionnement",
+        "Historique des consommations",
+        "Optimisation des stocks"
       ]
     },
     {
       icon: Target,
-      title: "First Time Fix pour interventions critiques",
-      description: "Équipez vos équipes biomédicales de toutes les informations pour résoudre les pannes rapidement.",
+      title: "First Time Fix augmenté",
+      description: "Avec Maintex, les techniciens ont accès à toutes les informations nécessaires pour résoudre la panne dès le premier passage.",
       benefits: [
-        "Diagnostic assisté",
-        "Historique accessible",
+        "Diagnostic assisté par IA",
         "Procédures détaillées",
-        "Intervention rapide"
+        "Pièces pré-positionnées",
+        "Historique complet"
       ]
     },
     {
       icon: Clock,
-      title: "Maintenance préventive réglementaire",
-      description: "Planifiez vos opérations de maintenance selon les cycles réglementaires et les recommandations fabricants.",
+      title: "Maintenance préventive intelligente",
+      description: "Passer d'une maintenance réactive à une maintenance prédictive basée sur les données d'exploitation.",
       benefits: [
-        "Calendrier réglementaire",
-        "Alertes d'échéance",
-        "Conformité assurée",
-        "Documentation automatique"
+        "Planification optimisée",
+        "Réduction des pannes imprévues",
+        "Allongement de la durée de vie",
+        "Optimisation des arrêts planifiés"
       ]
     },
     {
       icon: BarChart3,
-      title: "Indicateurs pour la santé",
-      description: "Pilotez votre maintenance avec des indicateurs adaptés aux exigences des établissements de santé.",
+      title: "Tableaux de bord opérationnels",
+      description: "Des indicateurs clés accessibles à tous les niveaux de l'organisation pour un pilotage efficace.",
       benefits: [
-        "Disponibilité par service",
-        "Conformité réglementaire",
-        "MTBF/MTTR critiques",
-        "Performance biomédicale"
+        "KPIs de performance",
+        "Suivi MTBF/MTTR",
+        "Analyse des tendances",
+        "Reporting automatisé"
       ]
     }
   ]
 
   const testimonials = [
     {
-      quote: "Maintex nous a permis de réduire nos pannes d'équipements critiques de 40%. La disponibilité de nos IRM est passée à 99.5%.",
-      author: "Dr. Jean-Marc Leroy",
-      role: "Directeur Technique",
-      company: "CHU",
-      stat: "99.5%",
-      statLabel: "disponibilité IRM"
+      quote: "Maintex nous a permis de réduire nos temps de diagnostic de 40% sur nos lignes de soudure. L'IA guide efficacement nos techniciens vers la solution.",
+      author: "Marc Leroy",
+      role: "Responsable Maintenance",
+      company: "Équipementier Automobile",
+      stat: "–40%",
+      statLabel: "temps de diagnostic"
     },
     {
-      quote: "La traçabilité complète des interventions nous a été essentielle pour nos certifications HAS. Zéro non-conformité.",
+      quote: "La traçabilité complète des interventions nous a été essentielle pour nos audits IATF. Plus aucune non-conformité liée à la documentation maintenance.",
       author: "Sophie Martin",
-      role: "Responsable Qualité",
-      company: "Clinique Privée",
+      role: "Directrice Qualité",
+      company: "Constructeur Automobile",
       stat: "100%",
-      statLabel: "conformité HAS"
+      statLabel: "conformité audits"
     },
     {
-      quote: "Nos biomédicaux ont accès à l'historique de chaque équipement sur leur mobile. L'efficacité des interventions a bondi.",
+      quote: "Nos techniciens juniors sont devenus autonomes deux fois plus vite grâce à la base de connaissances Maintex qui capitalise l'expertise des seniors.",
       author: "Pierre Durand",
-      role: "Chef Biomédical",
-      company: "Centre Hospitalier",
-      stat: "+35%",
-      statLabel: "efficacité interventions"
+      role: "Responsable Formation",
+      company: "Site de Production",
+      stat: "2x",
+      statLabel: "montée en compétence"
     }
   ]
 
   const stats = [
-    { value: '99.5%', label: 'Disponibilité équipements' },
-    { value: '100%', label: 'Conformité' },
-    { value: '–40%', label: 'Pannes critiques' },
-    { value: '+35%', label: 'Efficacité interventions' },
+    { value: '–35%', label: 'Temps d\'arrêt' },
+    { value: '+90%', label: 'First Time Fix' },
+    { value: '100%', label: 'Traçabilité' },
+    { value: '–20%', label: 'Stock pièces' },
   ]
 
   return (
@@ -179,19 +179,19 @@ export default function SantePage() {
             <div>
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 bg-[#F97316]/20 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/30">
-                  <HeartPulse className="w-8 h-8 text-[#F97316]" />
+                  <Car className="w-8 h-8 text-[#F97316]" />
                 </div>
                 <div>
-                  <span className="text-white/80 font-medium text-sm uppercase tracking-wider">Santé & Médical</span>
+                  <span className="text-white/80 font-medium text-sm uppercase tracking-wider">Industrie Automobile</span>
                 </div>
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight max-w-4xl">
-                Garantissez la disponibilité de vos équipements médicaux
+                Optimisez la disponibilité de vos lignes de production automobile
               </h1>
 
               <p className="text-lg text-white/80 max-w-xl mb-8">
-                Dans la santé, chaque équipement doit fonctionner parfaitement. Maintex optimise votre maintenance biomédicale pour la sécurité des patients.
+                Dans l&apos;industrie automobile, chaque minute d&apos;arrêt coûte des milliers d&apos;euros. Maintex vous aide à anticiper les pannes et maximiser votre productivité.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -384,7 +384,7 @@ export default function SantePage() {
             {/* Comparison */}
             <div className="bg-white rounded-2xl p-8 border border-gray-200">
               <h3 className="text-xl font-bold text-[#0C0A09] mb-6 text-center">
-                Dans la santé, la maintenance protège les patients
+                Dans l&apos;automobile, la maintenance est un levier de compétitivité
               </h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-red-50 rounded-xl p-6 border border-red-100">
@@ -395,15 +395,15 @@ export default function SantePage() {
                   <ul className="space-y-2 text-red-700/80 text-sm">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Équipements en panne
+                      Arrêts imprévus fréquents
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Risques pour les patients
+                      Surstocks de pièces
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Non-conformités
+                      Perte de savoir-faire
                     </li>
                   </ul>
                 </div>
@@ -415,15 +415,15 @@ export default function SantePage() {
                   <ul className="space-y-2 text-green-700/80 text-sm">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Équipements disponibles
+                      Disponibilité maximale
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Sécurité patients garantie
+                      Stocks optimisés
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Conformité totale
+                      Savoir capitalisé
                     </li>
                   </ul>
                 </div>
@@ -443,10 +443,10 @@ export default function SantePage() {
             <Zap className="w-8 h-8 text-[#F97316]" />
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Découvrez Maintex pour votre établissement de santé
+            Découvrez Maintex sur vos lignes de production
           </h2>
           <p className="text-xl text-white/90 mb-4 max-w-3xl mx-auto">
-            Hôpitaux, cliniques, centres d&apos;imagerie : Maintex s&apos;adapte à tous les établissements de santé.
+            Lignes d&apos;assemblage, presses, robots de soudure : Maintex s&apos;adapte à tous vos équipements automobiles.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <Link 

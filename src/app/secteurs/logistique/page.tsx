@@ -5,15 +5,15 @@ import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import Link from 'next/link'
 import { 
-  HeartPulse, Brain, Activity, Target, Shield, Clock, 
+  Truck, Brain, Activity, Target, Shield, Clock, 
   TrendingDown, Users, Award, Quote, Zap, Database,
   CheckCircle2, BarChart3, BookOpen, FileCheck, ChevronRight, Server, HeadphonesIcon,
-  AlertTriangle, Stethoscope, Syringe
+  AlertTriangle, Package, Warehouse
 } from 'lucide-react'
 import { TabNavigation, TabPanel } from '@/components/tab-navigation'
 import { TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup } from '@/components/device-mockups'
 
-export default function SantePage() {
+export default function LogistiquePage() {
   const [activeTab, setActiveTab] = useState('enjeux')
 
   const contentTabs = [
@@ -24,36 +24,36 @@ export default function SantePage() {
 
   const enjeux = [
     {
-      icon: HeartPulse,
-      title: "Sécurité des patients : priorité absolue",
-      description: "Dans le secteur de la santé, la défaillance d'un équipement médical peut avoir des conséquences directes sur la vie des patients.",
+      icon: Package,
+      title: "Flux tendus et exigences de délais",
+      description: "La logistique fonctionne en flux tendus. La défaillance d'un équipement peut paralyser toute la chaîne et compromettre les délais de livraison.",
       points: [
-        "Équipements de soins critiques",
-        "Disponibilité 24/7",
-        "Risques pour les patients",
-        "Responsabilité médicale"
+        "Délais clients stricts",
+        "Flux tendus permanents",
+        "Impact en cascade",
+        "Pénalités de retard"
       ]
     },
     {
-      icon: Stethoscope,
-      title: "Parc d'équipements médicaux complexe",
-      description: "Les établissements de santé gèrent un parc d'équipements variés et complexes : IRM, scanners, blocs opératoires, laboratoires.",
+      icon: Warehouse,
+      title: "Parc d'équipements variés",
+      description: "Les entrepôts logistiques intègrent de nombreux types d'équipements : chariots, convoyeurs, systèmes de tri, portes automatiques.",
       points: [
-        "Équipements haute technologie",
+        "Équipements hétérogènes",
+        "Technologies variées",
         "Maintenance spécialisée",
-        "Réglementations strictes",
-        "Compétences techniques"
+        "Compétences multiples"
       ]
     },
     {
-      icon: FileCheck,
-      title: "Conformité réglementaire stricte",
-      description: "Le secteur de la santé est soumis à des réglementations strictes : certifications, contrôles qualité, traçabilité des équipements.",
+      icon: Truck,
+      title: "Flotte de véhicules et engins",
+      description: "La gestion d'une flotte de véhicules et d'engins de manutention ajoute une complexité supplémentaire à la maintenance.",
       points: [
-        "Certifications HAS",
-        "Contrôles périodiques",
-        "Traçabilité obligatoire",
-        "Documentation exhaustive"
+        "Flotte de chariots",
+        "Véhicules de livraison",
+        "Suivi des heures",
+        "Géolocalisation"
       ]
     }
   ]
@@ -61,21 +61,21 @@ export default function SantePage() {
   const solutions = [
     {
       icon: Brain,
-      title: "Diagnostic IA pour équipements médicaux",
+      title: "Diagnostic IA pour équipements logistiques",
       description: "Maintex utilise l'intelligence artificielle pour analyser les historiques de vos équipements et proposer des diagnostics précis.",
       benefits: [
         "Identification des causes racines",
         "Anticipation des pannes",
         "Capitalisation du savoir-faire",
-        "Aide aux biomédicaux"
+        "Aide aux techniciens"
       ]
     },
     {
       icon: Activity,
       title: "Suivi des fonctions vitales",
-      description: "Surveillez les fonctions critiques de votre établissement : blocs opératoires, imagerie, urgences, réanimation.",
+      description: "Surveillez les fonctions critiques de votre logistique : réception, stockage, préparation, expédition.",
       benefits: [
-        "Vision par service",
+        "Vision par fonction",
         "Priorisation automatique",
         "Alertes intelligentes",
         "Disponibilité consolidée"
@@ -83,82 +83,82 @@ export default function SantePage() {
     },
     {
       icon: Database,
-      title: "Traçabilité complète pour conformité",
-      description: "Maintex garantit une traçabilité exhaustive de toutes les interventions, conforme aux exigences réglementaires.",
+      title: "Gestion du parc d'équipements",
+      description: "Centralisez toutes les informations de vos équipements : historique, maintenance, localisation.",
       benefits: [
         "Historique complet",
-        "Rapports d'audit automatisés",
-        "Documentation centralisée",
-        "Préparation certifications"
+        "Suivi des heures",
+        "Géolocalisation",
+        "Documentation centralisée"
       ]
     },
     {
       icon: Target,
-      title: "First Time Fix pour interventions critiques",
-      description: "Équipez vos équipes biomédicales de toutes les informations pour résoudre les pannes rapidement.",
+      title: "First Time Fix pour interventions rapides",
+      description: "Équipez vos techniciens de toutes les informations pour résoudre les pannes dès le premier passage.",
       benefits: [
         "Diagnostic assisté",
         "Historique accessible",
-        "Procédures détaillées",
-        "Intervention rapide"
+        "Pièces pré-positionnées",
+        "Réduction des retours"
       ]
     },
     {
       icon: Clock,
-      title: "Maintenance préventive réglementaire",
-      description: "Planifiez vos opérations de maintenance selon les cycles réglementaires et les recommandations fabricants.",
+      title: "Maintenance préventive planifiée",
+      description: "Planifiez vos opérations de maintenance en fonction des heures d'utilisation et des créneaux disponibles.",
       benefits: [
-        "Calendrier réglementaire",
-        "Alertes d'échéance",
-        "Conformité assurée",
-        "Documentation automatique"
+        "Planification par heures",
+        "Créneaux d'intervention",
+        "Optimisation des arrêts",
+        "Allongement durée de vie"
       ]
     },
     {
       icon: BarChart3,
-      title: "Indicateurs pour la santé",
-      description: "Pilotez votre maintenance avec des indicateurs adaptés aux exigences des établissements de santé.",
+      title: "Indicateurs pour la logistique",
+      description: "Pilotez votre maintenance avec des indicateurs adaptés aux exigences des entrepôts logistiques.",
       benefits: [
-        "Disponibilité par service",
-        "Conformité réglementaire",
-        "MTBF/MTTR critiques",
-        "Performance biomédicale"
+        "Disponibilité par équipement",
+        "Impact sur les flux",
+        "MTBF/MTTR",
+        "Performance globale"
       ]
     }
   ]
 
   const testimonials = [
     {
-      quote: "Maintex nous a permis de réduire nos pannes d'équipements critiques de 40%. La disponibilité de nos IRM est passée à 99.5%.",
-      author: "Dr. Jean-Marc Leroy",
-      role: "Directeur Technique",
-      company: "CHU",
-      stat: "99.5%",
-      statLabel: "disponibilité IRM"
+      quote: "Maintex nous a permis de réduire nos arrêts de convoyeurs de 40%. Nos délais de livraison sont mieux respectés.",
+      author: "Jean-Michel Petit",
+      role: "Directeur Entrepôt",
+      company: "Logisticien",
+      stat: "–40%",
+      statLabel: "arrêts convoyeurs"
     },
     {
-      quote: "La traçabilité complète des interventions nous a été essentielle pour nos certifications HAS. Zéro non-conformité.",
-      author: "Sophie Martin",
-      role: "Responsable Qualité",
-      company: "Clinique Privée",
-      stat: "100%",
-      statLabel: "conformité HAS"
+      quote: "La gestion de notre flotte de chariots est devenue beaucoup plus efficace avec le suivi des heures et la planification automatique.",
+      author: "Sophie Renard",
+      role: "Responsable Maintenance",
+      company: "Plateforme Logistique",
+      stat: "–25%",
+      statLabel: "pannes chariots"
     },
     {
-      quote: "Nos biomédicaux ont accès à l'historique de chaque équipement sur leur mobile. L'efficacité des interventions a bondi.",
-      author: "Pierre Durand",
-      role: "Chef Biomédical",
-      company: "Centre Hospitalier",
-      stat: "+35%",
-      statLabel: "efficacité interventions"
+      quote: "Nos techniciens ont accès à l'historique de chaque équipement sur leur tablette. Plus besoin de paperasse.",
+      author: "Pierre Bernard",
+      role: "Chef d'équipe",
+      company: "Entrepôt Distribution",
+      stat: "0",
+      statLabel: "papier terrain"
     }
   ]
 
   const stats = [
-    { value: '99.5%', label: 'Disponibilité équipements' },
-    { value: '100%', label: 'Conformité' },
-    { value: '–40%', label: 'Pannes critiques' },
-    { value: '+35%', label: 'Efficacité interventions' },
+    { value: '–40%', label: 'Arrêts équipements' },
+    { value: '+90%', label: 'Délais respectés' },
+    { value: '+85%', label: 'First Time Fix' },
+    { value: '–25%', label: 'Pannes chariots' },
   ]
 
   return (
@@ -179,19 +179,19 @@ export default function SantePage() {
             <div>
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 bg-[#F97316]/20 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/30">
-                  <HeartPulse className="w-8 h-8 text-[#F97316]" />
+                  <Truck className="w-8 h-8 text-[#F97316]" />
                 </div>
                 <div>
-                  <span className="text-white/80 font-medium text-sm uppercase tracking-wider">Santé & Médical</span>
+                  <span className="text-white/80 font-medium text-sm uppercase tracking-wider">Logistique & Transport</span>
                 </div>
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight max-w-4xl">
-                Garantissez la disponibilité de vos équipements médicaux
+                Maintenez vos flux logistiques en mouvement
               </h1>
 
               <p className="text-lg text-white/80 max-w-xl mb-8">
-                Dans la santé, chaque équipement doit fonctionner parfaitement. Maintex optimise votre maintenance biomédicale pour la sécurité des patients.
+                Dans la logistique, un équipement en panne bloque tout le flux. Maintex optimise votre maintenance pour des opérations continues.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -384,7 +384,7 @@ export default function SantePage() {
             {/* Comparison */}
             <div className="bg-white rounded-2xl p-8 border border-gray-200">
               <h3 className="text-xl font-bold text-[#0C0A09] mb-6 text-center">
-                Dans la santé, la maintenance protège les patients
+                Dans la logistique, la maintenance garantit vos délais
               </h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-red-50 rounded-xl p-6 border border-red-100">
@@ -395,15 +395,15 @@ export default function SantePage() {
                   <ul className="space-y-2 text-red-700/80 text-sm">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Équipements en panne
+                      Équipements souvent en panne
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Risques pour les patients
+                      Retards de livraison
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Non-conformités
+                      Flux perturbés
                     </li>
                   </ul>
                 </div>
@@ -419,11 +419,11 @@ export default function SantePage() {
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Sécurité patients garantie
+                      Délais respectés
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Conformité totale
+                      Flux optimisés
                     </li>
                   </ul>
                 </div>
@@ -443,10 +443,10 @@ export default function SantePage() {
             <Zap className="w-8 h-8 text-[#F97316]" />
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Découvrez Maintex pour votre établissement de santé
+            Découvrez Maintex pour vos opérations logistiques
           </h2>
           <p className="text-xl text-white/90 mb-4 max-w-3xl mx-auto">
-            Hôpitaux, cliniques, centres d&apos;imagerie : Maintex s&apos;adapte à tous les établissements de santé.
+            Convoyeurs, chariots, systèmes de tri : Maintex s&apos;adapte à tous vos équipements logistiques.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <Link 

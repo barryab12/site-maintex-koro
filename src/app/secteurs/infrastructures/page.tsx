@@ -5,15 +5,15 @@ import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import Link from 'next/link'
 import { 
-  HeartPulse, Brain, Activity, Target, Shield, Clock, 
+  Building, Brain, Activity, Target, Shield, Clock, 
   TrendingDown, Users, Award, Quote, Zap, Database,
   CheckCircle2, BarChart3, BookOpen, FileCheck, ChevronRight, Server, HeadphonesIcon,
-  AlertTriangle, Stethoscope, Syringe
+  AlertTriangle, Road, Map
 } from 'lucide-react'
 import { TabNavigation, TabPanel } from '@/components/tab-navigation'
 import { TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup } from '@/components/device-mockups'
 
-export default function SantePage() {
+export default function InfrastructuresPage() {
   const [activeTab, setActiveTab] = useState('enjeux')
 
   const contentTabs = [
@@ -24,36 +24,36 @@ export default function SantePage() {
 
   const enjeux = [
     {
-      icon: HeartPulse,
-      title: "Sécurité des patients : priorité absolue",
-      description: "Dans le secteur de la santé, la défaillance d'un équipement médical peut avoir des conséquences directes sur la vie des patients.",
+      icon: Map,
+      title: "Vieillissement des infrastructures",
+      description: "Les infrastructures publiques (ponts, tunnels, barrages) vieillissent et nécessitent une maintenance préventive rigoureuse.",
       points: [
-        "Équipements de soins critiques",
-        "Disponibilité 24/7",
-        "Risques pour les patients",
-        "Responsabilité médicale"
+        "Ouvrages d'art vieillissants",
+        "Inspections obligatoires",
+        "Travaux de rénovation",
+        "Sécurité des usagers"
       ]
     },
     {
-      icon: Stethoscope,
-      title: "Parc d'équipements médicaux complexe",
-      description: "Les établissements de santé gèrent un parc d'équipements variés et complexes : IRM, scanners, blocs opératoires, laboratoires.",
+      icon: Road,
+      title: "Réseau étendu et dispersé",
+      description: "Les gestionnaires d'infrastructures doivent maintenir des réseaux étendus sur de vastes territoires géographiques.",
       points: [
-        "Équipements haute technologie",
-        "Maintenance spécialisée",
-        "Réglementations strictes",
-        "Compétences techniques"
+        "Réseaux routiers étendus",
+        "Ouvrages dispersés",
+        "Interventions multiples",
+        "Coordination complexe"
       ]
     },
     {
-      icon: FileCheck,
-      title: "Conformité réglementaire stricte",
-      description: "Le secteur de la santé est soumis à des réglementations strictes : certifications, contrôles qualité, traçabilité des équipements.",
+      icon: Shield,
+      title: "Sécurité publique et responsabilité",
+      description: "La défaillance d'une infrastructure publique peut avoir des conséquences graves pour les usagers et engager la responsabilité des gestionnaires.",
       points: [
-        "Certifications HAS",
-        "Contrôles périodiques",
-        "Traçabilité obligatoire",
-        "Documentation exhaustive"
+        "Sécurité des usagers",
+        "Responsabilité juridique",
+        "Continuité de service",
+        "Image publique"
       ]
     }
   ]
@@ -61,104 +61,104 @@ export default function SantePage() {
   const solutions = [
     {
       icon: Brain,
-      title: "Diagnostic IA pour équipements médicaux",
-      description: "Maintex utilise l'intelligence artificielle pour analyser les historiques de vos équipements et proposer des diagnostics précis.",
+      title: "Diagnostic IA pour ouvrages",
+      description: "Maintex utilise l'intelligence artificielle pour analyser les historiques de vos ouvrages et anticiper les travaux nécessaires.",
       benefits: [
-        "Identification des causes racines",
-        "Anticipation des pannes",
-        "Capitalisation du savoir-faire",
-        "Aide aux biomédicaux"
+        "Analyse des pathologies",
+        "Anticipation des travaux",
+        "Priorisation automatique",
+        "Capitalisation du savoir-faire"
       ]
     },
     {
       icon: Activity,
       title: "Suivi des fonctions vitales",
-      description: "Surveillez les fonctions critiques de votre établissement : blocs opératoires, imagerie, urgences, réanimation.",
+      description: "Surveillez l'état de vos infrastructures et planifiez les interventions en fonction de leur criticité.",
       benefits: [
-        "Vision par service",
-        "Priorisation automatique",
+        "Vision par ouvrage",
+        "État en temps réel",
         "Alertes intelligentes",
-        "Disponibilité consolidée"
+        "Planification optimisée"
       ]
     },
     {
       icon: Database,
-      title: "Traçabilité complète pour conformité",
-      description: "Maintex garantit une traçabilité exhaustive de toutes les interventions, conforme aux exigences réglementaires.",
+      title: "Gestion documentaire centralisée",
+      description: "Centralisez tous les documents de vos ouvrages : plans, rapports d'inspection, historique des travaux.",
       benefits: [
-        "Historique complet",
-        "Rapports d'audit automatisés",
         "Documentation centralisée",
-        "Préparation certifications"
+        "Accès terrain mobile",
+        "Historique complet",
+        "Rapports automatisés"
       ]
     },
     {
       icon: Target,
-      title: "First Time Fix pour interventions critiques",
-      description: "Équipez vos équipes biomédicales de toutes les informations pour résoudre les pannes rapidement.",
+      title: "Inspections et contrôles planifiés",
+      description: "Planifiez et suivez toutes vos inspections réglementaires et contrôles périodiques.",
       benefits: [
-        "Diagnostic assisté",
-        "Historique accessible",
-        "Procédures détaillées",
-        "Intervention rapide"
+        "Calendrier réglementaire",
+        "Alertes d'échéance",
+        "Rapports standardisés",
+        "Conformité assurée"
       ]
     },
     {
       icon: Clock,
-      title: "Maintenance préventive réglementaire",
-      description: "Planifiez vos opérations de maintenance selon les cycles réglementaires et les recommandations fabricants.",
+      title: "Maintenance préventive optimisée",
+      description: "Planifiez vos opérations de maintenance en fonction de l'état réel des ouvrages et des priorités.",
       benefits: [
-        "Calendrier réglementaire",
-        "Alertes d'échéance",
-        "Conformité assurée",
-        "Documentation automatique"
+        "Planification optimisée",
+        "Optimisation des budgets",
+        "Travaux prioritaires",
+        "Allongement durée de vie"
       ]
     },
     {
       icon: BarChart3,
-      title: "Indicateurs pour la santé",
-      description: "Pilotez votre maintenance avec des indicateurs adaptés aux exigences des établissements de santé.",
+      title: "Indicateurs pour infrastructures",
+      description: "Pilotez votre maintenance avec des indicateurs adaptés à la gestion d'infrastructures publiques.",
       benefits: [
-        "Disponibilité par service",
-        "Conformité réglementaire",
-        "MTBF/MTTR critiques",
-        "Performance biomédicale"
+        "État du patrimoine",
+        "Taux de conformité",
+        "Budget par ouvrage",
+        "Performance globale"
       ]
     }
   ]
 
   const testimonials = [
     {
-      quote: "Maintex nous a permis de réduire nos pannes d'équipements critiques de 40%. La disponibilité de nos IRM est passée à 99.5%.",
-      author: "Dr. Jean-Marc Leroy",
-      role: "Directeur Technique",
-      company: "CHU",
-      stat: "99.5%",
-      statLabel: "disponibilité IRM"
+      quote: "Maintex nous a permis de mieux planifier nos inspections et de réduire nos retards de 60%. La conformité réglementaire est assurée.",
+      author: "Jean-Paul Mercier",
+      role: "Directeur Patrimoine",
+      company: "Gestionnaire Routier",
+      stat: "–60%",
+      statLabel: "retards inspections"
     },
     {
-      quote: "La traçabilité complète des interventions nous a été essentielle pour nos certifications HAS. Zéro non-conformité.",
-      author: "Sophie Martin",
-      role: "Responsable Qualité",
-      company: "Clinique Privée",
-      stat: "100%",
-      statLabel: "conformité HAS"
+      quote: "L'accès mobile à l'historique des ouvrages a transformé nos interventions terrain. Plus besoin de retourner au bureau.",
+      author: "Marie Fontaine",
+      role: "Responsable Maintenance",
+      company: "Services Techniques",
+      stat: "–50%",
+      statLabel: "déplacements bureau"
     },
     {
-      quote: "Nos biomédicaux ont accès à l'historique de chaque équipement sur leur mobile. L'efficacité des interventions a bondi.",
+      quote: "La base de connaissances Maintex a permis de capitaliser l'expertise de nos ingénieurs seniors partant à la retraite.",
       author: "Pierre Durand",
-      role: "Chef Biomédical",
-      company: "Centre Hospitalier",
-      stat: "+35%",
-      statLabel: "efficacité interventions"
+      role: "Directeur Technique",
+      company: "Gestion Infrastructures",
+      stat: "100%",
+      statLabel: "savoir préservé"
     }
   ]
 
   const stats = [
-    { value: '99.5%', label: 'Disponibilité équipements' },
+    { value: '–60%', label: 'Retards inspections' },
     { value: '100%', label: 'Conformité' },
-    { value: '–40%', label: 'Pannes critiques' },
-    { value: '+35%', label: 'Efficacité interventions' },
+    { value: '–50%', label: 'Déplacements' },
+    { value: '100%', label: 'Savoir préservé' },
   ]
 
   return (
@@ -179,19 +179,19 @@ export default function SantePage() {
             <div>
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 bg-[#F97316]/20 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/30">
-                  <HeartPulse className="w-8 h-8 text-[#F97316]" />
+                  <Building className="w-8 h-8 text-[#F97316]" />
                 </div>
                 <div>
-                  <span className="text-white/80 font-medium text-sm uppercase tracking-wider">Santé & Médical</span>
+                  <span className="text-white/80 font-medium text-sm uppercase tracking-wider">Infrastructures Publiques</span>
                 </div>
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight max-w-4xl">
-                Garantissez la disponibilité de vos équipements médicaux
+                Préservez votre patrimoine d'infrastructures
               </h1>
 
               <p className="text-lg text-white/80 max-w-xl mb-8">
-                Dans la santé, chaque équipement doit fonctionner parfaitement. Maintex optimise votre maintenance biomédicale pour la sécurité des patients.
+                Ponts, tunnels, routes, barrages : Maintex optimise la maintenance de vos infrastructures pour garantir la sécurité et la durabilité.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -384,7 +384,7 @@ export default function SantePage() {
             {/* Comparison */}
             <div className="bg-white rounded-2xl p-8 border border-gray-200">
               <h3 className="text-xl font-bold text-[#0C0A09] mb-6 text-center">
-                Dans la santé, la maintenance protège les patients
+                Pour les infrastructures, la maintenance garantit la sécurité
               </h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-red-50 rounded-xl p-6 border border-red-100">
@@ -395,15 +395,15 @@ export default function SantePage() {
                   <ul className="space-y-2 text-red-700/80 text-sm">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Équipements en panne
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Risques pour les patients
+                      Inspections en retard
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
                       Non-conformités
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
+                      Perte de savoir-faire
                     </li>
                   </ul>
                 </div>
@@ -415,15 +415,15 @@ export default function SantePage() {
                   <ul className="space-y-2 text-green-700/80 text-sm">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Équipements disponibles
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Sécurité patients garantie
+                      Inspections planifiées
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
                       Conformité totale
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
+                      Expertise capitalisée
                     </li>
                   </ul>
                 </div>
@@ -443,10 +443,10 @@ export default function SantePage() {
             <Zap className="w-8 h-8 text-[#F97316]" />
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Découvrez Maintex pour votre établissement de santé
+            Découvrez Maintex pour vos infrastructures
           </h2>
           <p className="text-xl text-white/90 mb-4 max-w-3xl mx-auto">
-            Hôpitaux, cliniques, centres d&apos;imagerie : Maintex s&apos;adapte à tous les établissements de santé.
+            Ponts, tunnels, routes, barrages : Maintex s&apos;adapte à tous vos ouvrages d&apos;art.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <Link 

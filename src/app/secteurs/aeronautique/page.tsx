@@ -5,15 +5,15 @@ import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import Link from 'next/link'
 import { 
-  HeartPulse, Brain, Activity, Target, Shield, Clock, 
+  Plane, Brain, Activity, Target, Shield, Clock, 
   TrendingDown, Users, Award, Quote, Zap, Database,
   CheckCircle2, BarChart3, BookOpen, FileCheck, ChevronRight, Server, HeadphonesIcon,
-  AlertTriangle, Stethoscope, Syringe
+  AlertTriangle, TrainFront, Wrench
 } from 'lucide-react'
 import { TabNavigation, TabPanel } from '@/components/tab-navigation'
 import { TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup } from '@/components/device-mockups'
 
-export default function SantePage() {
+export default function AeronautiquePage() {
   const [activeTab, setActiveTab] = useState('enjeux')
 
   const contentTabs = [
@@ -24,36 +24,36 @@ export default function SantePage() {
 
   const enjeux = [
     {
-      icon: HeartPulse,
-      title: "Sécurité des patients : priorité absolue",
-      description: "Dans le secteur de la santé, la défaillance d'un équipement médical peut avoir des conséquences directes sur la vie des patients.",
+      icon: Shield,
+      title: "Exigences de sécurité critiques",
+      description: "L'aéronautique et le ferroviaire sont soumis à des normes de sécurité draconiennes. La moindre défaillance peut avoir des conséquences graves.",
       points: [
-        "Équipements de soins critiques",
-        "Disponibilité 24/7",
-        "Risques pour les patients",
-        "Responsabilité médicale"
+        "Certification EN/AS 9100",
+        "Traçabilité complète obligatoire",
+        "Documentation exhaustive",
+        "Contrôles réglementaires stricts"
       ]
     },
     {
-      icon: Stethoscope,
-      title: "Parc d'équipements médicaux complexe",
-      description: "Les établissements de santé gèrent un parc d'équipements variés et complexes : IRM, scanners, blocs opératoires, laboratoires.",
+      icon: TrendingDown,
+      title: "Coût des immobilisations",
+      description: "Un aéronef ou un train à l'arrêt représente un coût financier considérable et perturbe l'ensemble du système de transport.",
       points: [
-        "Équipements haute technologie",
-        "Maintenance spécialisée",
-        "Réglementations strictes",
-        "Compétences techniques"
+        "Perturbation des horaires",
+        "Pénalités contractuelles",
+        "Image de marque impactée",
+        "Report sur autres équipements"
       ]
     },
     {
-      icon: FileCheck,
-      title: "Conformité réglementaire stricte",
-      description: "Le secteur de la santé est soumis à des réglementations strictes : certifications, contrôles qualité, traçabilité des équipements.",
+      icon: Wrench,
+      title: "Complexité des équipements",
+      description: "Les systèmes aéronautiques et ferroviaires intègrent des technologies complexes nécessitant une maintenance hautement spécialisée.",
       points: [
-        "Certifications HAS",
-        "Contrôles périodiques",
-        "Traçabilité obligatoire",
-        "Documentation exhaustive"
+        "Systèmes avioniques complexes",
+        "Équipements de propulsion",
+        "Systèmes de freinage",
+        "Équipements de sécurité"
       ]
     }
   ]
@@ -61,104 +61,104 @@ export default function SantePage() {
   const solutions = [
     {
       icon: Brain,
-      title: "Diagnostic IA pour équipements médicaux",
-      description: "Maintex utilise l'intelligence artificielle pour analyser les historiques de vos équipements et proposer des diagnostics précis.",
+      title: "Diagnostic IA pour équipements critiques",
+      description: "Maintex utilise l'intelligence artificielle pour analyser les historiques et proposer des diagnostics précis sur vos équipements.",
       benefits: [
-        "Identification des causes racines",
-        "Anticipation des pannes",
+        "Identification rapide des causes",
         "Capitalisation du savoir-faire",
-        "Aide aux biomédicaux"
+        "Aide aux techniciens terrain",
+        "Réduction des erreurs"
       ]
     },
     {
       icon: Activity,
       title: "Suivi des fonctions vitales",
-      description: "Surveillez les fonctions critiques de votre établissement : blocs opératoires, imagerie, urgences, réanimation.",
+      description: "Surveillez les fonctions critiques de vos aéronefs ou trains : propulsion, freinage, avionique.",
       benefits: [
-        "Vision par service",
+        "Vision par fonction critique",
         "Priorisation automatique",
         "Alertes intelligentes",
-        "Disponibilité consolidée"
+        "Disponibilité en temps réel"
       ]
     },
     {
       icon: Database,
-      title: "Traçabilité complète pour conformité",
+      title: "Traçabilité complète pour certifications",
       description: "Maintex garantit une traçabilité exhaustive de toutes les interventions, conforme aux exigences réglementaires.",
       benefits: [
         "Historique complet",
         "Rapports d'audit automatisés",
-        "Documentation centralisée",
-        "Préparation certifications"
+        "Conformité EN/AS 9100",
+        "Documentation centralisée"
       ]
     },
     {
       icon: Target,
-      title: "First Time Fix pour interventions critiques",
-      description: "Équipez vos équipes biomédicales de toutes les informations pour résoudre les pannes rapidement.",
+      title: "First Time Fix optimisé",
+      description: "Équipez vos techniciens de toutes les informations nécessaires pour résoudre les pannes dès le premier passage.",
       benefits: [
         "Diagnostic assisté",
+        "Procédures validées",
         "Historique accessible",
-        "Procédures détaillées",
-        "Intervention rapide"
+        "Intervention efficace"
       ]
     },
     {
       icon: Clock,
-      title: "Maintenance préventive réglementaire",
-      description: "Planifiez vos opérations de maintenance selon les cycles réglementaires et les recommandations fabricants.",
+      title: "Maintenance préventive planifiée",
+      description: "Planifiez vos opérations de maintenance en fonction des cycles de vol ou des kilomètres parcourus.",
       benefits: [
-        "Calendrier réglementaire",
-        "Alertes d'échéance",
-        "Conformité assurée",
-        "Documentation automatique"
+        "Planification par cycles",
+        "Anticipation des révisions",
+        "Optimisation des arrêts",
+        "Conformité réglementaire"
       ]
     },
     {
       icon: BarChart3,
-      title: "Indicateurs pour la santé",
-      description: "Pilotez votre maintenance avec des indicateurs adaptés aux exigences des établissements de santé.",
+      title: "Indicateurs pour transport",
+      description: "Pilotez votre maintenance avec des indicateurs adaptés aux exigences du transport aérien et ferroviaire.",
       benefits: [
-        "Disponibilité par service",
-        "Conformité réglementaire",
-        "MTBF/MTTR critiques",
-        "Performance biomédicale"
+        "Disponibilité par équipement",
+        "MTBF/MTTR",
+        "Conformité préventif",
+        "Performance flotte"
       ]
     }
   ]
 
   const testimonials = [
     {
-      quote: "Maintex nous a permis de réduire nos pannes d'équipements critiques de 40%. La disponibilité de nos IRM est passée à 99.5%.",
-      author: "Dr. Jean-Marc Leroy",
-      role: "Directeur Technique",
-      company: "CHU",
-      stat: "99.5%",
-      statLabel: "disponibilité IRM"
+      quote: "Maintex nous a permis de réduire nos temps de diagnostic de 35% sur nos équipements avioniques. La traçabilité est conforme à nos exigences EN 9100.",
+      author: "François Mercier",
+      role: "Directeur Maintenance",
+      company: "Compagnie Aérienne",
+      stat: "–35%",
+      statLabel: "temps diagnostic"
     },
     {
-      quote: "La traçabilité complète des interventions nous a été essentielle pour nos certifications HAS. Zéro non-conformité.",
-      author: "Sophie Martin",
-      role: "Responsable Qualité",
-      company: "Clinique Privée",
+      quote: "La base de connaissances Maintex a permis de capitaliser l'expertise de nos techniciens seniors partant à la retraite.",
+      author: "Sophie Renault",
+      role: "Responsable Formation",
+      company: "Transport Ferroviaire",
       stat: "100%",
-      statLabel: "conformité HAS"
+      statLabel: "savoir préservé"
     },
     {
-      quote: "Nos biomédicaux ont accès à l'historique de chaque équipement sur leur mobile. L'efficacité des interventions a bondi.",
-      author: "Pierre Durand",
-      role: "Chef Biomédical",
-      company: "Centre Hospitalier",
-      stat: "+35%",
-      statLabel: "efficacité interventions"
+      quote: "Nos audits de certification se passent sans aucune non-conformité liée à la documentation maintenance depuis Maintex.",
+      author: "Marc Dubois",
+      role: "Directeur Qualité",
+      company: "Maintenance Aéronautique",
+      stat: "0",
+      statLabel: "non-conformité"
     }
   ]
 
   const stats = [
-    { value: '99.5%', label: 'Disponibilité équipements' },
-    { value: '100%', label: 'Conformité' },
-    { value: '–40%', label: 'Pannes critiques' },
-    { value: '+35%', label: 'Efficacité interventions' },
+    { value: '–35%', label: 'Temps diagnostic' },
+    { value: '100%', label: 'Traçabilité' },
+    { value: '+85%', label: 'First Time Fix' },
+    { value: '0', label: 'Non-conformité' },
   ]
 
   return (
@@ -179,19 +179,19 @@ export default function SantePage() {
             <div>
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 bg-[#F97316]/20 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/30">
-                  <HeartPulse className="w-8 h-8 text-[#F97316]" />
+                  <Plane className="w-8 h-8 text-[#F97316]" />
                 </div>
                 <div>
-                  <span className="text-white/80 font-medium text-sm uppercase tracking-wider">Santé & Médical</span>
+                  <span className="text-white/80 font-medium text-sm uppercase tracking-wider">Aéronautique & Ferroviaire</span>
                 </div>
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight max-w-4xl">
-                Garantissez la disponibilité de vos équipements médicaux
+                Garantissez la sécurité et la disponibilité de vos flottes
               </h1>
 
               <p className="text-lg text-white/80 max-w-xl mb-8">
-                Dans la santé, chaque équipement doit fonctionner parfaitement. Maintex optimise votre maintenance biomédicale pour la sécurité des patients.
+                Dans l&apos;aéronautique et le ferroviaire, la maintenance est un enjeu de sécurité critique. Maintex vous accompagne dans cette démarche exigeante.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -384,7 +384,7 @@ export default function SantePage() {
             {/* Comparison */}
             <div className="bg-white rounded-2xl p-8 border border-gray-200">
               <h3 className="text-xl font-bold text-[#0C0A09] mb-6 text-center">
-                Dans la santé, la maintenance protège les patients
+                Dans le transport, la maintenance est un enjeu de sécurité
               </h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-red-50 rounded-xl p-6 border border-red-100">
@@ -395,15 +395,15 @@ export default function SantePage() {
                   <ul className="space-y-2 text-red-700/80 text-sm">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Équipements en panne
+                      Risques sécurité accrus
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Risques pour les patients
+                      Non-conformités réglementaires
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-red-400 rounded-full" />
-                      Non-conformités
+                      Immobilisations coûteuses
                     </li>
                   </ul>
                 </div>
@@ -415,15 +415,15 @@ export default function SantePage() {
                   <ul className="space-y-2 text-green-700/80 text-sm">
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Équipements disponibles
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
-                      Sécurité patients garantie
+                      Sécurité garantie
                     </li>
                     <li className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
                       Conformité totale
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 bg-green-400 rounded-full" />
+                      Disponibilité optimale
                     </li>
                   </ul>
                 </div>
@@ -443,10 +443,10 @@ export default function SantePage() {
             <Zap className="w-8 h-8 text-[#F97316]" />
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Découvrez Maintex pour votre établissement de santé
+            Découvrez Maintex pour vos flottes aériennes et ferroviaires
           </h2>
           <p className="text-xl text-white/90 mb-4 max-w-3xl mx-auto">
-            Hôpitaux, cliniques, centres d&apos;imagerie : Maintex s&apos;adapte à tous les établissements de santé.
+            Aéronefs, trains, systèmes avioniques : Maintex s&apos;adapte à tous vos équipements critiques.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <Link 
