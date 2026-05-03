@@ -8,7 +8,7 @@ import {
   Building, Brain, Activity, Target, Shield, Clock, 
   TrendingDown, Users, Award, Quote, Zap, Database,
   CheckCircle2, BarChart3, BookOpen, FileCheck, ChevronRight, Server, HeadphonesIcon,
-  AlertTriangle, Road, Map
+  AlertTriangle, Route, Map
 } from 'lucide-react'
 import { TabNavigation, TabPanel } from '@/components/tab-navigation'
 import { TabletMockup, MobileMockup, GMAODashboardMockup, EquipmentDetailMockup, TaskManagementMockup } from '@/components/device-mockups'
@@ -35,7 +35,7 @@ export default function InfrastructuresPage() {
       ]
     },
     {
-      icon: Road,
+      icon: Route,
       title: "Réseau étendu et dispersé",
       description: "Les gestionnaires d'infrastructures doivent maintenir des réseaux étendus sur de vastes territoires géographiques.",
       points: [
