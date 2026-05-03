@@ -342,87 +342,123 @@ export default function FonctionnalitesPage() {
 
   const performanceData = [85, 88, 92, 95, 97, 98, 96, 99, 98, 99, 99, 99]
 
-  // KPI data for features
-  const featureKpiData: Record<string, { chartData: number[], barData: number[], kpis: { name: string, value: string, trend?: string }[] }> = {
+  // KPI data for features with relevant chart labels
+  const featureKpiData: Record<string, { 
+    chartData: number[], 
+    barData: number[], 
+    kpis: { name: string, value: string, trend?: string }[],
+    chartLabel: string,
+    chartType: 'line' | 'bar'
+  }> = {
     'ot': {
       chartData: [45, 62, 78, 95, 110, 125, 118, 132, 145, 138, 152, 156],
       barData: [12, 8, 5, 3, 2],
-      kpis: [{ name: 'OT/mois', value: '156' }, { name: 'Délai moyen', value: '2.1j', trend: '-30%' }]
+      kpis: [{ name: 'OT/mois', value: '156' }, { name: 'Délai moyen', value: '2.1j', trend: '-30%' }],
+      chartLabel: 'OT clôturés/mois',
+      chartType: 'line'
     },
     'preventif': {
       chartData: [55, 58, 62, 68, 72, 75, 78, 82, 85, 88, 90, 92],
       barData: [25, 18, 12, 8, 5],
-      kpis: [{ name: 'Taux préventif', value: '76%' }, { name: 'Planifiées', value: '+45%' }]
+      kpis: [{ name: 'Taux préventif', value: '76%' }, { name: 'Planifiées', value: '+45%' }],
+      chartLabel: 'Taux préventif (%)',
+      chartType: 'line'
     },
     'predictif': {
       chartData: [98, 98.5, 99, 99.2, 99.5, 99.6, 99.7, 99.8, 99.9, 99.9, 99.9, 99.9],
       barData: [35, 22, 12, 6, 2],
-      kpis: [{ name: 'Disponibilité', value: '99.9%' }, { name: 'Pannes évitées', value: '42%' }]
+      kpis: [{ name: 'Disponibilité', value: '99.9%' }, { name: 'Pannes évitées', value: '42%' }],
+      chartLabel: 'Disponibilité (%)',
+      chartType: 'line'
     },
     'demandes': {
       chartData: [72, 78, 85, 88, 92, 94, 95, 96, 97, 98, 98, 99],
       barData: [45, 32, 18, 8, 4],
-      kpis: [{ name: 'Satisfaction', value: '98%' }, { name: 'Délai traitement', value: '-45%' }]
+      kpis: [{ name: 'Satisfaction', value: '98%' }, { name: 'Délai traitement', value: '-45%' }],
+      chartLabel: 'Satisfaction (%)',
+      chartType: 'line'
     },
     'planification': {
       chartData: [65, 72, 78, 82, 85, 88, 90, 92, 94, 95, 96, 97],
       barData: [20, 15, 10, 5, 3],
-      kpis: [{ name: 'Efficacité', value: '+25%' }, { name: 'Conflits', value: '-80%' }]
+      kpis: [{ name: 'Efficacité', value: '+25%' }, { name: 'Conflits', value: '-80%' }],
+      chartLabel: 'Taux occupation (%)',
+      chartType: 'line'
     },
     'equipements': {
       chartData: [850, 860, 870, 880, 890, 900, 910, 920, 930, 940, 950, 960],
       barData: [100, 80, 60, 40, 20],
-      kpis: [{ name: 'Équipements', value: '850+' }, { name: 'Traçabilité', value: '100%' }]
+      kpis: [{ name: 'Équipements', value: '850+' }, { name: 'Traçabilité', value: '100%' }],
+      chartLabel: 'Parc équipements',
+      chartType: 'line'
     },
     'vitaux': {
       chartData: [95, 96, 97, 98, 98.5, 99, 99.2, 99.5, 99.6, 99.7, 99.8, 99.9],
       barData: [5, 3, 1, 0, 0],
-      kpis: [{ name: 'Disponibilité', value: '99.2%' }, { name: 'Critiques', value: '0 panne' }]
+      kpis: [{ name: 'Disponibilité', value: '99.2%' }, { name: 'Critiques', value: '0 panne' }],
+      chartLabel: 'Disponibilité (%)',
+      chartType: 'line'
     },
     'ressources': {
       chartData: [75, 78, 82, 85, 88, 90, 91, 92, 93, 94, 95, 96],
       barData: [30, 25, 20, 15, 10],
-      kpis: [{ name: 'Productivité', value: '+20%' }, { name: 'Techniciens', value: '12' }]
+      kpis: [{ name: 'Productivité', value: '+20%' }, { name: 'Techniciens', value: '12' }],
+      chartLabel: 'Productivité (%)',
+      chartType: 'line'
     },
     'stocks': {
       chartData: [2400, 2350, 2300, 2250, 2200, 2150, 2100, 2050, 2000, 1950, 1900, 1850],
       barData: [40, 30, 20, 10, 5],
-      kpis: [{ name: 'Références', value: '2,400' }, { name: 'Stock dormant', value: '-20%' }]
+      kpis: [{ name: 'Références', value: '2,400' }, { name: 'Stock dormant', value: '-20%' }],
+      chartLabel: 'Stock optimisé',
+      chartType: 'line'
     },
     'achats': {
       chartData: [85, 87, 89, 90, 91, 92, 93, 94, 95, 95, 96, 96],
       barData: [25, 20, 15, 10, 5],
-      kpis: [{ name: 'Coûts achat', value: '-15%' }, { name: 'Délai', value: '-25%' }]
+      kpis: [{ name: 'Coûts achat', value: '-15%' }, { name: 'Délai', value: '-25%' }],
+      chartLabel: 'Performance fournisseurs',
+      chartType: 'line'
     },
     'dashboard': {
       chartData: [15, 18, 22, 28, 35, 42, 48, 55, 62, 68, 75, 82],
       barData: [50, 40, 30, 20, 15],
-      kpis: [{ name: 'KPIs suivis', value: '15+' }, { name: 'Monitoring', value: '24/7' }]
+      kpis: [{ name: 'KPIs suivis', value: '15+' }, { name: 'Monitoring', value: '24/7' }],
+      chartLabel: 'Tableaux de bord actifs',
+      chartType: 'line'
     },
     'budget': {
       chartData: [80, 82, 85, 87, 90, 92, 94, 96, 98, 99, 100, 100],
       barData: [20, 15, 10, 5, 2],
-      kpis: [{ name: 'ROI moyen', value: '4 mois' }, { name: 'Écarts', value: '-60%' }]
+      kpis: [{ name: 'ROI moyen', value: '4 mois' }, { name: 'Écarts', value: '-60%' }],
+      chartLabel: 'Budget consommé (%)',
+      chartType: 'line'
     },
     'mobile': {
       chartData: [92, 94, 95, 96, 97, 98, 98, 99, 99, 99, 99, 99],
       barData: [85, 90, 94, 97, 99],
-      kpis: [{ name: 'Hors-ligne', value: '100%' }, { name: 'Adoption', value: '98%' }]
+      kpis: [{ name: 'Hors-ligne', value: '100%' }, { name: 'Adoption', value: '98%' }],
+      chartLabel: 'Taux d\'adoption (%)',
+      chartType: 'line'
     },
     'integrations': {
       chartData: [5, 6, 7, 8, 9, 10, 10, 11, 11, 12, 12, 13],
       barData: [95, 92, 88, 85, 82],
-      kpis: [{ name: 'Connecteurs', value: '10+' }, { name: 'API uptime', value: '99.9%' }]
+      kpis: [{ name: 'Connecteurs', value: '10+' }, { name: 'API uptime', value: '99.9%' }],
+      chartLabel: 'Intégrations actives',
+      chartType: 'line'
     },
     'documents': {
       chartData: [60, 65, 70, 75, 80, 85, 88, 90, 92, 94, 96, 98],
       barData: [40, 30, 20, 10, 5],
-      kpis: [{ name: 'Conformité', value: '100%' }, { name: 'Recherche', value: '-60%' }]
+      kpis: [{ name: 'Conformité', value: '100%' }, { name: 'Recherche', value: '-60%' }],
+      chartLabel: 'Documents numérisés',
+      chartType: 'line'
     }
   }
 
   const renderFeatureCard = (feature: any) => {
-    const kpiData = featureKpiData[feature.id] || { chartData: performanceData, barData: [50, 40, 30, 20, 10], kpis: feature.stats || [] }
+    const kpiData = featureKpiData[feature.id] || { chartData: performanceData, barData: [50, 40, 30, 20, 10], kpis: feature.stats || [], chartLabel: 'Performance', chartType: 'line' }
     
     return (
       <div 
@@ -477,21 +513,26 @@ export default function FonctionnalitesPage() {
             </div>
             
             {/* Top Right - Line Chart Card */}
-            <div className="absolute -top-2 -right-2 bg-white rounded-xl p-3 shadow-lg w-36">
-              <div className="text-xs text-gray-500 mb-1">Évolution</div>
+            <div className="absolute -top-2 -right-2 bg-white rounded-xl p-3 shadow-lg w-40">
+              <div className="text-xs text-gray-500 mb-1">{kpiData.chartLabel}</div>
               <MiniLineChartInline data={kpiData.chartData} color={feature.highlight ? '#F97316' : '#1E3A8A'} height={30} />
             </div>
             
             {/* Bottom Left - KPI Card with Bar Chart */}
-            <div className="absolute -bottom-2 left-4 bg-white rounded-xl p-3 shadow-lg w-40">
-              <div className="flex items-center gap-2 mb-2">
-                {kpiData.kpis[0] && (
+            <div className="absolute -bottom-2 left-4 bg-white rounded-xl p-3 shadow-lg w-44">
+              {kpiData.kpis[0] && (
+                <div className="flex items-center gap-3 mb-2">
                   <div>
                     <div className="text-lg font-bold text-[#0C0A09]">{kpiData.kpis[0].value}</div>
                     <div className="text-xs text-gray-500">{kpiData.kpis[0].name}</div>
                   </div>
-                )}
-              </div>
+                  {kpiData.kpis[0].trend && (
+                    <div className="text-xs font-semibold text-[#059669] bg-[#059669]/10 px-2 py-1 rounded-full">
+                      {kpiData.kpis[0].trend}
+                    </div>
+                  )}
+                </div>
+              )}
               <MiniBarChartInline data={kpiData.barData} color={feature.highlight ? '#F97316' : '#059669'} height={25} />
             </div>
             
