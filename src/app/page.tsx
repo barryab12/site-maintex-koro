@@ -254,8 +254,8 @@ export default function HomePage() {
 
           <div className="mb-12">
             <EnhancedBtpPhotoVisual 
-              imageSrc="/images/remote-supervision.png"
-              imageAlt="Manager supervisant les installations à distance"
+              imageSrc="/images/btp-chantier-realistic.png"
+              imageAlt="Équipe de techniciens sur chantier BTP avec tablettes"
               className="max-w-4xl mx-auto"
             />
           </div>
