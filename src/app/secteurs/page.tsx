@@ -335,7 +335,7 @@ export default function SecteursPage() {
             </div>
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4 text-[#F97316]" />
-              <span>Déploiement 14 jours</span>
+              <span>Déploiement auto assisté</span>
             </div>
             <div className="flex items-center gap-2">
               <Users className="w-4 h-4 text-[#F97316]" />

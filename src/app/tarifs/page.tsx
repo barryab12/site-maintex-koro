@@ -276,7 +276,7 @@ export default function TarifsPage() {
           <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16 text-white/90 text-sm">
             <div className="flex items-center gap-2">
               <Server className="w-4 h-4 text-[#F97316]" />
-              <span>Hébergement France</span>
+              <span>Hébergement sécurisé</span>
             </div>
             <div className="flex items-center gap-2">
               <Shield className="w-4 h-4 text-[#F97316]" />
@@ -284,7 +284,7 @@ export default function TarifsPage() {
             </div>
             <div className="flex items-center gap-2">
               <HeadphonesIcon className="w-4 h-4 text-[#F97316]" />
-              <span>Support francophone</span>
+              <span>Support francophone • GMAO multilingues</span>
             </div>
             <div className="flex items-center gap-2">
               <BadgeCheck className="w-4 h-4 text-[#F97316]" />

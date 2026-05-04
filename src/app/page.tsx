@@ -85,7 +85,7 @@ export default function HomePage() {
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F97316]/10 border border-[#F97316]/20 text-[#1E3A8A] mb-6">
                 <MapPin className="w-4 h-4 text-[#F97316]" />
-                <span className="text-sm font-semibold">De Marseille à Abidjan — 350+ clients en 15 pays</span>
+                <span className="text-sm font-semibold">La GMAO évolutive</span>
               </div>
 
               {/* Headline */}
@@ -102,9 +102,9 @@ export default function HomePage() {
               {/* Key Benefits */}
               <div className="flex flex-wrap gap-3 mb-8">
                 {[
-                  { icon: Server, text: 'Hébergée en France' },
+                  { icon: Brain, text: 'Assistance IA' },
                   { icon: Smartphone, text: 'Opérationnelle hors-ligne' },
-                  { icon: Clock, text: 'Déployée en 14 jours' },
+                  { icon: Clock, text: '30 Jours Essai gratuit' },
                 ].map((benefit, i) => (
                   <div key={i} className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-full text-sm text-[#44403C]">
                     <benefit.icon className="w-4 h-4 text-[#F97316]" />
@@ -133,9 +133,9 @@ export default function HomePage() {
               {/* Quick Stats Row */}
               <div className="flex flex-wrap gap-6">
                 {[
-                  { value: '350+', label: 'Clients' },
-                  { value: '15', label: 'Pays' },
-                  { value: '-30%', label: 'Arrêts' },
+                  { value: '15+', label: 'Modules' },
+                  { value: '18+', label: 'Secteurs' },
+                  { value: '18+', label: 'Fonctionnalités IA' },
                 ].map((stat, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <div className="text-2xl font-bold text-[#F97316]">{stat.value}</div>
@@ -144,7 +144,7 @@ export default function HomePage() {
                 ))}
                 <div className="flex items-center gap-2 px-3 py-1.5 bg-[#1E3A8A] text-white rounded-full text-sm">
                   <span>🇫🇷</span>
-                  <span>Support francophone</span>
+                  <span>Support francophone • GMAO multilingues</span>
                 </div>
               </div>
             </div>
@@ -168,7 +168,7 @@ export default function HomePage() {
           <div className="flex flex-wrap justify-center items-center gap-6 lg:gap-12 text-white/90 text-sm">
             <div className="flex items-center gap-2">
               <Server className="w-4 h-4 text-[#F97316]" />
-              <span>Hébergement France</span>
+              <span>Hébergement sécurisé</span>
             </div>
             <div className="flex items-center gap-2">
               <Shield className="w-4 h-4 text-[#F97316]" />
@@ -180,7 +180,7 @@ export default function HomePage() {
             </div>
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4 text-[#F97316]" />
-              <span>Déploiement 14 jours</span>
+              <span>Déploiement auto assisté</span>
             </div>
             <div className="flex items-center gap-2">
               <Users className="w-4 h-4 text-[#F97316]" />

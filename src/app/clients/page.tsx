@@ -132,7 +132,7 @@ export default function ClientsPage() {
             <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F97316]/10 border border-[#F97316]/20 text-[#1E3A8A] mb-6">
                 <CheckCircle2 className="w-4 h-4 text-[#F97316]" />
-                <span className="text-sm font-semibold">350+ clients satisfaits</span>
+                <span className="text-sm font-semibold">15+ Modules satisfaits</span>
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0C0A09] leading-tight tracking-tight mb-6">

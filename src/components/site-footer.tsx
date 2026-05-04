@@ -84,8 +84,8 @@ export function SiteFooter() {
               <Users className="w-5 h-5 text-[#F97316]" />
             </div>
             <div>
-              <div className="text-lg font-bold text-[#1E3A8A]">350+</div>
-              <div className="text-xs text-gray-500">Clients actifs</div>
+              <div className="text-lg font-bold text-[#1E3A8A]">15+</div>
+              <div className="text-xs text-gray-500">Modules</div>
             </div>
           </div>
           <div className="flex items-center gap-3">
@@ -93,8 +93,8 @@ export function SiteFooter() {
               <Globe className="w-5 h-5 text-[#F97316]" />
             </div>
             <div>
-              <div className="text-lg font-bold text-[#1E3A8A]">15</div>
-              <div className="text-xs text-gray-500">Pays francophones</div>
+              <div className="text-lg font-bold text-[#1E3A8A]">18+</div>
+              <div className="text-xs text-gray-500">Secteurs</div>
             </div>
           </div>
           <div className="flex items-center gap-3">
@@ -103,7 +103,7 @@ export function SiteFooter() {
             </div>
             <div>
               <div className="text-lg font-bold text-[#1E3A8A]">100%</div>
-              <div className="text-xs text-gray-500">Hébergement France</div>
+              <div className="text-xs text-gray-500">Hébergement sécurisé</div>
             </div>
           </div>
           <div className="flex items-center gap-3">
@@ -111,8 +111,8 @@ export function SiteFooter() {
               <Shield className="w-5 h-5 text-[#F97316]" />
             </div>
             <div>
-              <div className="text-lg font-bold text-[#1E3A8A]">RGPD</div>
-              <div className="text-xs text-gray-500">Conforme</div>
+              <div className="text-lg font-bold text-[#1E3A8A]">Auto</div>
+              <div className="text-xs text-gray-500">Déploiement assisté</div>
             </div>
           </div>
         </div>
@@ -125,7 +125,7 @@ export function SiteFooter() {
             </p>
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
-              <span className="text-[11px] text-gray-400">RGPD conforme — Hébergement France</span>
+              <span className="text-[11px] text-gray-400">RGPD conforme — Hébergement sécurisé</span>
             </div>
           </div>
           <div className="flex items-center gap-4 text-xs text-gray-400">

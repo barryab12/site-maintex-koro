@@ -230,7 +230,7 @@ export default function RetailPage() {
           <div className="flex flex-wrap justify-center items-center gap-6 lg:gap-12 text-white/90 text-sm">
             <div className="flex items-center gap-2">
               <Server className="w-4 h-4 text-[#F97316]" />
-              Hébergement France
+              Hébergement sécurisé
             </div>
             <div className="flex items-center gap-2">
               <Shield className="w-4 h-4 text-[#F97316]" />
@@ -242,7 +242,7 @@ export default function RetailPage() {
             </div>
             <div className="flex items-center gap-2">
               <Zap className="w-4 h-4 text-[#F97316]" />
-              Déploiement 14 jours
+              Déploiement auto assisté
             </div>
           </div>
         </div>

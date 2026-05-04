@@ -28,7 +28,7 @@ export default function RessourcesPage() {
 
   const testimonialResources = [
     { icon: Star, title: 'Études de cas', description: 'Success stories détaillées de nos clients', count: '25 études', href: '/clients#etudes', id: 'etudes' },
-    { icon: Users, title: 'Clients par secteur', description: 'Découvrez nos références dans votre secteur', count: '350+ clients', href: '/clients', id: 'clients' },
+    { icon: Users, title: 'Clients par secteur', description: 'Découvrez nos références dans votre secteur', count: '15+ Modules', href: '/clients', id: 'clients' },
     { icon: Play, title: 'Vidéos témoignages', description: 'Retours d\'expérience en vidéo', count: '18 vidéos', href: '#videos', id: 'videos' },
     { icon: MessageSquare, title: 'Avis clients', description: 'Ce que nos utilisateurs pensent de MAINTEX', count: '4.8/5 étoiles', href: '/clients#avis', id: 'avis' },
   ]

@@ -117,7 +117,7 @@ export default function SecuritePage() {
         <div className="max-w-[1240px] mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { icon: MapPin, label: 'Hébergement France', value: 'OVH / 3DS Paris' },
+              { icon: MapPin, label: 'Hébergement sécurisé', value: 'OVH / 3DS Paris' },
               { icon: Lock, label: 'Chiffrement', value: 'AES-256 + TLS 1.3' },
               { icon: Shield, label: 'Conformité', value: 'RGPD natif' },
               { icon: Award, label: 'Disponibilité', value: '99.9% SLA' }

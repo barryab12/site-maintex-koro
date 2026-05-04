@@ -114,14 +114,14 @@ export default function AProposPage() {
     { name: 'ISO 9001', description: 'Système de management de la qualité' },
     { name: 'ISO 27001', description: 'Sécurité de l\'information' },
     { name: 'RGPD', description: 'Conformité protection des données' },
-    { name: 'Hébergement France', description: 'Données hébergées en France' },
+    { name: 'Hébergement sécurisé', description: 'Données hébergées en France' },
   ]
 
   const timeline = [
     { year: '2009', title: 'Création', description: 'Fondation de BBC & Partners à Paris' },
     { year: '2012', title: 'Expansion Afrique', description: 'Ouverture bureaux Ouagadougou et Abidjan' },
     { year: '2015', title: 'MAINTEX', description: 'Lancement de la GMAO MAINTEX' },
-    { year: '2018', title: 'Croissance', description: '350+ clients et 25 pays couverts' },
+    { year: '2018', title: 'Croissance', description: '15+ Modules et 25 pays couverts' },
     { year: '2023', title: 'MAINTEX 5.0', description: 'Nouvelle version avec IA et IoT' },
   ]
 
@@ -500,7 +500,7 @@ export default function AProposPage() {
             </p>
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { title: 'Hébergement France', desc: 'Data centers certifiés Tier III+' },
+                { title: 'Hébergement sécurisé', desc: 'Data centers certifiés Tier III+' },
                 { title: 'Conformité RGPD', desc: 'Protection des données personnelles' },
                 { title: 'Support local', desc: 'Équipe basée en France' },
               ].map((item, i) => (

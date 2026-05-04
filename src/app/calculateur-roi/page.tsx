@@ -657,7 +657,7 @@ export default function CalculateurROIPage() {
 
             {/* Disclaimer */}
             <p className="text-center text-sm text-gray-400">
-              * Ces estimations sont basées sur les résultats moyens de nos 350+ clients. Les résultats réels peuvent varier selon votre contexte spécifique. Les économies calculées sont des projections basées sur les données fournies.
+              * Ces estimations sont basées sur les résultats moyens de nos 15+ Modules. Les résultats réels peuvent varier selon votre contexte spécifique. Les économies calculées sont des projections basées sur les données fournies.
             </p>
           </div>
         </section>

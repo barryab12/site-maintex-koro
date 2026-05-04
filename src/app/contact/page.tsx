@@ -134,7 +134,7 @@ export default function ContactPage() {
           <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16 text-white/90 text-sm">
             <div className="flex items-center gap-2">
               <Shield className="w-4 h-4 text-[#F97316]" />
-              <span>Hébergement France</span>
+              <span>Hébergement sécurisé</span>
             </div>
             <div className="flex items-center gap-2">
               <Activity className="w-4 h-4 text-[#F97316]" />
@@ -142,11 +142,11 @@ export default function ContactPage() {
             </div>
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4 text-[#F97316]" />
-              <span>Support francophone</span>
+              <span>Support francophone • GMAO multilingues</span>
             </div>
             <div className="flex items-center gap-2">
               <Target className="w-4 h-4 text-[#F97316]" />
-              <span>350+ clients</span>
+              <span>15+ Modules</span>
             </div>
           </div>
         </div>
@@ -413,7 +413,7 @@ export default function ContactPage() {
               
               <div className="absolute -top-3 left-4 flex items-center gap-2 px-4 py-2.5 bg-[#1E3A8A] text-white rounded-full shadow-lg">
                 <TrendingUp className="w-4 h-4" />
-                <span className="text-sm font-semibold">15 pays</span>
+                <span className="text-sm font-semibold">18+ Secteurs</span>
               </div>
               
               <div className="absolute top-16 right-4 bg-white rounded-xl p-4 shadow-lg">
