@@ -312,45 +312,44 @@ export default function IntelligenceArtificiellePage() {
         </div>
       </section>
 
-      {/* Photo with Chart */}
+      {/* Photo with Chart - Diagnostic SDR */}
       <section className="py-20 bg-white">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/team-technicians.png"
-                  alt="Techniciens utilisant l'IA"
+                  src="/images/technician-sdr-validation.png"
+                  alt="Technicien validant réparation SDR"
                   width={550}
                   height={400}
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
               </div>
-              
-              <div className="absolute -top-3 left-4 flex items-center gap-2 px-4 py-2.5 bg-[#1E3A8A] text-white rounded-full shadow-lg">
-                <Users className="w-4 h-4" />
-                <span className="text-sm font-semibold">Équipes terrain</span>
+
+              <div className="absolute -top-3 left-4 flex items-center gap-2 px-4 py-2.5 bg-[#059669] text-white rounded-full shadow-lg">
+                <CheckCircle2 className="w-4 h-4" />
+                <span className="text-sm font-semibold">Réparation validée</span>
               </div>
-              
-              <div className="absolute top-16 right-4 bg-white rounded-xl p-4 shadow-lg w-48">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs text-gray-500">Interventions</span>
-                  <span className="text-xs font-semibold text-[#059669] bg-[#059669]/10 px-2 py-0.5 rounded-full">+20%</span>
+
+              <div className="absolute top-16 right-4 bg-white rounded-xl p-4 shadow-lg">
+                <div className="flex items-center gap-2 mb-1">
+                  <Activity className="w-4 h-4 text-[#059669]" />
+                  <span className="text-xs text-gray-500">Disponibilité</span>
                 </div>
-                <div className="text-xl font-bold text-[#0C0A09] mb-2">156/mois</div>
-                <MiniLineChartInline data={interventionData} color="#1E3A8A" height={40} />
+                <div className="text-2xl font-bold text-[#0C0A09]">99.2%</div>
               </div>
-              
-              <div className="absolute bottom-4 left-4 bg-[#F97316] text-white rounded-xl p-4 shadow-lg">
-                <div className="text-lg font-bold">+89%</div>
-                <div className="text-xs text-white/80">FTFR</div>
+
+              <div className="absolute bottom-4 left-4 bg-[#1E3A8A] text-white rounded-xl p-4 shadow-lg">
+                <div className="text-lg font-bold">5×</div>
+                <div className="text-xs text-white/80">Plus rapide</div>
               </div>
-              
+
               <div className="absolute bottom-4 right-4 bg-white rounded-xl p-3 shadow-lg">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#059669]" />
-                  <span className="text-sm font-medium">IA validée</span>
+                  <span className="text-sm font-medium">Machine OK</span>
                 </div>
               </div>
             </div>
@@ -360,7 +359,29 @@ export default function IntelligenceArtificiellePage() {
               <h2 className="text-3xl md:text-4xl font-bold text-[#0C0A09] mb-4">
                 Diagnostic Intelligent : du symptôme au remède en quelques secondes
               </h2>
-              
+
+              {/* SDR Process */}
+              <div className="flex gap-4 mb-6">
+                <div className="flex-1 bg-[#059669] text-white rounded-xl p-4 text-center">
+                  <CheckCircle2 className="w-6 h-6 mx-auto mb-2" />
+                  <div className="font-bold text-sm">S</div>
+                  <div className="text-xs text-white/80">Symptôme</div>
+                  <div className="text-xs mt-1 font-semibold">✓ OK</div>
+                </div>
+                <div className="flex-1 bg-[#059669] text-white rounded-xl p-4 text-center">
+                  <CheckCircle2 className="w-6 h-6 mx-auto mb-2" />
+                  <div className="font-bold text-sm">D</div>
+                  <div className="text-xs text-white/80">Diagnostic</div>
+                  <div className="text-xs mt-1 font-semibold">✓ OK</div>
+                </div>
+                <div className="flex-1 bg-[#059669] text-white rounded-xl p-4 text-center">
+                  <CheckCircle2 className="w-6 h-6 mx-auto mb-2" />
+                  <div className="font-bold text-sm">R</div>
+                  <div className="text-xs text-white/80">Remède</div>
+                  <div className="text-xs mt-1 font-semibold">✓ OK</div>
+                </div>
+              </div>
+
               <div className="space-y-6">
                 <div className="bg-red-50 rounded-xl p-4 border border-red-100">
                   <h4 className="font-semibold text-red-700 mb-2 flex items-center gap-2">
@@ -371,7 +392,7 @@ export default function IntelligenceArtificiellePage() {
                     Le diagnostic de panne repose souvent sur l&apos;expérience individuelle des techniciens seniors, qui n&apos;est pas capitalisée.
                   </p>
                 </div>
-                
+
                 <div className="bg-green-50 rounded-xl p-4 border border-green-100">
                   <h4 className="font-semibold text-green-700 mb-2 flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4" />
@@ -381,7 +402,7 @@ export default function IntelligenceArtificiellePage() {
                     L&apos;IA analyse les symptômes, l&apos;historique et propose les causes probables avec leurs remèdes en quelques secondes.
                   </p>
                 </div>
-                
+
                 <div>
                   <h4 className="font-semibold text-[#0C0A09] mb-3 flex items-center gap-2">
                     <Target className="w-4 h-4 text-[#F97316]" />
