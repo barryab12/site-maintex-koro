@@ -85,7 +85,7 @@ export default function HomePage() {
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F97316]/10 border border-[#F97316]/20 text-[#1E3A8A] mb-6">
                 <MapPin className="w-4 h-4 text-[#F97316]" />
-                <span className="text-sm font-semibold">La GMAO évolutive</span>
+                <span className="text-sm font-semibold">La GMAO française qui s'adapte à votre métier.</span>
               </div>
 
               {/* Headline */}

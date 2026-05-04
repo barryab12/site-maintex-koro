@@ -14,15 +14,8 @@ export function SiteFooter() {
               className="h-8 mb-4"
             />
             <p className="text-sm text-gray-500 leading-relaxed mb-6">
-              La GMAO mobile-first pour les industries francophones. Développé par BBC & Partners depuis 2009.
+              La GMAO française qui s'adapte à votre métier.
             </p>
-            <div className="flex items-center gap-3 p-3 bg-white border border-gray-200 rounded-lg">
-              <img src="/upload/logo-bbc.png" alt="BBC & Partners" className="h-10 w-auto" />
-              <div className="flex flex-col">
-                <span className="text-xs font-medium text-gray-700">Développé par BBC & Partners</span>
-                <span className="text-xs text-gray-500">Depuis 2009</span>
-              </div>
-            </div>
           </div>
 
           {/* Produit */}
