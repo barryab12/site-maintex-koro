@@ -250,52 +250,52 @@ export function HeroPhotoVisual({ imageSrc, imageAlt, className = '' }: HeroPhot
         <span className="text-xs font-semibold">GMAO Mobile</span>
       </div>
 
-      {/* Floating Card - Top Right - Green background */}
-      <div className="absolute -right-2 top-3 w-36 rounded-xl p-3 shadow-xl z-10 bg-[#059669]">
+      {/* Floating Card - Top Right */}
+      <div className="absolute -right-2 top-3 w-36 bg-white rounded-xl p-3 shadow-xl z-10">
         <div className="flex items-center gap-1.5 mb-1.5">
-          <div className="w-6 h-6 rounded-lg flex items-center justify-center bg-white/20">
-            <TrendingUp className="w-3.5 h-3.5 text-white" />
+          <div className="w-6 h-6 rounded-lg flex items-center justify-center bg-[#059669]/10">
+            <TrendingUp className="w-3.5 h-3.5 text-[#059669]" />
           </div>
-          <span className="text-[10px] text-white/90">Disponibilité</span>
+          <span className="text-[10px] text-gray-500">Disponibilité</span>
         </div>
-        <div className="text-2xl font-bold text-white">98.5%</div>
+        <div className="text-2xl font-bold text-[#0C0A09]">98.5%</div>
         <div className="flex items-center gap-0.5 mt-0.5">
-          <ArrowUpRight className="w-3 h-3 text-white" />
-          <span className="text-xs font-semibold text-white">+2.3%</span>
+          <ArrowUpRight className="w-3 h-3 text-[#059669]" />
+          <span className="text-xs font-semibold text-[#059669]">+2.3%</span>
         </div>
       </div>
 
-      {/* Floating Card - Left Middle - Orange background */}
-      <div className="absolute -left-2 top-[35%] w-36 rounded-xl p-3 shadow-xl z-10 bg-[#F97316]">
+      {/* Floating Card - Left Middle */}
+      <div className="absolute -left-2 top-[35%] w-36 bg-white rounded-xl p-3 shadow-xl z-10">
         <div className="flex items-center gap-1.5 mb-1.5">
-          <div className="w-6 h-6 rounded-lg flex items-center justify-center bg-white/20">
-            <Clock className="w-3.5 h-3.5 text-white" />
+          <div className="w-6 h-6 rounded-lg flex items-center justify-center bg-[#F97316]/10">
+            <Clock className="w-3.5 h-3.5 text-[#F97316]" />
           </div>
-          <span className="text-[10px] text-white/90">MTTR</span>
+          <span className="text-[10px] text-gray-500">MTTR</span>
         </div>
-        <div className="text-2xl font-bold text-white">2.4h</div>
+        <div className="text-2xl font-bold text-[#0C0A09]">2.4h</div>
         <div className="flex items-center gap-0.5 mt-0.5">
-          <TrendingDown className="w-3 h-3 text-white" />
-          <span className="text-xs font-semibold text-white">-18%</span>
+          <TrendingDown className="w-3 h-3 text-[#059669]" />
+          <span className="text-xs font-semibold text-[#059669]">-18%</span>
         </div>
       </div>
 
-      {/* Chart Card - Bottom Right - Indigo background */}
-      <div className="absolute -right-2 bottom-14 w-40 rounded-xl p-3 shadow-xl z-10 bg-[#1E3A8A]">
+      {/* Chart Card - Bottom Right */}
+      <div className="absolute -right-2 bottom-14 w-40 bg-white rounded-xl p-3 shadow-xl z-10">
         <div className="flex items-center justify-between mb-1.5">
-          <span className="text-[10px] text-white/90">Interventions</span>
-          <span className="text-[10px] font-semibold text-white bg-white/20 px-1.5 py-0.5 rounded-full">+20%</span>
+          <span className="text-[10px] text-gray-500">Interventions</span>
+          <span className="text-[10px] font-semibold text-[#059669] bg-[#059669]/10 px-1.5 py-0.5 rounded-full">+20%</span>
         </div>
-        <div className="text-lg font-bold text-white mb-1.5">156/mois</div>
-        <MiniLineChartInline data={interventionData} color="#ffffff" height={35} />
+        <div className="text-lg font-bold text-[#0C0A09] mb-1.5">156/mois</div>
+        <MiniLineChartInline data={interventionData} color="#1E3A8A" height={35} />
       </div>
 
       {/* Accent Badge - Bottom Left - On edge */}
-      <div className="absolute left-2 bottom-3 flex items-center gap-2 px-3 py-2.5 bg-[#1E3A8A] text-white rounded-xl shadow-lg">
-        <Shield className="w-4 h-4" />
+      <div className="absolute left-2 bottom-3 flex items-center gap-2 px-3 py-2.5 bg-white rounded-xl shadow-lg">
+        <Shield className="w-4 h-4 text-[#1E3A8A]" />
         <div>
-          <div className="text-base font-bold">350+</div>
-          <div className="text-[10px] text-white/80">Clients</div>
+          <div className="text-base font-bold text-[#0C0A09]">350+</div>
+          <div className="text-[10px] text-gray-500">Clients</div>
         </div>
       </div>
       
@@ -339,20 +339,20 @@ export function TeamPhotoVisual({ imageSrc, imageAlt, className = '' }: TeamPhot
         <span className="text-xs font-semibold">Équipes terrain</span>
       </div>
 
-      {/* Top Right Card - Green background */}
-      <div className="absolute top-3 right-2 rounded-xl p-2.5 shadow-lg w-28 z-10 bg-[#059669]">
-        <div className="text-[10px] text-white/80 mb-0.5">Performance</div>
-        <div className="text-lg font-bold text-white">+89%</div>
-        <div className="text-[10px] text-white/90">FTFR</div>
+      {/* Top Right Card */}
+      <div className="absolute top-3 right-2 bg-white rounded-xl p-2.5 shadow-lg w-28 z-10">
+        <div className="text-[10px] text-gray-500 mb-0.5">Performance</div>
+        <div className="text-lg font-bold text-[#0C0A09]">+89%</div>
+        <div className="text-[10px] text-[#059669]">FTFR</div>
       </div>
 
-      {/* Bottom Left Card - Indigo background */}
-      <div className="absolute bottom-3 left-2 rounded-xl p-2.5 shadow-lg w-36 z-10 bg-[#1E3A8A]">
+      {/* Bottom Left Card */}
+      <div className="absolute bottom-3 left-2 bg-white rounded-xl p-2.5 shadow-lg w-36 z-10">
         <div className="flex items-center gap-1.5 mb-1.5">
           <Target className="w-3.5 h-3.5 text-[#F97316]" />
-          <span className="text-[10px] text-white/90">Objectifs</span>
+          <span className="text-[10px] text-gray-500">Objectifs</span>
         </div>
-        <MiniLineChartInline data={performanceData} color="#ffffff" height={25} />
+        <MiniLineChartInline data={performanceData} color="#1E3A8A" height={25} />
       </div>
 
       {/* Bottom Right Badge - Green background */}
@@ -393,30 +393,30 @@ export function MachineRoomVisual({ imageSrc, imageAlt, className = '' }: Machin
         <span className="text-xs font-semibold">Opérationnel</span>
       </div>
 
-      {/* Top Right - Availability Card - Indigo background */}
-      <div className="absolute top-3 right-2 rounded-xl p-3 shadow-lg w-32 z-10 bg-[#1E3A8A]">
+      {/* Top Right - Availability Card */}
+      <div className="absolute top-3 right-2 bg-white rounded-xl p-3 shadow-lg w-32 z-10">
         <div className="flex items-center gap-1.5 mb-1">
-          <Gauge className="w-3.5 h-3.5 text-white" />
-          <span className="text-[10px] text-white/90">Disponibilité</span>
+          <Gauge className="w-3.5 h-3.5 text-[#1E3A8A]" />
+          <span className="text-[10px] text-gray-500">Disponibilité</span>
         </div>
-        <div className="text-xl font-bold text-white">99.2%</div>
+        <div className="text-xl font-bold text-[#0C0A09]">99.2%</div>
       </div>
 
-      {/* Bottom Center - Stats Bar - Dark background */}
-      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-3 px-5 py-2.5 bg-[#1E3A8A] rounded-xl shadow-lg z-10">
+      {/* Bottom Center - Stats Bar */}
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-3 px-5 py-2.5 bg-white rounded-xl shadow-lg z-10">
         <div className="text-center">
           <div className="text-base font-bold text-[#F97316]">24</div>
-          <div className="text-[10px] text-white/80">OT ouverts</div>
+          <div className="text-[10px] text-gray-500">OT ouverts</div>
         </div>
-        <div className="w-px h-6 bg-white/20" />
+        <div className="w-px h-6 bg-gray-200" />
         <div className="text-center">
-          <div className="text-base font-bold text-white">156</div>
-          <div className="text-[10px] text-white/80">Clôturés</div>
+          <div className="text-base font-bold text-[#1E3A8A]">156</div>
+          <div className="text-[10px] text-gray-500">Clôturés</div>
         </div>
-        <div className="w-px h-6 bg-white/20" />
+        <div className="w-px h-6 bg-gray-200" />
         <div className="text-center">
           <div className="text-base font-bold text-[#059669]">-38%</div>
-          <div className="text-[10px] text-white/80">Arrêts</div>
+          <div className="text-[10px] text-gray-500">Arrêts</div>
         </div>
       </div>
     </div>
@@ -454,47 +454,47 @@ export function BtpTeamVisual({ imageSrc, imageAlt, className = '' }: BtpTeamVis
         <span className="text-xs font-semibold">Chantier BTP</span>
       </div>
 
-      {/* Top Right - Disponibilité Card - Green background */}
-      <div className="absolute top-3 right-2 rounded-xl p-3 shadow-lg w-32 z-10 bg-[#059669]">
+      {/* Top Right - Disponibilité Card */}
+      <div className="absolute top-3 right-2 bg-white rounded-xl p-3 shadow-lg w-32 z-10">
         <div className="flex items-center gap-1.5 mb-1">
-          <Gauge className="w-3.5 h-3.5 text-white" />
-          <span className="text-[10px] text-white/90">Disponibilité</span>
+          <Gauge className="w-3.5 h-3.5 text-[#059669]" />
+          <span className="text-[10px] text-gray-500">Disponibilité</span>
         </div>
-        <div className="text-xl font-bold text-white">99.5%</div>
+        <div className="text-xl font-bold text-[#0C0A09]">99.5%</div>
         <div className="flex items-center gap-0.5 mt-0.5">
-          <ArrowUpRight className="w-3 h-3 text-white" />
-          <span className="text-[10px] font-semibold text-white">+3.2%</span>
+          <ArrowUpRight className="w-3 h-3 text-[#059669]" />
+          <span className="text-[10px] font-semibold text-[#059669]">+3.2%</span>
         </div>
       </div>
 
-      {/* Middle Left - MTTR Card - Orange background */}
-      <div className="absolute left-2 top-1/3 rounded-xl p-3 shadow-lg w-32 z-10 bg-[#F97316]">
+      {/* Middle Left - MTTR Card */}
+      <div className="absolute left-2 top-1/3 bg-white rounded-xl p-3 shadow-lg w-32 z-10">
         <div className="flex items-center gap-1.5 mb-1">
-          <Clock className="w-3.5 h-3.5 text-white" />
-          <span className="text-[10px] text-white/90">MTTR</span>
+          <Clock className="w-3.5 h-3.5 text-[#F97316]" />
+          <span className="text-[10px] text-gray-500">MTTR</span>
         </div>
-        <div className="text-lg font-bold text-white">1.8h</div>
-        <div className="text-[10px] text-white/80">-40% vs avant</div>
+        <div className="text-lg font-bold text-[#0C0A09]">1.8h</div>
+        <div className="text-[10px] text-[#059669]">-40% vs avant</div>
       </div>
 
-      {/* Bottom Left - Chart Card - Indigo background */}
-      <div className="absolute bottom-3 left-2 rounded-xl p-3 shadow-lg w-40 z-10 bg-[#1E3A8A]">
+      {/* Bottom Left - Chart Card */}
+      <div className="absolute bottom-3 left-2 bg-white rounded-xl p-3 shadow-lg w-40 z-10">
         <div className="flex items-center justify-between mb-1.5">
-          <span className="text-[10px] text-white/90">Interventions</span>
-          <span className="text-[10px] font-semibold text-white bg-white/20 px-1.5 py-0.5 rounded-full">+45%</span>
+          <span className="text-[10px] text-gray-500">Interventions</span>
+          <span className="text-[10px] font-semibold text-[#059669] bg-[#059669]/10 px-1.5 py-0.5 rounded-full">+45%</span>
         </div>
-        <div className="text-base font-bold text-white mb-1.5">89/mois</div>
-        <MiniLineChartInline data={chantierData} color="#ffffff" height={30} />
+        <div className="text-base font-bold text-[#0C0A09] mb-1.5">89/mois</div>
+        <MiniLineChartInline data={chantierData} color="#1E3A8A" height={30} />
       </div>
 
-      {/* Bottom Right - Stats Badge - Indigo background */}
-      <div className="absolute bottom-3 right-2 bg-[#1E3A8A] text-white rounded-xl p-3 shadow-lg z-10">
+      {/* Bottom Right - Stats Badge */}
+      <div className="absolute bottom-3 right-2 bg-white rounded-xl p-3 shadow-lg z-10">
         <div className="flex items-center gap-1.5 mb-0.5">
           <Target className="w-3.5 h-3.5 text-[#F97316]" />
-          <span className="text-[10px] text-white/80">First Time Fix</span>
+          <span className="text-[10px] text-gray-500">First Time Fix</span>
         </div>
-        <div className="text-xl font-bold text-white">92%</div>
-        <div className="text-[10px] text-[#F97316]">+28 pts</div>
+        <div className="text-xl font-bold text-[#0C0A09]">92%</div>
+        <div className="text-[10px] text-[#059669]">+28 pts</div>
       </div>
 
       {/* Middle Right - Success Badge - Green background */}
