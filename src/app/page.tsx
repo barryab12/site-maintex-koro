@@ -197,8 +197,8 @@ export default function HomePage() {
             {/* Left - Photo Visual */}
             <div className="hidden lg:block">
               <TeamPhotoVisual 
-                imageSrc="/images/team-engineers.png"
-                imageAlt="Équipe d'ingénieurs maintenance"
+                imageSrc="/images/manager-technician-success.png"
+                imageAlt="Manager et technicien célébrant le succès"
               />
             </div>
 
