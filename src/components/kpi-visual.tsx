@@ -256,14 +256,12 @@ export function ZeroBadge({
   return (
     <div 
       className={`
-        inline-flex items-center ${sizes[size]} rounded-full font-semibold
+        inline-flex items-center ${sizes[size]} rounded-full font-semibold text-white shadow-lg
         ${animated ? 'animate-pulse' : ''}
         ${className}
       `}
       style={{ 
-        backgroundColor: `${color}15`,
-        color: color,
-        border: `1px solid ${color}30`
+        backgroundColor: color
       }}
     >
       <Icon className={iconSizes[size]} />
