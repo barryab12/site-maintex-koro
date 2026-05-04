@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
+import { PartnerCarousel } from '@/components/partner-carousel'
 import Link from 'next/link'
 import { 
   CheckCircle2, ArrowRight, ChevronRight,
@@ -344,6 +345,9 @@ export default function SecteursPage() {
           </div>
         </div>
       </section>
+
+      {/* Partner Carousel */}
+      <PartnerCarousel />
 
       {/* Tab Navigation */}
       <section id="secteurs" className="py-8 bg-white border-b border-gray-200 sticky top-[68px] z-30">
