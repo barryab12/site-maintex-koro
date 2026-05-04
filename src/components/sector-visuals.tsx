@@ -49,88 +49,76 @@ export function SectorHeroVisual({
         </div>
       )}
 
-      {/* Card 1 - Top Right, on edge */}
-      <div className="absolute -right-2 top-3 w-36 bg-white rounded-xl p-3 shadow-xl border border-gray-100 z-10">
+      {/* Card 1 - Top Right, on edge - Colored background with white text */}
+      <div className="absolute -right-2 top-3 w-36 rounded-xl p-3 shadow-xl z-10" style={{ backgroundColor: stats[0]?.iconColor || '#059669' }}>
         {stats[0]?.icon && (
           <div className="flex items-center gap-1.5 mb-1.5">
-            <div 
-              className="w-6 h-6 rounded-lg flex items-center justify-center"
-              style={{ backgroundColor: stats[0].iconColor ? `${stats[0].iconColor}15` : '#F9731615' }}
-            >
+            <div className="w-6 h-6 rounded-lg flex items-center justify-center bg-white/20">
               {stats[0].icon}
             </div>
-            <span className="text-[10px] text-gray-500">{stats[0].label}</span>
+            <span className="text-[10px] text-white/90">{stats[0].label}</span>
           </div>
         )}
-        <div className="text-xl font-bold text-[#0C0A09]">{stats[0]?.value}</div>
+        <div className="text-xl font-bold text-white">{stats[0]?.value}</div>
         {stats[0]?.trend && (
-          <div className={`flex items-center gap-0.5 mt-0.5 ${stats[0].trendType === 'positive' ? 'text-[#059669]' : 'text-[#DC2626]'}`}>
+          <div className="flex items-center gap-0.5 mt-0.5 text-white/90">
             {stats[0].trendType === 'positive' ? <ArrowUpRight className="w-3 h-3" /> : <ArrowDownRight className="w-3 h-3" />}
             <span className="text-[10px] font-semibold">{stats[0].trend}</span>
           </div>
         )}
       </div>
 
-      {/* Card 2 - Left side, middle */}
-      <div className="absolute -left-2 top-[30%] w-36 bg-white rounded-xl p-3 shadow-xl border border-gray-100 z-10">
+      {/* Card 2 - Left side, middle - Colored background with white text */}
+      <div className="absolute -left-2 top-[30%] w-36 rounded-xl p-3 shadow-xl z-10" style={{ backgroundColor: stats[1]?.iconColor || '#1E3A8A' }}>
         {stats[1]?.icon && (
           <div className="flex items-center gap-1.5 mb-1.5">
-            <div 
-              className="w-6 h-6 rounded-lg flex items-center justify-center"
-              style={{ backgroundColor: stats[1].iconColor ? `${stats[1].iconColor}15` : '#F9731615' }}
-            >
+            <div className="w-6 h-6 rounded-lg flex items-center justify-center bg-white/20">
               {stats[1].icon}
             </div>
-            <span className="text-[10px] text-gray-500">{stats[1].label}</span>
+            <span className="text-[10px] text-white/90">{stats[1].label}</span>
           </div>
         )}
-        <div className="text-xl font-bold text-[#0C0A09]">{stats[1]?.value}</div>
+        <div className="text-xl font-bold text-white">{stats[1]?.value}</div>
         {stats[1]?.trend && (
-          <div className={`flex items-center gap-0.5 mt-0.5 ${stats[1].trendType === 'positive' ? 'text-[#059669]' : 'text-[#DC2626]'}`}>
+          <div className="flex items-center gap-0.5 mt-0.5 text-white/90">
             {stats[1].trendType === 'positive' ? <ArrowUpRight className="w-3 h-3" /> : <ArrowDownRight className="w-3 h-3" />}
             <span className="text-[10px] font-semibold">{stats[1].trend}</span>
           </div>
         )}
       </div>
 
-      {/* Card 3 - Right side, lower middle */}
-      <div className="absolute -right-2 top-[58%] w-36 bg-white rounded-xl p-3 shadow-xl border border-gray-100 z-10">
+      {/* Card 3 - Right side, lower middle - Colored background with white text */}
+      <div className="absolute -right-2 top-[58%] w-36 rounded-xl p-3 shadow-xl z-10" style={{ backgroundColor: stats[2]?.iconColor || '#F97316' }}>
         {stats[2]?.icon && (
           <div className="flex items-center gap-1.5 mb-1.5">
-            <div 
-              className="w-6 h-6 rounded-lg flex items-center justify-center"
-              style={{ backgroundColor: stats[2].iconColor ? `${stats[2].iconColor}15` : '#F9731615' }}
-            >
+            <div className="w-6 h-6 rounded-lg flex items-center justify-center bg-white/20">
               {stats[2].icon}
             </div>
-            <span className="text-[10px] text-gray-500">{stats[2].label}</span>
+            <span className="text-[10px] text-white/90">{stats[2].label}</span>
           </div>
         )}
-        <div className="text-xl font-bold text-[#0C0A09]">{stats[2]?.value}</div>
+        <div className="text-xl font-bold text-white">{stats[2]?.value}</div>
         {stats[2]?.trend && (
-          <div className={`flex items-center gap-0.5 mt-0.5 ${stats[2].trendType === 'positive' ? 'text-[#059669]' : 'text-[#DC2626]'}`}>
+          <div className="flex items-center gap-0.5 mt-0.5 text-white/90">
             {stats[2].trendType === 'positive' ? <ArrowUpRight className="w-3 h-3" /> : <ArrowDownRight className="w-3 h-3" />}
             <span className="text-[10px] font-semibold">{stats[2].trend}</span>
           </div>
         )}
       </div>
 
-      {/* Card 4 - Bottom Left, on edge */}
-      <div className="absolute -left-2 bottom-3 w-36 bg-white rounded-xl p-3 shadow-xl border border-gray-100 z-10">
+      {/* Card 4 - Bottom Left, on edge - Colored background with white text */}
+      <div className="absolute -left-2 bottom-3 w-36 rounded-xl p-3 shadow-xl z-10" style={{ backgroundColor: stats[3]?.iconColor || '#7C3AED' }}>
         {stats[3]?.icon && (
           <div className="flex items-center gap-1.5 mb-1.5">
-            <div 
-              className="w-6 h-6 rounded-lg flex items-center justify-center"
-              style={{ backgroundColor: stats[3].iconColor ? `${stats[3].iconColor}15` : '#F9731615' }}
-            >
+            <div className="w-6 h-6 rounded-lg flex items-center justify-center bg-white/20">
               {stats[3].icon}
             </div>
-            <span className="text-[10px] text-gray-500">{stats[3].label}</span>
+            <span className="text-[10px] text-white/90">{stats[3].label}</span>
           </div>
         )}
-        <div className="text-xl font-bold text-[#0C0A09]">{stats[3]?.value}</div>
+        <div className="text-xl font-bold text-white">{stats[3]?.value}</div>
         {stats[3]?.trend && (
-          <div className={`flex items-center gap-0.5 mt-0.5 ${stats[3].trendType === 'positive' ? 'text-[#059669]' : 'text-[#DC2626]'}`}>
+          <div className="flex items-center gap-0.5 mt-0.5 text-white/90">
             {stats[3].trendType === 'positive' ? <ArrowUpRight className="w-3 h-3" /> : <ArrowDownRight className="w-3 h-3" />}
             <span className="text-[10px] font-semibold">{stats[3].trend}</span>
           </div>
@@ -180,48 +168,48 @@ export function SectorEnjeuxVisual({
         <span className="text-xs font-semibold">Défis du secteur</span>
       </div>
 
-      {/* Problem Card 1 - Top Right on edge */}
-      <div className="absolute -right-2 top-3 w-32 bg-white rounded-xl p-2.5 shadow-xl border-l-4 border-red-400 z-10">
+      {/* Problem Card 1 - Top Right on edge - Dark red background */}
+      <div className="absolute -right-2 top-3 w-32 rounded-xl p-2.5 shadow-xl z-10 bg-[#991B1B]">
         {problems[0]?.icon && (
-          <div className="w-6 h-6 rounded-lg bg-red-50 flex items-center justify-center mb-1.5">
+          <div className="w-6 h-6 rounded-lg flex items-center justify-center mb-1.5 bg-white/20">
             {problems[0].icon}
           </div>
         )}
-        <div className="text-lg font-bold text-red-600">{problems[0]?.value}</div>
-        <div className="text-[10px] text-gray-600">{problems[0]?.label}</div>
+        <div className="text-lg font-bold text-white">{problems[0]?.value}</div>
+        <div className="text-[10px] text-white/80">{problems[0]?.label}</div>
       </div>
 
-      {/* Problem Card 2 - Left side on edge */}
-      <div className="absolute -left-2 top-[28%] w-32 bg-white rounded-xl p-2.5 shadow-xl border-l-4 border-red-400 z-10">
+      {/* Problem Card 2 - Left side on edge - Dark red background */}
+      <div className="absolute -left-2 top-[28%] w-32 rounded-xl p-2.5 shadow-xl z-10 bg-[#991B1B]">
         {problems[1]?.icon && (
-          <div className="w-6 h-6 rounded-lg bg-red-50 flex items-center justify-center mb-1.5">
+          <div className="w-6 h-6 rounded-lg flex items-center justify-center mb-1.5 bg-white/20">
             {problems[1].icon}
           </div>
         )}
-        <div className="text-lg font-bold text-red-600">{problems[1]?.value}</div>
-        <div className="text-[10px] text-gray-600">{problems[1]?.label}</div>
+        <div className="text-lg font-bold text-white">{problems[1]?.value}</div>
+        <div className="text-[10px] text-white/80">{problems[1]?.label}</div>
       </div>
 
-      {/* Problem Card 3 - Right side, lower on edge */}
-      <div className="absolute -right-2 top-[52%] w-32 bg-white rounded-xl p-2.5 shadow-xl border-l-4 border-red-400 z-10">
+      {/* Problem Card 3 - Right side, lower on edge - Dark red background */}
+      <div className="absolute -right-2 top-[52%] w-32 rounded-xl p-2.5 shadow-xl z-10 bg-[#991B1B]">
         {problems[2]?.icon && (
-          <div className="w-6 h-6 rounded-lg bg-red-50 flex items-center justify-center mb-1.5">
+          <div className="w-6 h-6 rounded-lg flex items-center justify-center mb-1.5 bg-white/20">
             {problems[2].icon}
           </div>
         )}
-        <div className="text-lg font-bold text-red-600">{problems[2]?.value}</div>
-        <div className="text-[10px] text-gray-600">{problems[2]?.label}</div>
+        <div className="text-lg font-bold text-white">{problems[2]?.value}</div>
+        <div className="text-[10px] text-white/80">{problems[2]?.label}</div>
       </div>
 
-      {/* Problem Card 4 - Left side above banner */}
-      <div className="absolute -left-2 bottom-16 w-32 bg-white rounded-xl p-2.5 shadow-xl border-l-4 border-red-400 z-10">
+      {/* Problem Card 4 - Left side above banner - Dark red background */}
+      <div className="absolute -left-2 bottom-16 w-32 rounded-xl p-2.5 shadow-xl z-10 bg-[#991B1B]">
         {problems[3]?.icon && (
-          <div className="w-6 h-6 rounded-lg bg-red-50 flex items-center justify-center mb-1.5">
+          <div className="w-6 h-6 rounded-lg flex items-center justify-center mb-1.5 bg-white/20">
             {problems[3].icon}
           </div>
         )}
-        <div className="text-lg font-bold text-red-600">{problems[3]?.value}</div>
-        <div className="text-[10px] text-gray-600">{problems[3]?.label}</div>
+        <div className="text-lg font-bold text-white">{problems[3]?.value}</div>
+        <div className="text-[10px] text-white/80">{problems[3]?.label}</div>
       </div>
 
       {/* Bottom Warning Banner */}
@@ -276,48 +264,48 @@ export function SectorSolutionsVisual({
         <span className="text-xs font-semibold">Avec Maintex</span>
       </div>
 
-      {/* Benefit Card 1 - Top Right on edge */}
-      <div className="absolute -right-2 top-3 w-32 bg-white rounded-xl p-2.5 shadow-xl border-l-4 z-10" style={{ borderLeftColor: colors[0] }}>
+      {/* Benefit Card 1 - Top Right on edge - Colored background */}
+      <div className="absolute -right-2 top-3 w-32 rounded-xl p-2.5 shadow-xl z-10" style={{ backgroundColor: colors[0] }}>
         {benefits[0]?.icon && (
-          <div className="w-6 h-6 rounded-lg flex items-center justify-center mb-1.5" style={{ backgroundColor: `${colors[0]}15` }}>
+          <div className="w-6 h-6 rounded-lg flex items-center justify-center mb-1.5 bg-white/20">
             {benefits[0].icon}
           </div>
         )}
-        <div className="text-lg font-bold" style={{ color: colors[0] }}>{benefits[0]?.value}</div>
-        <div className="text-[10px] text-gray-600">{benefits[0]?.label}</div>
+        <div className="text-lg font-bold text-white">{benefits[0]?.value}</div>
+        <div className="text-[10px] text-white/80">{benefits[0]?.label}</div>
       </div>
 
-      {/* Benefit Card 2 - Left side on edge */}
-      <div className="absolute -left-2 top-[28%] w-32 bg-white rounded-xl p-2.5 shadow-xl border-l-4 z-10" style={{ borderLeftColor: colors[1] }}>
+      {/* Benefit Card 2 - Left side on edge - Colored background */}
+      <div className="absolute -left-2 top-[28%] w-32 rounded-xl p-2.5 shadow-xl z-10" style={{ backgroundColor: colors[1] }}>
         {benefits[1]?.icon && (
-          <div className="w-6 h-6 rounded-lg flex items-center justify-center mb-1.5" style={{ backgroundColor: `${colors[1]}15` }}>
+          <div className="w-6 h-6 rounded-lg flex items-center justify-center mb-1.5 bg-white/20">
             {benefits[1].icon}
           </div>
         )}
-        <div className="text-lg font-bold" style={{ color: colors[1] }}>{benefits[1]?.value}</div>
-        <div className="text-[10px] text-gray-600">{benefits[1]?.label}</div>
+        <div className="text-lg font-bold text-white">{benefits[1]?.value}</div>
+        <div className="text-[10px] text-white/80">{benefits[1]?.label}</div>
       </div>
 
-      {/* Benefit Card 3 - Right side, lower on edge */}
-      <div className="absolute -right-2 top-[52%] w-32 bg-white rounded-xl p-2.5 shadow-xl border-l-4 z-10" style={{ borderLeftColor: colors[2] }}>
+      {/* Benefit Card 3 - Right side, lower on edge - Colored background */}
+      <div className="absolute -right-2 top-[52%] w-32 rounded-xl p-2.5 shadow-xl z-10" style={{ backgroundColor: colors[2] }}>
         {benefits[2]?.icon && (
-          <div className="w-6 h-6 rounded-lg flex items-center justify-center mb-1.5" style={{ backgroundColor: `${colors[2]}15` }}>
+          <div className="w-6 h-6 rounded-lg flex items-center justify-center mb-1.5 bg-white/20">
             {benefits[2].icon}
           </div>
         )}
-        <div className="text-lg font-bold" style={{ color: colors[2] }}>{benefits[2]?.value}</div>
-        <div className="text-[10px] text-gray-600">{benefits[2]?.label}</div>
+        <div className="text-lg font-bold text-white">{benefits[2]?.value}</div>
+        <div className="text-[10px] text-white/80">{benefits[2]?.label}</div>
       </div>
 
-      {/* Benefit Card 4 - Left side above banner */}
-      <div className="absolute -left-2 bottom-16 w-32 bg-white rounded-xl p-2.5 shadow-xl border-l-4 z-10" style={{ borderLeftColor: colors[3] }}>
+      {/* Benefit Card 4 - Left side above banner - Colored background */}
+      <div className="absolute -left-2 bottom-16 w-32 rounded-xl p-2.5 shadow-xl z-10" style={{ backgroundColor: colors[3] }}>
         {benefits[3]?.icon && (
-          <div className="w-6 h-6 rounded-lg flex items-center justify-center mb-1.5" style={{ backgroundColor: `${colors[3]}15` }}>
+          <div className="w-6 h-6 rounded-lg flex items-center justify-center mb-1.5 bg-white/20">
             {benefits[3].icon}
           </div>
         )}
-        <div className="text-lg font-bold" style={{ color: colors[3] }}>{benefits[3]?.value}</div>
-        <div className="text-[10px] text-gray-600">{benefits[3]?.label}</div>
+        <div className="text-lg font-bold text-white">{benefits[3]?.value}</div>
+        <div className="text-[10px] text-white/80">{benefits[3]?.label}</div>
       </div>
 
       {/* Bottom Success Banner */}
