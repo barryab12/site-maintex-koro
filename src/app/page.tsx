@@ -25,7 +25,7 @@ import {
 export default function HomePage() {
   const features = [
     { number: '01', title: 'Ordres de travail intelligents', desc: 'Créez, assignez et suivez chaque intervention en temps réel.', icon: Zap, color: '#F97316' },
-    { number: '02', title: 'Maintenance préventive', desc: 'Planifiez vos révisions par fréquence calendaire ou compteur.', icon: Clock, color: '#059669' },
+    { number: '02', title: 'Fonctionnalités IA natives', desc: 'Diagnostic intelligent, prédiction des pannes et assistance automatisée.', icon: Brain, color: '#059669' },
     { number: '03', title: 'Fonctions Vitales', desc: 'Surveillez la disponibilité de vos fonctions critiques en temps réel.', icon: Heart, color: '#DC2626', highlight: true },
     { number: '04', title: 'Projets & Budgets', desc: 'Pilotez vos projets et suivez vos budgets avec alertes automatiques.', icon: BarChart3, color: '#7C3AED', highlight: true },
     { number: '05', title: 'Gestion pièces & inventaire', desc: 'Stock en temps réel, seuils d\'alerte, consommation par équipement.', icon: Settings, color: '#0891B2' },
@@ -320,7 +320,7 @@ export default function HomePage() {
                 <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: `${feature.color}15` }}>
                   <feature.icon className="w-7 h-7" style={{ color: feature.color }} />
                 </div>
-                <div className="text-xs font-semibold text-[#F97316] mb-2">{feature.number} — Cœur du produit</div>
+                <div className="text-xs font-semibold text-[#F97316] mb-2">{feature.number}</div>
                 <h3 className="text-lg font-bold text-[#0C0A09] mb-2">{feature.title}</h3>
                 <p className="text-sm text-[#64748b] leading-relaxed">{feature.desc}</p>
                 <Link 
