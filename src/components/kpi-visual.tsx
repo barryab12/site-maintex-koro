@@ -414,8 +414,8 @@ export function EnhancedHeroPhotoVisual({ imageSrc, imageAlt, className = '' }: 
         </div>
       </div>
 
-      {/* Card 3 - Right side, lower middle */}
-      <div className="absolute -right-2 top-[48%] w-44 bg-white rounded-xl p-4 shadow-xl border border-gray-100 z-10">
+      {/* Card 3 - Right side, middle - well separated from top card */}
+      <div className="absolute -right-2 top-[42%] w-44 bg-white rounded-xl p-4 shadow-xl border border-gray-100 z-10">
         <div className="flex items-center justify-between mb-1.5">
           <div className="flex items-center gap-2">
             <div className="w-7 h-7 rounded-lg bg-[#F97316]/10 flex items-center justify-center">
@@ -439,8 +439,8 @@ export function EnhancedHeroPhotoVisual({ imageSrc, imageAlt, className = '' }: 
         <div className="text-xs text-[#F97316]">+24 pts</div>
       </div>
 
-      {/* Card 5 - Bottom Right, OEE on edge */}
-      <div className="absolute -right-2 bottom-14 w-44 bg-white rounded-xl p-4 shadow-xl border border-gray-100 z-10">
+      {/* Card 5 - Bottom Right, OEE - well separated from middle card */}
+      <div className="absolute -right-2 bottom-12 w-44 bg-white rounded-xl p-4 shadow-xl border border-gray-100 z-10">
         <div className="flex items-center justify-between mb-1.5">
           <div className="flex items-center gap-2">
             <Target className="w-4 h-4 text-[#7C3AED]" />
