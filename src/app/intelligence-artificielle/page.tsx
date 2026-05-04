@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
+import { PartnerCarousel } from '@/components/partner-carousel'
 import Link from 'next/link'
 import { 
   Brain, Zap, MessageSquare, Search, FileText, Wrench, UserCheck, 
@@ -222,6 +223,9 @@ export default function IntelligenceArtificiellePage() {
           </div>
         </div>
       </section>
+
+      {/* Partner Carousel */}
+      <PartnerCarousel />
 
       {/* Pourquoi Maintex IA est différente */}
       <section className="py-20 bg-white">

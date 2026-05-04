@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
+import { PartnerCarousel } from '@/components/partner-carousel'
 import Link from 'next/link'
 import { 
   CheckCircle2, TrendingUp, Activity, Gauge, BarChart3, ClipboardList, RefreshCw, Heart, Wallet, Package, Smartphone, Link2, Brain, Cpu, Calendar, Settings, Users, FileText, ShieldCheck, ArrowRight, Zap, Shield, Server, ChevronRight, Clock, Target, Warehouse, ShoppingCart, DollarSign, FolderKanban, ArrowUpRight, TrendingDown, Wrench
@@ -703,6 +704,9 @@ export default function FonctionnalitesPage() {
           </div>
         </div>
       </section>
+
+      {/* Partner Carousel */}
+      <PartnerCarousel />
 
       {/* Tab Navigation */}
       <section className="py-8 bg-white border-b border-gray-200 sticky top-[68px] z-30">

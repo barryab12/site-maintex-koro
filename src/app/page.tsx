@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
+import { PartnerCarousel } from '@/components/partner-carousel'
 import { 
   Zap, Shield, Server, CheckCircle2, ChevronRight, ArrowRight,
   Factory, Pickaxe, Stethoscope, HardHat, Wheat, Truck,
@@ -189,6 +190,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Partner Carousel */}
+      <PartnerCarousel />
 
       {/* KPI Section with Photo + Data */}
       <section className="py-20 bg-[#FAFAF9]">

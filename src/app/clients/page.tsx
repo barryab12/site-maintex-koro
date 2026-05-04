@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
+import { PartnerCarousel } from '@/components/partner-carousel'
 import Link from 'next/link'
 import { CheckCircle2, Factory, Building, Zap, Building2, Wheat, Truck, ArrowRight, Star, TrendingUp, TrendingDown, Users, Globe, Target, Clock, Award, ChevronRight } from 'lucide-react'
 
@@ -225,6 +226,9 @@ export default function ClientsPage() {
           </div>
         </div>
       </section>
+
+      {/* Partner Carousel */}
+      <PartnerCarousel />
 
       {/* Stats with Photos */}
       <section className="py-20 bg-[#FAFAF9]">
