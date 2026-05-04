@@ -481,7 +481,7 @@ export function EnhancedBtpPhotoVisual({ imageSrc, imageAlt, className = '' }: E
           src={imageSrc}
           alt={imageAlt}
           width={900}
-          height={450}
+          height={225}
           className="object-cover w-full rounded-3xl"
           priority
         />
