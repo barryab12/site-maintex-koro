@@ -501,8 +501,8 @@ export default function HomePage() {
             <div className="hidden lg:block relative">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/warehouse.png"
-                  alt="Entrepôt industriel"
+                  src="/images/industrial-sectors.png"
+                  alt="Complex industriel multi-secteurs"
                   width={550}
                   height={450}
                   className="object-cover"
