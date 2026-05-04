@@ -476,13 +476,12 @@ export function EnhancedBtpPhotoVisual({ imageSrc, imageAlt, className = '' }: E
   return (
     <div className={`relative ${className}`}>
       {/* Main Photo - Reduced height */}
-      <div className="relative rounded-3xl overflow-visible shadow-2xl">
+      <div className="relative rounded-3xl overflow-visible shadow-2xl h-[280px]">
         <Image
           src={imageSrc}
           alt={imageAlt}
-          width={900}
-          height={225}
-          className="object-cover w-full rounded-3xl"
+          fill
+          className="object-cover rounded-3xl"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-3xl" />
