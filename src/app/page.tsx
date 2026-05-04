@@ -320,7 +320,7 @@ export default function HomePage() {
                 <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-4" style={{ backgroundColor: `${feature.color}15` }}>
                   <feature.icon className="w-7 h-7" style={{ color: feature.color }} />
                 </div>
-                <div className="text-xs font-semibold text-[#F97316] mb-2">{feature.number}</div>
+                
                 <h3 className="text-lg font-bold text-[#0C0A09] mb-2">{feature.title}</h3>
                 <p className="text-sm text-[#64748b] leading-relaxed">{feature.desc}</p>
                 <Link 
