@@ -8,20 +8,16 @@ import { PartnerCarousel } from '@/components/partner-carousel'
 import { 
   Zap, Shield, Server, CheckCircle2, ChevronRight, ArrowRight,
   Factory, Pickaxe, Stethoscope, HardHat, Wheat, Truck,
-  Globe, Users, TrendingUp, Clock, Star, MapPin, BadgeCheck,
+  Globe, Users, TrendingUp, Clock, Star, MapPin,
   Activity, Brain, Heart, Smartphone, BarChart3, Settings,
-  ArrowUpRight, Gauge, DollarSign, PieChart, Target, TrendingDown,
-  Wrench, Calendar, AlertTriangle, Timer
+  ArrowUpRight, Gauge, Target, TrendingDown,
+  Wrench, Calendar
 } from 'lucide-react'
 import { 
-  HeroPhotoVisual, TeamPhotoVisual, MachineRoomVisual,
-  BtpTeamVisual, MiniLineChartInline
-} from '@/components/photo-data-visual'
-import { 
-  EnhancedHeroPhotoVisual, EnhancedBtpPhotoVisual, 
-  ZeroBadge, KpiCard, KpiDashboard, SectorKpiGrid,
-  maintenanceKPIs, sectorKPIs, zeroBadges
-} from '@/components/kpi-visual'
+  MiniLineChart, MiniBarChart, DataCard, VignetteBadge,
+  HeroImageLayout, KpiGridLayout, ResultsLayout
+} from '@/components/multi-image-layout'
+import { ImageGridAsymmetric, ImageGridLShape, TeamDiverseGrid } from '@/components/image-grid'
 
 export default function HomePage() {
   const features = [
@@ -65,6 +61,12 @@ export default function HomePage() {
     { icon: Wheat, name: 'Agroalimentaire', href: '/secteurs/agroalimentaire' },
     { icon: Truck, name: 'Logistique', href: '/secteurs' },
   ]
+
+  // Chart data
+  const availabilityData = [92, 94, 91, 96, 98, 97, 99, 98, 99, 98]
+  const interventionData = [35, 45, 55, 70, 85]
+  const mttrData = [4.2, 3.8, 3.5, 3.1, 2.8, 2.5, 2.3, 2.4]
+  const performanceData = [65, 72, 78, 85, 92, 95]
 
   return (
     <main className="min-h-screen bg-white flex flex-col">
@@ -150,13 +152,71 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right - Photo with Floating Data */}
+            {/* Right - Photo with Floating Data - Cards overlapping at edges */}
             <div className="order-1 lg:order-2 hidden lg:block">
-              <EnhancedHeroPhotoVisual 
-                imageSrc="/images/hero-technician-final.png"
-                imageAlt="Technicien maintenance avec tablette sur ligne de production industrielle"
-                className="ml-4"
-              />
+              <div className="relative ml-8 mr-4">
+                {/* Main Photo */}
+                <div className="relative rounded-3xl overflow-visible shadow-2xl">
+                  <Image
+                    src="/images/hero-technician-new-1.png"
+                    alt="Technicien maintenance avec tablette"
+                    width={480}
+                    height={520}
+                    className="object-cover w-full h-auto rounded-3xl"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-3xl" />
+                </div>
+
+                {/* Card 1 - Overlapping top-right edge */}
+                <div className="absolute -right-6 top-16 z-10">
+                  <DataCard
+                    value="98.5%"
+                    label="Disponibilité"
+                    change="+2.3%"
+                    icon={<Gauge className="w-3 h-3 text-[#059669]" />}
+                    chart="line"
+                    chartData={[92, 94, 91, 96, 98, 97, 99, 98]}
+                    chartColor="#059669"
+                    size="sm"
+                  />
+                </div>
+
+                {/* Card 2 - Overlapping left edge */}
+                <div className="absolute -left-6 top-[40%] z-10">
+                  <DataCard
+                    value="2.4h"
+                    label="MTTR"
+                    change="-18%"
+                    changeType="positive"
+                    icon={<Clock className="w-3 h-3 text-[#F97316]" />}
+                    size="sm"
+                  />
+                </div>
+
+                {/* Card 3 - Overlapping bottom-right edge */}
+                <div className="absolute -right-4 bottom-8 z-10">
+                  <DataCard
+                    value="156"
+                    label="Interventions/mois"
+                    change="+20%"
+                    icon={<Activity className="w-4 h-4 text-[#1E3A8A]" />}
+                    chart="bar"
+                    chartData={interventionData}
+                    chartColor="#1E3A8A"
+                    size="md"
+                  />
+                </div>
+
+                {/* Vignette Badge - Overlapping bottom-left */}
+                <div className="absolute -bottom-3 left-6 z-10">
+                  <VignetteBadge 
+                    icon={<Zap className="w-5 h-5 text-white" />} 
+                    color="#F97316"
+                    size="lg"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -194,15 +254,32 @@ export default function HomePage() {
       {/* Partner Carousel */}
       <PartnerCarousel />
 
-      {/* KPI Section with Photo + Data */}
+      {/* KPI Section - Image Grid with overlapping card */}
       <section className="py-20 bg-[#FAFAF9]">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left - Photo Visual */}
+            {/* Left - Image Grid Asymmetric */}
             <div className="hidden lg:block">
-              <TeamPhotoVisual 
-                imageSrc="/images/success-handshake.png"
-                imageAlt="Manager et technicien célébrant le succès"
+              <ImageGridAsymmetric
+                mainImage={{
+                  src: "/images/team-success-new-3.png",
+                  alt: "Succès projet maintenance"
+                }}
+                smallImages={[
+                  { src: "/images/team-diverse-european-african-1.png", alt: "Équipe diverse" },
+                  { src: "/images/happy-technician.png", alt: "Technicien satisfait" }
+                ]}
+                dataCards={[
+                  {
+                    value: "4 mois",
+                    label: "ROI moyen",
+                    change: "Retour investissement",
+                    icon: <Target className="w-4 h-4 text-[#F97316]" />,
+                    position: "-right-4 bottom-8"
+                  }
+                ]}
+                vignette={{ icon: <CheckCircle2 className="w-5 h-5 text-white" />, color: "#059669" }}
+                className="mr-4"
               />
             </div>
 
@@ -220,26 +297,23 @@ export default function HomePage() {
                 Nos clients constatent une amélioration significative de leurs indicateurs de performance maintenance en moins de 6 mois.
               </p>
 
-              {/* Enhanced KPI Grid with Maintenance KPIs */}
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                <KpiCard kpiKey="tempsArret" value="-38%" change="vs. année précédente" trend="down" size="md" />
-                <KpiCard kpiKey="disponibilite" value="98.5%" change="+2.3% ce mois" trend="up" size="md" />
-                <KpiCard kpiKey="ftfr" value="89%" change="+24 pts vs. avant" trend="up" size="md" />
-                <KpiCard kpiKey="roi" value="4 mois" description="retour investissement" size="md" />
-              </div>
-              
-              {/* Zero Badges */}
-              <div className="flex flex-wrap gap-2">
-                <ZeroBadge text="Zéro arrêt production" icon={Shield} color="#059669" size="sm" />
-                <ZeroBadge text="Zéro panne" icon={Zap} color="#0891B2" size="sm" />
-                <ZeroBadge text="Zéro gaspillages" icon={Target} color="#7C3AED" size="sm" />
-              </div>
+              {/* KPI Grid - Compact */}
+              <KpiGridLayout
+                title="Indicateurs clés"
+                subtitle="Amélioration moyenne constatée"
+                kpis={[
+                  { value: '-38%', label: 'Temps d\'arrêt', change: 'vs. année précédente', icon: <TrendingDown className="w-5 h-5 text-[#059669]" />, color: '#059669' },
+                  { value: '98.5%', label: 'Disponibilité', change: '+2.3%', icon: <Gauge className="w-5 h-5 text-[#1E3A8A]" />, color: '#1E3A8A' },
+                  { value: '89%', label: 'FTFR', change: '+24 pts', icon: <Wrench className="w-5 h-5 text-[#F97316]" />, color: '#F97316' },
+                  { value: '4 mois', label: 'ROI', icon: <Target className="w-5 h-5 text-[#7C3AED]" />, color: '#7C3AED' },
+                ]}
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* BTP Team Section */}
+      {/* Supervision Section - Single Image with 3 cards */}
       <section className="py-20 bg-white">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
           <div className="text-center mb-12">
@@ -256,16 +330,72 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="mb-12">
-            <EnhancedBtpPhotoVisual 
-              imageSrc="/images/chantier-btp-new.png"
-              imageAlt="Équipe de techniciens sur chantier BTP avec tablettes"
-              className="max-w-4xl mx-auto"
-            />
+          {/* Single Image with 3 overlapping cards */}
+          <div className="max-w-4xl mx-auto">
+            <div className="relative rounded-3xl overflow-visible shadow-2xl h-[400px]">
+              <Image
+                src="/images/control-room-new-2.png"
+                alt="Équipe en salle de contrôle"
+                fill
+                className="object-cover rounded-3xl"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-3xl" />
+              
+              {/* Card 1 - Overlapping top-left edge */}
+              <div className="absolute -left-6 top-6 flex items-center gap-3 px-4 py-3 bg-white rounded-xl shadow-xl z-10">
+                <VignetteBadge 
+                  icon={<Activity className="w-4 h-4 text-white" />} 
+                  color="#059669"
+                  size="sm"
+                />
+                <div>
+                  <div className="text-[10px] text-gray-500">Équipements</div>
+                  <div className="text-lg font-bold text-[#0C0A09]">1,240</div>
+                </div>
+              </div>
+
+              {/* Card 2 - Overlapping top-right edge */}
+              <div className="absolute -right-6 top-6 z-10">
+                <DataCard
+                  value="99.9%"
+                  label="Uptime"
+                  change="Réseau"
+                  icon={<Gauge className="w-3 h-3 text-[#059669]" />}
+                  chart="line"
+                  chartData={[98, 99, 99.5, 99.8, 99.9, 99.9]}
+                  chartColor="#059669"
+                  size="sm"
+                />
+              </div>
+
+              {/* Card 3 - Overlapping bottom-right edge */}
+              <div className="absolute -right-4 -bottom-4 z-10">
+                <DataCard
+                  value="24/7"
+                  label="Monitoring"
+                  change="Alertes temps réel"
+                  icon={<Clock className="w-4 h-4 text-[#F97316]" />}
+                  chart="bar"
+                  chartData={[85, 90, 92, 95, 98, 99]}
+                  chartColor="#F97316"
+                  size="md"
+                />
+              </div>
+              
+              {/* Vignette overlapping bottom-left */}
+              <div className="absolute -bottom-3 left-6 z-10">
+                <VignetteBadge 
+                  icon={<Shield className="w-5 h-5 text-white" />} 
+                  color="#1E3A8A"
+                  size="lg"
+                />
+              </div>
+            </div>
           </div>
 
-          {/* Feature Pills with Zero Badges */}
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
+          {/* Feature Pills */}
+          <div className="flex flex-wrap justify-center gap-4 mt-8">
             {[
               { icon: Activity, text: 'Monitoring temps réel', color: '#059669' },
               { icon: Brain, text: 'Diagnostic IA', color: '#7C3AED' },
@@ -277,14 +407,6 @@ export default function HomePage() {
                 <span className="text-sm font-medium text-[#44403C]">{item.text}</span>
               </div>
             ))}
-          </div>
-          
-          {/* Zero Badges Row */}
-          <div className="flex flex-wrap justify-center gap-3">
-            <ZeroBadge text="Zéro indisponibilité" icon={Shield} color="#059669" size="md" />
-            <ZeroBadge text="Zéro retard chantier" icon={Clock} color="#F97316" size="md" />
-            <ZeroBadge text="Zéro arrêt production" icon={Factory} color="#DC2626" size="md" />
-            <ZeroBadge text="Zéro gaspillages" icon={Target} color="#7C3AED" size="md" />
           </div>
         </div>
       </section>
@@ -450,19 +572,19 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Zero Badges Row */}
-          <div className="flex flex-wrap justify-center gap-3">
-            <ZeroBadge text="Zéro indisponibilité" icon={Shield} color="#059669" size="md" />
-            <ZeroBadge text="Zéro retard chantier" icon={Clock} color="#F97316" size="md" />
-            <ZeroBadge text="Zéro arrêt production" icon={Factory} color="#DC2626" size="md" />
-            <ZeroBadge text="Zéro gaspillages" icon={Target} color="#7C3AED" size="md" />
-            <ZeroBadge text="Zéro perte de production" icon={TrendingUp} color="#1E3A8A" size="md" />
-            <ZeroBadge text="Zéro défauts" icon={CheckCircle2} color="#0891B2" size="md" />
-          </div>
+          {/* Results Summary with Vignettes */}
+          <ResultsLayout
+            results={[
+              { value: '+35%', label: 'Productivité', icon: <TrendingUp className="w-5 h-5 text-white" />, color: '#059669' },
+              { value: '-38%', label: 'Arrêts', icon: <Clock className="w-5 h-5 text-white" />, color: '#F97316' },
+              { value: '-22%', label: 'Coûts', icon: <Target className="w-5 h-5 text-white" />, color: '#7C3AED' },
+            ]}
+            className="justify-center"
+          />
         </div>
       </section>
 
-      {/* Sectors Section with Photo */}
+      {/* Sectors Section - Single Image with 2 cards */}
       <section className="py-24 bg-white">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -501,53 +623,10 @@ export default function HomePage() {
               </Link>
             </div>
 
-            {/* Sector Photo Visual with KPIs */}
-            <div className="hidden lg:block relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                <Image
-                  src="/images/industrial-sectors.png"
-                  alt="Complex industriel multi-secteurs"
-                  width={550}
-                  height={450}
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
-              </div>
-
-              {/* Floating Stats with KPIs */}
-              <div className="absolute -top-4 left-8 bg-white rounded-xl p-4 shadow-lg">
-                <div className="flex items-center gap-2 mb-1">
-                  <Factory className="w-4 h-4 text-[#F97316]" />
-                  <span className="text-xs text-gray-500">Industrie</span>
-                </div>
-                <div className="text-xl font-bold text-[#0C0A09]">98.2%</div>
-                <div className="text-xs text-[#059669]">Disponibilité</div>
-              </div>
-
-              {/* OEE Badge */}
-              <div className="absolute top-16 -left-4 bg-white rounded-xl p-3 shadow-lg">
-                <div className="flex items-center gap-2 mb-1">
-                  <Target className="w-3.5 h-3.5 text-[#7C3AED]" />
-                  <span className="text-xs text-gray-500">OEE</span>
-                </div>
-                <div className="text-lg font-bold text-[#0C0A09]">92%</div>
-              </div>
-
-              <div className="absolute -bottom-4 right-8 bg-[#1E3A8A] text-white rounded-xl p-4 shadow-lg">
-                <div className="text-lg font-bold">15</div>
-                <div className="text-xs text-white/80">Secteurs</div>
-              </div>
-
-              <div className="absolute top-1/3 -right-4 bg-white rounded-xl p-3 shadow-lg">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#059669]" />
-                  <span className="text-sm font-medium">Conforme réglementation</span>
-                </div>
-              </div>
-              
-              {/* Zero Badge */}
-              <div className="absolute bottom-4 left-8">
-                <ZeroBadge text="Zéro défauts" icon={CheckCircle2} color="#059669" size="sm" />
+            {/* Team Diverse Grid with overlapping card */}
+            <div className="hidden lg:block">
+              <div className="relative">
+                <TeamDiverseGrid variant="european-african" className="mr-4" />
               </div>
             </div>
           </div>

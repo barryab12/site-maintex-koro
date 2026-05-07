@@ -12,6 +12,7 @@ import {
 } from 'lucide-react'
 import { TabNavigation, TabPanel } from '@/components/tab-navigation'
 import { SectorHeroVisual, SectorEnjeuxVisual, SectorSolutionsVisual, getSectorConfig } from '@/components/sector-visuals'
+import { ImageGridAsymmetric } from '@/components/image-grid'
 
 export default function AgroalimentairePage() {
   const [activeTab, setActiveTab] = useState('enjeux')
@@ -345,6 +346,37 @@ export default function AgroalimentairePage() {
 
           {/* Résultats Tab */}
           <TabPanel isActive={activeTab === 'resultats'}>
+            {/* Image Grid with food industry */}
+            <div className="mb-12">
+              <ImageGridAsymmetric
+                mainImage={{
+                  src: "/images/food-processing.png",
+                  alt: "Industrie agroalimentaire"
+                }}
+                smallImages={[
+                  { src: "/images/team-diverse-european-african-3.png", alt: "Équipe production" },
+                  { src: "/images/happy-technician.png", alt: "Technicien satisfait" }
+                ]}
+                dataCards={[
+                  {
+                    value: "+44%",
+                    label: "Préventif",
+                    change: "Optimisé",
+                    icon: <Activity className="w-4 h-4 text-[#059669]" />,
+                    position: "-right-4 top-8"
+                  },
+                  {
+                    value: "100%",
+                    label: "HACCP",
+                    change: "Conforme",
+                    icon: <Shield className="w-4 h-4 text-[#F97316]" />,
+                    position: "-left-4 bottom-8"
+                  }
+                ]}
+                className="max-w-3xl mx-auto"
+              />
+            </div>
+
             <div className="grid lg:grid-cols-3 gap-6 mb-12">
               {testimonials.map((testimonial, i) => (
                 <div 

@@ -12,6 +12,7 @@ import {
 } from 'lucide-react'
 import { TabNavigation, TabPanel } from '@/components/tab-navigation'
 import { SectorHeroVisual, SectorEnjeuxVisual, SectorSolutionsVisual, getSectorConfig } from '@/components/sector-visuals'
+import { ImageGridAsymmetric } from '@/components/image-grid'
 
 export default function BTPPage() {
   const [activeTab, setActiveTab] = useState('enjeux')
@@ -345,6 +346,37 @@ export default function BTPPage() {
 
           {/* Résultats Tab */}
           <TabPanel isActive={activeTab === 'resultats'}>
+            {/* Image Grid with construction site */}
+            <div className="mb-12">
+              <ImageGridAsymmetric
+                mainImage={{
+                  src: "/images/chantier-btp-diverse.png",
+                  alt: "Chantier BTP"
+                }}
+                smallImages={[
+                  { src: "/images/chantier-btp-new.png", alt: "Engins de chantier" },
+                  { src: "/images/technician-african-action.png", alt: "Technicien BTP" }
+                ]}
+                dataCards={[
+                  {
+                    value: "-40%",
+                    label: "Pannes",
+                    change: "Imprévues",
+                    icon: <TrendingDown className="w-4 h-4 text-[#059669]" />,
+                    position: "-right-4 top-8"
+                  },
+                  {
+                    value: "100%",
+                    label: "Conformité",
+                    change: "VGP",
+                    icon: <Shield className="w-4 h-4 text-[#F97316]" />,
+                    position: "-left-4 bottom-8"
+                  }
+                ]}
+                className="max-w-3xl mx-auto"
+              />
+            </div>
+
             <div className="grid lg:grid-cols-3 gap-6 mb-12">
               {testimonials.map((testimonial, i) => (
                 <div 

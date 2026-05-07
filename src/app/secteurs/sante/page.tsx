@@ -12,6 +12,7 @@ import {
 } from 'lucide-react'
 import { TabNavigation, TabPanel } from '@/components/tab-navigation'
 import { SectorHeroVisual, SectorEnjeuxVisual, SectorSolutionsVisual, getSectorConfig } from '@/components/sector-visuals'
+import { ImageGridAsymmetric } from '@/components/image-grid'
 
 export default function SantePage() {
   const [activeTab, setActiveTab] = useState('enjeux')
@@ -352,6 +353,36 @@ export default function SantePage() {
 
           {/* Résultats Tab */}
           <TabPanel isActive={activeTab === 'resultats'}>
+            {/* Image Grid with diverse team */}
+            <div className="mb-12">
+              <ImageGridAsymmetric
+                mainImage={{
+                  src: "/images/team-diverse-european-african-2.png",
+                  alt: "Équipe médicale diverse"
+                }}
+                smallImages={[
+                  { src: "/images/hospital-medical.png", alt: "Hôpital moderne" },
+                  { src: "/images/medical-equipment.png", alt: "Équipements médicaux" }
+                ]}
+                dataCards={[
+                  {
+                    value: "99.5%",
+                    label: "Disponibilité",
+                    change: "IRM & scanners",
+                    icon: <Activity className="w-4 h-4 text-[#059669]" />,
+                    position: "-right-4 top-8"
+                  },
+                  {
+                    value: "100%",
+                    label: "Conformité",
+                    change: "Certifications HAS",
+                    icon: <Shield className="w-4 h-4 text-[#1E3A8A]" />,
+                    position: "-left-4 bottom-8"
+                  }
+                ]}
+                className="max-w-3xl mx-auto"
+              />
+            </div>
             <div className="grid lg:grid-cols-3 gap-6 mb-12">
               {testimonials.map((testimonial, i) => (
                 <div 

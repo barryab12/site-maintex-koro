@@ -5,7 +5,7 @@ import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import Link from 'next/link'
 import { CheckCircle2, Users, Target, Lightbulb, Shield, Award, BookOpen, Settings, Wrench, Globe, MapPin, Phone, Mail, Building2, Briefcase, TrendingUp, Layers, Cpu, Factory, Pickaxe, Zap, Landmark, HardHat, Wheat, Truck, Hotel, Clock, Heart, Lock, FileText, Newspaper, Rocket, Users2, ArrowRight, ArrowUpRight, Activity, Gauge } from 'lucide-react'
-import { MiniLineChartInline } from '@/components/photo-data-visual'
+import { MiniLineChart, MiniBarChart, DataCard, VignetteBadge } from '@/components/multi-image-layout'
 
 export default function AProposPage() {
   const stats = [
@@ -159,43 +159,45 @@ export default function AProposPage() {
               </div>
             </div>
 
-            {/* Hero Photo with Floating Stats */}
+            {/* Hero Photo with Max 3 Floating Stats */}
             <div className="hidden lg:block relative">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img src="/images/team-engineers.png" alt="BBC & Partners" className="w-full h-auto" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
               </div>
               
-              {/* Floating Cards */}
+              {/* Card 1 - Top Left - Badge */}
               <div className="absolute -top-3 left-4 flex items-center gap-2 px-4 py-2.5 bg-[#F97316] text-white rounded-full shadow-lg">
                 <TrendingUp className="w-4 h-4" />
                 <span className="text-sm font-semibold">+15 ans</span>
               </div>
               
-              <div className="absolute top-16 right-4 bg-white rounded-xl p-4 shadow-lg">
-                <div className="flex items-center gap-2 mb-1">
-                  <Gauge className="w-4 h-4 text-[#1E3A8A]" />
-                  <span className="text-xs text-gray-500">Performance</span>
-                </div>
-                <div className="text-2xl font-bold text-[#0C0A09]">+30%</div>
+              {/* Card 2 - Top Right */}
+              <div className="absolute top-4 -right-3 z-10">
+                <DataCard
+                  value="+30%"
+                  label="Performance"
+                  change="Amélioration moyenne"
+                  icon={<Gauge className="w-4 h-4 text-[#1E3A8A]" />}
+                />
               </div>
               
-              <div className="absolute bottom-4 left-4 bg-white rounded-xl p-4 shadow-lg">
-                <div className="flex items-center gap-2 mb-1">
-                  <Users className="w-4 h-4 text-[#059669]" />
-                  <span className="text-xs text-gray-500">Clients</span>
-                </div>
-                <div className="text-2xl font-bold text-[#0C0A09]">350+</div>
+              {/* Card 3 - Bottom Left */}
+              <div className="absolute bottom-4 -left-3 z-10">
+                <DataCard
+                  value="350+"
+                  label="Clients"
+                  change="Dans 25 pays"
+                  icon={<Users className="w-4 h-4 text-[#059669]" />}
+                />
               </div>
               
-              <div className="absolute bottom-4 right-4 bg-[#1E3A8A] text-white rounded-xl p-3 shadow-lg">
-                <div className="flex items-center gap-2">
-                  <Globe className="w-4 h-4" />
-                  <div>
-                    <div className="text-lg font-bold">25</div>
-                    <div className="text-xs text-white/80">Pays</div>
-                  </div>
-                </div>
+              {/* Vignette Badge */}
+              <div className="absolute bottom-4 right-4 z-10">
+                <VignetteBadge 
+                  icon={<Globe className="w-5 h-5 text-white" />} 
+                  color="#1E3A8A" 
+                />
               </div>
             </div>
           </div>

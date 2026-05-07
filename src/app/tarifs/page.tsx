@@ -10,6 +10,7 @@ import {
   HeadphonesIcon, Clock, ChevronRight, Sparkles, X, ArrowRight,
   BadgeCheck, TrendingUp, Target, Gift, Star, Phone, DollarSign, Gauge, ArrowUpRight
 } from 'lucide-react'
+import { ImageGridAsymmetric } from '@/components/image-grid'
 
 export default function TarifsPage() {
   const [isAnnual, setIsAnnual] = useState(true)
@@ -548,32 +549,63 @@ export default function TarifsPage() {
 
       {/* FAQ */}
       <section className="py-20 bg-[#FAFAF9]">
-        <div className="max-w-[800px] mx-auto px-6 lg:px-10">
-          <div className="text-center mb-12">
-            <span className="text-xs font-semibold uppercase tracking-wider text-[#F97316] mb-3 block">FAQ</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0C0A09] mb-4">
-              Questions fréquentes
-            </h2>
-            <p className="text-lg text-[#44403C]">
-              Tout ce que vous devez savoir avant de démarrer
-            </p>
-          </div>
+        <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* FAQ Content */}
+            <div>
+              <div className="mb-12">
+                <span className="text-xs font-semibold uppercase tracking-wider text-[#F97316] mb-3 block">FAQ</span>
+                <h2 className="text-3xl md:text-4xl font-bold text-[#0C0A09] mb-4">
+                  Questions fréquentes
+                </h2>
+                <p className="text-lg text-[#44403C]">
+                  Tout ce que vous devez savoir avant de démarrer
+                </p>
+              </div>
 
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <details key={index} className="group bg-white rounded-2xl border border-gray-200 shadow-sm hover:border-[#F97316]/30 transition-colors">
-                <summary className="flex items-center justify-between p-6 cursor-pointer list-none font-semibold text-[#0C0A09]">
-                  <span className="flex items-center gap-3">
-                    <HelpCircle className="w-5 h-5 text-[#F97316] flex-shrink-0" />
-                    {faq.question}
-                  </span>
-                  <ChevronRight className="w-5 h-5 text-gray-400 group-open:rotate-90 transition-transform" />
-                </summary>
-                <div className="px-6 pb-6 text-sm text-[#44403C] leading-relaxed ml-8">
-                  {faq.answer}
-                </div>
-              </details>
-            ))}
+              <div className="space-y-4">
+                {faqs.map((faq, index) => (
+                  <details key={index} className="group bg-white rounded-2xl border border-gray-200 shadow-sm hover:border-[#F97316]/30 transition-colors">
+                    <summary className="flex items-center justify-between p-6 cursor-pointer list-none font-semibold text-[#0C0A09]">
+                      <span className="flex items-center gap-3">
+                        <HelpCircle className="w-5 h-5 text-[#F97316] flex-shrink-0" />
+                        {faq.question}
+                      </span>
+                      <ChevronRight className="w-5 h-5 text-gray-400 group-open:rotate-90 transition-transform" />
+                    </summary>
+                    <div className="px-6 pb-6 text-sm text-[#44403C] leading-relaxed ml-8">
+                      {faq.answer}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </div>
+
+            {/* Image Grid - Centered with FAQ-themed images */}
+            <div className="hidden lg:flex flex-col items-center justify-center relative">
+              <div className="relative overflow-visible">
+                <ImageGridAsymmetric
+                  mainImage={{
+                    src: "/images/control-room-new-2.png",
+                    alt: "Hébergement sécurisé et support disponible"
+                  }}
+                  smallImages={[
+                    { src: "/images/data-center.png", alt: "Data center - Hébergement inclus" },
+                    { src: "/images/success-handshake-diverse.png", alt: "Sans engagement - Flexibilité totale" }
+                  ]}
+                  dataCards={[
+                    {
+                      value: "30 jours",
+                      label: "Essai gratuit",
+                      change: "Sans engagement",
+                      icon: <Gift className="w-4 h-4 text-[#F97316]" />,
+                      position: "right-0 top-[70%] -translate-y-1/2 translate-x-1/2"
+                    }
+                  ]}
+                  className="max-w-lg"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>

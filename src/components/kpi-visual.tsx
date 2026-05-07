@@ -5,17 +5,16 @@ import {
   TrendingUp, TrendingDown, ArrowUpRight, ArrowDownRight,
   Clock, Gauge, Activity, Shield, CheckCircle2, Target,
   Zap, Factory, HardHat, Stethoscope, Truck, Wheat, Pickaxe,
-  AlertTriangle, Award, DollarSign, BarChart3, Settings,
-  Wrench, Timer, Calendar, Percent, TrendingUpIcon
+  AlertTriangle, DollarSign, BarChart3, Settings,
+  Wrench, Timer, Calendar, Users
 } from 'lucide-react'
 import { MiniLineChartInline } from './photo-data-visual'
 
 // =====================================================
-// KPI DATA DEFINITIONS - Extracted from maintenance text
+// KPI DATA DEFINITIONS
 // =====================================================
 
 export const maintenanceKPIs = {
-  // Fiabilité & Disponibilité
   mtbf: {
     name: 'MTBF',
     fullName: 'Temps Moyen Entre Pannes',
@@ -61,8 +60,6 @@ export const maintenanceKPIs = {
     unit: '%',
     color: '#DC2626'
   },
-  
-  // Efficacité
   pmp: {
     name: 'PMP',
     fullName: 'Maintenance Préventive Planifiée',
@@ -99,8 +96,6 @@ export const maintenanceKPIs = {
     unit: 'j',
     color: '#F97316'
   },
-  
-  // Coûts
   coutUnitaire: {
     name: 'Coût/Unité',
     fullName: 'Coût de Maintenance par Unité',
@@ -122,156 +117,7 @@ export const maintenanceKPIs = {
 }
 
 // =====================================================
-// ZERO BADGES - Vignettes "Zéro"
-// =====================================================
-
-export const zeroBadges = [
-  { text: 'Zéro indisponibilité', icon: Shield, color: '#059669' },
-  { text: 'Zéro retard chantier', icon: Clock, color: '#F97316' },
-  { text: 'Zéro arrêt production', icon: Factory, color: '#DC2626' },
-  { text: 'Zéro gaspillages', icon: Target, color: '#7C3AED' },
-  { text: 'Zéro perte de production', icon: TrendingUp, color: '#1E3A8A' },
-  { text: 'Zéro défauts', icon: CheckCircle2, color: '#0891B2' },
-  { text: 'Zéro panne', icon: Zap, color: '#059669' },
-  { text: 'Zéro surprise', icon: Activity, color: '#F97316' },
-]
-
-// =====================================================
-// KPIs PAR SECTEUR
-// =====================================================
-
-export const sectorKPIs = {
-  industrie: {
-    name: 'Industrie',
-    icon: Factory,
-    kpis: [
-      { name: 'OEE', value: '92%', target: '85%+', trend: '+8%' },
-      { name: 'MTBF', value: '720h', target: '500h+', trend: '+15%' },
-      { name: 'MTTR', value: '2.1h', target: '<3h', trend: '-25%' },
-      { name: 'Disponibilité', value: '98.5%', target: '95%+', trend: '+2.3%' }
-    ],
-    zeroBadges: ['Zéro arrêt production', 'Zéro défauts', 'Zéro gaspillages']
-  },
-  btp: {
-    name: 'BTP',
-    icon: HardHat,
-    kpis: [
-      { name: 'Conformité calendrier', value: '94%', target: '90%+', trend: '+12%' },
-      { name: 'Retard chantier', value: '-45%', target: '0%', trend: '-45%' },
-      { name: 'Safety events', value: '0', target: '0', trend: 'Stable' },
-      { name: 'MTTR engins', value: '1.8h', target: '<2h', trend: '-30%' }
-    ],
-    zeroBadges: ['Zéro retard chantier', 'Zéro indisponibilité', 'Zéro panne']
-  },
-  mines: {
-    name: 'Mines & Carrières',
-    icon: Pickaxe,
-    kpis: [
-      { name: 'Disponibilité engins', value: '96%', target: '90%+', trend: '+6%' },
-      { name: 'MTBF', value: '480h', target: '400h+', trend: '+20%' },
-      { name: 'Conso. carburant', value: '-12%', target: '-10%', trend: '-12%' },
-      { name: 'PMP', value: '88%', target: '85%+', trend: '+15%' }
-    ],
-    zeroBadges: ['Zéro panne', 'Zéro gaspillages', 'Zéro perte de production']
-  },
-  sante: {
-    name: 'Santé',
-    icon: Stethoscope,
-    kpis: [
-      { name: 'Dispo. équip. critiques', value: '99.9%', target: '99.5%+', trend: '+0.4%' },
-      { name: 'Conformité réglementaire', value: '100%', target: '100%', trend: 'Stable' },
-      { name: 'MTTR équip. médicaux', value: '0.5h', target: '<1h', trend: '-50%' },
-      { name: 'Traçabilité', value: '100%', target: '100%', trend: 'Stable' }
-    ],
-    zeroBadges: ['Zéro indisponibilité', 'Zéro défauts', 'Zéro surprise']
-  },
-  energie: {
-    name: 'Énergie',
-    icon: Zap,
-    kpis: [
-      { name: 'PMP', value: '91%', target: '85%+', trend: '+18%' },
-      { name: 'MTBF', value: '2160h', target: '2000h+', trend: '+8%' },
-      { name: 'Disponibilité', value: '99.2%', target: '98%+', trend: '+1.2%' },
-      { name: 'Safety incidents', value: '0', target: '0', trend: 'Stable' }
-    ],
-    zeroBadges: ['Zéro arrêt production', 'Zéro panne', 'Zéro surprise']
-  },
-  agroalimentaire: {
-    name: 'Agroalimentaire',
-    icon: Wheat,
-    kpis: [
-      { name: 'Conformité HACCP', value: '100%', target: '100%', trend: 'Stable' },
-      { name: 'Traçabilité', value: '100%', target: '100%', trend: 'Stable' },
-      { name: 'OEE', value: '89%', target: '85%+', trend: '+4%' },
-      { name: 'PMP', value: '87%', target: '85%+', trend: '+10%' }
-    ],
-    zeroBadges: ['Zéro défauts', 'Zéro gaspillages', 'Zéro perte de production']
-  },
-  logistique: {
-    name: 'Logistique',
-    icon: Truck,
-    kpis: [
-      { name: 'Dispo. flotte', value: '97%', target: '95%+', trend: '+2%' },
-      { name: 'MTTR véhicules', value: '1.2h', target: '<2h', trend: '-40%' },
-      { name: 'OT respectés', value: '95%', target: '90%+', trend: '+5%' },
-      { name: 'Cost per mile', value: '-8%', target: '-5%', trend: '-8%' }
-    ],
-    zeroBadges: ['Zéro indisponibilité', 'Zéro retard', 'Zéro panne']
-  }
-}
-
-// =====================================================
-// ZERO BADGE COMPONENT
-// =====================================================
-
-interface ZeroBadgeProps {
-  text: string
-  icon?: React.ElementType
-  color?: string
-  size?: 'sm' | 'md' | 'lg'
-  animated?: boolean
-  className?: string
-}
-
-export function ZeroBadge({ 
-  text, 
-  icon: Icon = CheckCircle2, 
-  color = '#059669',
-  size = 'md',
-  animated = false,
-  className = ''
-}: ZeroBadgeProps) {
-  const sizes = {
-    sm: 'px-3 py-1.5 text-xs gap-1.5',
-    md: 'px-4 py-2 text-sm gap-2',
-    lg: 'px-5 py-3 text-base gap-2.5'
-  }
-  
-  const iconSizes = {
-    sm: 'w-3.5 h-3.5',
-    md: 'w-4 h-4',
-    lg: 'w-5 h-5'
-  }
-  
-  return (
-    <div 
-      className={`
-        inline-flex items-center ${sizes[size]} rounded-full font-semibold text-white shadow-lg
-        ${animated ? 'animate-pulse' : ''}
-        ${className}
-      `}
-      style={{ 
-        backgroundColor: color
-      }}
-    >
-      <Icon className={iconSizes[size]} />
-      <span>{text}</span>
-    </div>
-  )
-}
-
-// =====================================================
-// KPI CARD COMPONENT - Enhanced with full KPI data
+// KPI CARD COMPONENT
 // =====================================================
 
 interface KpiCardProps {
@@ -347,7 +193,7 @@ export function KpiCard({
 }
 
 // =====================================================
-// ENHANCED HERO PHOTO VISUAL with KPIs
+// ENHANCED HERO PHOTO VISUAL - Max 3 cartes, style modèle
 // =====================================================
 
 interface EnhancedHeroPhotoVisualProps {
@@ -357,13 +203,12 @@ interface EnhancedHeroPhotoVisualProps {
 }
 
 export function EnhancedHeroPhotoVisual({ imageSrc, imageAlt, className = '' }: EnhancedHeroPhotoVisualProps) {
-  const mttrData = [4.2, 3.8, 3.5, 3.1, 2.8, 2.5, 2.3, 2.4, 2.2, 2.1, 2.0, 1.9]
-  const availabilityData = [92, 94, 91, 96, 98, 97, 99, 98, 99, 98, 99, 98]
-  const oeeData = [72, 75, 78, 82, 85, 87, 89, 91, 92, 93, 92, 94]
+  const mttrData = [4.2, 3.8, 3.5, 3.1, 2.8, 2.5, 2.3, 2.4]
+  const oeeData = [72, 75, 78, 82, 85, 87, 89, 91, 92, 93]
   
   return (
     <div className={`relative ${className}`}>
-      {/* Main Photo Container - Reduced height for better proportions */}
+      {/* Main Photo Container */}
       <div className="relative rounded-3xl overflow-visible shadow-2xl">
         <Image
           src={imageSrc}
@@ -376,91 +221,57 @@ export function EnhancedHeroPhotoVisual({ imageSrc, imageAlt, className = '' }: 
         <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent rounded-3xl" />
       </div>
 
-      {/* Badge Top Left - Outside image on edge */}
-      <div className="absolute -top-3 left-2 flex items-center gap-2 px-4 py-2.5 bg-[#F97316] text-white rounded-full shadow-lg z-10">
-        <Activity className="w-4 h-4" />
-        <span className="text-sm font-semibold">Performance</span>
-      </div>
-
-      {/* Card 1 - Top Right */}
-      <div className="absolute -right-2 top-3 w-40 bg-white rounded-xl p-4 shadow-xl z-10">
+      {/* Card 1 - Top Right - Disponibilité (style modèle avec graphique) */}
+      <div className="absolute -right-3 top-4 w-44 bg-white rounded-xl p-4 shadow-xl z-10">
         <div className="flex items-center gap-2 mb-2">
           <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-[#059669]/10">
             <Gauge className="w-4 h-4 text-[#059669]" />
           </div>
           <span className="text-xs text-gray-500">Disponibilité</span>
         </div>
-        <div className="text-2xl font-bold text-[#0C0A09]">98.5%</div>
+        <div className="text-3xl font-bold text-[#0C0A09]">98.5%</div>
         <div className="flex items-center gap-1 mt-1">
           <ArrowUpRight className="w-3.5 h-3.5 text-[#059669]" />
-          <span className="text-xs font-semibold text-[#059669]">+2.3%</span>
+          <span className="text-xs font-semibold text-[#059669]">+2.3% ce mois</span>
         </div>
       </div>
 
-      {/* Card 2 - Left side, middle */}
-      <div className="absolute -left-2 top-[26%] w-40 bg-white rounded-xl p-4 shadow-xl z-10">
+      {/* Card 2 - Left Middle - MTTR avec chart */}
+      <div className="absolute -left-3 top-[30%] w-44 bg-white rounded-xl p-4 shadow-xl z-10">
         <div className="flex items-center gap-2 mb-2">
-          <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-[#1E3A8A]/10">
-            <Activity className="w-4 h-4 text-[#1E3A8A]" />
+          <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-[#F97316]/10">
+            <Clock className="w-4 h-4 text-[#F97316]" />
           </div>
-          <span className="text-xs text-gray-500">MTBF</span>
+          <span className="text-xs text-gray-500">MTTR</span>
         </div>
-        <div className="text-2xl font-bold text-[#0C0A09]">720h</div>
+        <div className="text-3xl font-bold text-[#0C0A09]">2.4h</div>
         <div className="flex items-center gap-1 mt-1">
-          <ArrowUpRight className="w-3.5 h-3.5 text-[#059669]" />
-          <span className="text-xs font-semibold text-[#059669]">+15%</span>
+          <TrendingDown className="w-3.5 h-3.5 text-[#059669]" />
+          <span className="text-xs font-semibold text-[#059669]">-18% vs avant</span>
         </div>
+        <MiniLineChartInline data={mttrData} color="#F97316" height={25} className="mt-2" />
       </div>
 
-      {/* Card 3 - Right side, middle */}
-      <div className="absolute -right-2 top-[42%] w-44 bg-white rounded-xl p-4 shadow-xl z-10">
-        <div className="flex items-center justify-between mb-1.5">
+      {/* Card 3 - Bottom Right - OEE (style modèle avec badge) */}
+      <div className="absolute -right-3 bottom-4 w-48 bg-white rounded-xl p-4 shadow-xl z-10">
+        <div className="flex items-center justify-between mb-2">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg flex items-center justify-center bg-[#F97316]/10">
-              <Clock className="w-4 h-4 text-[#F97316]" />
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-[#7C3AED]/10">
+              <Target className="w-4 h-4 text-[#7C3AED]" />
             </div>
-            <span className="text-xs text-gray-500">MTTR</span>
-          </div>
-          <span className="text-xs font-semibold text-[#059669] bg-[#059669]/10 px-2 py-1 rounded">-18%</span>
-        </div>
-        <div className="text-2xl font-bold text-[#0C0A09]">2.4h</div>
-        <MiniLineChartInline data={mttrData} color="#F97316" height={25} />
-      </div>
-
-      {/* Card 4 - Bottom Left */}
-      <div className="absolute -left-2 bottom-3 w-40 bg-white rounded-xl p-4 shadow-lg z-10">
-        <div className="flex items-center gap-2 mb-1.5">
-          <Wrench className="w-4 h-4 text-[#F97316]" />
-          <span className="text-xs text-gray-500">First Time Fix</span>
-        </div>
-        <div className="text-2xl font-bold text-[#0C0A09]">89%</div>
-        <div className="text-xs text-[#059669]">+24 pts</div>
-      </div>
-
-      {/* Card 5 - Bottom Right */}
-      <div className="absolute -right-2 bottom-12 w-44 bg-white rounded-xl p-4 shadow-xl z-10">
-        <div className="flex items-center justify-between mb-1.5">
-          <div className="flex items-center gap-2">
-            <Target className="w-4 h-4 text-[#7C3AED]" />
             <span className="text-xs text-gray-500">OEE</span>
           </div>
           <span className="text-xs font-semibold text-[#7C3AED] bg-[#7C3AED]/10 px-2 py-1 rounded-full">World-class</span>
         </div>
-        <div className="text-2xl font-bold text-[#0C0A09]">92%</div>
-        <MiniLineChartInline data={oeeData} color="#7C3AED" height={25} />
-      </div>
-
-      {/* Bottom - Zero Badge Row */}
-      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-        <ZeroBadge text="Zéro panne" icon={Zap} color="#059669" size="sm" />
-        <ZeroBadge text="Zéro arrêt" icon={Shield} color="#059669" size="sm" />
+        <div className="text-3xl font-bold text-[#0C0A09]">92%</div>
+        <MiniLineChartInline data={oeeData} color="#7C3AED" height={25} className="mt-2" />
       </div>
     </div>
   )
 }
 
 // =====================================================
-// ENHANCED BTP PHOTO VISUAL with Sector KPIs
+// ENHANCED BTP PHOTO VISUAL - Max 3 cartes, style diversifié
 // =====================================================
 
 interface EnhancedBtpPhotoVisualProps {
@@ -470,12 +281,12 @@ interface EnhancedBtpPhotoVisualProps {
 }
 
 export function EnhancedBtpPhotoVisual({ imageSrc, imageAlt, className = '' }: EnhancedBtpPhotoVisualProps) {
-  const chantierData = [45, 52, 58, 62, 68, 72, 75, 80, 85, 88, 92, 95]
-  const conformiteData = [78, 82, 85, 88, 91, 93, 94, 95, 94, 96, 95, 97]
+  const chantierData = [45, 52, 58, 62, 68, 72, 75, 80, 85, 88]
+  const conformiteData = [78, 82, 85, 88, 91, 93, 94, 95]
   
   return (
     <div className={`relative ${className}`}>
-      {/* Main Photo - Reduced height */}
+      {/* Main Photo */}
       <div className="relative rounded-3xl overflow-visible shadow-2xl h-[400px]">
         <Image
           src={imageSrc}
@@ -487,66 +298,45 @@ export function EnhancedBtpPhotoVisual({ imageSrc, imageAlt, className = '' }: E
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-3xl" />
       </div>
 
-      {/* Badge Top Left - Outside image on edge */}
-      <div className="absolute -top-3 left-2 flex items-center gap-2 px-4 py-2.5 bg-[#F97316] text-white rounded-full shadow-lg z-10">
-        <HardHat className="w-4 h-4" />
-        <span className="text-sm font-semibold">Chantier BTP</span>
+      {/* Card 1 - Top Left - Badge style (inspired by model) */}
+      <div className="absolute -left-3 top-4 flex items-center gap-3 px-5 py-4 bg-white rounded-xl shadow-xl z-10">
+        <div className="w-10 h-10 rounded-full flex items-center justify-center bg-[#F97316]">
+          <HardHat className="w-5 h-5 text-white" />
+        </div>
+        <div>
+          <div className="text-xs text-gray-500">Chantiers actifs</div>
+          <div className="text-2xl font-bold text-[#0C0A09]">12</div>
+        </div>
       </div>
 
-      {/* Card 1 - Top Right */}
-      <div className="absolute -right-2 top-3 w-40 bg-white rounded-xl p-4 shadow-xl z-10">
+      {/* Card 2 - Top Right - Conformité */}
+      <div className="absolute -right-3 top-4 w-44 bg-white rounded-xl p-4 shadow-xl z-10">
         <div className="flex items-center gap-2 mb-2">
           <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-[#059669]/10">
             <Calendar className="w-4 h-4 text-[#059669]" />
           </div>
           <span className="text-xs text-gray-500">Conformité</span>
         </div>
-        <div className="text-2xl font-bold text-[#0C0A09]">94%</div>
+        <div className="text-3xl font-bold text-[#0C0A09]">94%</div>
         <div className="flex items-center gap-1 mt-1">
           <ArrowUpRight className="w-3.5 h-3.5 text-[#059669]" />
           <span className="text-xs font-semibold text-[#059669]">+12%</span>
         </div>
       </div>
 
-      {/* Card 2 - Left side, middle */}
-      <div className="absolute -left-2 top-[30%] w-40 bg-white rounded-xl p-4 shadow-xl z-10">
-        <div className="flex items-center gap-2 mb-2">
-          <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-[#F97316]/10">
-            <Clock className="w-4 h-4 text-[#F97316]" />
-          </div>
-          <span className="text-xs text-gray-500">MTTR Engins</span>
-        </div>
-        <div className="text-2xl font-bold text-[#0C0A09]">1.8h</div>
-        <div className="text-xs text-[#059669]">-30% vs avant</div>
-      </div>
-
-      {/* Card 3 - Right side, lower middle */}
-      <div className="absolute -right-2 top-[55%] w-44 bg-white rounded-xl p-4 shadow-xl z-10">
-        <div className="flex items-center justify-between mb-1.5">
+      {/* Card 3 - Bottom Right - Progression (style modèle avec chart) */}
+      <div className="absolute -right-3 bottom-4 w-48 bg-white rounded-xl p-4 shadow-xl z-10">
+        <div className="flex items-center justify-between mb-2">
           <div className="flex items-center gap-2">
-            <Target className="w-4 h-4 text-[#7C3AED]" />
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-[#7C3AED]/10">
+              <Target className="w-4 h-4 text-[#7C3AED]" />
+            </div>
             <span className="text-xs text-gray-500">Progression</span>
           </div>
           <span className="text-xs font-semibold text-[#059669] bg-[#059669]/10 px-2 py-1 rounded">+45%</span>
         </div>
-        <div className="text-2xl font-bold text-[#0C0A09]">95%</div>
-        <MiniLineChartInline data={chantierData} color="#7C3AED" height={25} />
-      </div>
-
-      {/* Card 4 - Bottom Left */}
-      <div className="absolute -left-2 bottom-3 w-40 bg-white rounded-xl p-4 shadow-lg z-10">
-        <div className="flex items-center gap-2 mb-1.5">
-          <Target className="w-4 h-4 text-[#F97316]" />
-          <span className="text-xs text-gray-500">First Time Fix</span>
-        </div>
-        <div className="text-2xl font-bold text-[#0C0A09]">92%</div>
-        <div className="text-xs text-[#059669]">+28 pts</div>
-      </div>
-
-      {/* Bottom - Zero Badges */}
-      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-        <ZeroBadge text="Zéro indisponibilité" icon={Shield} color="#059669" size="sm" />
-        <ZeroBadge text="Zéro panne" icon={Zap} color="#0891B2" size="sm" />
+        <div className="text-3xl font-bold text-[#0C0A09]">95%</div>
+        <MiniLineChartInline data={chantierData} color="#7C3AED" height={30} className="mt-2" />
       </div>
     </div>
   )
@@ -555,6 +345,79 @@ export function EnhancedBtpPhotoVisual({ imageSrc, imageAlt, className = '' }: E
 // =====================================================
 // SECTOR KPI GRID COMPONENT
 // =====================================================
+
+export const sectorKPIs = {
+  industrie: {
+    name: 'Industrie',
+    icon: Factory,
+    kpis: [
+      { name: 'OEE', value: '92%', target: '85%+', trend: '+8%' },
+      { name: 'MTBF', value: '720h', target: '500h+', trend: '+15%' },
+      { name: 'MTTR', value: '2.1h', target: '<3h', trend: '-25%' },
+      { name: 'Disponibilité', value: '98.5%', target: '95%+', trend: '+2.3%' }
+    ]
+  },
+  btp: {
+    name: 'BTP',
+    icon: HardHat,
+    kpis: [
+      { name: 'Conformité calendrier', value: '94%', target: '90%+', trend: '+12%' },
+      { name: 'Retard chantier', value: '-45%', target: '0%', trend: '-45%' },
+      { name: 'Safety events', value: '0', target: '0', trend: 'Stable' },
+      { name: 'MTTR engins', value: '1.8h', target: '<2h', trend: '-30%' }
+    ]
+  },
+  mines: {
+    name: 'Mines & Carrières',
+    icon: Pickaxe,
+    kpis: [
+      { name: 'Disponibilité engins', value: '96%', target: '90%+', trend: '+6%' },
+      { name: 'MTBF', value: '480h', target: '400h+', trend: '+20%' },
+      { name: 'Conso. carburant', value: '-12%', target: '-10%', trend: '-12%' },
+      { name: 'PMP', value: '88%', target: '85%+', trend: '+15%' }
+    ]
+  },
+  sante: {
+    name: 'Santé',
+    icon: Stethoscope,
+    kpis: [
+      { name: 'Dispo. équip. critiques', value: '99.9%', target: '99.5%+', trend: '+0.4%' },
+      { name: 'Conformité réglementaire', value: '100%', target: '100%', trend: 'Stable' },
+      { name: 'MTTR équip. médicaux', value: '0.5h', target: '<1h', trend: '-50%' },
+      { name: 'Traçabilité', value: '100%', target: '100%', trend: 'Stable' }
+    ]
+  },
+  energie: {
+    name: 'Énergie',
+    icon: Zap,
+    kpis: [
+      { name: 'PMP', value: '91%', target: '85%+', trend: '+18%' },
+      { name: 'MTBF', value: '2160h', target: '2000h+', trend: '+8%' },
+      { name: 'Disponibilité', value: '99.2%', target: '98%+', trend: '+1.2%' },
+      { name: 'Safety incidents', value: '0', target: '0', trend: 'Stable' }
+    ]
+  },
+  agroalimentaire: {
+    name: 'Agroalimentaire',
+    icon: Wheat,
+    kpis: [
+      { name: 'Conformité HACCP', value: '100%', target: '100%', trend: 'Stable' },
+      { name: 'Traçabilité', value: '100%', target: '100%', trend: 'Stable' },
+      { name: 'OEE', value: '89%', target: '85%+', trend: '+4%' },
+      { name: 'PMP', value: '87%', target: '85%+', trend: '+10%' }
+    ]
+  },
+  logistique: {
+    name: 'Logistique',
+    icon: Truck,
+    kpis: [
+      { name: 'Dispo. flotte', value: '97%', target: '95%+', trend: '+2%' },
+      { name: 'MTTR véhicules', value: '1.2h', target: '<2h', trend: '-40%' },
+      { name: 'OT respectés', value: '95%', target: '90%+', trend: '+5%' },
+      { name: 'Cost per mile', value: '-8%', target: '-5%', trend: '-8%' }
+    ]
+  }
+}
 
 interface SectorKpiGridProps {
   sectorKey: keyof typeof sectorKPIs
@@ -576,7 +439,7 @@ export function SectorKpiGrid({ sectorKey, className = '' }: SectorKpiGridProps)
       </div>
       
       {/* KPI Grid */}
-      <div className="grid grid-cols-2 gap-3 mb-4">
+      <div className="grid grid-cols-2 gap-3">
         {sector.kpis.map((kpi, i) => (
           <div key={i} className="bg-white rounded-xl p-3 shadow border border-gray-100">
             <div className="text-xs text-gray-500 mb-1">{kpi.name}</div>
@@ -591,89 +454,12 @@ export function SectorKpiGrid({ sectorKey, className = '' }: SectorKpiGridProps)
           </div>
         ))}
       </div>
-      
-      {/* Zero Badges */}
-      <div className="flex flex-wrap gap-2">
-        {sector.zeroBadges.map((badge, i) => (
-          <ZeroBadge key={i} text={badge} icon={CheckCircle2} color="#059669" size="sm" />
-        ))}
-      </div>
     </div>
   )
 }
 
 // =====================================================
-// FLOATING KPI OVERLAY - For any photo
-// =====================================================
-
-interface FloatingKpiOverlayProps {
-  children: React.ReactNode
-  kpis: Array<{
-    name: string
-    value: string
-    change?: string
-    trend?: 'up' | 'down'
-    position: 'top-left' | 'top-right' | 'middle-left' | 'middle-right' | 'bottom-left' | 'bottom-right'
-  }>
-  zeroBadges?: Array<{ text: string; icon?: React.ElementType; color?: string }>
-  className?: string
-}
-
-export function FloatingKpiOverlay({ 
-  children, 
-  kpis, 
-  zeroBadges = [], 
-  className = '' 
-}: FloatingKpiOverlayProps) {
-  const positionClasses: Record<string, string> = {
-    'top-left': 'top-4 left-4',
-    'top-right': 'top-4 right-4',
-    'middle-left': 'top-1/3 left-4',
-    'middle-right': 'top-1/3 right-4',
-    'bottom-left': 'bottom-4 left-4',
-    'bottom-right': 'bottom-4 right-4'
-  }
-  
-  return (
-    <div className={`relative ${className}`}>
-      {children}
-      
-      {kpis.map((kpi, i) => (
-        <div 
-          key={i}
-          className={`absolute ${positionClasses[kpi.position]} bg-white rounded-xl p-3 shadow-lg`}
-        >
-          <div className="text-xs text-gray-500">{kpi.name}</div>
-          <div className="text-lg font-bold text-[#0C0A09]">{kpi.value}</div>
-          {kpi.change && (
-            <div className={`text-xs font-semibold ${
-              kpi.trend === 'up' ? 'text-[#059669]' : kpi.trend === 'down' ? 'text-[#DC2626]' : 'text-gray-500'
-            }`}>
-              {kpi.change}
-            </div>
-          )}
-        </div>
-      ))}
-      
-      {zeroBadges.length > 0 && (
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-          {zeroBadges.map((badge, i) => (
-            <ZeroBadge 
-              key={i} 
-              text={badge.text} 
-              icon={badge.icon} 
-              color={badge.color || '#059669'} 
-              size="sm" 
-            />
-          ))}
-        </div>
-      )}
-    </div>
-  )
-}
-
-// =====================================================
-// KPI DASHBOARD SUMMARY - For pages
+// KPI DASHBOARD SUMMARY
 // =====================================================
 
 interface KpiDashboardProps {
@@ -686,7 +472,6 @@ interface KpiDashboardProps {
     trend?: 'up' | 'down'
     description?: string
   }>
-  showZeroBadges?: boolean
   className?: string
 }
 
@@ -694,7 +479,6 @@ export function KpiDashboard({
   title, 
   subtitle, 
   kpis, 
-  showZeroBadges = true,
   className = '' 
 }: KpiDashboardProps) {
   return (
@@ -706,7 +490,7 @@ export function KpiDashboard({
         </div>
       )}
       
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {kpis.map((kpi, i) => (
           <KpiCard
             key={i}
@@ -719,20 +503,6 @@ export function KpiDashboard({
           />
         ))}
       </div>
-      
-      {showZeroBadges && (
-        <div className="flex flex-wrap gap-2">
-          {zeroBadges.slice(0, 4).map((badge, i) => (
-            <ZeroBadge 
-              key={i} 
-              text={badge.text} 
-              icon={badge.icon} 
-              color={badge.color} 
-              size="sm" 
-            />
-          ))}
-        </div>
-      )}
     </div>
   )
 }

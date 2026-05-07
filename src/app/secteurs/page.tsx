@@ -14,6 +14,7 @@ import {
   Globe, Target, Activity, Gauge, TrendingUp, TrendingDown, ArrowUpRight
 } from 'lucide-react'
 import { TabNavigation, TabPanel } from '@/components/tab-navigation'
+import { DataCard, VignetteBadge } from '@/components/multi-image-layout'
 
 export default function SecteursPage() {
   const [activeTab, setActiveTab] = useState('industrie')
@@ -277,43 +278,40 @@ export default function SecteursPage() {
               </div>
             </div>
 
-            {/* Hero Photo with Floating Stats */}
-            <div className="hidden lg:block relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+            {/* Hero Image - Cards overlapping at edges */}
+            <div className="hidden lg:block">
+              <div className="relative rounded-3xl overflow-visible shadow-2xl">
                 <Image
-                  src="/images/technician-action.png"
-                  alt="Technicien en action"
+                  src="/images/supervision-diverse-new-5.png"
+                  alt="Présentation performance maintenance"
                   width={550}
-                  height={350}
-                  className="object-cover"
+                  height={380}
+                  className="object-cover w-full rounded-3xl"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
-              </div>
-              
-              {/* Floating Cards */}
-              <div className="absolute -top-3 left-4 flex items-center gap-2 px-4 py-2.5 bg-[#F97316] text-white rounded-full shadow-lg">
-                <Target className="w-4 h-4" />
-                <span className="text-sm font-semibold">18 Secteurs</span>
-              </div>
-              
-              <div className="absolute top-12 right-4 bg-white rounded-xl p-4 shadow-lg">
-                <div className="flex items-center gap-2 mb-1">
-                  <Gauge className="w-4 h-4 text-[#059669]" />
-                  <span className="text-xs text-gray-500">Disponibilité</span>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-3xl" />
+                
+                {/* Single Card - Overlapping bottom-right edge */}
+                <div className="absolute -right-6 -bottom-4 z-10">
+                  <DataCard
+                    value="18"
+                    label="Secteurs"
+                    change="Solutions métier"
+                    icon={<Target className="w-4 h-4 text-[#F97316]" />}
+                    chart="bar"
+                    chartData={[8, 10, 12, 14, 16, 18]}
+                    chartColor="#F97316"
+                    size="md"
+                  />
                 </div>
-                <div className="text-2xl font-bold text-[#0C0A09]">98.2%</div>
-              </div>
-              
-              <div className="absolute bottom-4 left-4 bg-[#1E3A8A] text-white rounded-xl p-4 shadow-lg">
-                <div className="text-lg font-bold">350+</div>
-                <div className="text-xs text-white/80">Clients</div>
-              </div>
-              
-              <div className="absolute bottom-4 right-4 bg-white rounded-xl p-3 shadow-lg">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#059669]" />
-                  <span className="text-sm font-medium">Conforme</span>
+                
+                {/* Vignette overlapping top-left */}
+                <div className="absolute -top-3 left-6 z-10">
+                  <VignetteBadge 
+                    icon={<Globe className="w-5 h-5 text-white" />} 
+                    color="#1E3A8A"
+                    size="lg"
+                  />
                 </div>
               </div>
             </div>

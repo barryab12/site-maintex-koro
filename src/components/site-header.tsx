@@ -205,11 +205,11 @@ export function SiteHeader() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-gray-200/50 shadow-sm">
       <div className="max-w-[1240px] mx-auto px-6 lg:px-10 h-[70px] flex items-center gap-6">
         {/* Logo */}
-        <Link href="/" className="flex items-center flex-shrink-0">
+        <Link href="/" className="flex items-center flex-shrink-0 no-underline">
           <img
             src="/upload/logo-maintex.png"
             alt="MAINTEX"
-            className="h-10"
+            className="h-10 w-auto"
           />
         </Link>
 

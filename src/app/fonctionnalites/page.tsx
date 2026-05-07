@@ -10,8 +10,8 @@ import {
   CheckCircle2, TrendingUp, Activity, Gauge, BarChart3, ClipboardList, RefreshCw, Heart, Wallet, Package, Smartphone, Link2, Brain, Cpu, Calendar, Settings, Users, FileText, ShieldCheck, ArrowRight, Zap, Shield, Server, ChevronRight, Clock, Target, Warehouse, ShoppingCart, DollarSign, FolderKanban, ArrowUpRight, TrendingDown, Wrench
 } from 'lucide-react'
 import { TabNavigation, TabPanel } from '@/components/tab-navigation'
-import { MiniLineChartInline } from '@/components/photo-data-visual'
-import { ZeroBadge, KpiCard, maintenanceKPIs } from '@/components/kpi-visual'
+import { MiniLineChart, MiniBarChart, DataCard, VignetteBadge } from '@/components/multi-image-layout'
+import { ImageGridStrip } from '@/components/image-grid'
 
 // Mini Bar Chart Component
 function MiniBarChartInline({ data, color = '#F97316', height = 40, className = '' }: { data: number[], color?: string, height?: number, className?: string }) {
@@ -500,7 +500,7 @@ export default function FonctionnalitesPage() {
             </div>
           </div>
           
-          {/* Right - Photo with KPIs and Graphs */}
+          {/* Right - Photo with Max 3 KPI Cards */}
           <div className="relative py-6 px-4">
             <div className="relative rounded-2xl overflow-hidden shadow-lg w-full h-[260px]">
               <Image
@@ -512,13 +512,13 @@ export default function FonctionnalitesPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
             
-            {/* Top Right - Line Chart Card */}
+            {/* Card 1 - Top Right - Line Chart */}
             <div className="absolute top-2 right-0 bg-white rounded-xl p-3 shadow-xl w-44 z-10 border border-gray-100">
               <div className="text-xs text-gray-500 mb-1 font-medium">{kpiData.chartLabel}</div>
-              <MiniLineChartInline data={kpiData.chartData} color={feature.highlight ? '#F97316' : '#1E3A8A'} height={30} />
+              <MiniLineChart data={kpiData.chartData} color={feature.highlight ? '#F97316' : '#1E3A8A'} height={30} />
             </div>
             
-            {/* Bottom Left - KPI Card with Bar Chart */}
+            {/* Card 2 - Bottom Left - Bar Chart */}
             <div className="absolute bottom-0 left-6 bg-white rounded-xl p-3 shadow-xl w-48 z-10 border border-gray-100">
               {kpiData.kpis[0] && (
                 <div className="flex items-center gap-3 mb-2">
@@ -533,21 +533,13 @@ export default function FonctionnalitesPage() {
                   )}
                 </div>
               )}
-              <MiniBarChartInline data={kpiData.barData} color={feature.highlight ? '#F97316' : '#059669'} height={25} />
+              <MiniBarChart data={kpiData.barData} color={feature.highlight ? '#F97316' : '#059669'} height={25} />
             </div>
             
-            {/* Top Left - Badge */}
-            <div className={`absolute top-6 left-6 px-3 py-1.5 rounded-full text-xs font-semibold shadow-lg z-10 ${feature.highlight ? 'bg-[#F97316] text-white' : 'bg-[#1E3A8A] text-white'}`}>
-              {feature.stats && feature.stats[0]?.value}
-            </div>
-            
-            {/* Right Middle - Additional KPI */}
-            {kpiData.kpis[1] && (
-              <div className="absolute right-2 top-1/2 -translate-y-1/2 bg-white rounded-lg p-3 shadow-xl z-10 border border-gray-100">
-                <div className={`text-sm font-bold ${kpiData.kpis[1].trend?.includes('-') ? 'text-[#059669]' : 'text-[#0C0A09]'}`}>
-                  {kpiData.kpis[1].value}
-                </div>
-                <div className="text-[10px] text-gray-500">{kpiData.kpis[1].name}</div>
+            {/* Card 3 - Top Left - Badge (only if stats exist) */}
+            {feature.stats && feature.stats[0] && (
+              <div className={`absolute top-6 left-6 px-3 py-1.5 rounded-full text-xs font-semibold shadow-lg z-10 ${feature.highlight ? 'bg-[#F97316] text-white' : 'bg-[#1E3A8A] text-white'}`}>
+                {feature.stats[0]?.value}
               </div>
             )}
           </div>
@@ -594,87 +586,66 @@ export default function FonctionnalitesPage() {
               </div>
             </div>
             
-            {/* Hero Photo with Floating KPIs and Graphs */}
-            <div className="hidden lg:block relative py-6">
-              {/* Main Image Container */}
-              <div className="relative rounded-3xl overflow-visible shadow-2xl w-full h-[480px]">
+            {/* Hero Image - Cards overlapping at edges */}
+            <div className="hidden lg:block py-6">
+              <div className="relative rounded-3xl overflow-visible shadow-2xl h-[480px]">
                 <Image
-                  src="/images/hero-fonctionnalites.jpg"
-                  alt="Technicien maintenance avec tablette devant machine industrielle"
+                  src="/images/team-btp-chantier.png"
+                  alt="Technicien en intervention de maintenance"
                   fill
-                  className="object-cover object-center rounded-3xl"
+                  className="object-cover rounded-3xl"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent rounded-3xl" />
-              </div>
-              
-              {/* Top Left - OEE Badge - overlapping */}
-              <div className="absolute -top-3 left-6 bg-white rounded-xl p-3 shadow-xl w-32 z-10 border border-gray-100">
-                <div className="flex items-center gap-2 mb-1">
-                  <Target className="w-4 h-4 text-[#7C3AED]" />
-                  <span className="text-xs text-gray-500">OEE</span>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-3xl" />
+                
+                {/* Card 1 - Overlapping top-right edge */}
+                <div className="absolute -right-6 top-6 z-10">
+                  <DataCard
+                    value="98.5%"
+                    label="Disponibilité"
+                    change="+2.3%"
+                    icon={<Gauge className="w-3 h-3 text-[#059669]" />}
+                    chart="line"
+                    chartData={[92, 94, 91, 96, 98, 97, 99, 98]}
+                    chartColor="#059669"
+                    size="sm"
+                  />
                 </div>
-                <div className="text-2xl font-bold text-[#0C0A09]">92%</div>
-                <span className="text-xs text-[#059669] font-semibold">World-class</span>
-              </div>
-              
-              {/* Top Right - Disponibilité with Chart - overlapping */}
-              <div className="absolute -top-3 right-6 bg-white rounded-xl p-4 shadow-xl w-44 z-10 border border-gray-100">
-                <div className="flex items-center gap-2 mb-1">
-                  <Gauge className="w-4 h-4 text-[#059669]" />
-                  <span className="text-xs text-gray-500">Disponibilité</span>
+                
+                {/* Card 2 - Overlapping left edge */}
+                <div className="absolute -left-6 top-[35%] z-10">
+                  <DataCard
+                    value="2.4h"
+                    label="MTTR"
+                    change="-18%"
+                    changeType="positive"
+                    icon={<Clock className="w-3 h-3 text-[#F97316]" />}
+                    size="sm"
+                  />
                 </div>
-                <div className="text-2xl font-bold text-[#0C0A09]">98.5%</div>
-                <div className="flex items-center gap-1 mt-1">
-                  <ArrowUpRight className="w-3.5 h-3.5 text-[#059669]" />
-                  <span className="text-xs font-semibold text-[#059669]">+2.3%</span>
+                
+                {/* Card 3 - Overlapping bottom-right edge */}
+                <div className="absolute -right-4 -bottom-4 z-10">
+                  <DataCard
+                    value="156"
+                    label="Interventions/mois"
+                    change="+20%"
+                    icon={<Activity className="w-4 h-4 text-[#1E3A8A]" />}
+                    chart="bar"
+                    chartData={[45, 62, 78, 95, 110]}
+                    chartColor="#1E3A8A"
+                    size="md"
+                  />
                 </div>
-                <MiniLineChartInline data={[92, 94, 91, 96, 98, 97, 99, 98, 99, 98, 99, 98]} color="#059669" height={25} />
-              </div>
-              
-              {/* Middle Left - MTTR Card - overlapping */}
-              <div className="absolute left-0 top-[32%] -translate-x-3 bg-white rounded-xl p-4 shadow-xl w-38 z-10 border border-gray-100">
-                <div className="flex items-center gap-2 mb-1">
-                  <Clock className="w-4 h-4 text-[#F97316]" />
-                  <span className="text-xs text-gray-500">MTTR</span>
+                
+                {/* Vignette overlapping bottom-left */}
+                <div className="absolute -bottom-3 left-6 z-10">
+                  <VignetteBadge 
+                    icon={<Target className="w-5 h-5 text-white" />} 
+                    color="#7C3AED"
+                    size="lg"
+                  />
                 </div>
-                <div className="text-2xl font-bold text-[#0C0A09]">2.4h</div>
-                <div className="flex items-center gap-1 mt-1">
-                  <TrendingDown className="w-3.5 h-3.5 text-[#059669]" />
-                  <span className="text-xs font-semibold text-[#059669]">-18%</span>
-                </div>
-              </div>
-              
-              {/* Middle Right - Bar Chart - overlapping */}
-              <div className="absolute right-0 top-[38%] translate-x-3 bg-white rounded-xl p-3 shadow-xl w-38 z-10 border border-gray-100">
-                <div className="text-xs text-gray-500 mb-2 font-medium">Interventions/mois</div>
-                <div className="text-lg font-bold text-[#0C0A09] mb-2">156</div>
-                <MiniBarChartInline data={[45, 62, 78, 95, 110, 125, 118, 132, 145, 138, 152, 156]} color="#1E3A8A" height={35} />
-              </div>
-              
-              {/* Bottom Left - MTBF - overlapping */}
-              <div className="absolute bottom-10 -left-2 bg-[#1E3A8A] text-white rounded-xl p-4 shadow-xl z-10">
-                <div className="flex items-center gap-2 mb-1">
-                  <Activity className="w-4 h-4 text-[#F97316]" />
-                  <span className="text-xs text-white/80">MTBF</span>
-                </div>
-                <div className="text-2xl font-bold">720h</div>
-                <div className="text-xs text-[#F97316]">+15%</div>
-              </div>
-              
-              {/* Bottom Right - FTFR - overlapping */}
-              <div className="absolute -bottom-2 right-6 bg-white rounded-xl p-3 shadow-xl z-10 border border-gray-100">
-                <div className="flex items-center gap-2 mb-1">
-                  <Wrench className="w-4 h-4 text-[#F97316]" />
-                  <span className="text-xs text-gray-500">First Time Fix</span>
-                </div>
-                <div className="text-lg font-bold text-[#0C0A09]">89%</div>
-              </div>
-              
-              {/* Bottom Center - Zero Badges - overlapping */}
-              <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                <ZeroBadge text="Zéro panne" icon={Zap} color="#059669" size="sm" />
-                <ZeroBadge text="Zéro arrêt" icon={Shield} color="#DC2626" size="sm" />
               </div>
             </div>
           </div>
